@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core">
+	<xp:this.resources>
+		<xp:styleSheet href="/css00.css"></xp:styleSheet>
+	</xp:this.resources>
+	<xp:viewPanel rows="30" id="viewPanel1">
+		<xp:this.facets>
+			<xp:pager partialRefresh="true" layout="Previous Group Next"
+				xp:key="headerPager" id="pager1">
+			</xp:pager>
+		</xp:this.facets>
+		<xp:this.data>
+			<xp:dominoView var="DS_QuesitonList1" viewName="質問一覧"></xp:dominoView>
+		</xp:this.data>
+		<xp:viewColumn columnName="Author" id="viewColumn1">
+			<xp:viewColumnHeader value="質問者名" id="viewColumnHeader1"></xp:viewColumnHeader>
+		</xp:viewColumn>
+		<xp:viewColumn columnName="Title" id="viewColumn2"
+			displayAs="link">
+			<xp:viewColumnHeader value="件名" id="viewColumnHeader2"></xp:viewColumnHeader>
+			<xp:eventHandler event="onclick" submit="true"
+				refreshMode="complete">
+				<xp:this.action><![CDATA[#{javascript:sessionScope.questionDocId = viewEntry.getUniversalID();
+context.redirectToPage("x_anspage.xsp");}]]></xp:this.action>
+			</xp:eventHandler>
+		</xp:viewColumn>
+		<xp:viewColumn columnName="Created" id="viewColumn3">
+			<xp:viewColumnHeader value="質問日時" id="viewColumnHeader3"></xp:viewColumnHeader>
+		</xp:viewColumn>
+	</xp:viewPanel>
+	<xp:eventHandler event="onClientLoad" submit="true"
+		refreshMode="norefresh">
+	</xp:eventHandler>
+</xp:view>

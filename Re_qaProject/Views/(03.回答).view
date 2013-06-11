@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='utf-8'?>
+<note class='view' xmlns='http://www.lotus.com/dxl' version='9.0' replicaid='49257B870044B72C'>
+<noteinfo noteid='176' unid='EE7684613180BCA349257B09003B2742' sequence='11'>
+<created><datetime>20130205T194606,74+09</datetime></created>
+<modified><datetime>20130611T213034,55+09</datetime></modified>
+<revised><datetime>20130423T213415,58+09</datetime></revised>
+<lastaccessed><datetime>20130611T213034,55+09</datetime></lastaccessed>
+<addedtofile><datetime>20130611T213034,55+09</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=System Administrator/O=rskkgdev852</name></updatedby>
+<wassignedby><name>CN=System Administrator/O=rskkgdev852</name></wassignedby>
+<item name='$FormatNote' summary='true' sign='true'>
+<rawitemdata type='4'>
+AQD2tdcUWCG3Z9J8QAAEeyVJ
+</rawitemdata></item>
+<item name='$FormulaClass' sign='true'><text>1</text></item>
+<item name='$Index' sign='true'><text/></item>
+<item name='$Formula' summary='true' sign='true'><formula compiled='true'>
+agAFADgAMwAFAAsABgAHAAkABABQYXJlbnREb2NJZEF1dGhvckNyZWF0ZWQkQ29uZmxpY3QkUkVG
+AAQABAAAAB4ABQAEAEZvcm0BAAkARk1fQW5zd2VyAAoCAwAHAA4ACAAJTDFTMlMzUw==
+</formula></item>
+<item name='$Collation' summary='true'>
+<rawitemdata type='2'>
+GAABAABEgGYAAAALAFBhcmVudERvY0lk
+</rawitemdata></item>
+<item name='$ViewFormat' summary='true' sign='true'>
+<rawitemdata type='5'>
+AQADAAYACAAAAFZDAQALAA4AAAAAAFAAAQAACgAAAAAAAAAAAAICAAAAVkMAAAYADAAAAAAAUAAB
+AAAKAAAAAAAAAAAAAgIAAABWQwAABwAMAAAAAABQAAEAAAoAAAAAAAAAAAACAgAAAFBhcmVudERv
+Y0lkEI6/EJbiEJW2EI+RSURBdXRob3IQifEQk5oQjtIQlrxDcmVhdGVkEInxEJOaEJP6EI6eJgAB
+AAAAAQEACQEAAAoBAQ4KAAABAK0rAQABAAEAAAAAAAAAAABXQwEBAAkAAAAAAAAAAAAAAAAAAAAA
+AAAEAAAAAAD//wAAAAAAAAAAAAAAAAAAV0MBAQAJAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAA//8A
+AAAAAAAAAAAAAAAAAFdDAQEACQAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAP//AAAAAAAAAAAAAAAA
+AABCAAAAAAABAP///wAFAP///wABAAAAAAAAAAAAAAAAAAEA////AAEA////AAAAAQAAAAAAAQAA
+AAAAAQAAAAAAAAAIAAAAAAABAA==
+</rawitemdata></item>
+<item name='$Comment' sign='true'><text/></item>
+<item name='$TITLE' sign='true'><text>(03.回答)|V_Answer_All</text></item>
+<item name='$DesignerVersion' sign='true'><text>8.5.3</text></item>
+<item name='$Flags'><text>Y</text></item></note>
+

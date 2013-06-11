@@ -1,0 +1,20 @@
+.bold {
+	font-weight: bold;
+}
+ /*------------------------------ 角丸CSS */
+    #xsnazzy { background:transparent; margin:1em; padding:0; }
+    #xsnazzy .h, #xsnazzy p { margin:0; padding:10px 15px; line-height:2em; }
+    #xsnazzy .h { font-size:1.5em; color:#60c8d8; padding-bottom:0; font-weight:bold; }
+    #xsnazzy .xtop, #xsnazzy .xbottom {display:block; background:transparent; font-size:1px; }
+    #xsnazzy b { display:block; overflow:hidden; }
+    #xsnazzy .xb1, #xsnazzy .xb2, #xsnazzy .xb3 {height:1px; }
+    #xsnazzy .xb2, #xsnazzy .xb3, #xsnazzy .xb4 {background:#FFFFFF; border-left:1px solid #708090; border-right:1px solid #708090; }
+    #xsnazzy .xb1 { margin:0 5px; background:#708090; }
+    #xsnazzy .xb2 { margin:0 3px; border-width:0 2px; }
+    #xsnazzy .xb3 { margin:0 2px; }
+    #xsnazzy .xb4 { height:2px; margin:0 1px; }
+    #xsnazzy .xboxcontent { display:block; background:#FFFFFF; border:0 solid #708090; border-width:0 1px; }
+    
+    
+.BestAnwerImage {color:#ff0000; position:relative; left:-40px }
+.EndImage { position:absolute;top:-5;left:40px}

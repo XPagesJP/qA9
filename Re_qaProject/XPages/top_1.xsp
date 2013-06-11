@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core"
+	xmlns:xe="http://www.ibm.com/xsp/coreex"
+	xmlns:xc="http://www.ibm.com/xsp/custom">
+	<xp:this.resources>
+		<xp:styleSheet href="/qa.css"></xp:styleSheet>
+	</xp:this.resources>
+	<div class="lotusFrame">
+		<div class="lotusBanner">
+			<div class="lotusRightCorner">
+				<div class="lotusInner">
+					<div class="title"></div>
+					<xp:table>
+						<xp:tr>
+							<xp:td style="width:100%">
+								<p class="bold">Q &amp; A</p>
+							</xp:td>
+							<xp:td>
+								<ul
+									class="lotusInlinelist lotusUtility">
+									<li class="lotusFirst">
+										<xp:text escape="true"
+											id="computedField1">
+											<xp:this.value><![CDATA[#{javascript:var userName:NotesName = session.createName(@UserName());
+return(userName.getCommon());}]]></xp:this.value>
+										</xp:text>
+									</li>
+									<li>
+										<xp:link escape="true"
+											id="link1">
+											<xp:this.text><![CDATA[#{javascript:var userName:NotesName = session.createName(@UserName());
+if (userName.getCommon()=="Anonymous")
+{
+       facesContext.getExternalContext().getRequestContextPath() + "?login"
+}
+else
+{
+       facesContext.getExternalContext().getRequestContextPath() + "?logout"
+}}]]></xp:this.text>
+										</xp:link>
+									</li>
+								</ul>
+
+
+
+							</xp:td>
+						</xp:tr>
+					</xp:table>
+				</div>
+			</div>
+		</div>
+		<div class="lotusTitleBar">
+			<div class="lotusRightCorner">
+				<div class="lotusInner">
+					<ul class="lotusTabs">
+						<li class="lotusSelected">
+							<a href="top.xsp">
+								<strong>メイン</strong>
+							</a>
+						</li>
+						<li>
+							<a href="user.xsp">ユーザー</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="lotusMain">
+			<div class="lotusColLeft">
+				<!-- Left Sidebar Here -->
+				<div class="lotusMenu">
+					<div class="lotusBottomCorner">
+						<div class="lotusInner">
+							<ul>
+								<li>
+									<a>新着順</a>
+								</li>
+								<li class="lotusSelected">
+									<a>
+											<xp:link escape="true"
+												text="カテゴリ順" id="link2">
+												
+											<xp:eventHandler event="onclick" submit="true" refreshMode="complete">
+												<xp:this.action>
+													<xe:changeDynamicContentAction
+														facetName="view2" for="dynp">
+													</xe:changeDynamicContentAction>
+												</xp:this.action></xp:eventHandler></xp:link>
+										
+									</a>
+								</li>
+								<li>
+									<a><xp:link escape="true"
+												text="未回答" id="link3">
+												
+											<xp:eventHandler event="onclick" submit="true" refreshMode="complete">
+												<xp:this.action>
+													<xe:changeDynamicContentAction
+														facetName="AnsForm" for="dynp">
+													</xe:changeDynamicContentAction>
+												</xp:this.action></xp:eventHandler></xp:link></a>
+								</li>
+								<li>
+									<a><xp:link escape="true"
+												text="いい質問" id="link4">
+											<xp:eventHandler event="onclick" submit="true" refreshMode="complete">
+												<xp:this.action>
+													<xe:changeDynamicContentAction
+														facetName="view2" for="dynp">
+													</xe:changeDynamicContentAction>
+												</xp:this.action></xp:eventHandler></xp:link></a>
+								</li>
+								<li>
+									<a>閲覧数順</a>
+								</li>
+								<li>
+									<a>お気に入り</a>
+								</li>
+								<li>
+									<a>Tag</a>
+								</li>
+								<li>
+									<a>全ての文書</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div>
+
+				</div>
+			</div>
+			<div class="lotusContent">
+				<div class="lotusHeader">
+					<h1 style="margin:0px">
+						Main Content Here
+						</h1>
+					<xe:dynamicContent id="dynp"
+						defaultFacet="view1"><xp:this.facets>
+		<xp:panel xp:key="view1" id="view1">
+							<xc:cc_View1></xc:cc_View1>
+						</xp:panel>
+						<xp:panel xp:key="view2" id="view2">
+							<xc:cc_View2></xc:cc_View2>
+						</xp:panel>
+						<xp:panel xp:key="view3" id="view3">
+							<xc:cc_View3></xc:cc_View3>
+						</xp:panel>
+						</xp:this.facets>
+					</xe:dynamicContent>
+				</div>
+			</div>
+		</div>
+		<div class="lotusFooter">
+			<div align="center">
+				Copyright © 2013 Kyushu Notes Partner Community. All
+				Rights Reserved.
+			</div>
+		</div>
+	</div>
+</xp:view>

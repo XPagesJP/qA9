@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Author: Tony McGuckin, IBM -->
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core"
+	xmlns:xc="http://www.ibm.com/xsp/custom" enableModifiedFlag="true">
+	<h1 style="margin-left:20.0px">回答入力</h1>
+
+
+	<xp:panel style="width:700.0px;padding-top:5.0px;padding-bottom:5.0px">
+		<A Href="#QuesErea" style="padding-right:0.0px;margin-right:0.0px"><xp:div style="text-align:right">
+			質問を確認する>>
+		</xp:div></A>
+	</xp:panel>
+	<xp:panel style="height:auto;width:650.0px;padding-left:50.0px" id="panel_Res">
+		<xp:this.data>
+			<xp:dominoDocument var="docAnsRes" formName="FM_Answer">
+			</xp:dominoDocument>
+		</xp:this.data>
+
+
+		<xp:div>
+			<xp:radioGroup id="res_AorC" defaultValue="A"
+				value="#{docAnsRes.AorC}">
+				<xp:selectItem itemLabel="回答" itemValue="A"></xp:selectItem>
+				<xp:selectItem itemLabel="コメント" itemValue="C"></xp:selectItem>
+			</xp:radioGroup>
+		</xp:div>
+		<xp:table border="0">
+			<xp:tr>
+				<xp:td>
+
+					<xp:inputRichText id="res_Body"
+						value="#{docAnsRes.Body}" style="width:650.0px">
+					</xp:inputRichText>
+				</xp:td>
+
+
+
+			</xp:tr>
+			<xp:tr>
+
+
+				<xp:td>
+
+					<xp:fileUpload id="res_Fileupload"
+						value="#{docAnsRes.TempFile}">
+						<xp:eventHandler event="onchange" submit="true"
+							refreshMode="complete" disableValidators="true"
+							id="eventHandler1">
+						</xp:eventHandler>
+					</xp:fileUpload>
+					<xp:fileDownload rows="30" id="Res_Filedownload"
+						displayLastModified="false" hideWhen="true" allowDelete="true"
+						value="#{docAnsRes.TempFile}">
+						<xp:eventHandler event="onclick" submit="true"
+							refreshMode="complete" disableValidators="true"
+							id="eventHandler2">
+						</xp:eventHandler>
+					</xp:fileDownload>
+
+
+					<xp:eventHandler event="onclick" submit="true"
+						refreshMode="complete" id="eventHandler3">
+					</xp:eventHandler>
+				</xp:td>
+
+
+
+			</xp:tr>
+			<xp:tr>
+				<xp:td>
+					<xp:panel
+						style="text-align:right;margin-right:23.0px">
+
+						<xp:text style="color:rgb(0,128,255)"
+							escape="true" id="res_Author">
+							<xp:this.value><![CDATA[#{javascript:var Author = viewScope.author = session.getEffectiveUserName();
+return @Name("[ABBREVIATE]",Author)}]]></xp:this.value>
+						</xp:text>
+						<xp:label id="label2" value="|"
+							style="color:rgb(192,192,192);margin-left:5.0px;margin-right:5.0px">
+						</xp:label>
+						<xp:span>回答日時</xp:span>
+
+						<xp:text style="color:rgb(0,128,255)"
+							escape="true" id="res_Created"
+							value="#{javascript:viewScope.created = Date()}">
+						</xp:text>
+					</xp:panel>
+
+				</xp:td>
+
+			</xp:tr>
+			<xp:tr>
+				<xp:td>
+					<xp:div style="text-align:center">
+						<xp:button value="回答する" id="button1">
+							
+						<xp:eventHandler event="onclick" submit="true"
+							refreshMode="complete">
+							<xp:this.action><![CDATA[#{javascript:docAnsRes.setValue("Author",viewScope.author);
+docAnsRes.setValue("Created",viewScope.created);
+docAnsRes.setValue("ParentDocId",sessionScope.questionDocId);
+docAnsRes.save();
+context.reloadPage();
+}]]></xp:this.action>
+						</xp:eventHandler></xp:button>
+					</xp:div>
+				</xp:td>
+			</xp:tr>
+
+		</xp:table>
+	</xp:panel>
+</xp:view>

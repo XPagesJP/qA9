@@ -1,0 +1,37 @@
+
+.Panel_docList_Title{
+	font-size: 2.0 ex;
+	color: #105CB6;
+}
+	
+	
+.Panel_docList_Footer{
+	width: 100%;
+	border-bottom-width: 1px;
+	border-bottom-style:solid;
+	border-bottom-color: #EEE;
+}
+	
+ .Table01{
+ border-bottom-color: #EEE;
+border-collapse: collapse;
+width: 100%;
+font-family: Arial, Verdana, Helvetica, sans-serif;
+font-size: 12px;
+font-style: normal;
+font-variant: normal;
+font-weight: normal;
+}
+
+.Table01Lastcell {
+		border-bottom-width: 3px;
+		border-bottom-style: solid;
+		border-bottom-color: #105CB6;
+}
+
+.Table01Title{
+	font-size: 1.2 ex;
+	color: #105CB6;
+}
+
+
