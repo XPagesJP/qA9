@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xp:view xmlns:xp="http://www.ibm.com/xsp/core">
 
-	<xp:button value="ラベル" id="button1"></xp:button></xp:view>
+	<xp:button value="ほげほげ" id="button1"></xp:button></xp:view>
