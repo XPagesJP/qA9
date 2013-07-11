@@ -6,6 +6,7 @@
 	</xp:this.resources>
 	<xp:inputHidden id="sessionUser" value="#{javascript:session.getEffectiveUserName();}">
 	</xp:inputHidden>
+	
 	<div class="lotusFrame">
 			<div class="lotusBanner">
 			<div class="lotusRightCorner">
@@ -63,9 +64,10 @@ else
 					<xp:td colspan="4" valign="top" style="padding:10.0px">
 					<xp:text escape="true" id="computedField1" value="#{docQues.Title}" style="font-size:14pt;color:rgb(255,255,255);padding-left:20.0px">
 					</xp:text>
+					
 				</xp:td>
-		
-	</xp:panel>
+
+					</xp:panel>
 				</div>
 			</div>
 		</div>
@@ -82,7 +84,7 @@ else
 	</xp:panel>
 	<h1 style="margin-left:20.0px">
 						回答・コメント
-					</h1>
+					<xp:panel style="padding-left:20.0px;padding-right:20.0px"><hr size="1" color="#808080"></hr></xp:panel></h1>
 			
 	<xp:panel style="height:auto;width:750px" id="panel_Ans">
 
@@ -104,7 +106,7 @@ return answerlist.getAllEntriesByKey(sessionScope.questionDocId);
 		</xp:repeat>
 	</xp:panel>
 	<A Name="AnsErea"></A>
-	 
+	 <xp:panel style="padding-left:20.0px;padding-right:20.0px"><hr size="1" color="#808080"></hr></xp:panel>
 	<xc:cc_AnserEdit></xc:cc_AnserEdit>
 
 	<xp:eventHandler event="onClientLoad" submit="true"

@@ -101,7 +101,7 @@ return @Name("[ABBREVIATE]",Author)}]]></xc:this.userName>
 						<xp:button style="margin-top:10.0px" id="CloseB">
 							<xp:this.value><![CDATA[#{javascript:
 var parentdoc = docQues.getDocument();
-if(parentdoc.getItemValueString("status")=="9"){
+if(parentdoc.getItemValueString("status")=="2"){
 	return "解決解除";
 }else{
 	return "これで解決！";
@@ -111,7 +111,7 @@ var parentdoc = docQues.getDocument();
 //コメントの場合、非表示
 if(targetdoc.getItemValueString("AorC")=="C") return false;
 
-if(parentdoc.getItemValueString("status")=="9"){
+if(parentdoc.getItemValueString("status")=="2"){
 //クローズされていてベストアンサーだった場合表示
 	if(targetdoc.getItemValueString("bestAns")=="1") return true;
 	

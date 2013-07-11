@@ -1,10 +1,10 @@
 <?xml version='1.0' encoding='utf-8'?>
 <note class='view' xmlns='http://www.lotus.com/dxl' version='9.0' replicaid='49257B870044B72C'>
-<noteinfo noteid='166' unid='67B7215814D7B5F649257B0400407CD2' sequence='11'>
+<noteinfo noteid='166' unid='67B7215814D7B5F649257B0400407CD2' sequence='12'>
 <created><datetime>20130131T204422,58+09</datetime></created>
-<modified><datetime>20130611T213034,47+09</datetime></modified>
-<revised><datetime>20130424T000619,51+09</datetime></revised>
-<lastaccessed><datetime>20130611T213034,47+09</datetime></lastaccessed>
+<modified><datetime>20130627T221404,35+09</datetime></modified>
+<revised><datetime>20130627T221404,34+09</datetime></revised>
+<lastaccessed><datetime>20130627T221404,35+09</datetime></lastaccessed>
 <addedtofile><datetime>20130611T213034,47+09</datetime></addedtofile></noteinfo>
 <updatedby><name>CN=System Administrator/O=rskkgdev852</name></updatedby>
 <wassignedby><name>CN=System Administrator/O=rskkgdev852</name></wassignedby>
@@ -30,7 +30,6 @@ BQD///8AAQAAAAAAAAAAAAAAAAABAP///wABAP///wAAAAEAAAAAAAEAAAAAAAEAAAAAAAAACAAA
 AAAAAQA=
 </rawitemdata></item>
 <item name='$Comment' sign='true'><text/></item>
-<item name='$Flags'><text>PY</text></item>
 <item name='$ViewGlobalScript_O' sign='true'>
 <rawitemdata type='14'>
 AQAAAkxTT0IDABQIamEAAAQAAAADAAAAAAAEAIgAAAAAAAAAAAAAAAAAAAAkAAAAGAA4AP////9U
@@ -48,5 +47,6 @@ AEUAAAD//wYATwBCAEoARQBDAFQAAAAAAP//AAAAAAAABQAIAAAAAAB0jpRNBAAHAAAAAAAdAAAC
 AAAACgAAAA==
 </rawitemdata></item>
 <item name='$TITLE' sign='true'><text>(01A.質問一覧）|V_Question_All</text></item>
-<item name='$DesignerVersion' sign='true'><text>8.5.3</text></item></note>
+<item name='$DesignerVersion' sign='true'><text>8.5.3</text></item>
+<item name='$Flags'><text>Y</text></item></note>
 

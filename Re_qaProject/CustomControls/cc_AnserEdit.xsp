@@ -1,27 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Author: Tony McGuckin, IBM -->
 <xp:view xmlns:xp="http://www.ibm.com/xsp/core"
-	xmlns:xc="http://www.ibm.com/xsp/custom" enableModifiedFlag="true">
+	xmlns:xc="http://www.ibm.com/xsp/custom" enableModifiedFlag="true"
+	xmlns:xe="http://www.ibm.com/xsp/coreex">
+	
 	<h1 style="margin-left:20.0px">回答入力</h1>
 
 
-	<xp:panel style="width:700.0px;padding-top:5.0px;padding-bottom:5.0px">
-		<A Href="#QuesErea" style="padding-right:0.0px;margin-right:0.0px"><xp:div style="text-align:right">
-			質問を確認する>>
-		</xp:div></A>
+	<xp:panel
+		style="width:700.0px;padding-top:5.0px;padding-bottom:5.0px">
+		<A Href="#QuesErea"
+			style="padding-right:0.0px;margin-right:0.0px">
+			<xp:div style="text-align:right">質問を確認する>></xp:div>
+		</A>
 	</xp:panel>
-	<xp:panel style="height:auto;width:650.0px;padding-left:50.0px" id="panel_Res">
+	<xp:panel style="height:auto;width:650.0px;padding-left:50.0px"
+		id="panel_Res">
 		<xp:this.data>
 			<xp:dominoDocument var="docAnsRes" formName="FM_Answer">
+			</xp:dominoDocument>
+			<xp:dominoDocument var="docQues" action="openDocument"
+				documentId="#{javascript:return sessionScope.questionDocId}">
 			</xp:dominoDocument>
 		</xp:this.data>
 
 
 		<xp:div>
-			<xp:radioGroup id="res_AorC" defaultValue="A"
-				value="#{docAnsRes.AorC}">
-				<xp:selectItem itemLabel="回答" itemValue="A"></xp:selectItem>
+			<xp:radioGroup id="res_AorC" value="#{docAnsRes.AorC}">
+				<xp:this.defaultValue><![CDATA[#{javascript://解決済みか否かを判定
+var targetdoc = docQues.getDocument();
+var status = targetdoc.getItemValueString("Status");
+print( status);
+if (status=="9"){
+return "C"
+}else{
+return "A"
+}
+}]]></xp:this.defaultValue>
+
+				<xp:selectItems>
+					<xp:this.value><![CDATA[#{javascript://解決済みか否かを判定
+var targetdoc = docQues.getDocument();
+var status = targetdoc.getItemValueString("Status");
+
+if (status=="2"){
+return null
+}else{
+return "回答|A"
+}
+
+}]]></xp:this.value>
+				</xp:selectItems>
 				<xp:selectItem itemLabel="コメント" itemValue="C"></xp:selectItem>
+
 			</xp:radioGroup>
 		</xp:div>
 		<xp:table border="0">
@@ -94,20 +125,42 @@ return @Name("[ABBREVIATE]",Author)}]]></xp:this.value>
 				<xp:td>
 					<xp:div style="text-align:center">
 						<xp:button value="回答する" id="button1">
-							
-						<xp:eventHandler event="onclick" submit="true"
-							refreshMode="complete">
-							<xp:this.action><![CDATA[#{javascript:docAnsRes.setValue("Author",viewScope.author);
+
+							<xp:eventHandler event="onclick"
+								submit="true" refreshMode="complete">
+								<xp:this.action><![CDATA[#{javascript:
+
+docAnsRes.setValue("Author",viewScope.author);
 docAnsRes.setValue("Created",viewScope.created);
 docAnsRes.setValue("ParentDocId",sessionScope.questionDocId);
 docAnsRes.save();
 context.reloadPage();
 }]]></xp:this.action>
-						</xp:eventHandler></xp:button>
+							</xp:eventHandler>
+						</xp:button>
+						<xe:djButton label="Dojo ボタン" id="djButton2">
+							<xp:eventHandler event="onBlur"
+								submit="false">
+								<xe:this.script><![CDATA[var dialog = dijit.byId("#{id:dialog1}");
+dialog.show();
+]]></xe:this.script>
+							</xp:eventHandler>
+						</xe:djButton>
 					</xp:div>
 				</xp:td>
 			</xp:tr>
 
 		</xp:table>
 	</xp:panel>
+
+
+
+
+	<xe:dialog id="dialog1">
+		<xp:text escape="true" id="computedField1">
+			<xp:this.value><![CDATA[#{javascript:"保存しますか？"}]]></xp:this.value>
+		</xp:text>
+		<xe:djButton label="Dojo ボタン" id="djButton1"></xe:djButton>
+	</xe:dialog>
+
 </xp:view>

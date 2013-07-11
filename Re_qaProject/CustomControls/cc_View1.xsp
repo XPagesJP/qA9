@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xp:view xmlns:xp="http://www.ibm.com/xsp/core">
+	<xp:this.data>
+		<xp:dominoView var="view1" viewName="V_Question_All"></xp:dominoView>
+	</xp:this.data>
 	<xp:this.resources>
 		<xp:styleSheet href="/css00.css"></xp:styleSheet>
 	</xp:this.resources>
@@ -10,7 +13,9 @@
 			</xp:pager>
 		</xp:this.facets>
 		<xp:this.data>
-			<xp:dominoView var="DS_QuesitonList1" viewName="質問一覧"></xp:dominoView>
+			<xp:dominoView var="DS_QuesitonList1"
+				viewName="V_Question_All">
+			</xp:dominoView>
 		</xp:this.data>
 		<xp:viewColumn columnName="Author" id="viewColumn1">
 			<xp:viewColumnHeader value="質問者名" id="viewColumnHeader1"></xp:viewColumnHeader>
@@ -31,4 +36,4 @@ context.redirectToPage("x_anspage.xsp");}]]></xp:this.action>
 	<xp:eventHandler event="onClientLoad" submit="true"
 		refreshMode="norefresh">
 	</xp:eventHandler>
-</xp:view>
+	</xp:view>
