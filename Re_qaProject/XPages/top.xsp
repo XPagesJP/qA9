@@ -1,112 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xp:view xmlns:xp="http://www.ibm.com/xsp/core"
-	xmlns:xe="http://www.ibm.com/xsp/coreex"><xp:this.resources>
-		<xp:styleSheet href="/qa.css"></xp:styleSheet>
-	</xp:this.resources><div class="lotusFrame"><div class="lotusBanner"><div class="lotusRightCorner"><div class="lotusInner"><div class="title"></div>
-					<xp:table>
-						<xp:tr>
-							<xp:td style="width:100%"><p class="bold">Q &amp; A</p></xp:td>
-							<xp:td><ul class="lotusInlinelist lotusUtility">
-						<li class="lotusFirst">
-							<xp:text escape="true" id="computedField1">
-								<xp:this.value><![CDATA[#{javascript:var userName:NotesName = session.createName(@UserName());
-return(userName.getCommon());}]]></xp:this.value>
-							</xp:text>
-						</li>
-						<li>
-							<xp:link escape="true" id="link1">
-								<xp:this.text><![CDATA[#{javascript:var userName:NotesName = session.createName(@UserName());
-if (userName.getCommon()=="Anonymous")
-{
-       facesContext.getExternalContext().getRequestContextPath() + "?login"
-}
-else
-{
-       facesContext.getExternalContext().getRequestContextPath() + "?logout"
-}}]]></xp:this.text>
-							</xp:link>
-						</li>
-					</ul>
-				
-			
-		
-		</xp:td>
-						</xp:tr>
-					</xp:table>
-				</div>
-			</div>
-		</div>
-		<div class="lotusTitleBar">
-			<div class="lotusRightCorner">
-				<div class="lotusInner">
-					<ul class="lotusTabs">
-						<li class="lotusSelected">
-							<a href="top.xsp">
-								<strong>メイン</strong>
-							</a>
-						</li>
-						<li>
-							<a href="user.xsp">ユーザー</a>
-						</li>
-					</ul>
-				</div>
-			</div>
-		</div>
-		<div class="lotusMain">
-			<div class="lotusColLeft">
-				<!-- Left Sidebar Here -->
-				<div class="lotusMenu">
-					<div class="lotusBottomCorner">
-						<div class="lotusInner">
-							<ul>
-								<li>
-									<a>新着順</a>
-								</li>
-								<li class="lotusSelected">
-									<a>
-										<strong>カテゴリ順</strong>
-									</a>
-								</li>
-								<li>
-									<a>未回答</a>
-								</li>
-								<li>
-									<a>いい質問</a>
-								</li>
-								<li>
-									<a>閲覧数順</a>
-								</li>
-								<li>
-									<a>お気に入り</a>
-								</li>
-								<li>
-									<a>Tag</a>
-								</li>
-								<li>
-									<a>全ての文書</a>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				<div>
-					<xe:tagCloud id="tagCloud1" sliderVisible="true">
-						<xe:this.cloudData>
-							<xe:dominoViewCloudData viewName="viewTag"
-								sortTags="weight">
-							</xe:dominoViewCloudData>
-						</xe:this.cloudData>
-					</xe:tagCloud>
-				</div>
-			</div>
-			<div class="lotusContent">
-				<div class="lotusHeader">
-					<h1 style="margin:0px">Main Content Here</h1>
-				</div>
-			</div>
-		</div>
-		<div class="lotusFooter">
-			<div align="center">Copyright © 2013 Kyushu Notes Partner Community. All Rights Reserved.</div>
-		</div>
-	</div>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xe="http://www.ibm.com/xsp/coreex"
+    xmlns:xc="http://www.ibm.com/xsp/custom">
+    <xp:this.resources>
+        <xp:styleSheet href="/qa.css"></xp:styleSheet>
+    </xp:this.resources>
+    <xc:cc_AppLayout>
+        <xp:this.facets>
+            
+        </xp:this.facets>
+    </xc:cc_AppLayout>
 </xp:view>

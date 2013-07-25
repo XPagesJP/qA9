@@ -6,7 +6,7 @@
  
 	1. webstandard 2. oneui 3. notes
 -->
-<theme extends="oneui">
+<theme extends="oneuiv2.1_blue">
 	<!-- 
 		このパターンにより、このテーマで使用するスタイルシートや JavaScript ファイル
 		ファイルなどのリソースを指定します。

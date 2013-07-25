@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xe="http://www.ibm.com/xsp/coreex">
+    <xe:applicationLayout id="applicationLayout1">
+        <xp:callback facetName="facetMiddle" id="facetMiddle"></xp:callback>
+        <xe:this.facets>
+            <xp:panel xp:key="MastFooter" styleClass="lotusRight">
+                ver 0.0.0
+            </xp:panel>
+            <xp:callback facetName="facetRight" id="facetRight"
+                xp:key="RightColumn">
+            </xp:callback>
+            <xp:callback facetName="facetLeft" id="facetLeft"
+                xp:key="LeftColumn">
+            </xp:callback>
+        </xe:this.facets>
+
+        <xe:this.configuration>
+            <xe:oneuiApplication footer="false"
+                legalText="九州地区ノーツパートナー会 Copyright © 2013 Kyushu Notes Partner Community. All Rights Reserved."
+                productLogo="/logo.png" productLogoHeight="45px"
+                productLogoWidth="360px">
+                <xe:this.footerLinks></xe:this.footerLinks>
+                <xe:this.titleBarTabs>
+                    <xe:basicLeafNode label="トップ"></xe:basicLeafNode>
+                    <xe:basicLeafNode label="お気に入り"></xe:basicLeafNode>
+                    <xe:basicLeafNode label="履歴"></xe:basicLeafNode>
+                    <xe:basicLeafNode label="検索"></xe:basicLeafNode>
+                    <xe:basicLeafNode label="ユーザー"></xe:basicLeafNode>
+                    <xe:basicLeafNode label="ヘルプ"></xe:basicLeafNode>
+                </xe:this.titleBarTabs>
+
+                
+                <xe:this.bannerUtilityLinks>
+                    <xe:userTreeNode userField="commonName">
+                    </xe:userTreeNode>
+                    <xe:loginTreeNode label="ログイン"></xe:loginTreeNode>
+
+                </xe:this.bannerUtilityLinks>
+            </xe:oneuiApplication>
+        </xe:this.configuration>
+    </xe:applicationLayout>
+</xp:view>
