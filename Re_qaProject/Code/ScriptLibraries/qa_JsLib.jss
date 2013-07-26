@@ -106,7 +106,9 @@ qa_JsLib.GetViewCount = function(targetDoc:NotesXspDocument){
 	var Settingdoc =accountlist.getFirstDocument();
 	var QAV_server =Settingdoc.getItemValue("QAview_server");
 	var QAV_path =Settingdoc.getItemValue("QAview_path");
-	var QAV_db = session.getDatabase(QAV_server[0],QAV_path[0]);
+	var QAV_db = session.getDatabase(
+	        (QAV_server.size() === 0) ? '' : QAV_server[0],
+	        QAV_path[0]);
 	var QAV_view = QAV_db.getView("VLookup_A02");
 
 

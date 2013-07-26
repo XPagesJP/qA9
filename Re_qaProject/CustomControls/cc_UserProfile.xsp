@@ -1,52 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xp:view xmlns:xp="http://www.ibm.com/xsp/core"
-	xmlns:xe="http://www.ibm.com/xsp/coreex">
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xe="http://www.ibm.com/xsp/coreex">
 
-	<xp:this.resources>
-		<xp:styleSheet href="/qa.css"></xp:styleSheet>
-	</xp:this.resources>
-	<xp:span style="color:rgb(128,128,255)"></xp:span>
-	<xp:inputHidden id="Profile_SV">
-		<xp:this.value><![CDATA[#{javascript:var accountlist = database.getView("V_Setting");
+	<xp:span style="color:rgb(128,128,255)"></xp:span><xp:inputHidden id="Profile_SV">
+	<xp:this.value><![CDATA[#{javascript:var accountlist = database.getView("V_Setting");
 var Settingdoc =accountlist.getFirstDocument();
 var PRF_server =Settingdoc.getItemValue("Profile_server");
 
 
-return PRF_server;}]]></xp:this.value>
-	</xp:inputHidden>
-	<xp:inputHidden id="Profile_Path">
-		<xp:this.value><![CDATA[#{javascript:var accountlist = database.getView("V_Setting");
+return PRF_server;}]]></xp:this.value></xp:inputHidden>
+<xp:inputHidden id="Profile_Path">
+	<xp:this.value><![CDATA[#{javascript:var accountlist = database.getView("V_Setting");
 var Settingdoc =accountlist.getFirstDocument();
 var PRF_path =Settingdoc.getItemValue("Profile_path");
 
-return PRF_path;}]]></xp:this.value>
-	</xp:inputHidden>
+return PRF_path;}]]></xp:this.value></xp:inputHidden>
+	<xp:br></xp:br>
+	
+	
 	<xp:repeat id="repeat1" rows="1" var="PFLDoc">
-		<xp:this.value><![CDATA[#{javascript:var userName:NotesName = session.createName(compositeData.userName);
-var Targetuser = userName.getAbbreviated();
+	    <xp:this.value><![CDATA[#{javascript:var userName:NotesName = session.createName(compositeData.userName);
+var Targetuser = userName.getCommon();
+
+//var Targetuser = getComponent("sessionUser").getValue();
 
 
 var sv =getComponent("Profile_SV").getValue();
 var path = getComponent("Profile_Path").getValue();
 
-var PRF_db = session.getDatabase(sv[0],path[0]);
-var PRF_view = PRF_db.getView("V_Profile");
+var PRF_db = session.getDatabase(
+    (sv.size() === 0) ? '' : sv[0],
+    path[0]);
+var PRF_view = PRF_db.getView("PersonalProfiles");
+
 return PRF_view.getAllEntriesByKey(Targetuser);}]]></xp:this.value>
-		<xp:panel>
+	    <xp:panel>
 
 
 
 
-			
-				<xp:table styleClass="oneuser">
-					<xp:tr>
-						<xp:td>
-							<xp:image id="image1"
-								styleClass="userImage01">
-								<xp:this.url><![CDATA[#{javascript:var profileDoc:NotesDocument =PFLDoc.getDocument();
+	        <xp:div align="left">
+	            <xp:table>
+	                <xp:tr>
+	                    <xp:td>
+	                        <xp:image id="image1" height="115px"
+	                            width="115px"
+	                            style="height:30px;width:30px">
+	                            <xp:this.url><![CDATA[#{javascript:var profileDoc:NotesDocument =PFLDoc.getDocument();
 var imageName:String = "xpPhotoPlaceholder.gif";
 
-var attachment:NotesRichTextItem = profileDoc.getFirstItem("Photo");
+var attachment:NotesRichTextItem = profileDoc.getFirstItem("attachment");
 var attachment_vector = attachment.getEmbeddedObjects();
 
 var sv =getComponent("Profile_SV").getValue();
@@ -60,63 +62,35 @@ return(imageName);
 
 }]]></xp:this.url>
 
-								<xp:eventHandler event="onclick"
-									submit="false">
-									<xp:this.script><![CDATA[XSP.openTooltipDialog("#{id:tDuser}",'#{id:UserID}')]]></xp:this.script>
-								</xp:eventHandler>
-							</xp:image>
-						</xp:td>
-						<xp:td>
-							<div>
-								<xp:link escape="true"
-									id="UserNameKj">
-									<xp:this.text><![CDATA[#{javascript:var profileDoc =PFLDoc.getDocument();
+	                        </xp:image>
+	                    </xp:td>
+	                    <xp:td>
+	                        <xp:link escape="true" id="link1">
+	                            <xp:this.text><![CDATA[#{javascript:var profileDoc =PFLDoc.getDocument();
 
-var userNmae =profileDoc.getItemValueString("UserNameKj");
+var userNmae =profileDoc.getItemValueString("AltFrom");
 
-return userNmae;}]]></xp:this.text>
-									<xp:eventHandler event="onclick"
-										submit="false">
-										<xp:this.script><![CDATA[XSP.openTooltipDialog("#{id:tDuser}",'#{id:UserID}')]]></xp:this.script>
-									</xp:eventHandler>
-								</xp:link>
-							</div>
-
-							<div>
-								<xp:text escape="true" id="UserID"
-									style="color:rgb(128,128,128)">
-									<xp:this.value><![CDATA[#{javascript:var profileDoc =PFLDoc.getDocument();
-
-var userNmae =profileDoc.getItemValueString("UserID");
-
-return @Name("[ABBREVIATE]",userNmae);
-
-}]]></xp:this.value>
-								</xp:text>
-						</div>	<xp:text escape="true" id="User_Point" style="font-weight:bold;font-size:12pt;color:rgb(0,0,255)">
-													<xp:this.value><![CDATA[#{javascript:var profileDoc =PFLDoc.getDocument();
-var User_Point =profileDoc.getItemValueDouble("User_Point");
-
-return User_Point;}]]></xp:this.value>
-													<xp:this.converter>
-														<xp:convertNumber pattern="#,##0">
-														</xp:convertNumber>
-													</xp:this.converter>
-												</xp:text>
-						p</xp:td>
-					</xp:tr>
-				</xp:table>
-			
-			<xe:tooltipDialog id="tDuser"><xp:panel styleClass="userDialog">
-					<xp:table>
-						<xp:tr>
-							<xp:td>
-								<xp:image id="image2"
-									styleClass="userImage02">
-									<xp:this.url><![CDATA[#{javascript:var profileDoc:NotesDocument =PFLDoc.getDocument();
+return @Name("[ABBREVIATE]",userNmae);}]]></xp:this.text>
+	                            <xp:eventHandler event="onclick"
+	                                submit="false">
+	                                <xp:this.script><![CDATA[XSP.openTooltipDialog("#{id:tDuser}",'#{id:link1}')]]></xp:this.script>
+	                            </xp:eventHandler>
+	                        </xp:link>
+	                    </xp:td>
+	                </xp:tr>
+	            </xp:table>
+	        </xp:div>
+	        <xe:tooltipDialog id="tDuser">
+	            <xp:panel>
+	                <xp:table>
+	                    <xp:tr>
+	                        <xp:td>
+	                            <xp:image id="image2" height="115px"
+	                                width="115px">
+	                                <xp:this.url><![CDATA[#{javascript:var profileDoc:NotesDocument =PFLDoc.getDocument();
 var imageName:String = "xpPhotoPlaceholder.gif";
 
-var attachment:NotesRichTextItem = profileDoc.getFirstItem("Photo");
+var attachment:NotesRichTextItem = profileDoc.getFirstItem("attachment");
 var attachment_vector = attachment.getEmbeddedObjects();
 
 var sv =getComponent("Profile_SV").getValue();
@@ -130,215 +104,65 @@ return(imageName);
 
 }]]></xp:this.url>
 
-								</xp:image>
-							</xp:td>
-							<xp:td>
-								<xp:table>
-									<xp:tr>
-										<xp:td colspan="4">
-											<xp:text escape="true"
-												id="UserNameKj_big"
-												style="font-size:12pt;font-weight:bold">
-												<xp:this.value><![CDATA[#{javascript:var profileDoc =PFLDoc.getDocument();
+	                            </xp:image>
+	                        </xp:td>
+	                        <xp:td>
+	                            <xp:table>
+	                                <xp:tr>
+	                                    <xp:td colspan="2">
+	                                        <xp:text escape="true"
+	                                            id="computedField2">
+	                                            <xp:this.value><![CDATA[#{javascript:var profileDoc =PFLDoc.getDocument();
 
-var userNmae =profileDoc.getItemValueString("UserNameKj");
+return @Name("[ABBREVIATE]",profileDoc.getItemValueString("AltFrom"));}]]></xp:this.value>
+	                                        </xp:text>
+	                                    </xp:td>
 
-return userNmae;
-}]]></xp:this.value>
-											</xp:text>
-										</xp:td>
-
-
-
-									</xp:tr>
-									<xp:tr>
-										<xp:td colspan="4">
-											<xp:text escape="true"
-												id="UserID_big" style="color:rgb(128,128,128)">
-												<xp:this.value><![CDATA[#{javascript:var profileDoc =PFLDoc.getDocument();
-
-var userNmae =profileDoc.getItemValueString("UserID");
-
-return @Name("[ABBREVIATE]",userNmae);
-
-}]]></xp:this.value>
-											</xp:text>
-											<hr size="1"
-												color="#808080">
-											</hr>
-										</xp:td>
-
-
-
-									</xp:tr>
-									<xp:tr>
-										<xp:td>ポイント</xp:td>
-										<xp:td colspan="3">
-											：
-											<xp:span
-												style="color:rgb(0,0,255)">
-												<xp:text escape="true"
-													id="User_Point_big"
-													style="font-weight:bold;font-size:12pt">
-													<xp:this.value><![CDATA[#{javascript:var profileDoc =PFLDoc.getDocument();
-var User_Point =profileDoc.getItemValueDouble("User_Point");
-
-return User_Point;}]]></xp:this.value>
-													<xp:this.converter>
-														<xp:convertNumber
-															pattern="#,##0">
-														</xp:convertNumber>
-													</xp:this.converter>
-												</xp:text>
-											</xp:span>
-										p</xp:td>
-
-
-									</xp:tr>
-									<xp:tr>
-										<xp:td>&#160;質問数</xp:td>
-										<xp:td style="width:100px">
-											：
-
-											<xp:text escape="true"
-												id="Count_Qs_big">
-												<xp:this.value><![CDATA[#{javascript:var profileDoc =PFLDoc.getDocument();
-var vPoint =profileDoc.getItemValueDouble("Count_Qs");
-
-return vPoint;}]]></xp:this.value>
-												<xp:this.converter>
-													<xp:convertNumber
-														pattern="#,##0">
-													</xp:convertNumber>
-												</xp:this.converter>
-											</xp:text>
-										</xp:td>
-										<xp:td>
-											<xp:span
-												style="color:rgb(128,128,128)">
-											</xp:span>
-											いいね数
-										</xp:td>
-										<xp:td style="width:100px">
-											：
-											<xp:text escape="true"
-												id="Count_Good_big">
-												<xp:this.value><![CDATA[#{javascript:var profileDoc =PFLDoc.getDocument();
-var vPoint =profileDoc.getItemValueDouble("Count_Good");
-
-return vPoint;}]]></xp:this.value>
-												<xp:this.converter>
-													<xp:convertNumber
-														pattern="#,##0">
-													</xp:convertNumber>
-												</xp:this.converter>
-											</xp:text>
-										</xp:td>
-									</xp:tr>
-									<xp:tr>
-										<xp:td>&#160;回答数</xp:td>
-										<xp:td>
-											：
-
-											<xp:text escape="true"
-												id="Count_Ans_big">
-												<xp:this.value><![CDATA[#{javascript:var profileDoc =PFLDoc.getDocument();
-var vPoint =profileDoc.getItemValueDouble("Count_Ans");
-
-return vPoint;}]]></xp:this.value>
-												<xp:this.converter>
-													<xp:convertNumber
-														pattern="#,##0">
-													</xp:convertNumber>
-												</xp:this.converter>
-											</xp:text>
-										</xp:td>
-										<xp:td>これで解決数</xp:td>
-										<xp:td>
-											：
-											<xp:text escape="true"
-												id="Count_BestAns_big">
-												<xp:this.value><![CDATA[#{javascript:var profileDoc =PFLDoc.getDocument();
-var vPoint =profileDoc.getItemValueDouble("Count_BestAns");
-
-return vPoint;}]]></xp:this.value>
-												<xp:this.converter>
-													<xp:convertNumber
-														pattern="#,##0">
-													</xp:convertNumber>
-												</xp:this.converter>
-											</xp:text>
-										</xp:td>
-									</xp:tr>
-
-
-									<xp:tr>
-										<xp:td>タグ</xp:td>
-										<xp:td colspan="3">
-											：
-											<xe:djextListTextBox
-												id="djextListTextBox1">
-												<xe:this.value><![CDATA[#{javascript:var profileDoc =PFLDoc.getDocument();
-
-var Tag =profileDoc.getItemValue("Tag");
-
-return Tag;
-
-}]]></xe:this.value>
-
-											</xe:djextListTextBox>
-										</xp:td>
-
-
-									</xp:tr>
-								</xp:table>
-							</xp:td>
-						</xp:tr>
-						<xp:tr>
-							<xp:td></xp:td>
-							<xp:td>
-								<div style="color:rgb(0,0,255)">
-									コメント
-								</div>
-								<div>
-									<xp:text escape="true"
-										id="Comment_big">
-										<xp:this.value><![CDATA[#{javascript:var profileDoc =PFLDoc.getDocument();
-var vPoint =profileDoc.getItemValueString("Comment");
-
-return vPoint;}]]></xp:this.value>
-										<xp:this.converter>
-											<xp:convertNumber
-												pattern="#,##0">
-											</xp:convertNumber>
-										</xp:this.converter>
-									</xp:text>
-								</div>
-							</xp:td>
-						</xp:tr>
-						<xp:tr>
-							<xp:td colspan="2">
-
-
-								<hr size="1" color="#808080"></hr>
-
-								<div>
-
-								</div>
-								<xp:div style="text-align:center">
-									<xp:link escape="true" id="link2"
-										text="詳細">
-									</xp:link>
-								</xp:div>
-							</xp:td>
-
-						</xp:tr>
-					</xp:table>
-				</xp:panel>
-				
-			</xe:tooltipDialog>
-			
-		</xp:panel>
+	                                </xp:tr>
+	                                <xp:tr>
+	                                    <xp:td>いいね!獲得数</xp:td>
+	                                    <xp:td>
+	                                        ：
+	                                        <xp:span
+	                                            style="color:rgb(0,0,255)">
+	                                            100
+	                                        </xp:span>
+	                                    </xp:td>
+	                                </xp:tr>
+	                                <xp:tr>
+	                                    <xp:td>質問数</xp:td>
+	                                    <xp:td>
+	                                        ：
+	                                        <xp:span
+	                                            style="color:rgb(0,0,255)">
+	                                            10
+	                                        </xp:span>
+	                                    </xp:td>
+	                                </xp:tr>
+	                                <xp:tr>
+	                                    <xp:td></xp:td>
+	                                    <xp:td></xp:td>
+	                                </xp:tr>
+	                                <xp:tr>
+	                                    <xp:td></xp:td>
+	                                    <xp:td></xp:td>
+	                                </xp:tr>
+	                            </xp:table>
+	                        </xp:td>
+	                    </xp:tr>
+	                    <xp:tr>
+	                        <xp:td></xp:td>
+	                        <xp:td>
+	                            <xp:link escape="true" id="link2"
+	                                text="詳細">
+	                            </xp:link>
+	                        </xp:td>
+	                    </xp:tr>
+	                </xp:table>
+	            </xp:panel>
+	        </xe:tooltipDialog>
+	        <xp:br></xp:br>
+	    </xp:panel>
 	</xp:repeat>
 
 
