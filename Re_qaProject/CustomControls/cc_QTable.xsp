@@ -5,8 +5,6 @@
 	<xp:this.resources>
 		<xp:styleSheet href="/qa.css"></xp:styleSheet>
 	</xp:this.resources>
-
-
 	
 	<xp:panel style="width:750px;height:auto" id="panel_Ques">
 
@@ -16,6 +14,25 @@
 				documentId="#{javascript:return sessionScope.questionDocId}">
 			</xp:dominoDocument>
 		</xp:this.data>
+		
+		<xp:inputHidden id="sessionUser" value="#{javascript:session.getEffectiveUserName();}">
+	</xp:inputHidden>
+	
+<xp:panel style="width:750px;height:auto" id="panel1">
+
+		<xp:this.data>
+			<xp:dominoDocument var="docQues" formName="FM_Question"
+				action="openDocument"
+				documentId="#{javascript:return sessionScope.questionDocId}">
+			</xp:dominoDocument>
+		</xp:this.data>
+<A Name="QuesErea"></A> 
+					<xp:td colspan="4" valign="top" style="padding:10.0px">
+					<xp:text escape="true" id="computedField1" value="#{docQues.Title}" style="font-size:14pt;color:rgb(0,0,0);padding-left:20.0px">
+					</xp:text>
+				</xp:td>
+					</xp:panel>
+					
 		<xp:panel>
 			<xp:image id="image2" url="/Endiconp2mini.png"
 				styleClass="EndImage">
@@ -129,4 +146,40 @@ return @Name("[ABBREVIATE]",Author)}]]></xc:this.userName>
 			</b>
 		</div>
 	</xp:panel>
+	<xp:panel style="width:700.0px">
+		<A Href="#AnsErea" style="padding-right:0.0px;margin-right:0.0px"><xp:div style="text-align:right">
+			回答を入力する>>
+		</xp:div></A>
+	</xp:panel>
+	<h1 style="margin-left:20.0px">
+						回答・コメント
+					<xp:panel style="padding-left:20.0px;padding-right:20.0px"><hr size="1" color="#808080"></hr></xp:panel></h1>
+			
+	<xp:panel style="height:auto;width:750px" id="panel_Ans">
+
+		<xp:repeat id="repeat1" rows="30" var="docAns"
+			style="height:0.0auto">
+			<xp:this.value><![CDATA[#{javascript:var answerlist = database.getView("V_Answer_All");
+return answerlist.getAllEntriesByKey(sessionScope.questionDocId);
+}]]></xp:this.value>
+
+			<xc:cc_ATable></xc:cc_ATable>
+			
+			
+			
+			<xp:table style="width:748.0px">
+				<xp:tr>
+					<xp:td style="height:10px"></xp:td>
+				</xp:tr>
+			</xp:table>
+		</xp:repeat>
+	</xp:panel>
+	<A Name="AnsErea"></A>
+	 <xp:panel style="padding-left:20.0px;padding-right:20.0px"><hr size="1" color="#808080"></hr></xp:panel>
+	<xc:cc_AnserEdit></xc:cc_AnserEdit>
+
+	<xp:eventHandler event="onClientLoad" submit="true"
+		refreshMode="norefresh">
+	</xp:eventHandler>
+	
 	</xp:view>

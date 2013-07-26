@@ -138,14 +138,7 @@ context.reloadPage();
 }]]></xp:this.action>
 							</xp:eventHandler>
 						</xp:button>
-						<xe:djButton label="Dojo ボタン" id="djButton2">
-							<xp:eventHandler event="onBlur"
-								submit="false">
-								<xe:this.script><![CDATA[var dialog = dijit.byId("#{id:dialog1}");
-dialog.show();
-]]></xe:this.script>
-							</xp:eventHandler>
-						</xe:djButton>
+						
 					</xp:div>
 				</xp:td>
 			</xp:tr>
@@ -156,11 +149,6 @@ dialog.show();
 
 
 
-	<xe:dialog id="dialog1">
-		<xp:text escape="true" id="computedField1">
-			<xp:this.value><![CDATA[#{javascript:"保存しますか？"}]]></xp:this.value>
-		</xp:text>
-		<xe:djButton label="Dojo ボタン" id="djButton1"></xe:djButton>
-	</xe:dialog>
+	
 
 </xp:view>
