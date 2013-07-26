@@ -18,3 +18,43 @@
     
 .BestAnwerImage {color:#ff0000; position:relative; left:-40px }
 .EndImage { position:absolute;top:-5;left:40px}
+
+
+/*2013.07.25 nishi ADD >> */
+/*ユーザー情報（小）*/
+.userImage01{
+	height:40px;
+	width:40px;
+	cursor:pointer;
+	box-shadow:2px 2px 4px rgba(0,0,0,0.5);
+}
+
+/*ユーザー情報（大）*/
+.userImage02{
+	height:100px;
+	width:100px;
+	box-shadow:2px 2px 4px rgba(0,0,0,0.5);
+	border-collapse: separate;
+}
+
+.allUserList > div{
+	display: inline-block;
+}
+
+.userDialog{
+	max-width: 500px;
+	min-width: 350px;
+}
+
+.oneuser{
+	width: 200px;
+	min-height: 70px;
+}
+
+
+.subTittle {
+	font-size:16pt;
+	font-weight:bold;
+}
+
+/*2013.07.25 nishi ADD << */

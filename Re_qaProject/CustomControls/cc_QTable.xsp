@@ -26,7 +26,7 @@
 var targetdoc = docQues.getDocument();
 
 //ステータスが 「9」解決済みの場合表示
-if(targetdoc.getItemValueString("Status")=="9"){
+if(targetdoc.getItemValueString("Status")=="2"){
 	return true;
 }else{
 	return false;

@@ -21,11 +21,15 @@
                 productLogoWidth="360px">
                 <xe:this.footerLinks></xe:this.footerLinks>
                 <xe:this.titleBarTabs>
-                    <xe:basicLeafNode label="トップ"></xe:basicLeafNode>
-                    <xe:basicLeafNode label="お気に入り"></xe:basicLeafNode>
+                    <xe:basicLeafNode label="トップ" href="top.xsp"></xe:basicLeafNode>
+                    <xe:basicLeafNode label="お気に入り">
+
+                    </xe:basicLeafNode>
                     <xe:basicLeafNode label="履歴"></xe:basicLeafNode>
                     <xe:basicLeafNode label="検索"></xe:basicLeafNode>
-                    <xe:basicLeafNode label="ユーザー"></xe:basicLeafNode>
+                    <xe:basicLeafNode label="ユーザー"
+                    	href="x_Page_AlluserList.xsp">
+                    </xe:basicLeafNode>
                     <xe:basicLeafNode label="ヘルプ"></xe:basicLeafNode>
                 </xe:this.titleBarTabs>
 
