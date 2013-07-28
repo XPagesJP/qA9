@@ -1,139 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xp:view xmlns:xp="http://www.ibm.com/xsp/core"
-	xmlns:xp_1="http://www.ibm.com/xsp/coreex"
-	xmlns:xc="http://www.ibm.com/xsp/custom">
-
-	<xp:panel id="CountPanel">
-
-		<xp:label id="Countup_label" value="【カウントアップアクション】"
-			rendered="false"
-			style="background-color:rgb(192,192,192);width:324.0px">
-		</xp:label>
-
-		<xp:panel id="countViewer_Panel">
-
-
-
-			<xp:table border="0"
-				style="border-collapse:collapse;margin-top:10.0px">
-				<xp:tr>
-					<xp:td style="white-space:nowrap">
-						<xp:div style="text-align:center">
-							<xp:label id="lViewcount" value="閲覧数"
-								style="color:rgb(0,128,128)">
-							</xp:label>
-						</xp:div>
-					</xp:td>
-
-
-					<xp:td style="white-space:nowrap">
-						<xp:div style="text-align:center">
-							<xp:label id="label1" value="いいね!数"
-								style="color:rgb(0,128,255)">
-							</xp:label>
-						</xp:div>
-					</xp:td>
-
-				</xp:tr>
-				<xp:tr>
-
-					<xp:td></xp:td>
-
-
-					<xp:td>
-						<xp:button id="up_button"
-							style="width:100%;color:rgb(255,255,255);cursor: pointer;"
-							value="▲">
-							<xp:eventHandler event="onclick"
-								submit="true" refreshMode="partial" refreshId="link1">
-								<xp:this.action><![CDATA[#{javascript://いいね！カウントアップ
-var targetdoc = docQues.getDocument();
-qa_JsLib.SetGoodCountUD(1,targetdoc)}]]></xp:this.action>
-							</xp:eventHandler>
-						</xp:button>
-					</xp:td>
-				</xp:tr>
-				<xp:tr>
-
-					<xp:td>
-						<xp:div style="text-align:center">
-							<xp:text escape="true" id="View_count"
-								style="font-size:14pt;font-family:sans-serif;color:rgb(0,128,128);text-align:center">
-
-								<xp:this.converter>
-									<xp:convertNumber type="number"
-										integerOnly="true">
-									</xp:convertNumber>
-								</xp:this.converter>
-								<xp:this.value><![CDATA[#{javascript:var targetdoc = docQues.getDocument();
-//閲覧数の取得	
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xp_1="http://www.ibm.com/xsp/coreex"
+    xmlns:xc="http://www.ibm.com/xsp/custom">
+    <div class="qaCount">
+        <xc:cc_Like></xc:cc_Like>
+        <div class="viewCountBox">
+            閲覧数:
+            <xp:text escape="true" id="View_count" styleClass="number">
+                <xp:this.converter>
+                    <xp:convertNumber type="number"
+                        integerOnly="true">
+                    </xp:convertNumber>
+                </xp:this.converter>
+                <xp:this.value><![CDATA[#{javascript:var targetdoc = docQues.getDocument();
+//閲覧数の取得    
 return qa_JsLib.GetViewCount(targetdoc)
 }]]></xp:this.value>
-							</xp:text>
-						</xp:div>
-					</xp:td>
+            </xp:text>
+        </div>
+        
+    </div>
+    <xp_1:dialog id="dialog1"
+        style="background-color:rgb(188,217,233);border-color:rgb(0,0,0);border-style:groove;border-width:thin"
+        title="いいね!ユーザー">
+
+        <xp:panel style="background-color:rgb(255,255,255)">
+
+            <xp:repeat id="repeat" rows="30" var="rowUser">
 
 
-					<xp:td>
-						<xp:div style="text-align:center">
-							<xp:link escape="true" id="link1"
-								style="font-size:14pt;color:rgb(0,128,192);font-family:sans-serif">
-								<xp:this.text><![CDATA[#{javascript:var targetdoc = docQues.getDocument();
-//閲覧数の取得	
-return qa_JsLib.GetGoodCount(targetdoc)
-}]]></xp:this.text>
-
-								
-								<xp:eventHandler event="onclick"
-									submit="false">
-									<xp:this.script><![CDATA[//XSP.openTooltipDialog("#{id:tooltipDialog1}",'#{id:link1}')
-XSP.openDialog("#{id:dialog1}")]]></xp:this.script>
-								</xp:eventHandler></xp:link>
-						</xp:div>
-					</xp:td>
-				</xp:tr>
-
-				<xp:tr>
-
-					<xp:td></xp:td>
-
-
-					<xp:td style="text-align:center">
-						<xp:button value="▼" id="down_button"
-							style="width:100%;color:rgb(255,255,255);cursor: pointer;">
-							<xp:eventHandler event="onclick"
-								submit="true" refreshMode="partial" refreshId="link1">
-								<xp:this.action><![CDATA[#{javascript://いいね！カウントダウン
-var targetdoc = docQues.getDocument();
-qa_JsLib.SetGoodCountUD(0,targetdoc)}]]></xp:this.action>
-							</xp:eventHandler>
-						</xp:button>
-					</xp:td>
-				</xp:tr>
-
-			</xp:table>
-
-
-		</xp:panel>
-		<xp:eventHandler event="onClientLoad" submit="true"
-			refreshMode="norefresh">
-			<xp:this.action><![CDATA[#{javascript://閲覧のカウントアップ
-var targetdoc = docQues.getDocument();
-qa_JsLib.SetViewCountUD(targetdoc)}]]></xp:this.action>
-		</xp:eventHandler>
-	</xp:panel>
-
-	
-	<xp_1:dialog id="dialog1"
-		style="background-color:rgb(188,217,233);border-color:rgb(0,0,0);border-style:groove;border-width:thin"
-		title="いいね!ユーザー">
-
-		<xp:panel style="background-color:rgb(255,255,255)">
-
-			<xp:repeat id="repeat" rows="30" var="rowUser">
-
-
-				<xp:this.value><![CDATA[#{javascript://対象の文書
+                <xp:this.value><![CDATA[#{javascript://対象の文書
 var targetdoc = docQues.getDocument();
 //閲覧数の取得	
 
@@ -145,11 +40,11 @@ var targetdoc = docQues.getDocument();
 		return user_good;
 	
 	}}]]></xp:this.value>
-				<xc:cc_UserProfile>
-					<xc:this.userName><![CDATA[#{javascript:return @Name("[ABBREVIATE]",rowUser)}]]></xc:this.userName>
-				</xc:cc_UserProfile>
-			</xp:repeat>
+                <xc:cc_UserProfile>
+                    <xc:this.userName><![CDATA[#{javascript:return @Name("[ABBREVIATE]",rowUser)}]]></xc:this.userName>
+                </xc:cc_UserProfile>
+            </xp:repeat>
 
-		</xp:panel>
-	</xp_1:dialog>
+        </xp:panel>
+    </xp_1:dialog>
 </xp:view>

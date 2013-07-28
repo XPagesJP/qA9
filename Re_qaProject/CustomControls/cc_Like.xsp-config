@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<faces-config>
+  <faces-config-extension>
+    <namespace-uri>http://www.ibm.com/xsp/custom</namespace-uri>
+    <default-prefix>xc</default-prefix>
+  </faces-config-extension>
+  <composite-component>
+    <component-type>cc_Like</component-type>
+    <composite-name>cc_Like</composite-name>
+    <composite-file>/cc_Like.xsp</composite-file>
+    <composite-extension>
+      <designer-extension>
+        <in-palette>true</in-palette>
+        <render-markup>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&#xd;
+&lt;xp:view xmlns:xp="http://www.ibm.com/xsp/core"&gt;&#xd;
+    &lt;xp:this.resources&gt;&#xd;
+        &lt;xp:styleSheet href="/qa.css"&gt;&lt;/xp:styleSheet&gt;&#xd;
+    &lt;/xp:this.resources&gt;&#xd;
+    &lt;div class="likeBox"&gt;&#xd;
+        &lt;p&gt;&#xd;
+            &lt;xp:button id="up_button" value="▲" styleClass="lotusBtn" style="width:56px;"&gt;&#xd;
+                &lt;xp:eventHandler event="onclick" submit="true"&#xd;
+                    refreshMode="partial" refreshId="viewCountNumber"&gt;&#xd;
+                    &lt;xp:this.action&gt;&lt;![CDATA[#{javascript://いいね！カウントアップ&#xd;
+var targetdoc = docQues.getDocument();&#xd;
+qa_JsLib.SetGoodCountUD(1,targetdoc);}]]&gt;&lt;/xp:this.action&gt;&#xd;
+                &lt;/xp:eventHandler&gt;&#xd;
+            &lt;/xp:button&gt;&#xd;
+        &lt;/p&gt;&#xd;
+        &lt;p&gt;&#xd;
+            &lt;span style="font-size: 14pt;&#xd;
+	font-family: sans-serif;&#xd;
+	color: rgb(0, 128, 128);&#xd;
+	text-align: center"&gt;0&lt;/span&gt;&#xd;
+        &lt;/p&gt;&#xd;
+        &lt;p&gt;&#xd;
+            &lt;xp:button value="▼" id="down_button" styleClass="lotusBtn" style="width:56px;"&gt;&#xd;
+                &lt;xp:eventHandler event="onclick" submit="true"&#xd;
+                    refreshMode="partial" refreshId="viewCountNumber"&gt;&#xd;
+                    &lt;xp:this.action&gt;&lt;![CDATA[#{javascript://いいね！カウントダウン var&#xd;
+        targetdoc = docQues.getDocument();&#xd;
+        qa_JsLib.SetGoodCountUD(0,targetdoc)}]]&gt;&lt;/xp:this.action&gt;&#xd;
+                &lt;/xp:eventHandler&gt;&#xd;
+            &lt;/xp:button&gt;&#xd;
+        &lt;/p&gt;&#xd;
+    &lt;/div&gt;&#xd;
+&lt;/xp:view&gt;</render-markup>
+      </designer-extension>
+    </composite-extension>
+  </composite-component>
+</faces-config>

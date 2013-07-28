@@ -11,6 +11,24 @@
     <composite-extension>
       <designer-extension>
         <in-palette>true</in-palette>
+        <render-markup>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&#xd;
+&lt;xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xp_1="http://www.ibm.com/xsp/coreex"&#xd;
+    xmlns:xc="http://www.ibm.com/xsp/custom"&gt;&#xd;
+    &lt;xp:this.resources&gt;&#xd;
+        &lt;xp:styleSheet href="/qa.css"&gt;&lt;/xp:styleSheet&gt;&#xd;
+    &lt;/xp:this.resources&gt;&#xd;
+    &lt;div class="qaCount"&gt;&#xd;
+        &lt;xc:cc_Like&gt;&lt;/xc:cc_Like&gt;&#xd;
+        &lt;div class="viewCountBox"&gt;&#xd;
+            閲覧数:&#xd;
+            &lt;span style="font-size: 14pt;&#xd;
+	font-family: sans-serif;&#xd;
+	color: rgb(0, 128, 128);&#xd;
+	text-align: center"&gt;0&lt;/span&gt;&#xd;
+        &lt;/div&gt;&#xd;
+        &#xd;
+    &lt;/div&gt;&#xd;
+&lt;/xp:view&gt;</render-markup>
       </designer-extension>
     </composite-extension>
   </composite-component>

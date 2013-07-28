@@ -11,7 +11,29 @@
     <composite-extension>
       <designer-extension>
         <in-palette>true</in-palette>
+        <render-markup>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&#xd;
+&lt;xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom"&#xd;
+    xmlns:xe="http://www.ibm.com/xsp/coreex" dojoParseOnLoad="true"&gt;&#xd;
+    &lt;xp:this.resources&gt;&#xd;
+        &lt;xp:styleSheet href="/qa.css"&gt;&lt;/xp:styleSheet&gt;&#xd;
+    &lt;/xp:this.resources&gt;&#xd;
+    &lt;div class="questionBox" style="height:250px;"&gt;&#xd;
+        &lt;div class="controle"&gt;&#xd;
+            &lt;p&gt;&#xd;
+                &lt;xp:image url="/Q01.jpg" id="image1"&gt;&lt;/xp:image&gt;&#xd;
+            &lt;/p&gt;&#xd;
+            &lt;xc:cc_QAccount&gt;&lt;/xc:cc_QAccount&gt;&#xd;
+        &lt;/div&gt;&#xd;
+        &lt;div class="body"&gt;&#xd;
+           &lt;p&gt;(質問内容)&lt;/p&gt;&#xd;
+        &lt;/div&gt;&#xd;
+    &lt;/div&gt;&#xd;
+&lt;/xp:view&gt;</render-markup>
       </designer-extension>
     </composite-extension>
+    <property>
+      <property-name>docId</property-name>
+      <property-class>string</property-class>
+    </property>
   </composite-component>
 </faces-config>

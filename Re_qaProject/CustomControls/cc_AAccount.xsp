@@ -1,123 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xp:view xmlns:xp="http://www.ibm.com/xsp/core"
-	xmlns:xp_1="http://www.ibm.com/xsp/coreex"
-	xmlns:xc="http://www.ibm.com/xsp/custom">
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xp_1="http://www.ibm.com/xsp/coreex"
+    xmlns:xc="http://www.ibm.com/xsp/custom">
 
-	<xp:this.resources>
-		<xp:styleSheet href="/qa.css"></xp:styleSheet>
-	</xp:this.resources>
-	<xp:panel id="CountPanel">
-
-
-
-		<xp:panel id="countViewer_Panel">
-			<xp:image id="image1" url="/bestA_P2.jpg"
-				styleClass="BestAnwerImage">
-
-
-				<xp:this.rendered><![CDATA[#{javascript://対象の文書
-var targetdoc = docAns.getDocument();
-
-if(targetdoc.getItemValueString("bestAns")==""){
-	return false;
+    <xp:this.resources>
+        <xp:styleSheet href="/qa.css"></xp:styleSheet>
+    </xp:this.resources>
+    <div>
+        <p>
+            <xp:image id="image2">
+                <xp:this.url><![CDATA[#{javascript:if(docAns.getItemValueString("AorC") === "A"){
+    return "/A045_2.jpg";
 }else{
-	return true;
+    return "/Coment02.jpg";
+};}]]></xp:this.url>
+            </xp:image>
+        </p>
+        <p>
+            <xp:image id="image1" url="/bestA_P2.jpg"
+                styleClass="BestAnwerImage">
+
+
+                <xp:this.rendered><![CDATA[#{javascript://対象の文書
+if(docAns.getItemValueString("bestAns")==""){
+    return false;
+}else{
+    return true;
 }
 }]]></xp:this.rendered>
-			</xp:image>
+            </xp:image>
+        </p>
+        <xc:cc_Like></xc:cc_Like>
+    </div>
+    <xp_1:dialog id="dialog1"
+        style="background-color:rgb(188,217,233);border-color:rgb(0,0,0);border-style:groove;border-width:thin"
+        title="いいね!ユーザー">
 
-			<xp:table border="0"
-				style="border-collapse:collapse;margin-top:10.0px">
-				<xp:tr>
-					<xp:td style="white-space:nowrap">
-						<xp:div style="text-align:center">
-							<xp:label id="label1" value="いいね!数"
-								style="color:rgb(0,128,255)">
-							</xp:label>
-						</xp:div>
-					</xp:td>
-				</xp:tr>
-				<xp:tr>
-					<xp:td>
-						<xp:button id="up_button"
-							style="width:100%;color:rgb(255,255,255);cursor: pointer;"
-							value="▲">
-							<xp:eventHandler event="onclick"
-								submit="true" refreshMode="partial" refreshId="link1">
-								<xp:this.action><![CDATA[#{javascript://いいね！カウントアップ
-var targetdoc = docAns.getDocument();
-qa_JsLib.SetGoodCountUD(1,targetdoc)}]]></xp:this.action>
-							</xp:eventHandler>
-						</xp:button>
-					</xp:td>
-				</xp:tr>
-				<xp:tr>
+        <xp:panel style="background-color:rgb(255,255,255)">
 
+            <xp:repeat id="repeat" rows="30" var="rowUser">
 
-
-
-					<xp:td>
-						<xp:div style="text-align:center">
-							<xp:link escape="true" id="link1"
-								style="font-size:14pt;color:rgb(0,128,255);font-family:sans-serif">
-								<xp:this.text><![CDATA[#{javascript://対象の文書
-var targetdoc = docAns.getDocument();
-//閲覧数の取得	
-return qa_JsLib.GetGoodCount(targetdoc)
-}]]></xp:this.text>
-
-
-
-								
-								<xp:eventHandler event="onclick"
-									submit="false">
-									<xp:this.script><![CDATA[//XSP.openTooltipDialog("#{id:tooltipDialog2}",'#{id:link1}')
-XSP.openDialog("#{id:dialog1}")]]></xp:this.script>
-								</xp:eventHandler></xp:link>
-						</xp:div>
-					</xp:td>
-				</xp:tr>
-
-				<xp:tr>
-
-
-
-
-					<xp:td style="text-align:center">
-						<xp:button value="▼" id="down_button"
-							style="width:100%;color:rgb(255,255,255);cursor: pointer;">
-							<xp:eventHandler event="onclick"
-								submit="true" refreshMode="partial" refreshId="link1">
-								<xp:this.action><![CDATA[#{javascript://いいね！カウントアップ
-var targetdoc = docAns.getDocument();
-qa_JsLib.SetGoodCountUD(0,targetdoc)}]]></xp:this.action>
-							</xp:eventHandler>
-						</xp:button>
-					</xp:td>
-				</xp:tr>
-
-			</xp:table>
-
-
-		</xp:panel>
-		<xp:eventHandler event="onClientLoad" submit="true"
-			refreshMode="norefresh">
-		</xp:eventHandler>
-	</xp:panel>
-
-	
-	<xp_1:dialog id="dialog1"
-		style="background-color:rgb(188,217,233);border-color:rgb(0,0,0);border-style:groove;border-width:thin"
-		title="いいね!ユーザー">
-
-		<xp:panel style="background-color:rgb(255,255,255)">
-
-			<xp:repeat id="repeat" rows="30" var="rowUser">
-
-				<xc:cc_UserProfile>
-					<xc:this.userName><![CDATA[#{javascript:return @Name("[ABBREVIATE]",rowUser)}]]></xc:this.userName>
-				</xc:cc_UserProfile>
-				<xp:this.value><![CDATA[#{javascript://対象の文書
+                <xc:cc_UserProfile>
+                    <xc:this.userName><![CDATA[#{javascript:return @Name("[ABBREVIATE]",rowUser)}]]></xc:this.userName>
+                </xc:cc_UserProfile>
+                <xp:this.value><![CDATA[#{javascript://対象の文書
 var targetdoc = docAns.getDocument();
 //閲覧数の取得	
 
@@ -129,8 +54,8 @@ var targetdoc = docAns.getDocument();
 		return user_good;
 	
 	}}]]></xp:this.value>
-			</xp:repeat>
+            </xp:repeat>
 
-		</xp:panel>
-	</xp_1:dialog>
-	</xp:view>
+        </xp:panel>
+    </xp_1:dialog>
+</xp:view>

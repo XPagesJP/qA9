@@ -11,6 +11,34 @@
     <composite-extension>
       <designer-extension>
         <in-palette>true</in-palette>
+        <render-markup>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&#xd;
+&lt;xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xp_1="http://www.ibm.com/xsp/coreex"&#xd;
+    xmlns:xc="http://www.ibm.com/xsp/custom"&gt;&#xd;
+&#xd;
+    &lt;xp:this.resources&gt;&#xd;
+        &lt;xp:styleSheet href="/qa.css"&gt;&lt;/xp:styleSheet&gt;&#xd;
+    &lt;/xp:this.resources&gt;&#xd;
+    &lt;div&gt;&#xd;
+        &lt;p&gt;&#xd;
+            &lt;xp:image id="image1" url="/bestA_P2.jpg"&#xd;
+                styleClass="BestAnwerImage"&gt;&#xd;
+&#xd;
+&#xd;
+                &lt;xp:this.rendered&gt;&lt;![CDATA[#{javascript://対象の文書&#xd;
+var targetdoc = docAns.getDocument();&#xd;
+&#xd;
+if(targetdoc.getItemValueString("bestAns")==""){&#xd;
+    return false;&#xd;
+}else{&#xd;
+    return true;&#xd;
+}&#xd;
+}]]&gt;&lt;/xp:this.rendered&gt;&#xd;
+            &lt;/xp:image&gt;&#xd;
+        &lt;/p&gt;&#xd;
+        &lt;xc:cc_Like&gt;&lt;/xc:cc_Like&gt;&#xd;
+    &lt;/div&gt;&#xd;
+&lt;/xp:view&gt;&#xd;
+</render-markup>
       </designer-extension>
     </composite-extension>
   </composite-component>

@@ -18,7 +18,8 @@
             <xe:oneuiApplication footer="false"
                 legalText="九州地区ノーツパートナー会 Copyright © 2013 Kyushu Notes Partner Community. All Rights Reserved."
                 productLogo="/logo.png" productLogoHeight="45px"
-                productLogoWidth="360px">
+                productLogoWidth="360px"
+                placeBarName="#{javascript:compositeData.placeBarName;}">
                 <xe:this.footerLinks></xe:this.footerLinks>
                 <xe:this.titleBarTabs>
                     <xe:basicLeafNode label="トップ"></xe:basicLeafNode>
@@ -29,7 +30,7 @@
                     <xe:basicLeafNode label="ヘルプ"></xe:basicLeafNode>
                 </xe:this.titleBarTabs>
 
-                
+
                 <xe:this.bannerUtilityLinks>
                     <xe:userTreeNode userField="commonName">
                     </xe:userTreeNode>

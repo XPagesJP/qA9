@@ -1,132 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xp:view xmlns:xp="http://www.ibm.com/xsp/core"
-	xmlns:xc="http://www.ibm.com/xsp/custom"
-	xmlns:xe="http://www.ibm.com/xsp/coreex">
-	<xp:this.resources>
-		<xp:styleSheet href="/qa.css"></xp:styleSheet>
-	</xp:this.resources>
-
-
-	
-	<xp:panel style="width:750px;height:auto" id="panel_Ques">
-
-		<xp:this.data>
-			<xp:dominoDocument var="docQues" formName="FM_Question"
-				action="openDocument"
-				documentId="#{javascript:return sessionScope.questionDocId}">
-			</xp:dominoDocument>
-		</xp:this.data>
-		<xp:panel>
-			<xp:image id="image2" url="/Endiconp2mini.png"
-				styleClass="EndImage">
-
-
-
-				<xp:this.rendered><![CDATA[#{javascript://対象の文書
-var targetdoc = docQues.getDocument();
-
-//ステータスが 「9」解決済みの場合表示
-if(targetdoc.getItemValueString("Status")=="9"){
-	return true;
-}else{
-	return false;
-}
-}]]></xp:this.rendered>
-			</xp:image></xp:panel><div id="xsnazzy">
-			<b class="xtop">
-				<b class="xb1"></b>
-				<b class="xb2"></b>
-				<b class="xb3"></b>
-				<b class="xb4"></b>
-			</b>
-			<div class="xboxcontent">
-			
-					<xp:table>
-						
-						
-						<xp:tr>
-
-							
-							
-							<xp:td rowspan="2" valign="top">
-								<xp:image url="/Q01.jpg" id="image1">
-								</xp:image>
-
-								<xc:cc_QAccount></xc:cc_QAccount>
-							</xp:td><xp:td valign="top">
-								<xp:panel style="padding-left:20.0px;padding-top:10.0px"><xp:text escape="false" id="Ques_Body" value="#{docQues.Body}">
-								</xp:text></xp:panel>
-								
-								
-							</xp:td>
-						</xp:tr>
-						<xp:tr>
-
-							
-							
-							<xp:td valign="top">
-								<xp:fileDownload rows="30"
-									id="Ques_FileDownload" displayLastModified="false"
-									value="#{docQues.TempFile}" xp:key="footer" hideWhen="true">
-								</xp:fileDownload>
-							</xp:td>
-						</xp:tr>
-						<xp:tr>
-							<xp:td></xp:td>
-							
-							
-							<xp:td valign="top" align="right">
-
-							</xp:td>
-						</xp:tr>
-					</xp:table>
-					<xp:panel style="padding-left:20.0px;padding-right:20.0px"><hr size="1" color="#808080"></hr></xp:panel>
-					
-					<xp:panel
-						style="text-align:right;margin-right:23.0px">
-						
-						<xp:span>
-							カテゴリ
-						</xp:span>
-						<xp:text style="color:rgb(0,128,255)" escape="true" id="Ques_Category"
-							value="#{docQues.Tag}">
-						</xp:text>
-							<xp:label id="label2" value="|"
-							style="color:rgb(192,192,192);margin-left:5.0px;margin-right:5.0px">
-						</xp:label>
-						<xp:span>
-							タグ
-						</xp:span>
-						<xp:text style="color:rgb(0,128,255)" escape="true" value="#{docQues.Tag}" id="Ques_Tag">
-						</xp:text>
-						<xp:label id="label1" value="|"
-							style="color:rgb(192,192,192);margin-left:5.0px;margin-right:5.0px">
-						</xp:label>
-						<xp:span>
-							質問日時
-						</xp:span>
-						<xp:text style="color:rgb(0,128,255)" escape="true" id="Ques_Created"
-							value="#{docQues.Created}">
-							<xp:this.converter>
-								<xp:convertDateTime type="both"
-									dateStyle="short">
-								</xp:convertDateTime>
-							</xp:this.converter>
-						</xp:text>
-							<xc:cc_UserProfile>
-								<xc:this.userName><![CDATA[#{javascript:var Author = docQues.getDocument().getItemValueString("Author");
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom"
+    xmlns:xe="http://www.ibm.com/xsp/coreex" dojoParseOnLoad="true">
+    <xp:this.resources>
+        <xp:styleSheet href="/qa.css"></xp:styleSheet>
+    </xp:this.resources>
+    <xp:panel styleClass="questionBox">
+        <xp:this.data>
+            <xp:dominoDocument var="docQues" action="openDocument"
+                documentId="#{javascript:compositeData.docId;}"
+                formName="FM_Question">
+            </xp:dominoDocument>
+        </xp:this.data>
+        <div class="controle">
+            <p>
+                <xp:image url="/Q01.jpg" id="image1"></xp:image>
+            </p>
+            <xc:cc_QAccount></xc:cc_QAccount>
+        </div>
+        <div class="body">
+            <xp:inputRichText id="inputRichText1"
+                value="#{docQues.Body}" readonly="true">
+            </xp:inputRichText>
+            <xp:fileDownload rows="30" id="fileDownload1"
+                displayLastModified="false" displayCreated="false"
+                hideWhen="true">
+            </xp:fileDownload>
+        </div>
+        <div class="qaInfo">
+            <span>カテゴリ:</span>
+            <xp:text styleClass="value" escape="true" id="Ques_Category"
+                value="#{docQues.Tag}">
+            </xp:text>
+            <span class="separator">&#160;|&#160;</span>
+            <span>タグ:</span>
+            <xp:text styleClass="value" escape="true"
+                value="#{docQues.Tag}" id="Ques_Tag">
+            </xp:text>
+            <span class="separator">&#160;|&#160;</span>
+            <span>質問日時:</span>
+            <xp:text styleClass="value" escape="true"
+                id="Ques_Created" value="#{docQues.Created}">
+                <xp:this.converter>
+                    <xp:convertDateTime type="both"
+                        dateStyle="short">
+                    </xp:convertDateTime>
+                </xp:this.converter>
+            </xp:text>
+            <xc:cc_UserProfile>
+                <xc:this.userName><![CDATA[#{javascript:var Author = docQues.getDocument().getItemValueString("Author");
 return @Name("[ABBREVIATE]",Author)}]]></xc:this.userName>
-							</xc:cc_UserProfile>
-						
-					</xp:panel>
+            </xc:cc_UserProfile>
 
-			</div>
-			<b class="xbottom">
-				<b class="xb4"></b>
-				<b class="xb3"></b>
-				<b class="xb2"></b>
-				<b class="xb1"></b>
-			</b>
-		</div>
-	</xp:panel>
-	</xp:view>
+        </div>
+    </xp:panel>
+</xp:view>

@@ -1,141 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xp:view xmlns:xp="http://www.ibm.com/xsp/core"
-	xmlns:xc="http://www.ibm.com/xsp/custom"
-	xmlns:xe="http://www.ibm.com/xsp/coreex">
-	<xp:this.resources>
-		<xp:styleSheet href="/qa.css"></xp:styleSheet>
-	</xp:this.resources>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom"
+    xmlns:xe="http://www.ibm.com/xsp/coreex">
+    <xp:this.resources>
+        <xp:styleSheet href="/qa.css"></xp:styleSheet>
+    </xp:this.resources>
 
-
-	<xp:panel style="height:auto;margin-left:20.0px" id="panel_Ques">
-
-		<xp:this.data>
-			<xp:dominoDocument var="docQues" formName="FM_Question"
-				action="openDocument"
-				documentId="#{javascript:return sessionScope.questionDocId}">
-			</xp:dominoDocument>
-		</xp:this.data>
-		<div id="xsnazzy">
-			<b class="xtop">
-				<b class="xb1"></b>
-				<b class="xb2"></b>
-				<b class="xb3">
-					</b>
-				<b class="xb4"></b>
-			</b>
-			<div class="xboxcontent">
-					<xp:table>
-						<xp:tr>
-							<xp:td rowspan="2" valign="top">
-
-
-								<xp:image id="image1">
-									<xp:this.url><![CDATA[#{javascript:if(docAns.getDocument().getItemValueString("AorC")=="A"){
-	return "/A045_2.jpg";
-}else{
-	return "/Coment02.jpg";
-};}]]></xp:this.url>
-								</xp:image>
-								
-								<xc:cc_AAccount></xc:cc_AAccount>
-							</xp:td>
-
-
-							<xp:td valign="top">
-								<xp:panel style="padding:10.0px">
-									<xp:this.data>
-										<xp:dominoDocument
-											var="docAnsBody" action="openDocument"
-											documentId="#{javascript:docAns.getDocument().getNoteID()}"
-											formName="FM_Answer">
-										</xp:dominoDocument>
-									</xp:this.data>
-									<xp:text escape="false"
-										id="ans_Body" value="#{docAnsBody.Body}">
-									</xp:text>
-								</xp:panel>
-							</xp:td>
-						</xp:tr>
-
-
-						<xp:tr>
-
-
-
-							<xp:td valign="top">
-								<xp:panel>
-									<xp:this.data>
-										<xp:dominoDocument
-											var="docAnsTemp" formName="FM_Answer" action="openDocument"
-											documentId="#{javascript:docAns.getDocument().getNoteID()}">
-										</xp:dominoDocument>
-									</xp:this.data>
-									<xp:fileDownload rows="30"
-										displayLastModified="false" id="ans_FileDownload"
-										value="#{docAnsTemp.TempFile}" hideWhen="true">
-									</xp:fileDownload>
-								</xp:panel>
-							</xp:td>
-						</xp:tr>
-
-					</xp:table>
-					<xp:panel style="padding-left:20.0px;padding-right:20.0px"><hr size="1" color="#808080"></hr></xp:panel>
-					<xp:panel
-						style="text-align:right;margin-right:23.0px;padding-left:20.0px">
-
-						
-						<xp:span>
-							回答日時
-						</xp:span>
-						<xp:text style="color:rgb(0,128,255)" escape="true" id="ans_Created">
-							<xp:this.value><![CDATA[#{javascript:return docAns.getDocument().getItemValue("Created");}]]></xp:this.value>
-						</xp:text>
-						
-					<xc:cc_UserProfile>
+    <xp:this.data>
+        <xp:dominoDocument formName="FM_Answer" var="currentDoc"></xp:dominoDocument>
+    </xp:this.data>
+    <xp:panel styleClass="answerBox">
+        <xp:this.data>
+            <xp:dominoDocument var="docAns" formName="FM_Answer"
+                action="openDocument" documentId="#{javascript:compositeData.docId;}">
+            </xp:dominoDocument>
+        </xp:this.data>
+        <div class="controle">
+            <xc:cc_AAccount></xc:cc_AAccount>
+        </div>
+        <div class="body">
+            <xp:inputRichText id="inputRichText1"
+                readonly="true" value="#{docAns.Body}">
+            </xp:inputRichText>
+            <xp:fileDownload rows="30" id="fileDownload1"
+                displayLastModified="false" value="#{docAns.TempFile}"
+                displayType="true" displayCreated="false" displaySize="true"
+                hideWhen="true">
+            </xp:fileDownload>
+        </div>
+        <div class="qaInfo">
+            <span>回答日時:</span>
+            <xp:text styleClass="value" escape="true"
+                id="Ques_Created" value="#{docAns.Created}">
+                <xp:this.converter>
+                    <xp:convertDateTime type="both"
+                        dateStyle="short">
+                    </xp:convertDateTime>
+                </xp:this.converter>
+            </xp:text>
+            <xc:cc_UserProfile>
 							<xc:this.userName><![CDATA[#{javascript:var Author = docAns.getDocument().getItemValueString("Author");
 return @Name("[ABBREVIATE]",Author)}]]></xc:this.userName>
-						</xc:cc_UserProfile></xp:panel>
-					
-					<xp:panel style="text-align:center">
-						
-						<xp:button style="margin-top:10.0px" id="CloseB">
-							<xp:this.value><![CDATA[#{javascript:
-var parentdoc = docQues.getDocument();
-if(parentdoc.getItemValueString("status")=="2"){
-	return "解決解除";
-}else{
-	return "これで解決！";
-}}]]></xp:this.value>
-							<xp:this.rendered><![CDATA[#{javascript:var targetdoc = docAns.getDocument();
-var parentdoc = docQues.getDocument();
-//コメントの場合、非表示
-if(targetdoc.getItemValueString("AorC")=="C") return false;
-
-if(parentdoc.getItemValueString("status")=="2"){
-//クローズされていてベストアンサーだった場合表示
-	if(targetdoc.getItemValueString("bestAns")=="1") return true;
-	
-	}else{
-	return true
-}
-
-return false}]]></xp:this.rendered><xp:eventHandler event="onclick"
-								submit="true" refreshMode="partial" refreshId="image1">
-
-								<xp:this.action><![CDATA[#{javascript://ベストアンサー　アクション
-
-var targetdoc = docAns.getDocument();
-var parentdoc = docQues.getDocument();
-qa_JsLib.SetBestAnswer(targetdoc,parentdoc);}]]></xp:this.action>
-							</xp:eventHandler>
-						</xp:button></xp:panel>
-			</div>
-			<b class="xbottom">
-				<b class="xb4"></b>
-				<b class="xb3"></b>
-				<b class="xb2"></b>
-				<b class="xb1"></b>
-			</b>
-		</div>
-	</xp:panel>
-	</xp:view>
+						</xc:cc_UserProfile>
+        </div>
+    </xp:panel>
+</xp:view>

@@ -235,7 +235,9 @@ qa_JsLib.ComposeAccess_log = function(targetDoc:NotesXspDocument,Chkkey , Action
 	var Settingdoc =accountlist.getFirstDocument();
 	var QAV_server =Settingdoc.getItemValue("QAview_server");
 	var QAV_path =Settingdoc.getItemValue("QAview_path");
-	var QAV_db = session.getDatabase(QAV_server[0],QAV_path[0]);
+	var QAV_db = session.getDatabase(
+	        QAV_server.size() === 0 ? '' : QAV_server[0],
+	        QAV_path[0]);
 
 
 	//チェックキーがある場合、同キーのチェック。あった場合、処理しない

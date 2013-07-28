@@ -11,7 +11,44 @@
     <composite-extension>
       <designer-extension>
         <in-palette>true</in-palette>
+        <render-markup>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&#xd;
+&lt;xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom"&#xd;
+    xmlns:xe="http://www.ibm.com/xsp/coreex"&gt;&#xd;
+    &lt;xp:this.resources&gt;&#xd;
+        &lt;xp:styleSheet href="/qa.css"&gt;&lt;/xp:styleSheet&gt;&#xd;
+    &lt;/xp:this.resources&gt;&#xd;
+    &lt;div class="answerbox" style="height:250px"&gt;&#xd;
+        &lt;div class="controle"&gt;&#xd;
+            &lt;xc:cc_AAccount&gt;&lt;/xc:cc_AAccount&gt;&#xd;
+        &lt;/div&gt;&#xd;
+        &lt;div class="body"&gt;&#xd;
+            &lt;xp:panel style="padding:10.0px"&gt;&#xd;
+                &lt;xp:this.data&gt;&#xd;
+                    &lt;xp:dominoDocument var="docAnsBody"&#xd;
+                        action="openDocument"&#xd;
+                        documentId="#{javascript:docAns.getDocument().getNoteID()}"&#xd;
+                        formName="FM_Answer"&gt;&#xd;
+                    &lt;/xp:dominoDocument&gt;&#xd;
+                &lt;/xp:this.data&gt;&#xd;
+                &lt;xp:text escape="false" id="ans_Body"&#xd;
+                    value="#{docAnsBody.Body}" contentType="html"&#xd;
+                    tagName="div"&gt;&#xd;
+                &lt;/xp:text&gt;&#xd;
+                &lt;xp:fileDownload rows="30" id="fileDownload1"&#xd;
+                    displayLastModified="false"&#xd;
+                    value="#{docAnsBody.TempFile}" displayType="true"&#xd;
+                    displayCreated="false" displaySize="true"&gt;&#xd;
+                &lt;/xp:fileDownload&gt;&#xd;
+            &lt;/xp:panel&gt;&#xd;
+        &lt;/div&gt;&#xd;
+    &lt;/div&gt;&#xd;
+&lt;/xp:view&gt;&#xd;
+</render-markup>
       </designer-extension>
     </composite-extension>
+    <property>
+      <property-name>docId</property-name>
+      <property-class>string</property-class>
+    </property>
   </composite-component>
 </faces-config>

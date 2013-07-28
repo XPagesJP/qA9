@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core">
+    <div class="likeBox">
+        <p>いいね!数</p>
+        <p>
+            <xp:button id="up_button" value="▲" styleClass="lotusBtn">
+                <xp:eventHandler event="onclick" submit="true"
+                    refreshMode="partial" refreshId="viewCountNumber">
+                    <xp:this.action><![CDATA[#{javascript://いいね！カウントアップ
+var targetdoc = docQues.getDocument();
+qa_JsLib.SetGoodCountUD(1,targetdoc);}]]></xp:this.action>
+                </xp:eventHandler>
+            </xp:button>
+        </p>
+        <p>
+            <xp:text escape="true" id="viewCountNumber"
+                styleClass="linkNumber">
+
+                <xp:this.converter>
+                    <xp:convertNumber type="number"
+                        integerOnly="true">
+                    </xp:convertNumber>
+                </xp:this.converter>
+                <xp:this.value><![CDATA[#{javascript:var targetdoc =
+        docQues.getDocument(); //閲覧数の取得 return
+        qa_JsLib.GetViewCount(targetdoc) }]]></xp:this.value>
+            </xp:text>
+        </p>
+        <p>
+            <xp:button value="▼" id="down_button" styleClass="lotusBtn">
+                <xp:eventHandler event="onclick" submit="true"
+                    refreshMode="partial" refreshId="viewCountNumber">
+                    <xp:this.action><![CDATA[#{javascript://いいね！カウントダウン var
+        targetdoc = docQues.getDocument();
+        qa_JsLib.SetGoodCountUD(0,targetdoc)}]]></xp:this.action>
+                </xp:eventHandler>
+            </xp:button>
+        </p>
+    </div>
+</xp:view>
