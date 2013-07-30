@@ -29,8 +29,8 @@
         </div>
         <div class="qaInfo">
             <span>回答日時:</span>
-            <xp:text styleClass="value" escape="true"
-                id="Ques_Created" value="#{docAns.Created}">
+            <xp:text styleClass="value" escape="true" id="Ques_Created"
+                value="#{docAns.Created}">
                 <xp:this.converter>
                     <xp:convertDateTime type="both"
                         dateStyle="short">
@@ -38,9 +38,43 @@
                 </xp:this.converter>
             </xp:text>
             <xc:cc_UserProfile>
-							<xc:this.userName><![CDATA[#{javascript:var Author = docAns.getDocument().getItemValueString("Author");
+                <xc:this.userName><![CDATA[#{javascript:var Author = docAns.getDocument().getItemValueString("Author");
 return @Name("[ABBREVIATE]",Author)}]]></xc:this.userName>
-						</xc:cc_UserProfile>
+            </xc:cc_UserProfile>
+        </div>
+        <div class="bestAnswerBox">
+            <xp:button style="margin-top:10.0px" id="CloseB">
+                <xp:this.value><![CDATA[#{javascript:
+var parentdoc = docQues.getDocument();
+if(parentdoc.getItemValueString("status")=="2"){
+    return "解決解除";
+}else{
+    return "これで解決！";
+}}]]></xp:this.value>
+                <xp:this.rendered><![CDATA[#{javascript:var targetdoc = docAns.getDocument();
+var parentdoc = docQues.getDocument();
+//コメントの場合、非表示
+if(targetdoc.getItemValueString("AorC")=="C") return false;
+
+if(parentdoc.getItemValueString("status")=="2"){
+//クローズされていてベストアンサーだった場合表示
+    if(targetdoc.getItemValueString("bestAns")=="1") return true;
+    
+    }else{
+    return true
+}
+
+return false}]]></xp:this.rendered>
+                <xp:eventHandler event="onclick" submit="true"
+                    refreshMode="partial" refreshId="image1">
+
+                    <xp:this.action><![CDATA[#{javascript://ベストアンサー　アクション
+
+var targetdoc = docAns.getDocument();
+var parentdoc = docQues.getDocument();
+qa_JsLib.SetBestAnswer(targetdoc,parentdoc);}]]></xp:this.action>
+                </xp:eventHandler>
+            </xp:button>
         </div>
     </xp:panel>
 </xp:view>

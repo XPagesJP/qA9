@@ -29,7 +29,7 @@ if(docAns.getItemValueString("bestAns")==""){
 }]]></xp:this.rendered>
             </xp:image>
         </p>
-        <xc:cc_Like></xc:cc_Like>
+        <xc:cc_Like targetDoc="#{javascript:docAns}"></xc:cc_Like>
     </div>
     <xp_1:dialog id="dialog1"
         style="background-color:rgb(188,217,233);border-color:rgb(0,0,0);border-style:groove;border-width:thin"

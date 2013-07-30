@@ -2,7 +2,12 @@
 <xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xp_1="http://www.ibm.com/xsp/coreex"
     xmlns:xc="http://www.ibm.com/xsp/custom">
     <div class="qaCount">
-        <xc:cc_Like></xc:cc_Like>
+        <xc:cc_Like targetDoc="#{javascript:docQues}">
+
+
+
+
+        </xc:cc_Like>
         <div class="viewCountBox">
             閲覧数:
             <xp:text escape="true" id="View_count" styleClass="number">

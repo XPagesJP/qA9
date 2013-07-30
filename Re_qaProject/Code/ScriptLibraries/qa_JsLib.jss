@@ -1,3 +1,4 @@
+import Common_jss;
 //名前空間は設計要素名と同一にする(ローカルルール)
 var qa_JsLib = {};
 
@@ -11,8 +12,8 @@ var qa_JsLib = {};
 qa_JsLib.SetGoodCountUD = function(key:int ,targetDoc:NotesXspDocument){
 
 	//var targetdoc = docQues.getDocument();
-	var su = getComponent("sessionUser").getValue();
-
+	//var su = getComponent("sessionUser").getValue();
+	var su = Common.getCurrentUser().name;
 	var user_good = targetdoc.getItemValue("user_good");
 
 	if (key == 1) {
@@ -259,7 +260,7 @@ qa_JsLib.ComposeAccess_log = function(targetDoc:NotesXspDocument,Chkkey , Action
 	QAV_doc.replaceItemValue("Db_id",database.getReplicaID());
 	QAV_doc.replaceItemValue("doc_id",targetdoc.getUniversalID());
 	QAV_doc.replaceItemValue("Doc_Author",targetdoc.getItemValue("Author"));
-	QAV_doc.replaceItemValue("AccessUser",getComponent("sessionUser").getValue());
+	QAV_doc.replaceItemValue("AccessUser",Common.getCurrentUser().name);
 	var date_notes = session.createDateTime(@Now()); 
 	QAV_doc.replaceItemValue("AccessDate", date_notes);
 

@@ -9,6 +9,9 @@ div.qalist h3{
     font-size: 120%;
     border-bottom: 1ps solid #999;
 }
+.jumpAnchor{
+    text-align: right;
+}
 div.questionBox,
 div.answerBox {
 	border-radius: 10px;
@@ -61,6 +64,9 @@ div.qaCount div.likeBox button,
 div.answerBox div.likeBox button {
 	width: 80%;
 }
+div.answerBox .bestAnswerBox{
+    text-align: center;
+}
 div.qaInfo{
     border-top: 1px solid #000;
     padding: 0.5em;
@@ -82,7 +88,14 @@ div.qaInfo .separator{
 	position: relative;
 	left: -40px
 }
-
+.newAnswerInputBox{
+    margin-top: 1em;
+    border-top: 1px solid #aaa;
+    padding: 0.5em 0 0.5em 0;
+}
+.inputAnswerActions{
+	text-align: center;
+}
 .EndImage {
 	position: absolute;
 	top: -5;

@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xp:view xmlns:xp="http://www.ibm.com/xsp/core"
-    xmlns:xc="http://www.ibm.com/xsp/custom">
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom">
     <xp:this.resources>
         <xp:script src="/qa_JsLib.jss" clientSide="false"></xp:script>
 
@@ -8,27 +7,37 @@
 
     <xp:this.data>
         <xp:dominoDocument var="docQues" formName="FM_Question"
-            action="openDocument"
-            documentId="#{javascript:param.get('docId');}">
+            action="openDocument" documentId="#{javascript:param.get('docId');}">
         </xp:dominoDocument>
     </xp:this.data>
     <xc:cc_AppLayout
         placeBarName="#{javascript:docQues.getItemValueString('Title');}">
         <xp:this.facets>
             <xp:div xp:key="facetMiddle" styleClass="qalist">
-                <xc:cc_QTable
-                    docId="#{javascript:param.get('docId');}">
-                </xc:cc_QTable>
-                <h3>回答・コメント</h3>
-                <xp:repeat id="repeat1" rows="30" var="entryAns"
-                    style="height:0.0auto" styleClass="answerList">
-                    <xp:this.value><![CDATA[#{javascript:var answerlist = database.getView("V_Answer_All");
+                <xp:panel disableOutputTag="true">
+                    <xp:this.loaded><![CDATA[${javascript:param.containsKey('docId');}]]></xp:this.loaded>
+                    <p id="showQuestion"></p>
+                    <xc:cc_QTable
+                        docId="#{javascript:param.get('docId');}">
+                    </xc:cc_QTable>
+                    <p class="jumpAnchor">
+                        <a href="#inputAnswer">回答する≫</a>
+                    </p>
+                    <h3>回答・コメント</h3>
+                    <xp:repeat id="repeat1" rows="30" var="entryAns"
+                        style="height:0.0auto"
+                        styleClass="answerList">
+                        <xp:this.value><![CDATA[#{javascript:var answerlist = database.getView("V_Answer_All");
 return answerlist.getAllEntriesByKey(docQues.getItemValueString('UniqueID'));
 }]]></xp:this.value>
-                    <xc:cc_ATable
-                        docId="#{javascript:entryAns.getUniversalID();}">
-                    </xc:cc_ATable>
-                </xp:repeat>
+                        <xc:cc_ATable
+                            docId="#{javascript:entryAns.getUniversalID();}">
+                        </xc:cc_ATable>
+                    </xp:repeat>
+                    <div class="newAnswerInputBox">
+                        <xc:cc_AnserEdit></xc:cc_AnserEdit>
+                    </div>
+                </xp:panel>
             </xp:div>
         </xp:this.facets>
     </xc:cc_AppLayout>

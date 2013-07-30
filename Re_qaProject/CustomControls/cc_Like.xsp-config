@@ -47,5 +47,14 @@ qa_JsLib.SetGoodCountUD(1,targetdoc);}]]&gt;&lt;/xp:this.action&gt;&#xd;
 &lt;/xp:view&gt;</render-markup>
       </designer-extension>
     </composite-extension>
+    <property>
+      <property-name>targetDoc</property-name>
+      <property-class>com.ibm.xsp.model.domino.DominoDocumentData</property-class>
+      <property-extension>
+        <designer-extension>
+          <editor>com.ibm.workplace.designer.property.editors.dataSourcePicker</editor>
+        </designer-extension>
+      </property-extension>
+    </property>
   </composite-component>
 </faces-config>
