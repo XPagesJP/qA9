@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="UTF-8"?><note class="form" replicaid="49257B870044B72C" version="9.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="196" sequence="89" unid="F67D80697B78939549257B560045657F">
-<created><datetime>20130423T213759,67+09</datetime></created>
-<modified><datetime>20130611T213034,71+09</datetime></modified>
-<revised><datetime>20130611T210742,65+09</datetime></revised>
-<lastaccessed><datetime>20130611T213034,71+09</datetime></lastaccessed>
-<addedtofile><datetime>20130611T213034,71+09</datetime></addedtofile></noteinfo>
+<?xml version="1.0" encoding="UTF-8"?><note class="form" replicaid="49257BB30040F45C" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="476" sequence="7" unid="7F60C6F494B1B6DD49257BB3004123A6">
+<created><datetime>20130725T205129,66+09</datetime></created>
+<modified><datetime>20130725T205502,39+09</datetime></modified>
+<revised><datetime>20130725T205502,38+09</datetime></revised>
+<lastaccessed><datetime>20130725T205502,39+09</datetime></lastaccessed>
+<addedtofile><datetime>20130725T205129,69+09</datetime></addedtofile></noteinfo>
 <updatedby><name>CN=System Administrator/O=rskkgdev852</name></updatedby>
 <wassignedby><name>CN=System Administrator/O=rskkgdev852</name></wassignedby>
 <item name="$TITLE"><text>qa.css</text></item>

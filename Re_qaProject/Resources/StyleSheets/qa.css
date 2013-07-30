@@ -1,7 +1,63 @@
 .bold {
 	font-weight: bold;
 }
-div.qalist{
+ /*------------------------------ 角丸CSS */
+    #xsnazzy { background:transparent; margin:1em; padding:0; }
+    #xsnazzy .h, #xsnazzy p { margin:0; padding:10px 15px; line-height:2em; }
+    #xsnazzy .h { font-size:1.5em; color:#60c8d8; padding-bottom:0; font-weight:bold; }
+    #xsnazzy .xtop, #xsnazzy .xbottom {display:block; background:transparent; font-size:1px; }
+    #xsnazzy b { display:block; overflow:hidden; }
+    #xsnazzy .xb1, #xsnazzy .xb2, #xsnazzy .xb3 {height:1px; }
+    #xsnazzy .xb2, #xsnazzy .xb3, #xsnazzy .xb4 {background:#FFFFFF; border-left:1px solid #708090; border-right:1px solid #708090; }
+    #xsnazzy .xb1 { margin:0 5px; background:#708090; }
+    #xsnazzy .xb2 { margin:0 3px; border-width:0 2px; }
+    #xsnazzy .xb3 { margin:0 2px; }
+    #xsnazzy .xb4 { height:2px; margin:0 1px; }
+    #xsnazzy .xboxcontent { display:block; background:#FFFFFF; border:0 solid #708090; border-width:0 1px; }
+    
+    
+.BestAnwerImage {color:#ff0000; position:relative; left:-40px }
+.EndImage { position:absolute;top:-5;left:80px}
+
+
+/*2013.07.25 nishi ADD >> */
+/*ユーザー情報（小）*/
+.userImage01{
+	height:40px;
+	width:40px;
+	cursor:pointer;
+	box-shadow:2px 2px 4px rgba(0,0,0,0.5);
+}
+
+/*ユーザー情報（大）*/
+.userImage02{
+	height:100px;
+	width:100px;
+	box-shadow:2px 2px 4px rgba(0,0,0,0.5);
+	border-collapse: separate;
+}
+
+.allUserList > div{
+	display: inline-block;
+}
+
+.userDialog{
+	max-width: 500px;
+	min-width: 350px;
+}
+
+.oneuser{
+	width: 200px;
+	min-height: 70px;
+}
+
+
+.subTittle {
+	font-size:16pt;
+	font-weight:bold;
+}
+
+/*2013.07.25 nishi ADD << */div.qalist{
     width: 800px;
 }
 div.qalist h3{
