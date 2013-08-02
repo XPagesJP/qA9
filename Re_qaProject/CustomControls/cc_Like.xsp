@@ -14,18 +14,11 @@ qa_JsLib.SetGoodCountUD(1,targetdoc);}]]></xp:this.action>
             </xp:button>
         </p>
         <p>
-            <xp:text escape="true" id="viewCountNumber"
-                styleClass="linkNumber"
-                value="#{javascript:compositeData.targetDoc.getDocument().getItemValue('user_good').size();}">
-
-                <xp:this.converter>
-                    <xp:convertNumber type="number"
-                        integerOnly="true">
-                    </xp:convertNumber>
-                </xp:this.converter>
-
-            </xp:text>
-        </p>
+            
+            <xp:link escape="true" text="#{javascript:compositeData.targetDoc.getDocument().getItemValue('user_good').size();}" id="viewCountNumber" styleClass="linkNumber">
+            	<xp:eventHandler event="onclick" submit="false">
+            		<xp:this.script><![CDATA[XSP.openDialog("#{id:viewCountMemberList_dialog}")]]></xp:this.script>
+            	</xp:eventHandler></xp:link></p>
         <p>
             <xp:button value="▼" id="down_button"
                 styleClass="lotusBtn">

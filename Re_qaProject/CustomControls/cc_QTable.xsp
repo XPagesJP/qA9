@@ -11,6 +11,22 @@
                 formName="FM_Question">
             </xp:dominoDocument>
         </xp:this.data>
+			<xp:image id="image2" url="/Endiconp2mini.png"
+				styleClass="EndImage">
+
+
+
+				<xp:this.rendered><![CDATA[#{javascript://対象の文書
+var targetdoc = docQues.getDocument();
+
+//ステータスが 「9」解決済みの場合表示
+if(targetdoc.getItemValueString("Status")=="2"){
+	return true;
+}else{
+	return false;
+}
+}]]></xp:this.rendered>
+			</xp:image>
         <div class="controle">
             <p>
                 <xp:image url="/Q01.jpg" id="image1"></xp:image>
@@ -19,7 +35,7 @@
         </div>
         <div class="body">
             <xp:inputRichText id="inputRichText1"
-                value="#{docQues.Body}" readonly="true">
+            	value="#{docQues.Body}" readonly="true">
             </xp:inputRichText>
             <xp:fileDownload rows="30" id="fileDownload1"
                 displayLastModified="false" displayCreated="false"

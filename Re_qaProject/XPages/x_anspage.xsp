@@ -3,7 +3,9 @@
     <xp:this.resources>
         <xp:script src="/qa_JsLib.jss" clientSide="false"></xp:script>
 
+
     </xp:this.resources>
+
 
     <xp:this.data>
         <xp:dominoDocument var="docQues" formName="FM_Question"
@@ -42,3 +44,5 @@ return answerlist.getAllEntriesByKey(docQues.getItemValueString('UniqueID'));
         </xp:this.facets>
     </xc:cc_AppLayout>
 </xp:view>
+
+

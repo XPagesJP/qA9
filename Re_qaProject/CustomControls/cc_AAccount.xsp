@@ -6,20 +6,8 @@
         <xp:styleSheet href="/qa.css"></xp:styleSheet>
     </xp:this.resources>
     <div>
-        <p>
-            <xp:image id="image2">
-                <xp:this.url><![CDATA[#{javascript:if(docAns.getItemValueString("AorC") === "A"){
-    return "/A045_2.jpg";
-}else{
-    return "/Coment02.jpg";
-};}]]></xp:this.url>
-            </xp:image>
-        </p>
-        <p>
-            <xp:image id="image1" url="/bestA_P2.jpg"
+    <xp:image id="image1" url="/best_s.png"
                 styleClass="BestAnwerImage">
-
-
                 <xp:this.rendered><![CDATA[#{javascript://対象の文書
 if(docAns.getItemValueString("bestAns")==""){
     return false;
@@ -28,6 +16,15 @@ if(docAns.getItemValueString("bestAns")==""){
 }
 }]]></xp:this.rendered>
             </xp:image>
+    <p>
+             <xp:image id="image2">
+                <xp:this.url><![CDATA[#{javascript:if(docAns.getItemValueString("AorC") === "A"){
+    return "/A04.jpg";
+}else{
+    return "/Coment02.jpg";
+};}]]></xp:this.url>
+            </xp:image>
+
         </p>
         <xc:cc_Like targetDoc="#{javascript:docAns}"></xc:cc_Like>
     </div>

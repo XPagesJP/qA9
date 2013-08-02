@@ -15,9 +15,6 @@
     #xsnazzy .xb4 { height:2px; margin:0 1px; }
     #xsnazzy .xboxcontent { display:block; background:#FFFFFF; border:0 solid #708090; border-width:0 1px; }
     
-    
-.BestAnwerImage {color:#ff0000; position:relative; left:-40px }
-.EndImage { position:absolute;top:-5;left:80px}
 
 
 /*2013.07.25 nishi ADD >> */
@@ -138,12 +135,8 @@ div.qaInfo .separator{
 }
 .answerList{
     padding-left: 2em;
-}
-.BestAnwerImage {
-	color: #ff0000;
-	position: relative;
-	left: -40px
-}
+}    
+
 .newAnswerInputBox{
     margin-top: 1em;
     border-top: 1px solid #aaa;
@@ -152,8 +145,13 @@ div.qaInfo .separator{
 .inputAnswerActions{
 	text-align: center;
 }
+
+.BestAnwerImage {
+	position: absolute;
+	left: 750px;
+}
+
 .EndImage {
 	position: absolute;
-	top: -5;
-	left: 40px
+	left: 00px;
 }
