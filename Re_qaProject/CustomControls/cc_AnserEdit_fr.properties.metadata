@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?><note class="form" replicaid="49257BB30040F45C" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="78e" sequence="2" unid="FFE0CC85433E57CB49257BBB003D58E7">
+<created><datetime>20130802T201004,55+09</datetime></created>
+<modified><datetime>20130802T201004,82+09</datetime></modified>
+<revised><datetime>20130802T201004,81+09</datetime></revised>
+<lastaccessed><datetime>20130802T201004,82+09</datetime></lastaccessed>
+<addedtofile><datetime>20130802T201004,80+09</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=System Administrator/O=rskkgdev852</name></updatedby>
+<wassignedby><name>CN=System Administrator/O=rskkgdev852</name></wassignedby>
+<item name="$Flags"><text>gC~4;2</text></item>
+<item name="$TITLE"><text>cc_AnserEdit_fr.properties</text></item>
+
+
+<item name="$FileNames" sign="true"><text>cc_AnserEdit_fr.properties</text></item></note>

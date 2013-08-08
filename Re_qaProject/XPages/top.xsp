@@ -5,8 +5,9 @@
         <xp:styleSheet href="/qa.css"></xp:styleSheet>
     </xp:this.resources>
     <xc:cc_AppLayout>
-        <xp:this.facets><xc:cc_View1 xp:key="facetMiddle"></xc:cc_View1>
-            
+        <xp:this.facets>
+        	<xc:cc_View_Category xp:key="facetMiddle"></xc:cc_View_Category>
+
         </xp:this.facets>
     </xc:cc_AppLayout>
 </xp:view>
