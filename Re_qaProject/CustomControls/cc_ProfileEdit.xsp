@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core">
+	<xp:this.resources>
+		<xp:script src="/qa_JsLib.jss" clientSide="false"></xp:script>
+		<xp:script src="/xpCGIVariables.jss" clientSide="false"></xp:script>
+	</xp:this.resources>
+	<xp:this.data>
+		<xp:dominoDocument var="docAcc" action="openDocument"
+			formName="Person">
+			<xp:this.databaseName><![CDATA[#{javascript://登録チェック
+//環境設定文書取得
+var db:NotesDatabase = session.getCurrentDatabase();
+var envvw:NotesView = db.getView("V_Setting");
+var envdoc:NotesDocument = envvw.getFirstDocument();
+if (envdoc == null){
+	return false;
+}
+		
+return envdoc.getItemValueString("Profile_path");
+}]]></xp:this.databaseName>
+			<xp:this.documentId><![CDATA[#{javascript://登録チェック
+//環境設定文書取得
+var db:NotesDatabase = session.getCurrentDatabase();
+var envvw:NotesView = db.getView("V_Setting");
+var envdoc:NotesDocument = envvw.getFirstDocument();
+if (envdoc == null){
+	return "";
+}		
+		
+//プロフィールDB取得
+var ProServer = envdoc.getItemValueString("Profile_server");
+var ProPath = envdoc.getItemValueString("Profile_path");
+var Prodb:NotesDatabase = session.getDatabase(ProServer,ProPath);
+if (Prodb == null) {
+	return "";
+}
+var Provw:NotesView = Prodb.getView("V_Profile");			
+var Prodoc:NotesDocument = Provw.getDocumentByKey(@Name("[ABBREVIATE]", @UserName()), true);
+if(Prodoc == null){
+	return "";
+}else{
+	return Prodoc.getUniversalID();
+}}]]></xp:this.documentId>
+			<xp:this.querySaveDocument><![CDATA[#{javascript:// flush out the old image if updating with a new one..."
+if(!docAcc.isNewNote()){
+	var al:java.util.List = docAcc.getAttachmentList("Photo");
+	if(!al.isEmpty()){
+		var lastItemIndex = al.size() - 1;
+		if(lastItemIndex > 0){
+			for(var i = lastItemIndex - 1; i >= 0; i--){
+				var eo:NotesEmbeddedObject = al.get(i);
+				docAcc.removeAttachment("Photo", eo.getName());
+			}
+		}
+	}
+}
+
+// store user CGI variables...
+var cgi = new CGIVariables();
+docAcc.replaceItemValue("Remote_User", cgi.get("REMOTE_USER"));
+docAcc.replaceItemValue("Remote_Addr", cgi.get("REMOTE_ADDR"));
+cgi = null;}]]></xp:this.querySaveDocument>
+		</xp:dominoDocument>
+	</xp:this.data>
+	<xp:this.afterPageLoad><![CDATA[#{javascript:if(docAcc.isNewNote()){
+	docAcc.setValue("Form", "Person")
+	docAcc.setValue("LastName",  @Name("[CN]", @UserName()))
+	docAcc.setValue("UserID", @Name("[ABBREVIATE]", @UserName()))
+}}]]></xp:this.afterPageLoad>
+	<xp:panel style="margin-left:5.0%;margin-right:5.0%" id="panelBody">
+		<xp:panel id="panelRegist" style="height:250.0px">
+			<xp:panel id="panel1" style="height:350px">
+				<xp:this.rendered><![CDATA[#{javascript:if (getComponent('FlagDisplay').value != '1'){
+	return true;
+}else{
+	return false;
+}}]]></xp:this.rendered>
+				<xp:br></xp:br>
+				<xp:span style="font-weight:bold;font-size:14pt">
+					プロフィール変更　　&#160;<xp:text escape="true" id="computedField1" value="#{docAcc.LastName}" style="color:rgb(0,128,255)">
+							</xp:text></xp:span>
+				<xp:span style="font-weight:bold;font-size:14pt"></xp:span>
+				&#160;&#160;&#160;
+				<xp:br></xp:br>
+				<xp:span style="font-size:11pt"></xp:span>
+				<xp:span style="font-size:11pt">
+				</xp:span>
+				<xp:br></xp:br>
+				&#160;
+				<xp:span style="font-size:11pt"></xp:span><xp:table
+					style="width:800px;font-size:11pt;margin-left:20.0px"><xp:tr style="font-size:11pt"><xp:td
+							style="font-size:11pt;width:120px;height:30px">
+								&#160;&#160;コメント：</xp:td><xp:td>
+							&#160;
+							
+						<xp:inputTextarea id="inputTextarea1" value="#{docAcc.Comment}" style="width:400px;height:50px">
+							</xp:inputTextarea></xp:td>
+						<xp:td rowspan="2" style="width:150px">
+							<xp:image id="photo" height="130px"
+								width="130px" alt="" title="">
+								<xp:this.url><![CDATA[#{javascript:var imageName:String = "xpPhotoPlaceholder.gif";
+				if(!docAcc.isNewNote())
+				{
+					var al:java.util.List = docAcc.getAttachmentList("Photo");
+					if(!al.isEmpty())
+					{
+						var eo:NotesEmbeddedObject = al.get(0);
+						imageName = eo.getHref();
+					}
+				}
+				return(imageName);}]]>
+								</xp:this.url>
+							</xp:image>
+							<xp:br></xp:br>&#160;&#160;<xp:br></xp:br>&#160;
+							<xp:fileUpload id="profileImage"
+								value="#{docAcc.Photo}" styleClass="webAuthorUpload"
+								role="upload a file with document" title="file upload control"
+								style="width:150px">
+							</xp:fileUpload>
+						</xp:td>
+					</xp:tr>
+					<xp:tr style="font-size:11pt">
+						<xp:td style="font-size:11pt;height:30px">
+							&#160;&#160;</xp:td>
+						<xp:td>
+							&#160;
+
+							
+						</xp:td>
+
+					</xp:tr>
+					<xp:tr style="font-size:11pt">
+						<xp:td style="font-size:11pt;height:30px">
+							&#160;
+
+						</xp:td>
+						<xp:td>
+							&#160;
+
+						</xp:td>
+						<xp:td></xp:td>
+					</xp:tr>
+				</xp:table>
+				<xp:br></xp:br>
+				<xp:br></xp:br>
+				<xp:br></xp:br>
+			</xp:panel>
+			<xp:panel id="panelMessage" style="height:350.0px">
+			<xp:this.rendered><![CDATA[#{javascript:if (getComponent('FlagDisplay').value == '1'){
+	return true;
+}else{
+	return false;
+}}]]></xp:this.rendered>
+				<xp:br></xp:br>
+				<xp:br></xp:br>
+				<xp:span style="font-size:11pt">
+					パスワードの変更を行います。しばらくお待ちください。
+				</xp:span>
+				<xp:br></xp:br>
+				<xp:span style="font-size:11pt">
+					パスワードの変更手続きが完了すると、変更完了メールを送付致します。
+				</xp:span>
+				<xp:span></xp:span>
+				<xp:br></xp:br>
+			</xp:panel>
+			<xp:panel style="text-align:center" id="panelButton">
+				<xp:button id="btnComplete" style="padding:5px; width:80px" value="編集">
+					<xp:this.rendered><![CDATA[#{javascript:if(docAcc.isEditable()){
+	return false;
+}else{
+	return true;
+}}]]></xp:this.rendered>
+				<xp:eventHandler event="onclick" submit="true" refreshMode="complete">
+					<xp:this.action>
+						<xp:changeDocumentMode mode="edit"></xp:changeDocumentMode>
+					</xp:this.action></xp:eventHandler></xp:button>
+				&#160;
+				<xp:button id="button1" style="padding:5px; width:80px" value="保存">
+					<xp:this.rendered><![CDATA[#{javascript:if(docAcc.isEditable()){
+	return true;
+}else{
+	return false;
+}}]]></xp:this.rendered>
+				<xp:eventHandler event="onclick" submit="true" refreshMode="complete">
+					<xp:this.action>
+						<xp:save></xp:save>
+					</xp:this.action></xp:eventHandler></xp:button>&#160;&#160;<xp:button value="戻る" id="btnReturn"
+					style="padding:5px; width:80px">
+					<xp:eventHandler event="onclick" submit="true"
+						refreshMode="complete">
+						<xp:this.action>
+							<xp:openPage name="/top.xsp"></xp:openPage>
+						</xp:this.action>
+					</xp:eventHandler>
+				</xp:button>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+				</xp:panel>
+		</xp:panel>
+	</xp:panel>
+	<xp:inputHidden id="FlagDisplay"></xp:inputHidden>
+</xp:view>

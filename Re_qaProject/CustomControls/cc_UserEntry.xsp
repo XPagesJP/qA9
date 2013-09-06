@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core">
+	<xp:this.data>
+		<xp:dominoDocument var="docAcc"></xp:dominoDocument>
+	</xp:this.data>
+	<xp:this.resources>
+		<xp:script src="/qa_JsLib.jss" clientSide="false"></xp:script>
+	</xp:this.resources>
+	<xp:panel style="margin-left:5.0%;margin-right:5.0%" id="panelBody">
+		<xp:panel id="panelRegist" style="height:350px">
+			<xp:panel id="panel1" style="height:350px">
+				<xp:this.rendered><![CDATA[#{javascript:if (getComponent('FlagDisplay').value != '1'){
+	return true;
+}else{
+	return false;
+}}]]></xp:this.rendered>
+				<xp:br></xp:br>
+				<xp:span style="font-weight:bold;font-size:14pt">
+					アカウント登録
+				</xp:span>
+				<xp:span style="font-weight:bold;font-size:14pt"></xp:span>
+				&#160;&#160;&#160;<xp:text escape="true" id="computedField1" style="color:rgb(255,0,0)"><xp:this.value><![CDATA[#{javascript:var ErrMsg = sessionScope.ErrMsg;
+sessionScope.ErrMsg = "";
+return ErrMsg}]]></xp:this.value></xp:text>
+				<xp:br></xp:br>
+				<xp:br></xp:br>
+				&#160;
+				<xp:span style="font-size:11pt">
+					あなたのユーザー名とパスワードを入力してください。
+				</xp:span>
+				<xp:br></xp:br>
+				&#160;
+				<xp:span style="font-size:11pt"></xp:span>
+				<xp:table style="width:600px;font-size:11pt;margin-left:20.0px">
+					<xp:tr style="font-size:11pt">
+						<xp:td
+							style="font-size:11pt;width:120px;height:30px">
+							&#160; ログイン名：
+						</xp:td>
+						<xp:td>
+							&#160;
+							<xp:inputText id="LoginName"
+								style="width:250px">
+							</xp:inputText>
+						</xp:td>
+					</xp:tr>
+					<xp:tr style="font-size:11pt">
+						<xp:td style="font-size:11pt;height:30px">
+							&#160;パスワード：
+						</xp:td>
+						<xp:td>
+							&#160;
+							<xp:inputText style="width:250px"
+								password="true" id="Password1">
+							</xp:inputText>
+						</xp:td>
+					</xp:tr>
+					<xp:tr style="font-size:11pt">
+						<xp:td style="font-size:11pt;height:30px">
+							&#160;パスワード(再)：
+						</xp:td>
+						<xp:td>
+							&#160;
+							<xp:inputText id="Password2"
+								style="width:250px" password="true">
+							</xp:inputText>
+						</xp:td>
+					</xp:tr>
+				</xp:table>
+				<xp:br></xp:br>
+				<xp:br></xp:br>
+				<xp:br></xp:br>
+				<xp:span style="font-size:11pt">
+					メールアドレスを入力してください。
+				</xp:span>
+				<xp:br></xp:br>
+				<xp:span style="font-size:11pt">
+					アカウント登録の手続きが完了しますと、登録完了メールを送付致します。
+				</xp:span>
+				<xp:br></xp:br>
+				<xp:br></xp:br>
+				<xp:table style="width:600.0px;margin-left:20.0px">
+					<xp:tr style="font-size:11pt">
+						<xp:td
+							style="font-size:11pt;width:120px;height:30px">
+							&#160;
+							<xp:span style="padding-left:0.0px"></xp:span>
+							メールアドレス：
+						</xp:td>
+						<xp:td>
+							&#160;
+							<xp:inputText id="MailAddress"
+								style="width:95%">
+							</xp:inputText>
+						</xp:td>
+					</xp:tr>
+				</xp:table>
+			</xp:panel>
+			<xp:panel id="panelMessage" style="height:350px">
+				<xp:this.rendered><![CDATA[#{javascript:if (getComponent('FlagDisplay').value == '1'){
+	return true;
+}else{
+	return false;
+}}]]></xp:this.rendered>
+				<xp:br></xp:br>
+				<xp:br></xp:br>
+				<xp:span style="font-size:11pt">
+					アカウント登録を行います。しばらくお待ちください・・・
+				</xp:span>
+				<xp:br></xp:br>
+				<xp:span style="font-size:11pt">
+					アカウント登録の手続きが完了しますと、登録完了メールを送付致します。
+				</xp:span>
+				<xp:br></xp:br>
+				<xp:br></xp:br>
+				<xp:span style="font-size:11pt">
+					「ログイン」リンクをクリックし、ユーザー名およびパスワードを入力して 当システムにログインしてください。
+				</xp:span>
+				<xp:br></xp:br>
+			</xp:panel>
+			<xp:panel style="text-align:center" id="panelButton">
+				<xp:button id="btnComplete" value="登録完了"
+					style="padding:5px; width:80px">
+					<xp:this.rendered><![CDATA[#{javascript:if (getComponent('FlagDisplay').value != '1'){
+	return true;
+}else{
+	return false;
+}}]]></xp:this.rendered>
+
+					
+				<xp:eventHandler event="onclick" submit="true" refreshMode="complete">
+					<xp:this.action>
+						<xp:actionGroup>
+							<xp:this.condition><![CDATA[#{javascript:try{
+	//入力チェック
+	if (qa_JsLib.InputChkAccount(docAcc.getDocument(), "1") == false){
+		return false;
+	}
+	
+	//登録チェック
+	//環境設定文書取得
+	var db:NotesDatabase = session.getCurrentDatabase();
+	var envvw:NotesView = db.getView("V_Setting");
+	var envdoc:NotesDocument = envvw.getFirstDocument();
+	if (envdoc == null){
+		sessionScope.ErrMsg = "環境設定文書が取得できませんでした。管理者にご連絡ください。";
+		return false;
+	}
+	
+	var Domain = envdoc.getItemValueString("Domain");
+	//アドレス帳取得・登録チェック
+	var NamesServer = envdoc.getItemValueString("names_server");
+	var NamesPath = envdoc.getItemValueString("names_path");
+	var Namesdb:NotesDatabase = session.getDatabase(NamesServer,NamesPath);
+	if (Namesdb == null) {
+		sessionScope.ErrMsg = "アドレス帳の取得に失敗しました。管理者にご連絡ください。";
+		return false;
+	}
+	var Namesvw:NotesView = Namesdb.getView("($VIMPeople)");
+	var namesdoc:NotesDocument = Namesvw.getDocumentByKey(getComponent('LoginName').value + "/" + Domain, true)
+	if (namesdoc != null) {
+		sessionScope.ErrMsg = getComponent('LoginName').value + "はすでに登録されています。";
+		return false;
+	}
+	
+	//プロフィールDB取得
+	var ProServer = envdoc.getItemValueString("Profile_server");
+	var ProPath = envdoc.getItemValueString("Profile_path");
+	var Prodb:NotesDatabase = session.getDatabase(ProServer,ProPath);
+	if (Prodb == null) {
+		sessionScope.ErrMsg = "プロフィールDBの取得に失敗しました。管理者にご連絡ください。";
+		return false;
+	}
+	var Provw:NotesView = Prodb.getView("V_Profile_New");
+	var Prodoc:NotesDocument = Provw.getDocumentByKey(getComponent('LoginName').value + "/" + Domain, true);
+	if (Prodoc == null) {
+		Prodoc = Prodb.createDocument();
+		
+		Prodoc.appendItemValue("Form", "Person");
+		Prodoc.appendItemValue("Status", "0");
+		Prodoc.appendItemValue("Process", "0");
+		Prodoc.appendItemValue("LastName", getComponent('LoginName').value);
+		Prodoc.appendItemValue("UserID", getComponent('LoginName').value + "/" + Domain);
+		Prodoc.appendItemValue("HTTPPassword", getComponent('Password1').value);
+		Prodoc.appendItemValue("Address", getComponent('MailAddress').value);
+		Prodoc.computeWithForm(true, true);
+		Prodoc.save();
+	}else{
+		sessionScope.ErrMsg = "同じIDが登録中です。";
+		return false;
+	}
+	getComponent('FlagDisplay').setValue('1');
+	return true;
+
+}catch( e ){
+  sessionScope.ErrMsg=e;
+}
+}]]></xp:this.condition>
+						</xp:actionGroup>
+					</xp:this.action></xp:eventHandler></xp:button>
+				&#160;
+				<xp:button value="戻る" id="btnReturn"
+					style="padding:5px; width:80px">
+					<xp:eventHandler event="onclick" submit="true"
+						refreshMode="complete">
+						<xp:this.action>
+							<xp:openPage name="/top.xsp"></xp:openPage>
+						</xp:this.action>
+					</xp:eventHandler>
+				</xp:button>
+			</xp:panel>
+		</xp:panel>
+	</xp:panel>
+	<xp:inputHidden id="FlagDisplay"></xp:inputHidden>
+</xp:view>

@@ -1,12 +1,12 @@
 <?xml version='1.0' encoding='utf-8'?>
-<note class='form' xmlns='http://www.lotus.com/dxl' version='9.0' replicaid='49257B870044B72C'>
-<noteinfo noteid='14e' unid='C4A8587672AE741949257B0400354AA9' sequence='21'>
-<created><datetime>20130131T184205,21+09</datetime></created>
-<modified><datetime>20130628T205548,71+09</datetime></modified>
-<revised><datetime>20130628T205548,66+09</datetime></revised>
-<lastaccessed><datetime>20130628T205548,71+09</datetime></lastaccessed>
-<addedtofile><datetime>20130611T213034,35+09</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=System Administrator/O=rskkgdev852</name></updatedby>
+<note class='form' xmlns='http://www.lotus.com/dxl' version='9.0' replicaid='49257BB30040F45C'>
+<noteinfo noteid='8be' unid='2843895B2637CD7849257BD0004B1011' sequence='8'>
+<created><datetime>20130823T223953,13+09</datetime></created>
+<modified><datetime>20130828T140122,16+09</datetime></modified>
+<revised><datetime>20130828T140122,15+09</datetime></revised>
+<lastaccessed><datetime>20130828T140122,16+09</datetime></lastaccessed>
+<addedtofile><datetime>20130828T135628,99+09</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Administrator/O=ZEBRA</name><name>CN=System Administrator/O=rskkgdev852</name></updatedby>
 <wassignedby><name>CN=System Administrator/O=rskkgdev852</name></wassignedby>
 <item name='$Comment' sign='true'><text/></item>
 <item name='$HTMLCode' sign='true'>

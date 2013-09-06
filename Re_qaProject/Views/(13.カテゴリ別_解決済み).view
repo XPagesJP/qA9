@@ -1,13 +1,13 @@
 <?xml version='1.0' encoding='utf-8'?>
 <note class='view' xmlns='http://www.lotus.com/dxl' version='9.0' replicaid='49257BB30040F45C'>
-<noteinfo noteid='7d6' unid='049102B2BB41E44049257BC1002D9420' sequence='1'>
+<noteinfo noteid='7d6' unid='049102B2BB41E44049257BC1002D9420' sequence='3'>
 <created><datetime>20130808T171750,40+09</datetime></created>
-<modified><datetime>20130808T171751,97+09</datetime></modified>
-<revised><datetime>20130808T171751,96+09</datetime></revised>
-<lastaccessed><datetime>20130808T171751,97+09</datetime></lastaccessed>
+<modified><datetime>20130828T140122,28+09</datetime></modified>
+<revised><datetime>20130828T140122,27+09</datetime></revised>
+<lastaccessed><datetime>20130828T140122,28+09</datetime></lastaccessed>
 <addedtofile><datetime>20130808T171751,97+09</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=4ro Ricoh/OU=Test/O=rskkgdev852</name><name>CN=System Administrator/O=rskkgdev852</name></updatedby>
-<wassignedby><name>CN=4ro Ricoh/OU=Test/O=rskkgdev852</name></wassignedby>
+<updatedby><name>CN=Administrator/O=ZEBRA</name><name>CN=System Administrator/O=rskkgdev852</name></updatedby>
+<wassignedby><name>CN=System Administrator/O=rskkgdev852</name></wassignedby>
 <item name='$FormatNote' summary='true' sign='true'>
 <rawitemdata type='4'>
 AQD2tdcUWCG3Z9J8QAAEeyVJ

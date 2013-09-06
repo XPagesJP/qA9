@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><note class="filter" replicaid="49257BB30040F45C" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="89e" sequence="2" unid="BB979957B86F313449257BD400427F6F">
+<created><datetime>20130827T210619,99+09</datetime></created>
+<modified><datetime>20130828T135628,73+09</datetime></modified>
+<revised><datetime>20130827T210620,01+09</datetime></revised>
+<lastaccessed><datetime>20130828T135628,73+09</datetime></lastaccessed>
+<addedtofile><datetime>20130828T135628,73+09</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Lotus Notes Template Development/O=Lotus Notes</name><name>CN=Administrator/O=TIGGER</name></updatedby>
+<wassignedby><name>CN=Administrator/O=TIGGER</name></wassignedby>
+<item name="$Flags"><text>.5834Q</text></item>
+<item name="$PublicAccess" sign="true"><text>1</text></item>
+<item name="$DesignerVersion" sign="true"><text>8.5.3</text></item>
+
+<item name="$TITLE" sign="true"><text>xpCGIVariables</text></item>
+<item name="$LastBuildTime" sign="true"><datetime>20121123T213928,78+08</datetime></item>
+<item name="$BabelInfo" sign="true"><textlist><text>F0CE760432912A2B80257917004BF463</text><text>ja-JP</text></textlist></item>
+<item name="$LANGUAGE" sign="true"><text>ja</text></item>
+<item name="$POID"><datetime>20130827T210620,01+09</datetime></item></note>

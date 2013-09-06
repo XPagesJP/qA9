@@ -1,12 +1,12 @@
 <?xml version='1.0' encoding='utf-8'?>
-<note class='view' xmlns='http://www.lotus.com/dxl' version='9.0' replicaid='49257B870044B72C'>
-<noteinfo noteid='16e' unid='B723524B2F5866AF49257B04004699AB' sequence='4'>
-<created><datetime>20130131T215108,59+09</datetime></created>
-<modified><datetime>20130627T221409,34+09</datetime></modified>
-<revised><datetime>20130627T221409,33+09</datetime></revised>
-<lastaccessed><datetime>20130627T221409,34+09</datetime></lastaccessed>
-<addedtofile><datetime>20130611T213034,51+09</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=System Administrator/O=rskkgdev852</name></updatedby>
+<note class='view' xmlns='http://www.lotus.com/dxl' version='9.0' replicaid='49257BB30040F45C'>
+<noteinfo noteid='486' unid='412FFBC8F1E2643449257BB3004123D8' sequence='8'>
+<created><datetime>20130725T205130,16+09</datetime></created>
+<modified><datetime>20130828T140122,34+09</datetime></modified>
+<revised><datetime>20130828T140122,33+09</datetime></revised>
+<lastaccessed><datetime>20130828T140122,34+09</datetime></lastaccessed>
+<addedtofile><datetime>20130725T205130,17+09</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Administrator/O=ZEBRA</name><name>CN=System Administrator/O=rskkgdev852</name></updatedby>
 <wassignedby><name>CN=System Administrator/O=rskkgdev852</name></wassignedby>
 <item name='$FormatNote' summary='true'>
 <rawitemdata type='4'>

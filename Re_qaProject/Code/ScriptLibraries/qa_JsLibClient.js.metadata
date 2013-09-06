@@ -1,13 +1,14 @@
-<?xml version="1.0" encoding="UTF-8"?><note class="filter" replicaid="49257B870044B72C" version="9.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="21a" sequence="2" unid="8884EAF8C075961849257B660038B7E4">
-<created><datetime>20130509T191930,92+09</datetime></created>
-<modified><datetime>20130611T213035,58+09</datetime></modified>
-<revised><datetime>20130509T192140,65+09</datetime></revised>
-<lastaccessed><datetime>20130611T213035,58+09</datetime></lastaccessed>
-<addedtofile><datetime>20130611T213035,58+09</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=System Administrator/O=rskkgdev852</name></updatedby>
-<wassignedby><name>CN=System Administrator/O=rskkgdev852</name></wassignedby>
+<?xml version="1.0" encoding="UTF-8"?><note class="filter" replicaid="49257BB30040F45C" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="3ce" sequence="10" unid="76E99E7B7B02005949257BB3004120FA">
+<created><datetime>20130725T205122,82+09</datetime></created>
+<modified><datetime>20130828T135628,55+09</datetime></modified>
+<revised><datetime>20130823T223955,40+09</datetime></revised>
+<lastaccessed><datetime>20130828T135628,55+09</datetime></lastaccessed>
+<addedtofile><datetime>20130725T205124,48+09</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Administrator/O=ZEBRA</name></updatedby>
+<wassignedby><name>CN=Administrator/O=ZEBRA</name></wassignedby>
+<item name="$TITLE" sign="true"><text>qa_JsLibClient</text></item>
 <item name="$Flags"><text>h534Q</text></item>
 <item name="$PublicAccess" sign="true"><text>1</text></item>
-<item name="$TITLE" sign="true"><text>qa_JsLibClient</text></item>
-<item name="$DesignerVersion" sign="true"><text>8.5.3</text></item></note>
+<item name="$DesignerVersion"><text>8.5.3</text></item>
+<item name="$POID"><datetime>20130823T223955,40+09</datetime></item></note>

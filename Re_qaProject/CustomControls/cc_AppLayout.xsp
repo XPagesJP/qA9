@@ -1,6 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xe="http://www.ibm.com/xsp/coreex">
-    <xe:applicationLayout id="applicationLayout1">
+    <xp:link escape="true" text="　・アカウント登録"
+								id="link2" value="/x_Account.xsp">
+	<xp:this.rendered><![CDATA[#{javascript:var userName:NotesName = session.createName(@UserName());
+if (userName.getCommon()=="Anonymous")
+{
+       return true;
+}
+else
+{
+       return false;
+}}]]></xp:this.rendered>
+	</xp:link>
+	<xp:link escape="true" text="　・パスワード変更"
+								id="link3" value="/x_passwordChange.xsp">
+		<xp:this.rendered><![CDATA[#{javascript:var userName:NotesName = session.createName(@UserName());
+if (userName.getCommon()=="Anonymous")
+{
+       return false;
+}
+else
+{
+       return true;
+}}]]></xp:this.rendered>
+	</xp:link>
+	<xp:link escape="true" text="　・パスワード再発行"
+								id="link4" value="/x_passwordReissue.xsp">
+								<xp:this.rendered><![CDATA[#{javascript:var userName:NotesName = session.createName(@UserName());
+if (userName.getCommon()=="Anonymous")
+{
+       return true;
+}
+else
+{
+       return false;
+}}]]></xp:this.rendered>
+	</xp:link>
+	<xp:link escape="true" text="　・プロフィール変更" id="link1"
+		value="/x_ProfileEdit.xsp">
+		<xp:this.rendered><![CDATA[#{javascript:var userName:NotesName = session.createName(@UserName());
+if (userName.getCommon()=="Anonymous")
+{
+       return false;
+}
+else
+{
+       return true;
+}}]]></xp:this.rendered>
+	</xp:link>
+	<xe:applicationLayout id="applicationLayout1">
         <xp:callback facetName="facetMiddle" id="facetMiddle"></xp:callback>
         <xe:this.facets>
             <xp:panel xp:key="MastFooter" styleClass="lotusRight">

@@ -1,13 +1,13 @@
 <?xml version='1.0' encoding='utf-8'?>
-<note class='form' xmlns='http://www.lotus.com/dxl' version='9.0' replicaid='49257BB200479C9A'>
-<noteinfo noteid='1be' unid='E48C445BFB5073FE49257B040036390A' sequence='5'>
-<created><datetime>20130131T185215,46+09</datetime></created>
-<modified><datetime>20130727T141108,56+09</datetime></modified>
-<revised><datetime>20130727T141108,55+09</datetime></revised>
-<lastaccessed><datetime>20130727T141108,56+09</datetime></lastaccessed>
-<addedtofile><datetime>20130724T221741,05+09</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Kenji Ebihara/O=Kenji Ebihara</name></updatedby>
-<wassignedby><name>CN=Kenji Ebihara/O=Kenji Ebihara</name></wassignedby>
+<note class='form' xmlns='http://www.lotus.com/dxl' version='9.0' replicaid='49257BB30040F45C'>
+<noteinfo noteid='8c2' unid='C61A6C6ABEC2927B49257BD0004B1006' sequence='10'>
+<created><datetime>20130823T223953,02+09</datetime></created>
+<modified><datetime>20130828T140122,18+09</datetime></modified>
+<revised><datetime>20130828T140122,17+09</datetime></revised>
+<lastaccessed><datetime>20130828T140122,18+09</datetime></lastaccessed>
+<addedtofile><datetime>20130828T135629,03+09</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Administrator/O=ZEBRA</name><name>CN=System Administrator/O=rskkgdev852</name></updatedby>
+<wassignedby><name>CN=System Administrator/O=rskkgdev852</name></wassignedby>
 <item name='$Comment' sign='true'><text/></item>
 <item name='$HTMLCode' sign='true'>
 <rawitemdata type='1'>

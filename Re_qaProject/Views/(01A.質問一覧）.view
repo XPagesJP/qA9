@@ -1,12 +1,12 @@
 <?xml version='1.0' encoding='utf-8'?>
-<note class='view' xmlns='http://www.lotus.com/dxl' version='9.0' replicaid='49257B870044B72C'>
-<noteinfo noteid='166' unid='67B7215814D7B5F649257B0400407CD2' sequence='12'>
-<created><datetime>20130131T204422,58+09</datetime></created>
-<modified><datetime>20130627T221404,35+09</datetime></modified>
-<revised><datetime>20130627T221404,34+09</datetime></revised>
-<lastaccessed><datetime>20130627T221404,35+09</datetime></lastaccessed>
-<addedtofile><datetime>20130611T213034,47+09</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=System Administrator/O=rskkgdev852</name></updatedby>
+<note class='view' xmlns='http://www.lotus.com/dxl' version='9.0' replicaid='49257BB30040F45C'>
+<noteinfo noteid='16e' unid='FA98C223581E259F49257BB30040FD84' sequence='8'>
+<created><datetime>20130725T204952,04+09</datetime></created>
+<modified><datetime>20130828T140122,44+09</datetime></modified>
+<revised><datetime>20130828T140122,43+09</datetime></revised>
+<lastaccessed><datetime>20130828T140122,44+09</datetime></lastaccessed>
+<addedtofile><datetime>20130725T204952,08+09</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Administrator/O=ZEBRA</name><name>CN=System Administrator/O=rskkgdev852</name></updatedby>
 <wassignedby><name>CN=System Administrator/O=rskkgdev852</name></wassignedby>
 <item name='$FormulaClass' sign='true'><text>1</text></item>
 <item name='$Index' sign='true'><text/></item>

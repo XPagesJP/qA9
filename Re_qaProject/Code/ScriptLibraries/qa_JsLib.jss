@@ -270,3 +270,65 @@ qa_JsLib.ComposeAccess_log = function(targetDoc:NotesXspDocument,Chkkey , Action
 	QAV_doc.save();
 
 }
+
+
+//////////////////////////////////////////
+//[InputChkAccount]アカウント登録入力チェック
+//引数
+//accDoc　アカウント登録文書
+//type	"1"：新規登録		"2"：パスワード変更		"3"：パスワード再発行
+//戻り値
+//なし
+//////////////////////////////////////////
+qa_JsLib.InputChkAccount = function(accDoc, type){
+
+	sessionScope.ErrMsg = "";
+	
+	if (type=="1"){
+		//新規登録
+		var Password1 = getComponent("Password1").value;
+		var Password2 = getComponent("Password2").value;
+		
+		if (getComponent("LoginName").value == ""){
+			sessionScope.ErrMsg =  "ログインユーザー名が入力されていません。"
+		
+		}else if (Password1 == "" || Password2 == "" ){
+			sessionScope.ErrMsg =  "パスワードが入力されていません。"
+		
+		}else if (Password1 != Password2){
+			sessionScope.ErrMsg =  "パスワードが一致しません。パスワードを入力し直して下さい。"
+		
+		}else if (getComponent("MailAddress").value == ""){
+			sessionScope.ErrMsg =  "メールアドレスが入力されていません。"
+		}
+	}else if(type=="2"){
+		//パスワード変更
+		var Password1 = getComponent("Password1").value;
+		var Password2 = getComponent("Password2").value;
+		
+		if (getComponent("LoginName").value == ""){
+			sessionScope.ErrMsg =  "ログインユーザー名が入力されていません。"
+				
+		}else if (Password1 == "" || Password2 == "" ){
+			sessionScope.ErrMsg =  "パスワードが入力されていません。"
+
+		}else if (Password1 != Password2){
+			sessionScope.ErrMsg =  "パスワードが一致しません。パスワードを入力し直して下さい。"
+		}	
+	
+	}else if(type=="3"){
+		if (getComponent("LoginName").value == ""){
+			sessionScope.ErrMsg =  "ログインユーザー名が入力されていません。"
+				
+		}else if (getComponent("MailAddress").value == ""){
+			sessionScope.ErrMsg =  "メールアドレスが入力されていません。。"
+
+		}	
+	}
+	
+	if (sessionScope.ErrMsg != ""){
+		return false;
+	}else{
+		return true;
+	}	
+}
