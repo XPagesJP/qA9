@@ -45,14 +45,15 @@ if(targetdoc.getItemValueString("Status")=="2"){
         <div class="qaInfo">
             <span>カテゴリ:</span>
             <xp:text styleClass="value" escape="true" id="Ques_Category"
-                value="#{docQues.Tag}">
+            	value="#{docQues.Category}">
             </xp:text>
             <span class="separator">&#160;|&#160;</span>
             <span>タグ:</span>
-            <xp:text styleClass="value" escape="true"
-                value="#{docQues.Tag}" id="Ques_Tag">
-            </xp:text>
-            <span class="separator">&#160;|&#160;</span>
+            
+            <span class="separator">
+            	<xe:djextListTextBox id="Ques_Tag" value="#{docQues.Tag}"></xe:djextListTextBox>
+            	&#160;|&#160;
+            </span>
             <span>質問日時:</span>
             <xp:text styleClass="value" escape="true"
                 id="Ques_Created" value="#{docQues.Created}">

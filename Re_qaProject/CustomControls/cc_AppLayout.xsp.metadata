@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?><note class="form" replicaid="49257BB30040F45C" version="9.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="842" sequence="9" unid="FD3187C54CB261FF49257BD0004B104B">
-<created><datetime>20130823T223953,71+09</datetime></created>
-<modified><datetime>20130828T135627,81+09</datetime></modified>
-<revised><datetime>20130826T212046,56+09</datetime></revised>
-<lastaccessed><datetime>20130828T135627,81+09</datetime></lastaccessed>
-<addedtofile><datetime>20130828T135627,81+09</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Administrator/O=ZEBRA</name><name>CN=Administrator/O=TIGGER</name></updatedby>
-<wassignedby><name>CN=Administrator/O=TIGGER</name></wassignedby>
+<noteinfo noteid="113e" sequence="9" unid="FD74D27B4F2543A849257BE40048D1DE">
+<created><datetime>20130912T221523,18+09</datetime></created>
+<modified><datetime>20130912T221605,21+09</datetime></modified>
+<revised><datetime>20130912T221605,20+09</datetime></revised>
+<lastaccessed><datetime>20130912T221605,21+09</datetime></lastaccessed>
+<addedtofile><datetime>20130912T221523,20+09</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=System Administrator/O=rskkgdev852</name></updatedby>
+<wassignedby><name>CN=System Administrator/O=rskkgdev852</name></wassignedby>
 <item name="$TITLE"><text>cc_AppLayout.xsp</text></item>
 <item name="$Flags"><text>gC~4;</text></item>
 
 
-
-
-
-
-
-<item name="$FileNames" sign="true"><text>cc_AppLayout.xsp</text></item>
 <item name="$DesignerVersion"><text>8.5</text></item>
 
-</note>
+
+
+
+
+
+
+<item name="$FileNames" sign="true"><text>cc_AppLayout.xsp</text></item></note>

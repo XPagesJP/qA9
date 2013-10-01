@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core"
+	xmlns:xe="http://www.ibm.com/xsp/coreex">
+
+	<xp:this.data>
+		<xp:dominoDocument var="docQues" formName="FM_Question"></xp:dominoDocument>
+	</xp:this.data>
+	<xp:this.resources>
+		<xp:script src="/qa_JsLib.jss" clientSide="false"></xp:script>
+		<xp:styleSheet href="/qa.css"></xp:styleSheet>
+	</xp:this.resources>
+
+	<xp:panel styleClass="questionBox">
+		
+		<xp:table>
+			<xp:tr>
+				<xp:td><xp:image url="/Q01.jpg" id="image1" style="margin-left:10.0px;margin-top:10.0px"></xp:image></xp:td>
+				<xp:td valign="middle">
+					<xp:label id="label3" value="新規質問" style="font-size:28pt;font-family:メイリオ"></xp:label></xp:td>
+			</xp:tr>
+		</xp:table>
+		<xp:table style="width:86%;margin-bottom:20.0px;margin-top:10.0px;margin-left:10.0px">
+
+		<xp:tr>
+			
+			<xp:td style="background-color:rgb(246,246,246)">
+				質問タイトルを入力してください。
+			</xp:td>
+		</xp:tr>
+		<xp:tr>
+			
+
+			<xp:td style="padding-left:10.0px;padding-top:10.0px">
+				<xp:inputText value="#{docQues.Title}" id="title1"
+					style="height:23px;width:86%">
+				</xp:inputText>
+
+			</xp:td>
+		</xp:tr>
+	</xp:table>
+	</xp:panel>
+	
+	<div></div>
+	
+	<xp:table style="width:86%;margin-bottom:20.0px;margin-left:10.0px"><xp:tr><xp:td style="background-color:rgb(246,246,246)">
+			質問内容</xp:td>
+		</xp:tr>
+		<xp:tr>
+			
+
+			<xp:td style="height:550px;padding-top:10.0px"
+				valign="top">
+				<xp:table style="margin-bottom:10.0px">
+
+					<xp:tr>
+						<xp:td style="width:42px">カテゴリ</xp:td>
+						<xp:td>
+							<xp:label id="label6" for="category1"
+								value=":">
+							</xp:label>
+						</xp:td>
+						<xp:td>
+
+							<xp:comboBox id="InputCategory"
+								value="#{docQues.Category}" style="height:23px;width:200px">
+
+
+								<xp:selectItem itemLabel="JavaScript"
+									id="selectItem9">
+								</xp:selectItem>
+								<xp:selectItem itemLabel="OneUI"
+									id="selectItem10">
+								</xp:selectItem>
+								<xp:selectItem itemLabel="デザイン"
+									id="selectItem11">
+								</xp:selectItem>
+								<xp:selectItem itemLabel="Notes"
+									id="selectItem12">
+								</xp:selectItem>
+							</xp:comboBox>
+						</xp:td>
+
+
+
+
+					</xp:tr>
+
+
+
+				</xp:table>
+				<xp:panel id="TagPanel">
+					<xp:table style="margin-bottom:10.0px">
+
+						<xp:tr>
+
+							<xp:td style="width:42px">タグ</xp:td>
+							<xp:td>
+								<xp:label id="label5" for="category1"
+									value=":">
+								</xp:label>
+							</xp:td>
+							<xp:td>
+
+								<xe:djextListTextBox
+									id="djextListTextBox1" value="#{docQues.Tag}"
+									multipleTrim="true" multipleSeparator=",">
+								</xe:djextListTextBox>
+								<div>
+
+								</div>
+
+							</xp:td>
+							<xp:td>
+								<xp:inputText id="taginput"
+									style="height:23px;width:200px">
+									<xp:typeAhead mode="full"
+										minChars="1" id="typeAhead2" ignoreCase="true" tokens=","
+										valueListSeparator=",">
+										<xp:this.valueList><![CDATA[#{javascript:@DbColumn(@DbName(),"V_Tag",1)}]]></xp:this.valueList>
+									</xp:typeAhead>
+								</xp:inputText>
+
+								<xp:button id="button4" icon="/add.png"
+									iconAlt="ｓｓｓ">
+									<xp:eventHandler event="onclick"
+										submit="true" refreshMode="partial" refreshId="TagPanel"
+										id="eventHandler4">
+										<xp:this.action><![CDATA[#{javascript:var inputTag =getComponent("taginput").getValue();
+
+
+var NowTag2 =@Explode(getComponent("djextListTextBox1").getValue(),",");
+var NowTag =getComponent("djextListTextBox1").getValue();
+
+		if (NowTag.length == 0) {
+			getComponent("djextListTextBox1").setValue(inputTag);
+			getComponent("taginput").setValue("");
+		} else {
+			 var result = "";
+
+			 for (var i=1; i<=@Elements(NowTag); i++) {
+			 	var N1 = @Element(NowTag, i);
+			if(N1==inputTag){
+		 		//既に登録済みの場合、処理させない。
+		 		return
+			 }
+			 result  = result + N1 + ",";
+		 	}
+		 	
+		 	result  =@Explode(result  + inputTag,",");
+		 	
+			getComponent("djextListTextBox1").setValue(result);
+			getComponent("taginput").setValue("");
+		}
+		
+		
+		
+		
+}]]></xp:this.action>
+									</xp:eventHandler>
+								</xp:button>
+							</xp:td>
+						</xp:tr>
+
+
+
+					</xp:table>
+				</xp:panel>
+				<xp:inputRichText value="#{docQues.Body}"
+					id="inputRichText1" style="height:400px">
+				</xp:inputRichText>
+			</xp:td>
+		</xp:tr>
+	</xp:table>
+	<xp:table style="width:86%;margin-bottom:20.0px;margin-top:10.0px">
+	<xp:tr><xp:td style="background-color:rgb(246,246,246)">ファイル添付</xp:td>
+		</xp:tr>
+		<xp:tr>
+				<xp:td><xp:fileUpload id="res_Fileupload" value="#{docQues.TempFile}" style="margin-top:10.0px;width:80%">
+		<xp:eventHandler event="onchange" submit="true" refreshMode="complete" disableValidators="true" id="eventHandler1">
+		</xp:eventHandler>
+	</xp:fileUpload>
+					<xp:fileDownload rows="30" id="Res_Filedownload" displayLastModified="false" hideWhen="true" allowDelete="true" value="#{docQues.TempFile}">
+		<xp:eventHandler event="onclick" submit="true" refreshMode="complete" disableValidators="true" id="eventHandler3">
+		</xp:eventHandler>
+	</xp:fileDownload></xp:td>
+
+		
+		</xp:tr>
+	</xp:table>
+
+	
+	<xp:panel style="text-align:center;margin-top:20.0px">
+		<xp:button id="button1" value="投稿する" style="font-size:12pt">
+			<xp:eventHandler event="onclick" submit="true"
+				refreshMode="complete">
+				<xp:this.action>
+
+					<xp:actionGroup>
+
+
+
+
+
+
+
+
+
+
+
+
+						<xp:executeScript>
+							<xp:this.script><![CDATA[#{javascript:var uid = docQues.getDocument().getUniversalID();
+docQues.replaceItemValue("UniqueID",uid);
+//docQues.replaceItemValue("count_good","0");
+var userName:NotesName = session.createName(@UserName());
+docQues.replaceItemValue("Author",userName.getAbbreviated());
+docQues.replaceItemValue("Created",@Now());
+docQues.replaceItemValue("user_good","");
+docQues.replaceItemValue("Count_view","0");
+docQues.replaceItemValue("Status","1");
+
+var targetdoc = docQues.getDocument();
+qa_JsLib.SetPersonHistory(targetdoc,1);
+
+docQues.save();}]]></xp:this.script>
+						</xp:executeScript>
+						<xp:openPage name="/top.xsp"></xp:openPage>
+					</xp:actionGroup>
+				</xp:this.action>
+			</xp:eventHandler>
+		</xp:button>
+
+		<xp:button value="キャンセル" id="button2" style="font-size:12pt"><xp:eventHandler event="onclick" submit="true" refreshMode="complete" immediate="true" save="false">
+	<xp:this.action>
+		<xp:openPage name="/top.xsp"></xp:openPage>
+	</xp:this.action></xp:eventHandler></xp:button></xp:panel>
+
+</xp:view>

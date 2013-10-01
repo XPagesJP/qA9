@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-    <!-- Author: Tony McGuckin, IBM -->
+<!-- Author: Tony McGuckin, IBM -->
 <xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom"
     enableModifiedFlag="true" xmlns:xe="http://www.ibm.com/xsp/coreex">
     <h3>回答入力</h3>
@@ -72,17 +72,41 @@ return "回答|A"
         <div class="inputAnswerActions">
             <xp:button value="投稿する" id="button1">
 
-                <xp:eventHandler event="onclick" submit="true"
-                    refreshMode="complete">
-                    <xp:this.action><![CDATA[#{javascript:print('id:' + docQues.getItemValueString('UNID'));
-docAnsRes.replaceItemValue("Author",viewScope.author);
-docAnsRes.replaceItemValue("Created",viewScope.created);
+                
+            <xp:eventHandler event="onclick" submit="true" refreshMode="complete">
+            	<xp:this.action>
+
+            		<xp:actionGroup>
+
+
+
+
+
+
+
+
+
+            			<xp:executeScript>
+            				<xp:this.script><![CDATA[#{javascript:docAnsRes.replaceItemValue("Author",Common.getCurrentUser().name);
+docAnsRes.replaceItemValue("Created",@Now());
 docAnsRes.replaceItemValue("ParentDocId", docQues.getItemValueString('UniqueID'));
+docAnsRes.replaceItemValue("User_good","");
+docAnsRes.replaceItemValue("BestAns","");
+
+
 docAnsRes.save();
-context.reloadPage();
-}]]></xp:this.action>
-                </xp:eventHandler>
-            </xp:button>
+
+//プロフィールへの履歴回答履歴の追加
+var targetdoc = docAnsRes.getDocument();
+
+qa_JsLib.SetPersonHistory(targetdoc,2);
+
+//context.reloadPage();
+}]]></xp:this.script>
+            			</xp:executeScript>
+            			<xp:openPage name="/top.xsp"></xp:openPage>
+            		</xp:actionGroup>
+            	</xp:this.action></xp:eventHandler></xp:button>
             
         </div>
     </xp:panel>

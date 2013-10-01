@@ -5,7 +5,15 @@
         <p>いいね!数</p>
         <p>
             <xp:button id="up_button" value="▲" styleClass="lotusBtn">
-                <xp:eventHandler event="onclick" submit="true"
+                <xp:this.rendered><![CDATA[#{javascript:if (Common.getCurrentUser().name=="Anonymous")
+{
+       return false;
+}
+else
+{
+       return true;
+}
+}]]></xp:this.rendered><xp:eventHandler event="onclick" submit="true"
                     refreshMode="partial" refreshId="viewCountNumber">
                     <xp:this.action><![CDATA[#{javascript://いいね！カウントアップ
 var targetdoc = compositeData.targetDoc.getDocument();
@@ -22,7 +30,15 @@ qa_JsLib.SetGoodCountUD(1,targetdoc);}]]></xp:this.action>
         <p>
             <xp:button value="▼" id="down_button"
                 styleClass="lotusBtn">
-                <xp:eventHandler event="onclick" submit="true"
+                <xp:this.rendered><![CDATA[#{javascript:if (Common.getCurrentUser().name=="Anonymous")
+{
+       return false;
+}
+else
+{
+       return true;
+}
+}]]></xp:this.rendered><xp:eventHandler event="onclick" submit="true"
                     refreshMode="partial" refreshId="viewCountNumber">
                     <xp:this.action><![CDATA[#{javascript://いいね！カウントダウン var
         targetdoc = compositeData.targetDoc.getDocument();

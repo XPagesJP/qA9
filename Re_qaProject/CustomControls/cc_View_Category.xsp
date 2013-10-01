@@ -2,34 +2,54 @@
 <xp:view xmlns:xp="http://www.ibm.com/xsp/core"
 	xmlns:xc="http://www.ibm.com/xsp/custom"
 	xmlns:xe="http://www.ibm.com/xsp/coreex">
-
 	<xp:this.data>
-		<xp:dominoView var="view1"
-			keys="#{javascript:sessionScope.CategoryName;}"
-			keysExactMatch="true">
-			<xp:this.viewName><![CDATA[#{javascript:tmpView = sessionScope.viewName;
-if (tmpView == "" || tmpView == null){
-	"V_Category_All"
-}else{
-	tmpView
-}}]]></xp:this.viewName>
-
-			<xp:this.sortColumn><![CDATA[#{javascript:tmpSort = sessionScope.sortColumn;
-if (tmpSort == "" || tmpSort == null){
-	"Created"
-}else{
-	tmpSort
-}
-
-}]]></xp:this.sortColumn>
-		</xp:dominoView>
+		<xp:dominoView var="view2" viewName="V_Tag"></xp:dominoView>
 	</xp:this.data>
+
+
 	<xp:this.resources>
 		<xp:styleSheet href="/qa.css"></xp:styleSheet>
 	</xp:this.resources>
 	<xp:panel id="contentBody">
+		<xp:this.data>
+			<xp:dominoView var="view1"
+				keys="#{javascript:sessionScope.CategoryName;}"
+				keysExactMatch="true">
+				<xp:this.viewName><![CDATA[#{javascript:var sortColumn = sessionScope.sortColumn;
+var Status = sessionScope.Status;
+var CategoryName = sessionScope.CategoryName;
+var viewName = "V_Date_All";
+
+if (Status == "All" && sortColumn == "Created" ){
+	viewName = "V_Date_All"
+}else if (Status == "Open" && sortColumn == "Created"){
+	viewName = "V_Date_Open"	
+}else if (Status == "Close" && sortColumn == "Created"){
+	viewName = "V_Date_Close"
+}else if (Status == "All" && sortColumn == "Count_good"){
+	viewName = "V_Good_All"
+}else if (Status == "Open" && sortColumn == "Count_good"){
+	viewName = "V_Good_Open"
+}else if (Status == "Close" && sortColumn == "Count_good"){
+	viewName = "V_Good_Close"
+}else if (Status == "All" && sortColumn == "Count_view"){
+	viewName = "V_View_All"
+}else if (Status == "Open" && sortColumn == "Count_view"){
+	viewName = "V_View_Open"
+}else if (Status == "Close" && sortColumn == "Count_view"){
+	viewName = "V_View_Close"
+}
+
+if (CategoryName != null){
+	viewName = viewName + "_Cate"
+}
+
+return viewName}]]></xp:this.viewName>
+			</xp:dominoView>
+		</xp:this.data>
 		<xp:text escape="true"
-			style="font-size:14pt;color:rgb(255,0,128);font-weight:bold">
+			style="font-size:14pt;color:rgb(255,0,128);font-weight:bold"
+			id="CategoryName">
 			<xp:this.value><![CDATA[#{javascript:tmpCategory=sessionScope.CategoryName;
 
 if (tmpCategory==""||tmpCategory==null){
@@ -41,59 +61,23 @@ tmpCategory
 }]]></xp:this.value>
 		</xp:text>
 
+		<xp:panel id="panelCategory" styleClass="lotusSort">
+		<ul class="lotusInlinelist">
+			<xp:text escape="false">
+					<xp:this.value><![CDATA[#{javascript://カテゴリ一覧
+var title = '<li class="lotusFirst" style="color:rgb(128,128,128)">カテゴリ：</li>' ;
+var all = '<li class="lotusFirst"><a href="top.xsp">すべて</a></li>' ;
+var category = "";
 
+var tmpCategory = @Unique(@DbColumn(database,"V_Date_All_Cate",1));
+if(tmpCategory!=null){
+	for(var i = 0, max = tmpCategory.length; i < max; i++){
+		category = category + '<li><a href="top.xsp">' + tmpCategory[i] + '</a></li>' ;
+	}
+}
 
-		<xp:panel id="panel2" styleClass="lotusSort">
-			<ul class="lotusInlinelist">
-				<li class="lotusFirst" style="color:rgb(128,128,128)">
-					カテゴリ：
-				</li>
-				<li class="lotusFirst">
-					<xp:link escape="true" text="すべて" id="link6">
-						<xp:this.styleClass><![CDATA[#{javascript://getSortLinkStyleClass("いいねカウント")}]]></xp:this.styleClass>
-						<xp:eventHandler event="onclick" submit="true"
-							refreshMode="partial" refreshId="contentBody">
-							<xp:this.action><![CDATA[#{javascript:sessionScope.CategoryName = ""}]]></xp:this.action>
-						</xp:eventHandler>
-					</xp:link>
-				</li>
-				<li>
-					<xp:link escape="true" text="JavaScript"
-						id="link7">
-						<xp:this.styleClass><![CDATA[#{javascript://getSortLinkStyleClass("閲覧カウント")}]]></xp:this.styleClass>
-						<xp:eventHandler event="onclick" submit="true"
-							refreshMode="partial" refreshId="contentBody">
-							<xp:this.action><![CDATA[#{javascript:sessionScope.CategoryName = "JavaScript"}]]></xp:this.action>
-						</xp:eventHandler>
-					</xp:link>
-				</li>
-				<li>
-					<xp:link escape="true" text="OneUI" id="link8">
-						<xp:this.styleClass><![CDATA[#{javascript://getSortLinkStyleClass("閲覧カウント")}]]></xp:this.styleClass>
-						<xp:eventHandler event="onclick" submit="true"
-							refreshMode="partial" refreshId="contentBody">
-							<xp:this.action><![CDATA[#{javascript:sessionScope.CategoryName = "OneUI"}]]></xp:this.action>
-						</xp:eventHandler>
-					</xp:link>
-				</li>
-				<li>
-					<xp:link escape="true" text="デザイン" id="link9">
-						<xp:this.styleClass><![CDATA[#{javascript://getSortLinkStyleClass("閲覧カウント")}]]></xp:this.styleClass>
-						<xp:eventHandler event="onclick" submit="true"
-							refreshMode="partial" refreshId="contentBody">
-							<xp:this.action><![CDATA[#{javascript:sessionScope.CategoryName = "デザイン"}]]></xp:this.action>
-						</xp:eventHandler>
-					</xp:link>
-				</li>
-				<li>
-					<xp:link escape="true" text="Notes" id="link10">
-						<xp:this.styleClass><![CDATA[#{javascript://getSortLinkStyleClass("閲覧カウント")}]]></xp:this.styleClass>
-						<xp:eventHandler event="onclick" submit="true"
-							refreshMode="partial" refreshId="contentBody">
-							<xp:this.action><![CDATA[#{javascript:sessionScope.CategoryName = "Notes"}]]></xp:this.action>
-						</xp:eventHandler>
-					</xp:link>
-				</li>
+return title + all + category}]]></xp:this.value>
+				</xp:text>
 			</ul>
 		</xp:panel>
 
@@ -113,18 +97,22 @@ tmpCategory
 						<xp:link escape="true" text="いいね"
 							id="amountSort">
 							<xp:this.styleClass><![CDATA[#{javascript://getSortLinkStyleClass("いいねカウント")}]]></xp:this.styleClass>
+							<xp:this.style><![CDATA[#{javascript:if (sessionScope.sortColumn=="Count_good"){
+	"color:rgb(255,0,0);font-weight:bold"
+}}]]></xp:this.style>
 							<xp:eventHandler event="onclick"
 								submit="true" refreshMode="partial" refreshId="contentBody">
-								<xp:this.action><![CDATA[#{javascript:sessionScope.sortColumn="$Count_good"}]]></xp:this.action>
+								<xp:this.action><![CDATA[#{javascript:sessionScope.sortColumn="Count_good"}]]></xp:this.action>
 							</xp:eventHandler>
 						</xp:link>
 					</li>
 					<li>
 						<xp:link escape="true" text="回答数" id="link2">
 							<xp:this.styleClass><![CDATA[#{javascript://getSortLinkStyleClass("閲覧カウント")}]]></xp:this.styleClass>
+
 							<xp:eventHandler event="onclick"
 								submit="true" refreshMode="partial" refreshId="contentBody">
-								<xp:this.action><![CDATA[#{javascript:sessionScope.sortColumn="$Count_good"}]]></xp:this.action>
+								<xp:this.action><![CDATA[#{javascript:sessionScope.sortColumn="Count_good"}]]></xp:this.action>
 							</xp:eventHandler>
 						</xp:link>
 					</li>
@@ -132,6 +120,9 @@ tmpCategory
 						<xp:link escape="true" text="閲覧数"
 							id="statusSort">
 							<xp:this.styleClass><![CDATA[#{javascript://getSortLinkStyleClass("閲覧カウント")}]]></xp:this.styleClass>
+							<xp:this.style><![CDATA[#{javascript:if (sessionScope.sortColumn=="Count_view"){
+	"color:rgb(255,0,0);font-weight:bold"
+}}]]></xp:this.style>
 							<xp:eventHandler event="onclick"
 								submit="true" refreshMode="partial" refreshId="contentBody">
 								<xp:this.action><![CDATA[#{javascript:sessionScope.sortColumn="Count_view"}]]></xp:this.action>
@@ -142,6 +133,9 @@ tmpCategory
 						<xp:link escape="true" text="新着順"
 							id="startDateSort">
 							<xp:this.styleClass><![CDATA[#{javascript://getSortLinkStyleClass("質問日")}]]></xp:this.styleClass>
+							<xp:this.style><![CDATA[#{javascript:if (sessionScope.sortColumn=="Created"||sessionScope.sortColumn==null){
+	"color:rgb(255,0,0);font-weight:bold"
+}}]]></xp:this.style>
 							<xp:eventHandler event="onclick"
 								submit="true" refreshMode="partial" refreshId="contentBody">
 								<xp:this.action><![CDATA[#{javascript:sessionScope.sortColumn="Created"}]]></xp:this.action>
@@ -149,19 +143,10 @@ tmpCategory
 						</xp:link>
 					</li>
 				</ul>
+
 			</xp:panel>
-			<xp:text escape="true" id="computedField3"
-				style="color:rgb(0,0,255)">
-				<xp:this.value><![CDATA[#{javascript:tmpSort = sessionScope.sortColumn;
-if (tmpSort == "" || tmpSort == null){
-	"Created"
-}else{
-	tmpSort
-}}]]></xp:this.value>
-			</xp:text>
-			<xp:text escape="true" id="computedField4"
-				value="#{javascript:sessionScope.viewName;}">
-			</xp:text>
+
+
 			<xp:panel id="panel1" styleClass="lotusSort">
 				<ul class="lotusInlinelist">
 					<li class="lotusFirst"
@@ -171,27 +156,36 @@ if (tmpSort == "" || tmpSort == null){
 					<li class="lotusFirst">
 						<xp:link escape="true" text="すべて" id="link3">
 
+							<xp:this.style><![CDATA[#{javascript:if (sessionScope.Status == "All"||sessionScope.Status == null){
+	"color:rgb(255,0,0);font-weight:bold"
+}}]]></xp:this.style>
 							<xp:eventHandler event="onclick"
 								submit="true" refreshMode="partial" refreshId="contentBody">
-								<xp:this.action><![CDATA[#{javascript:sessionScope.viewName = "V_Category_All"}]]></xp:this.action>
+								<xp:this.action><![CDATA[#{javascript:sessionScope.Status = "All"}]]></xp:this.action>
 							</xp:eventHandler>
 						</xp:link>
 					</li>
 					<li>
 						<xp:link escape="true" text="解決済み" id="link4">
 
+							<xp:this.style><![CDATA[#{javascript:if (sessionScope.Status == "Close"){
+	"color:rgb(255,0,0);font-weight:bold"
+}}]]></xp:this.style>
 							<xp:eventHandler event="onclick"
 								submit="true" refreshMode="partial" refreshId="contentBody">
-								<xp:this.action><![CDATA[#{javascript:sessionScope.viewName = "V_Category_Close"}]]></xp:this.action>
+								<xp:this.action><![CDATA[#{javascript:sessionScope.Status = "Close"}]]></xp:this.action>
 							</xp:eventHandler>
 						</xp:link>
 					</li>
 					<li>
 						<xp:link escape="true" text="未解決" id="link5">
 
+							<xp:this.style><![CDATA[#{javascript:if (sessionScope.Status == "Open"){
+	"color:rgb(255,0,0);font-weight:bold"
+}}]]></xp:this.style>
 							<xp:eventHandler event="onclick"
 								submit="true" refreshMode="partial" refreshId="contentBody">
-								<xp:this.action><![CDATA[#{javascript:sessionScope.viewName = "V_Category_Open"}]]></xp:this.action>
+								<xp:this.action><![CDATA[#{javascript:sessionScope.Status = "Open"}]]></xp:this.action>
 							</xp:eventHandler>
 						</xp:link>
 					</li>
@@ -207,7 +201,7 @@ if (tmpSort == "" || tmpSort == null){
 								<xp:text escape="true"
 									style="font-size:14pt;color:rgb(255,255,255)"
 									id="Count_good">
-									<xp:this.value><![CDATA[#{javascript:viewEntry.getColumnValue("$Count_good")}]]></xp:this.value>
+									<xp:this.value><![CDATA[#{javascript:viewEntry.getColumnValue("Count_good")}]]></xp:this.value>
 									<xp:this.converter>
 										<xp:convertNumber type="number"
 											integerOnly="true">
@@ -222,13 +216,24 @@ if (tmpSort == "" || tmpSort == null){
 							<xp:td styleClass="Column_count_A"
 								style="text-align:center">
 								<xp:text escape="true"
-									value="#{viewEntry.Count_view}"
 									style="font-size:14pt;color:rgb(255,255,255)" id="Count_Ans">
 									<xp:this.converter>
 										<xp:convertNumber type="number"
 											integerOnly="true">
 										</xp:convertNumber>
 									</xp:this.converter>
+									<xp:this.value><![CDATA[#{javascript://KEY
+var doc:NotesDocument = viewEntry.getDocument()
+var key =doc.getItemValueString("UniqueID");
+
+//回答文書検索
+var aview:NotesView = database.getView("V_Answer_All");
+var adc:NotesDocumentCollection = aview.getAllDocumentsByKey(key,true);
+
+return adc.getCount();
+
+
+}]]></xp:this.value>
 								</xp:text>
 								<xp:br></xp:br>
 								<xp:label value="回答" id="label5"
@@ -236,7 +241,7 @@ if (tmpSort == "" || tmpSort == null){
 								</xp:label>
 							</xp:td>
 							<xp:td styleClass="Column_count_V"
-								style="text-align:center">
+								style="text-align:center;">
 								<xp:text escape="true" id="Count_view"
 									value="#{viewEntry.Count_view}"
 									style="font-size:14pt;color:rgb(255,255,255)">
@@ -292,8 +297,22 @@ return doc.getItemValueString("Body");
 						<xp:label value="カテゴリ:" id="label3"></xp:label>
 						<xp:text escape="true" id="Category"
 							value="#{viewEntry.Category}">
-						</xp:text><div>
-	<xe:djextListTextBox id="djextListTextBox1" value="#{viewEntry.Tag}"></xe:djextListTextBox></div>
+						</xp:text>
+						<div>
+
+
+							<xe:djextListTextBox id="djextListTextBox1"
+								value="#{viewEntry.Tag}">
+								<xp:eventHandler event="onClick"
+									submit="true" refreshMode="complete">
+									<xe:this.action>
+										<xp:openPage
+											name="/x_Tag.xsp">
+										</xp:openPage>
+									</xe:this.action>
+								</xp:eventHandler>
+							</xe:djextListTextBox>
+						</div>
 					</xp:panel>
 				</xp:column>
 				<xp:column id="column2" styleClass="Column_status">
@@ -319,5 +338,5 @@ return @Name("[ABBREVIATE]",Author)}]]></xc:this.userName>
 				style="text-align:left">
 			</xp:pager>
 		</xp:panel>
-	</xp:panel>
+		</xp:panel>
 </xp:view>

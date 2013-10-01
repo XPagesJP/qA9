@@ -1,95 +1,126 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xe="http://www.ibm.com/xsp/coreex">
-    <xp:link escape="true" text="　・アカウント登録"
-								id="link2" value="/x_Account.xsp">
-	<xp:this.rendered><![CDATA[#{javascript:var userName:NotesName = session.createName(@UserName());
-if (userName.getCommon()=="Anonymous")
-{
-       return true;
-}
-else
-{
-       return false;
-}}]]></xp:this.rendered>
-	</xp:link>
-	<xp:link escape="true" text="　・パスワード変更"
-								id="link3" value="/x_passwordChange.xsp">
-		<xp:this.rendered><![CDATA[#{javascript:var userName:NotesName = session.createName(@UserName());
-if (userName.getCommon()=="Anonymous")
-{
-       return false;
-}
-else
-{
-       return true;
-}}]]></xp:this.rendered>
-	</xp:link>
-	<xp:link escape="true" text="　・パスワード再発行"
-								id="link4" value="/x_passwordReissue.xsp">
-								<xp:this.rendered><![CDATA[#{javascript:var userName:NotesName = session.createName(@UserName());
-if (userName.getCommon()=="Anonymous")
-{
-       return true;
-}
-else
-{
-       return false;
-}}]]></xp:this.rendered>
-	</xp:link>
-	<xp:link escape="true" text="　・プロフィール変更" id="link1"
-		value="/x_ProfileEdit.xsp">
-		<xp:this.rendered><![CDATA[#{javascript:var userName:NotesName = session.createName(@UserName());
-if (userName.getCommon()=="Anonymous")
-{
-       return false;
-}
-else
-{
-       return true;
-}}]]></xp:this.rendered>
-	</xp:link>
+ 
 	<xe:applicationLayout id="applicationLayout1">
-        <xp:callback facetName="facetMiddle" id="facetMiddle"></xp:callback>
-        <xe:this.facets>
-            <xp:panel xp:key="MastFooter" styleClass="lotusRight">
-                ver 0.0.0
-            </xp:panel>
-            <xp:callback facetName="facetRight" id="facetRight"
-                xp:key="RightColumn">
-            </xp:callback>
-            <xp:callback facetName="facetLeft" id="facetLeft"
-                xp:key="LeftColumn">
-            </xp:callback>
-        </xe:this.facets>
+		<xp:callback facetName="facetMiddle" id="facetMiddle"></xp:callback>
+		<xe:this.facets>
+			
+			<xp:panel xp:key="MastFooter" styleClass="lotusRight">
+				ver 0.0.0
+			</xp:panel>
+			<xp:callback facetName="facetRight" id="facetRight"
+				xp:key="RightColumn">
+			</xp:callback>
+			<xp:callback facetName="facetLeft" id="facetLeft"
+				xp:key="LeftColumn">
+			</xp:callback>
+		</xe:this.facets>
 
-        <xe:this.configuration>
-            <xe:oneuiApplication footer="false"
-                legalText="九州地区ノーツパートナー会 Copyright © 2013 Kyushu Notes Partner Community. All Rights Reserved."
-                productLogo="/logo.png" productLogoHeight="45px"
-                productLogoWidth="360px"
-                placeBarName="#{javascript:compositeData.placeBarName;}">
-                <xe:this.footerLinks></xe:this.footerLinks>
-                <xe:this.titleBarTabs>
-                    <xe:basicLeafNode label="トップ" href="top.xsp"></xe:basicLeafNode>
-                    <xe:basicLeafNode label="お気に入り">
+		<xe:this.configuration>
+			<xe:oneuiApplication footer="false"
+				legalText="九州地区ノーツパートナー会 Copyright © 2013 Kyushu Notes Partner Community. All Rights Reserved."
+				productLogo="/logo.png" productLogoHeight="45px"
+				productLogoWidth="360px"
+				placeBarName="#{javascript:compositeData.placeBarName;}">
+				<xe:this.footerLinks></xe:this.footerLinks>
+				<xe:this.titleBarTabs>
+					<xe:basicLeafNode label="トップ" href="top.xsp"></xe:basicLeafNode>
+					<xe:basicLeafNode label="お気に入り"
+						href="x_Favorite.xsp">
+					</xe:basicLeafNode>
+					<xe:basicLeafNode label="履歴" href="x_History.xsp"></xe:basicLeafNode>
+					<xe:basicLeafNode label="検索" href="x_Search.xsp"></xe:basicLeafNode>
+					<xe:basicLeafNode label="ユーザー"
+						href="x_Page_AlluserList.xsp">
+					</xe:basicLeafNode>
+					<xe:basicLeafNode label="ヘルプ" href="x_Help.xsp"></xe:basicLeafNode>
+				</xe:this.titleBarTabs>
 
-                    </xe:basicLeafNode>
-                    <xe:basicLeafNode label="履歴"></xe:basicLeafNode>
-                    <xe:basicLeafNode label="検索"></xe:basicLeafNode>
-                    <xe:basicLeafNode label="ユーザー"
-                    	href="x_Page_AlluserList.xsp">
-                    </xe:basicLeafNode>
-                    <xe:basicLeafNode label="ヘルプ"></xe:basicLeafNode>
-                </xe:this.titleBarTabs>
+
+				<xe:this.bannerUtilityLinks>
+					<xe:userTreeNode userField="commonName">
+					</xe:userTreeNode>
+					<xe:loginTreeNode label="ログイン"></xe:loginTreeNode>
 
 
-                <xe:this.bannerUtilityLinks>
-                    <xe:userTreeNode userField="commonName">
-                    </xe:userTreeNode>
-                    <xe:loginTreeNode label="ログイン"></xe:loginTreeNode>
 
-                </xe:this.bannerUtilityLinks>
-            </xe:oneuiApplication>
-        </xe:this.configuration>
-    </xe:applicationLayout>
+					<xe:basicContainerNode label="編集">
+						<xe:this.children>
+
+							<xe:pageTreeNode label="プロフィール変更"
+								page="/x_ProfileEdit.xsp">
+								<xe:this.rendered><![CDATA[#{javascript:var userName:NotesName = session.createName(@UserName());
+if (userName.getCommon()=="Anonymous")
+{
+       return false;
+}
+else
+{
+       return true;
+}}]]></xe:this.rendered>
+							</xe:pageTreeNode>
+							<xe:pageTreeNode label="パスワード変更"
+								page="/x_passwordReissue.xsp">
+								<xe:this.rendered><![CDATA[#{javascript:var userName:NotesName = session.createName(@UserName());
+if (userName.getCommon()=="Anonymous")
+{
+       return false;
+}
+else
+{
+       return true;
+}}]]></xe:this.rendered>
+							</xe:pageTreeNode>
+							<xe:pageTreeNode label="パスワード再発行"
+								page="/x_passwordReissue.xsp">
+								<xe:this.rendered><![CDATA[#{javascript:var userName:NotesName = session.createName(@UserName());
+if (userName.getCommon()=="Anonymous")
+{
+       return true;
+}
+else
+{
+       return false;
+}}]]></xe:this.rendered>
+							</xe:pageTreeNode>
+							<xe:pageTreeNode label="アカウント登録"
+								page="/x_Account.xsp">
+								<xe:this.rendered><![CDATA[#{javascript:var userName:NotesName = session.createName(@UserName());
+if (userName.getCommon()=="Anonymous")
+{
+       return true;
+}
+else
+{
+       return false;
+}
+}]]></xe:this.rendered>
+							</xe:pageTreeNode>
+						</xe:this.children>
+					</xe:basicContainerNode>
+
+
+
+					
+				</xe:this.bannerUtilityLinks>
+				<xe:this.bannerApplicationLinks>
+
+				</xe:this.bannerApplicationLinks>
+				<xe:this.placeBarActions>
+					<xe:basicLeafNode label="新しい質問を投稿する"
+						style="font-size:12pt" href="x_QuestionCompose.xsp">
+						<xe:this.rendered><![CDATA[#{javascript:var userName:NotesName = session.createName(@UserName());
+if (userName.getCommon()=="Anonymous")
+{
+       return false;
+}
+else
+{
+       return true;
+}}]]></xe:this.rendered>
+					</xe:basicLeafNode>
+				</xe:this.placeBarActions>
+			</xe:oneuiApplication>
+		</xe:this.configuration>
+	</xe:applicationLayout>
 </xp:view>

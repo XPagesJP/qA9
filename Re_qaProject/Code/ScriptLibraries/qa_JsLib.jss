@@ -14,6 +14,7 @@ qa_JsLib.SetGoodCountUD = function(key:int ,targetDoc:NotesXspDocument){
 	//var targetdoc = docQues.getDocument();
 	//var su = getComponent("sessionUser").getValue();
 	var su = Common.getCurrentUser().name;
+	
 	var user_good = targetdoc.getItemValue("user_good");
 
 	if (key == 1) {
@@ -86,7 +87,9 @@ qa_JsLib.SetViewCountUD = function(targetDoc:NotesXspDocument){
 	Key.add(targetdoc.getParentDatabase().getReplicaID());
 	Key.add(targetdoc.getUniversalID());
 	Key.add(@Today().toDateString());
-	Key.add(getComponent("sessionUser").getValue());
+	var su = Common.getCurrentUser().name;
+	Key.add(su);
+	//Key.add(getComponent("sessionUser").getValue());
 	//ログ出力
 	qa_JsLib.ComposeAccess_log(targetDoc,Key ,'0','')
 	
@@ -331,4 +334,76 @@ qa_JsLib.InputChkAccount = function(accDoc, type){
 	}else{
 		return true;
 	}	
+}
+
+
+
+//////////////////////////////////////////
+//プロフィールへの更新
+//引数
+//targetDoc　対象質問・回答文書
+//key　1:質問履歴、2：回答履歴、3：お気に入り
+//戻り値
+//なし
+//////////////////////////////////////////
+
+qa_JsLib.SetPersonHistory = function(targetDoc:NotesXspDocument,key){
+	//登録チェック
+	//環境設定文書取得
+	var db:NotesDatabase = session.getCurrentDatabase();
+	var envvw:NotesView = db.getView("V_Setting");
+	var envdoc:NotesDocument = envvw.getFirstDocument();
+	if (envdoc == null){
+		return "";
+	}		
+			
+	//プロフィールDB取得
+	var ProServer = envdoc.getItemValueString("Profile_server");
+	var ProPath = envdoc.getItemValueString("Profile_path");
+	var Prodb:NotesDatabase = session.getDatabase(ProServer,ProPath);
+	if (Prodb == null) {
+		return "";
+	}
+	//自分のプロフィール取得
+	var user = @Name("[ABBREVIATE]", @UserName());
+	var Provw:NotesView = Prodb.getView("V_Profile");			
+	var Prodoc:NotesDocument = Provw.getDocumentByKey(user, true);
+	if(Prodoc == null){
+		return "";
+	}else{
+		
+		var UniqueID = "";
+		var SetField = "";
+		if(key == 1){
+			//1:質問履歴
+			//UniqueID = targetdoc.getItemValueString("UniqueID");
+			UniqueID = targetdoc.getUniversalID();
+			SetField ="History_Qs";
+		}else if(key == 2){
+			//2：回答履歴(親のキー)
+			UniqueID = targetdoc.getItemValueString("ParentDocId");
+			SetField ="History_Ans";
+		}else if(key ==3){
+			//3：お気に入り
+			UniqueID = targetdoc.getItemValueString("UniqueID");
+			SetField ="Favorite";
+		}
+		var Nowitem =  Prodoc.getItemValue(SetField);
+		if (Nowitem.length == 0) {
+			Prodoc.replaceItemValue(SetField,UniqueID);
+		} else {
+			 var result = "";
+			 for (var i=0; i<Nowitem.length; i++) {
+			 if(Nowitem[i]==UniqueID){
+		 		//既に登録済みの場合、処理させない。
+			 }else{
+			 	result  = result + Nowitem[i] + "\n";
+			 }
+		 	}
+		 	result  =UniqueID + "\n" + result ;
+		
+		 	Prodoc.replaceItemValue(SetField,@Explode(result,"\n"));
+		}
+		Prodoc.save();
+	}
 }

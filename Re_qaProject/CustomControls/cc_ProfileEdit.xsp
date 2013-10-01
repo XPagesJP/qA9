@@ -68,33 +68,35 @@ cgi = null;}]]></xp:this.querySaveDocument>
 	docAcc.setValue("UserID", @Name("[ABBREVIATE]", @UserName()))
 }}]]></xp:this.afterPageLoad>
 	<xp:panel style="margin-left:5.0%;margin-right:5.0%" id="panelBody">
-		<xp:panel id="panelRegist" style="height:250.0px">
-			<xp:panel id="panel1" style="height:350px">
-				<xp:this.rendered><![CDATA[#{javascript:if (getComponent('FlagDisplay').value != '1'){
-	return true;
-}else{
-	return false;
-}}]]></xp:this.rendered>
+		<xp:panel id="panelRegist">
+			<xp:panel id="panel1">
 				<xp:br></xp:br>
 				<xp:span style="font-weight:bold;font-size:14pt">
-					プロフィール変更　　&#160;<xp:text escape="true" id="computedField1" value="#{docAcc.LastName}" style="color:rgb(0,128,255)">
-							</xp:text></xp:span>
+					プロフィール　　&#160;
+					<xp:text escape="true" id="computedField1"
+						value="#{docAcc.LastName}" style="color:rgb(0,128,255)">
+					</xp:text>
+				</xp:span>
 				<xp:span style="font-weight:bold;font-size:14pt"></xp:span>
 				&#160;&#160;&#160;
 				<xp:br></xp:br>
-				<xp:span style="font-size:11pt"></xp:span>
-				<xp:span style="font-size:11pt">
-				</xp:span>
 				<xp:br></xp:br>
 				&#160;
-				<xp:span style="font-size:11pt"></xp:span><xp:table
-					style="width:800px;font-size:11pt;margin-left:20.0px"><xp:tr style="font-size:11pt"><xp:td
+				<xp:span style="font-size:11pt"></xp:span>
+				<xp:table
+					style="width:800px;font-size:11pt;margin-left:20.0px">
+					<xp:tr style="font-size:11pt">
+						<xp:td
 							style="font-size:11pt;width:120px;height:30px">
-								&#160;&#160;コメント：</xp:td><xp:td>
+							&#160;&#160;コメント：
+						</xp:td>
+						<xp:td>
 							&#160;
-							
-						<xp:inputTextarea id="inputTextarea1" value="#{docAcc.Comment}" style="width:400px;height:50px">
-							</xp:inputTextarea></xp:td>
+
+							<xp:inputTextarea id="inputTextarea1"
+								value="#{docAcc.Comment}" style="width:400px;height:50px">
+							</xp:inputTextarea>
+						</xp:td>
 						<xp:td rowspan="2" style="width:150px">
 							<xp:image id="photo" height="130px"
 								width="130px" alt="" title="">
@@ -111,7 +113,10 @@ cgi = null;}]]></xp:this.querySaveDocument>
 				return(imageName);}]]>
 								</xp:this.url>
 							</xp:image>
-							<xp:br></xp:br>&#160;&#160;<xp:br></xp:br>&#160;
+							<xp:br></xp:br>
+							&#160;&#160;
+							<xp:br></xp:br>
+							&#160;
 							<xp:fileUpload id="profileImage"
 								value="#{docAcc.Photo}" styleClass="webAuthorUpload"
 								role="upload a file with document" title="file upload control"
@@ -121,55 +126,119 @@ cgi = null;}]]></xp:this.querySaveDocument>
 					</xp:tr>
 					<xp:tr style="font-size:11pt">
 						<xp:td style="font-size:11pt;height:30px">
-							&#160;&#160;</xp:td>
+							&#160;&#160;
+						</xp:td>
 						<xp:td>
 							&#160;
-
-							
 						</xp:td>
-
 					</xp:tr>
 					<xp:tr style="font-size:11pt">
 						<xp:td style="font-size:11pt;height:30px">
 							&#160;
-
 						</xp:td>
 						<xp:td>
 							&#160;
-
 						</xp:td>
 						<xp:td></xp:td>
 					</xp:tr>
 				</xp:table>
 				<xp:br></xp:br>
-				<xp:br></xp:br>
-				<xp:br></xp:br>
-			</xp:panel>
-			<xp:panel id="panelMessage" style="height:350.0px">
-			<xp:this.rendered><![CDATA[#{javascript:if (getComponent('FlagDisplay').value == '1'){
-	return true;
+				<xp:table
+					style="width:800px;font-size:11pt;margin-left:20.0px">
+					<xp:tr style="font-size:11pt">
+						<xp:td
+							style="font-size:11pt;width:120px;height:30px; border-bottom-width: 1px;border-bottom-style:solid;border-bottom-color: #EEE;">
+							&#160;&#160;質問履歴：
+						</xp:td>
+						<xp:td
+							style="border-bottom-width: 1px;border-bottom-style:solid;border-bottom-color: #EEE;">
+							<xp:repeat id="repeat1" rows="30"
+								var="repeatQs">
+								<xp:this.value><![CDATA[#{javascript:return docAcc.getItemValue("History_Qs");}]]></xp:this.value>
+								<xp:text escape="false" id="Title">
+									<xp:this.value><![CDATA[#{javascript:var vw:NotesView = database.getView("V_QA_ALL");
+var doc:NotesDocument = vw.getDocumentByKey(repeatQs, true);
+if (doc != null){
+	return "<a href=\"x_anspage.xsp?docId=" 
++ repeatQs + "\">" 
++ "・" + doc.getItemValueString("Title") + "</a>"
 }else{
-	return false;
-}}]]></xp:this.rendered>
-				<xp:br></xp:br>
-				<xp:br></xp:br>
-				<xp:span style="font-size:11pt">
-					パスワードの変更を行います。しばらくお待ちください。
-				</xp:span>
-				<xp:br></xp:br>
-				<xp:span style="font-size:11pt">
-					パスワードの変更手続きが完了すると、変更完了メールを送付致します。
-				</xp:span>
-				<xp:span></xp:span>
-				<xp:br></xp:br>
+	return "---"
+}
+
+}]]></xp:this.value>
+								</xp:text>
+								<xp:br></xp:br>
+							</xp:repeat>
+							
+						</xp:td>
+					</xp:tr>
+					<xp:tr style="font-size:11pt">
+						<xp:td
+							style="font-size:11pt;height:30px; border-bottom-width: 1px;border-bottom-style:solid;border-bottom-color: #EEE;">
+							&#160;&#160;回答履歴：
+						</xp:td>
+						<xp:td
+							style="border-bottom-width: 1px;border-bottom-style:solid;border-bottom-color: #EEE;">
+							<xp:repeat id="repeat2" rows="30"
+								var="repeatAns">
+								<xp:this.value><![CDATA[#{javascript:return docAcc.getItemValue("History_Ans");}]]></xp:this.value>
+								<xp:text escape="false" id="Title2">
+									<xp:this.value><![CDATA[#{javascript:var vw:NotesView = database.getView("V_QA_ALL");
+var doc:NotesDocument = vw.getDocumentByKey(repeatAns, true);
+if (doc != null){
+	return "<a href=\"x_anspage.xsp?docId=" 
++ repeatAns + "\">" 
++ "・" + doc.getItemValueString("Title") + "</a>"
+}else{
+	return "---"
+}
+
+}]]></xp:this.value>
+								</xp:text>
+								<xp:br></xp:br>
+							</xp:repeat>
+						</xp:td>
+					</xp:tr>
+					<xp:tr style="font-size:11pt">
+						<xp:td
+							style="font-size:11pt;height:30px; border-bottom-width: 1px;border-bottom-style:solid;border-bottom-color: #EEE;">
+							&#160;&#160;お気に入り：
+						</xp:td>
+						<xp:td
+							style="border-bottom-width: 1px;border-bottom-style:solid;border-bottom-color: #EEE;">
+							<xp:repeat id="repeat3" rows="30"
+								var="repeatFavorite">
+								<xp:this.value><![CDATA[#{javascript:return docAcc.getItemValue("Favorite");}]]></xp:this.value>
+								<xp:text escape="false" id="Title3">
+									<xp:this.value><![CDATA[#{javascript:var vw:NotesView = database.getView("V_QA_ALL");
+var doc:NotesDocument = vw.getDocumentByKey(repeatFavorite, true);
+if (doc != null){
+	return "<a href=\"x_anspage.xsp?docId=" 
++ repeatFavorite + "\">" 
++ "・" + doc.getItemValueString("Title") + "</a>"
+}else{
+	return "---"
+}
+
+}]]></xp:this.value>
+								</xp:text>
+								<xp:br></xp:br>
+							</xp:repeat>
+						</xp:td>
+					</xp:tr>
+				</xp:table>
+				&#160;&#160;<xp:br></xp:br>
 			</xp:panel>
 			<xp:panel style="text-align:center" id="panelButton">
 				<xp:button id="btnComplete" style="padding:5px; width:80px" value="編集">
-					<xp:this.rendered><![CDATA[#{javascript:if(docAcc.isEditable()){
+					<xp:this.rendered><![CDATA[#{javascript:var UserID = docAcc.getItemValue("UserID");
+if((@Name("[ABBREVIATE]", @UserName()) == @Name("[ABBREVIATE]", UserID)) & docAcc.isEditable()){
 	return false;
 }else{
 	return true;
-}}]]></xp:this.rendered>
+}
+}]]></xp:this.rendered>
 				<xp:eventHandler event="onclick" submit="true" refreshMode="complete">
 					<xp:this.action>
 						<xp:changeDocumentMode mode="edit"></xp:changeDocumentMode>

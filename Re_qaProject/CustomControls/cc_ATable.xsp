@@ -53,6 +53,14 @@ if(parentdoc.getItemValueString("status")=="2"){
 }}]]></xp:this.value>
                 <xp:this.rendered><![CDATA[#{javascript:var targetdoc = docAns.getDocument();
 var parentdoc = docQues.getDocument();
+
+//質問者でなければ、非表示
+if (Common.getCurrentUser().name!=parentdoc.getItemValueString("Author"))
+{
+       return false;
+}
+
+
 //コメントの場合、非表示
 if(targetdoc.getItemValueString("AorC")=="C") return false;
 

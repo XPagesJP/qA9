@@ -335,9 +335,16 @@ return vPoint;}]]></xp:this.value>
 
 								</div>
 								<xp:div style="text-align:center">
-									<xp:link escape="true" id="link2"
-										text="詳細">
-									</xp:link>
+								<xp:text escape="false" id="ProfileLink">
+										<xp:this.value><![CDATA[#{javascript:var profileDoc =PFLDoc.getDocument();
+
+var userNmae =profileDoc.getItemValueString("UserID");
+
+"<a href=\"x_ProfileEdit.xsp?UserId=" 
++ @Name("[ABBREVIATE]",userNmae) + "\">" 
++ "詳細" + "</a>"
+}]]></xp:this.value>
+									</xp:text>
 								</xp:div>
 							</xp:td>
 

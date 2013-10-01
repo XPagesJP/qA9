@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core"
+	xmlns:xe="http://www.ibm.com/xsp/coreex"
+	xmlns:xc="http://www.ibm.com/xsp/custom">
+	<xp:this.data>
+		<xp:dominoView var="view1" viewName="V_Tag"></xp:dominoView>
+	</xp:this.data>
+
+
+	<xp:this.resources>
+		<xp:styleSheet href="/qa.css"></xp:styleSheet>
+	</xp:this.resources>
+
+
+
+	<xp:panel>
+		<xe:tagCloud id="tagCloud1" sliderVisible="true">
+			<xe:this.cloudData>
+				<xe:dominoViewCloudData sortTags="alphabet"
+					viewName="V_Tag" linkTargetPage="/x_Tag.xsp"
+					linkRequestParam="CategoryFilter">
+				</xe:dominoViewCloudData>
+			</xe:this.cloudData>
+		</xe:tagCloud>
+	</xp:panel>
+	<br />
+	<xp:dataTable id="opportunitiesDataTable" rows="10" var="viewEntry"
+		value="#{view1}" styleClass="lotusTable">
+		<xp:this.data>
+			<xp:dominoView var="view1" viewName="V_Tag">
+				<xp:this.categoryFilter><![CDATA[#{javascript:context.getUrlParameter("CategoryFilter")}]]></xp:this.categoryFilter>
+			</xp:dominoView>
+		</xp:this.data>
+		<xp:column id="column3">
+			<xp:table>
+				<xp:tr>
+					<xp:td styleClass="Column_count_G"
+						style="text-align:center">
+						<xp:text escape="true"
+							style="font-size:14pt;color:rgb(255,255,255)" id="Count_good">
+							<xp:this.value><![CDATA[#{javascript:viewEntry.getColumnValue("Count_good")}]]></xp:this.value>
+							<xp:this.converter>
+								<xp:convertNumber type="number"
+									integerOnly="true">
+								</xp:convertNumber>
+							</xp:this.converter>
+						</xp:text>
+						<xp:br></xp:br>
+						<xp:label value="いいね" id="label4"
+							style="color:rgb(255,255,255)">
+						</xp:label>
+					</xp:td>
+					<xp:td styleClass="Column_count_A"
+						style="text-align:center">
+						<xp:text escape="true"
+							style="font-size:14pt;color:rgb(255,255,255)" id="Count_Ans">
+							<xp:this.converter>
+								<xp:convertNumber type="number"
+									integerOnly="true">
+								</xp:convertNumber>
+							</xp:this.converter>
+							<xp:this.value><![CDATA[#{javascript://KEY
+var doc:NotesDocument = viewEntry.getDocument()
+var key =doc.getItemValueString("UniqueID");
+
+//回答文書検索
+var aview:NotesView = database.getView("V_Answer_All");
+var adc:NotesDocumentCollection = aview.getAllDocumentsByKey(key,true);
+
+return adc.getCount();
+
+
+}]]></xp:this.value>
+						</xp:text>
+						<xp:br></xp:br>
+						<xp:label value="回答" id="label5"
+							style="color:rgb(255,255,255)">
+						</xp:label>
+					</xp:td>
+					<xp:td styleClass="Column_count_V"
+						style="text-align:center;">
+						<xp:text escape="true" id="Count_view"
+							value="#{viewEntry.Count_view}"
+							style="font-size:14pt;color:rgb(255,255,255)">
+							<xp:this.converter>
+								<xp:convertNumber type="number"
+									integerOnly="true">
+								</xp:convertNumber>
+							</xp:this.converter>
+						</xp:text>
+						<xp:br></xp:br>
+						<xp:label value="閲覧" id="label6"
+							style="color:rgb(255,255,255)">
+						</xp:label>
+					</xp:td>
+
+				</xp:tr>
+			</xp:table>
+		</xp:column>
+		<xp:column id="column1" styleClass="Column_Main">
+			<xp:text escape="false" id="Title"
+				style="margin-left:0.0px;margin-right:0.0px;margin-top:3px;margin-bottom:3px"
+				tagName="h4">
+				<xp:this.value><![CDATA[#{javascript:"<a href=\"x_anspage.xsp?docId=" 
++ viewEntry.getDocument().getUniversalID() + "\">" 
++ viewEntry.getColumnValue("件名") + "</a>"
+
+
+}]]></xp:this.value>
+			</xp:text>
+			<xp:panel id="detail"
+				style="margin-top:5px;margin-bottom:5px;">
+				<xp:text escape="false" id="details">
+					<xp:this.value><![CDATA[#{javascript:var doc:NotesDocument = viewEntry.getDocument()
+return doc.getItemValueString("Body");
+}]]></xp:this.value>
+				</xp:text>
+			</xp:panel>
+			<xp:panel id="meta" styleClass="lotusMeta">
+				<xp:label id="label1" value="質問日時:"></xp:label>
+				<xp:text escape="true" id="Created"
+					value="#{viewEntry.Created}">
+					<xp:this.converter>
+						<xp:convertDateTime type="both"></xp:convertDateTime>
+					</xp:this.converter>
+				</xp:text>
+				<xp:text escape="true" id="divider1"
+					styleClass="lotusDivider">
+					<xp:this.value><![CDATA[#{javascript:"  |  "}]]></xp:this.value>
+				</xp:text>
+
+
+
+				<xp:label value="カテゴリ:" id="label3"></xp:label>
+				<xp:text escape="true" id="Category"
+					value="#{viewEntry.Category}">
+				</xp:text>
+				<div>
+
+
+					<xe:djextListTextBox id="djextListTextBox1"
+						value="#{viewEntry.Tag}">
+						<xp:eventHandler event="onClick" submit="true"
+							refreshMode="complete">
+							<xe:this.action>
+								<xp:openPage name="/x_Tag.xsp">
+								</xp:openPage>
+							</xe:this.action>
+						</xp:eventHandler>
+					</xe:djextListTextBox>
+				</div>
+			</xp:panel>
+		</xp:column>
+		<xp:column id="column2" styleClass="Column_status">
+			<xp:text escape="true" id="computedField1">
+				<xp:this.value><![CDATA[#{javascript:if (viewEntry.getColumnValue("Status")=="1"){
+  "質問中"
+}else if(viewEntry.getColumnValue("Status")=="2"){
+  "解決済み"
+}else{
+  ""
+}}]]></xp:this.value>
+			</xp:text>
+		</xp:column>
+		<xp:column id="column4">
+
+			<xc:cc_UserProfile>
+				<xc:this.userName><![CDATA[#{javascript:var Author =viewEntry.getColumnValue("質問者名");;
+return @Name("[ABBREVIATE]",Author)}]]></xc:this.userName>
+			</xc:cc_UserProfile>
+		</xp:column>
+	</xp:dataTable>
+
+</xp:view>
