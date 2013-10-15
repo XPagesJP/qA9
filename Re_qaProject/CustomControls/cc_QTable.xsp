@@ -51,8 +51,16 @@ if(targetdoc.getItemValueString("Status")=="2"){
             <span>タグ:</span>
             
             <span class="separator">
-            	<xe:djextListTextBox id="Ques_Tag" value="#{docQues.Tag}"></xe:djextListTextBox>
-            	&#160;|&#160;
+            	
+            	&#160;
+            	<xc:cc_Taglist id="Ques_Tag">
+            		<xc:this.TagField><![CDATA[#{javascript:
+var Tag =docQues.getItemValue("Tag");
+
+return @Implode(Tag,",")
+}]]></xc:this.TagField>
+            	</xc:cc_Taglist>
+            	|&#160;
             </span>
             <span>質問日時:</span>
             <xp:text styleClass="value" escape="true"

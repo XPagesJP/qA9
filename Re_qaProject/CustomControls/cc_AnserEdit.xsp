@@ -83,9 +83,6 @@ return "回答|A"
 
 
 
-
-
-
             			<xp:executeScript>
             				<xp:this.script><![CDATA[#{javascript:docAnsRes.replaceItemValue("Author",Common.getCurrentUser().name);
 docAnsRes.replaceItemValue("Created",@Now());
@@ -98,8 +95,19 @@ docAnsRes.save();
 
 //プロフィールへの履歴回答履歴の追加
 var targetdoc = docAnsRes.getDocument();
-
 qa_JsLib.SetPersonHistory(targetdoc,2);
+
+print("aaaa"+docAnsRes.getItemValueString("res_AorC"));
+//質問数の回答カウント数アップ
+if(docAnsRes.getItemValueString("AorC")=="A"){
+		if(docQues.getItemValueString("Count_Answer")==""){
+			var ca_count = 1;
+		}else{
+			var ca_count = 1 + parseInt(docQues.getItemValueString("Count_Answer"));
+		}
+		docQues.replaceItemValue("Count_Answer",ca_count.toString());
+docQues.save();
+}
 
 //context.reloadPage();
 }]]></xp:this.script>

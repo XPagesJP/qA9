@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='utf-8'?>
 <note class='view' xmlns='http://www.lotus.com/dxl' version='9.0' replicaid='49257BB30040F45C'>
-<noteinfo noteid='1182' unid='D2C7FC526F5BCA2A49257C000043E8B6' sequence='1'>
-<created><datetime>20131010T212144,86+09</datetime></created>
-<modified><datetime>20131010T212147,05+09</datetime></modified>
-<revised><datetime>20131010T212147,04+09</datetime></revised>
-<lastaccessed><datetime>20131010T212147,05+09</datetime></lastaccessed>
-<addedtofile><datetime>20131010T212147,05+09</datetime></addedtofile></noteinfo>
+<noteinfo noteid='11d2' unid='664B6560A020E5D549257C000043E8CA' sequence='1'>
+<created><datetime>20131010T212145,06+09</datetime></created>
+<modified><datetime>20131010T212153,61+09</datetime></modified>
+<revised><datetime>20131010T212153,60+09</datetime></revised>
+<lastaccessed><datetime>20131010T212153,61+09</datetime></lastaccessed>
+<addedtofile><datetime>20131010T212153,61+09</datetime></addedtofile></noteinfo>
 <updatedby><name>CN=Administrator/O=SISE2</name><name>CN=System Administrator/O=rskkgdev852</name></updatedby>
 <wassignedby><name>CN=Administrator/O=SISE2</name></wassignedby>
 <item name='$FormatNote' summary='true' sign='true'>
@@ -13,7 +13,6 @@
 AQD2tdcUWCG3Z9J8QAAEeyVJ
 </rawitemdata></item>
 <item name='$FormulaClass' sign='true'><text>1</text></item>
-<item name='$TITLE' sign='true'><text>(33.新着順_解決済み)|V_Date_Close</text></item>
 <item name='$Index' sign='true'><text/></item>
 <item name='$Formula' summary='true' sign='true'><formula compiled='true'>
 VgECACAAAgAkNQIABgAAAAAAAAAFAAYAQXV0aG9ytAIDAAIAIgAKACR1c2VyX2dvb2QFAAkAdXNl
@@ -21,21 +20,20 @@ cl9nb29kAGoBAwAKAAQAAgAmAAsAJENvdW50X3ZpZXcABQAKAENvdW50X3ZpZXf7AVQBAwAKAAQA
 AgAqAA0AJENvdW50X0Fuc3dlcgAFAAwAQ291bnRfQW5zd2Vy+wFUAQMABQBsAGgACwAIAAcABQAC
 AAoACwANAAYAAwAJAAQAQ2F0ZWdvcnlDcmVhdGVkVGl0bGUkNSR1c2VyX2dvb2QkQ291bnRfdmll
 dyRDb3VudF9BbnN3ZXJTdGF0dXNUYWckQ29uZmxpY3QkUkVGBAAEAAAANAAFAAQARm9ybQEACwBG
-TV9RdWVzdGlvbgAKAgUABgBTdGF0dXMBAAEAMgAKAhwCAwAHABYAEAAJTDFTMlMzUzRTNVM2UzdT
+TV9RdWVzdGlvbgAKAgUABgBTdGF0dXMBAAEAMQAKAhwCAwAHABYAEAAJTDFTMlMzUzRTNVM2UzdT
 </formula></item>
 <item name='$Collation' summary='true'>
 <rawitemdata type='2'>
-FAABAABEgWYAAAAHAENyZWF0ZWQ=
+KQACAABEgGYAAAAIAIFmAAgADQBDYXRlZ29yeSRDb3VudF9BbnN3ZXI=
 </rawitemdata></item>
 <item name='$Comment' sign='true'><text/></item>
 <item name='$Flags'><text>Y</text></item>
-<item name='$DesignerVersion'><text>8.5.3</text></item>
 <item name='$ViewFormat' sign='true'>
 <rawitemdata type='5'>
-AQAJAAsACAAAAFZDAAAIAAwAAAAAADoAAQAACgAAAAAAAAAAAAICAAAAVkMFAAcADAAAAAAAcAAB
+AQAJAAsACAAAAFZDAQAIAAwAAAAAAEYAAQAACgAAAAAAAAAAAAICAAAAVkMAAAcADAAAAAAAcAAB
 AAAKAAAAAAAAAAAAAgIAAABWQwAABQAGAAAAAABzAAEAAAoAAAAAAAAAAAACAgAAAFZDAAACAAwA
 LgAAAIkAAQAACgAAAAAAAAAAAAICAAAAVkMAIAoAFQAwAAAAQwABAAAKAAAAAAAAAAAAAgIAAABW
-QwAgCwASADgAAAA8AAEAAAoAAAAAAAAAAAACAgAAAFZDAAANABUAPAAAAEgAAQAACgAAAAAAAAAA
+QwAgCwASADgAAAA8AAEAAAoAAAAAAAAAAAACAgAAAFZDBQANABUAPAAAAEgAAQAACgAAAAAAAAAA
 AAICAAAAVkMAAAYADwAAAAAAPAABAAAKAAAAAAAAAAAAAgIAAABWQwAAAwADAAAAAABQAAEAAAoA
 AAAAAAAAAAACAgAAAENhdGVnb3J5EINKEINlEINTEIOKQ3JlYXRlZBCOvxCW4hCT+hCOnlRpdGxl
 EIyPEJa8JDUQjr8QluIQjtIQlrwuAAIAIAACACQ1AgAGAAAAAAAAAAUABgBBdXRob3K0AgMABwAM
@@ -54,5 +52,7 @@ AAAAAAAEAAAAAAD//wAAAAAAAAAAAAAAAAAAV0MBAAAJAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAA
 //8AAAAAAAAAAAAAAAAAAFdDAQAACQAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAP//AAAAAAAAAAAA
 AAAAAABCAAAAAAABAP///wAFAP///wABAAAAAAAAAAAAAAAAAAEA////AAEA////AAAAAQAAAAAA
 AQAAAAAAAQAAAAAAAAAIAAAAAAABAA==
-</rawitemdata></item></note>
+</rawitemdata></item>
+<item name='$TITLE' sign='true'><text>(21.回答数_未解決_カテゴリ有)|V_AnswerCount_Open_Cate</text></item>
+<item name='$DesignerVersion' sign='true'><text>8.5.3</text></item></note>
 

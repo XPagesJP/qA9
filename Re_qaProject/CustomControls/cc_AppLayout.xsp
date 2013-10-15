@@ -25,10 +25,12 @@
 				<xe:this.footerLinks></xe:this.footerLinks>
 				<xe:this.titleBarTabs>
 					<xe:basicLeafNode label="トップ" href="top.xsp"></xe:basicLeafNode>
-					<xe:basicLeafNode label="お気に入り"
-						href="x_Favorite.xsp">
+					<xe:basicLeafNode label="マイページ"
+						href="x_ProfileEdit.xsp">
 					</xe:basicLeafNode>
-					<xe:basicLeafNode label="履歴" href="x_History.xsp"></xe:basicLeafNode>
+					<xe:basicLeafNode label="履歴" href="x_History.xsp"
+						loaded="false">
+					</xe:basicLeafNode>
 					<xe:basicLeafNode label="検索" href="x_Search.xsp"></xe:basicLeafNode>
 					<xe:basicLeafNode label="ユーザー"
 						href="x_Page_AlluserList.xsp">
@@ -49,7 +51,11 @@
 
 							<xe:pageTreeNode label="プロフィール変更"
 								page="/x_ProfileEdit.xsp">
-								<xe:this.rendered><![CDATA[#{javascript:var userName:NotesName = session.createName(@UserName());
+								<xe:this.rendered><![CDATA[#{javascript://非表示
+return false;
+
+
+var userName:NotesName = session.createName(@UserName());
 if (userName.getCommon()=="Anonymous")
 {
        return false;

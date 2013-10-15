@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?><note class="form" replicaid="49257BB30040F45C" version="9.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="836" sequence="3" unid="BFD9E447270E065049257BD0004B1057">
-<created><datetime>20130823T223953,83+09</datetime></created>
-<modified><datetime>20130828T135627,69+09</datetime></modified>
-<revised><datetime>20130823T223954,17+09</datetime></revised>
-<lastaccessed><datetime>20130828T135627,69+09</datetime></lastaccessed>
-<addedtofile><datetime>20130828T135627,69+09</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Administrator/O=ZEBRA</name></updatedby>
-<wassignedby><name>CN=Administrator/O=ZEBRA</name></wassignedby>
+<noteinfo noteid="121a" sequence="2" unid="84DBB6FA5BD77B0249257C05003F0766">
+<created><datetime>20131015T202826,62+09</datetime></created>
+<modified><datetime>20131015T202826,68+09</datetime></modified>
+<revised><datetime>20131015T202826,67+09</datetime></revised>
+<lastaccessed><datetime>20131015T202826,68+09</datetime></lastaccessed>
+<addedtofile><datetime>20131015T202826,66+09</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=System Administrator/O=rskkgdev852</name></updatedby>
+<wassignedby><name>CN=System Administrator/O=rskkgdev852</name></wassignedby>
 <item name="$Flags"><text>gC~4;2</text></item>
 <item name="$TITLE"><text>cc_AnserEdit_sv.properties</text></item>
 

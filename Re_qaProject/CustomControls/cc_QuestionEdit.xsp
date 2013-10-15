@@ -65,16 +65,16 @@
 								value="#{docQues.Category}" style="height:23px;width:200px">
 
 
-								<xp:selectItem itemLabel="JavaScript"
+								<xp:selectItem itemLabel="Microsoft Office関連"
 									id="selectItem9">
 								</xp:selectItem>
-								<xp:selectItem itemLabel="OneUI"
+								<xp:selectItem itemLabel="OS関連"
 									id="selectItem10">
 								</xp:selectItem>
-								<xp:selectItem itemLabel="デザイン"
+								<xp:selectItem itemLabel="Notes関連"
 									id="selectItem11">
 								</xp:selectItem>
-								<xp:selectItem itemLabel="Notes"
+								<xp:selectItem itemLabel="その他"
 									id="selectItem12">
 								</xp:selectItem>
 							</xp:comboBox>

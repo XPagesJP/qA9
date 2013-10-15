@@ -2,20 +2,139 @@
 <xp:view xmlns:xp="http://www.ibm.com/xsp/core"
 	xmlns:xe="http://www.ibm.com/xsp/coreex"
 	xmlns:xc="http://www.ibm.com/xsp/custom">
+	
 	<xp:this.data>
 		<xp:dominoView var="view1" viewName="V_Tag"
 			search="#{javascript:sessionScope.searchEdit}">
 		</xp:dominoView>
 	</xp:this.data>
 
-
 	<xp:this.resources>
 		<xp:styleSheet href="/qa.css"></xp:styleSheet>
+		<xp:script src="/Common_jss.jss" clientSide="false"></xp:script>
 	</xp:this.resources>
 
 	<xp:panel>
-		<xp:text escape="true" value="#{javascript:sessionScope.searchEdit}"></xp:text>
-		</xp:panel>
+		
+		<xp:inputText id="inputSearchEdit" style="width:350px;height:21px" defaultValue="#{javascript:sessionScope.searchEdit}">
+
+
+
+		<xp:eventHandler event="onkeypress" submit="false" id="eventHandler3">
+			<xp:this.script><![CDATA[if(event.keyCode == 13){ 
+	event.keyCode = 0;
+	dojo.byId("#{id:lnkSearch}").click();
+} ]]></xp:this.script>
+
+			<xp:eventHandler event="onkeypress" submit="true" refreshMode="complete" id="eventHandler4">
+				<xp:this.script><![CDATA[if(event.keyCode == 13){ 
+	return true; 
+}else{
+	return false;
+} ]]></xp:this.script>
+				<xp:this.action><![CDATA[#{javascript://申請書
+if(getComponent("inputSearch1").getValue()=="すべて"){
+	viewScope.searchVariable1 = "";
+}else{
+	viewScope.searchVariable1 = getComponent("inputSearch1").getValue();
+};
+
+//申請者
+if(getComponent("inputSearch2").getValue()=="すべて"){
+	viewScope.searchVariable2 = "";
+}else{
+	viewScope.searchVariable2 = getComponent("inputSearch2").getValue();
+};
+
+//手入力
+if(getComponent("inputSearchEdit").getValue()!=""){
+	var fromList = new Array("　"," ");	//検索対象
+	var searchEdit = @ReplaceSubstring(getComponent("inputSearchEdit").getValue(),fromList,"&");
+	viewScope.searchEdit = searchEdit;
+};	}]]></xp:this.action>
+			</xp:eventHandler>
+			<xp:eventHandler event="onkeypress" submit="true" refreshMode="complete" id="eventHandler5">
+				<xp:this.script><![CDATA[if(event.keyCode == 13){ 
+	return true; 
+}else{
+	return false;
+} ]]></xp:this.script>
+
+			</xp:eventHandler>
+		</xp:eventHandler>
+		<xp:eventHandler event="onkeypress" submit="true" refreshMode="complete" id="eventHandler6">
+			<xp:this.script><![CDATA[if(event.keyCode == 13){ 
+	return true; 
+}else{
+	return false;
+} ]]></xp:this.script>
+
+			<xp:eventHandler event="onkeypress" submit="true" refreshMode="complete" id="eventHandler7">
+				<xp:this.script><![CDATA[if(event.keyCode == 13){ 
+	return true; 
+}else{
+	return false;
+} ]]></xp:this.script>
+				<xp:this.action><![CDATA[#{javascript://申請書
+if(getComponent("inputSearch1").getValue()=="すべて"){
+	viewScope.searchVariable1 = "";
+}else{
+	viewScope.searchVariable1 = getComponent("inputSearch1").getValue();
+};
+
+//申請者
+if(getComponent("inputSearch2").getValue()=="すべて"){
+	viewScope.searchVariable2 = "";
+}else{
+	viewScope.searchVariable2 = getComponent("inputSearch2").getValue();
+};
+
+//手入力
+if(getComponent("inputSearchEdit").getValue()!=""){
+	var fromList = new Array("　"," ");	//検索対象
+	var searchEdit = @ReplaceSubstring(getComponent("inputSearchEdit").getValue(),fromList,"&");
+	viewScope.searchEdit = searchEdit;
+};	}]]></xp:this.action>
+			</xp:eventHandler>
+		</xp:eventHandler>
+	</xp:inputText>
+	&#160;
+	<xp:button id="lnkSearch" styleClass="lotusSearch lotusBtn lotusBtnSpecial" navigate="false" value="検索">
+		<xp:eventHandler event="onclick" submit="true" refreshMode="partial" id="eventHandler8" refreshId="opportunitiesDataTable">
+			<xp:this.action>
+
+				<xp:actionGroup>
+
+
+
+
+
+					<xp:executeScript>
+						<xp:this.script><![CDATA[#{javascript://手入力
+sessionScope.searchEdit = "";
+if(getComponent("inputSearchEdit").getValue()!=""){
+    var fromList = new Array("　"," ");  //検索対象
+    var searchEdit = getComponent("inputSearchEdit").getValue();
+    searchEdit = @ReplaceSubstring(@Trim(searchEdit),fromList,"&");
+
+    if(isValidFTQuery(searchEdit)){
+        sessionScope.searchEdit=searchEdit;
+    }else{
+        //errmsg.setValue("「" + getComponent("inputSearchEdit").getValue()
+        // + "」は正しい検索条件ではありません。")
+    }
+};}]]></xp:this.script>
+					</xp:executeScript>
+				</xp:actionGroup>
+			</xp:this.action></xp:eventHandler>
+		<img src="/oneuiv2/images/iconSearch16.png" />
+	</xp:button>
+	<xp:button id="button2" value="クリア">
+		<xp:eventHandler event="onclick" submit="true" refreshMode="partial" refreshId="#{javascript:compositeData.id_ForPartialRefresh}" id="eventHandler9">
+			<xp:this.action><![CDATA[#{javascript:sessionScope.searchEdit = "";
+getComponent("inputSearchEdit").setValue("");}]]></xp:this.action>
+		</xp:eventHandler>
+	</xp:button></xp:panel>
 	<xp:dataTable id="opportunitiesDataTable" rows="10" var="viewEntry"
 		value="#{view1}" styleClass="lotusTable">
 		<xp:this.facets>
@@ -30,19 +149,15 @@
 
 
 
-		<xp:this.data>
-			<xp:dominoView var="view1" viewName="V_Tag">
-				<xp:this.categoryFilter><![CDATA[#{javascript:context.getUrlParameter("CategoryFilter")}]]></xp:this.categoryFilter>
-			</xp:dominoView>
-		</xp:this.data>
+
 		<xp:column id="column3">
 			<xp:table>
 				<xp:tr>
 					<xp:td styleClass="Column_count_G"
 						style="text-align:center">
 						<xp:text escape="true"
-							style="font-size:14pt;color:rgb(255,255,255)" id="Count_good">
-							<xp:this.value><![CDATA[#{javascript:viewEntry.getColumnValue("Count_good")}]]></xp:this.value>
+							style="font-size:14pt;color:rgb(255,255,255)" id="user_good">
+							<xp:this.value><![CDATA[#{javascript:viewEntry.getColumnValue("$user_good")}]]></xp:this.value>
 							<xp:this.converter>
 								<xp:convertNumber type="number"
 									integerOnly="true">
@@ -56,26 +171,16 @@
 					</xp:td>
 					<xp:td styleClass="Column_count_A"
 						style="text-align:center">
-						<xp:text escape="true"
-							style="font-size:14pt;color:rgb(255,255,255)" id="Count_Ans">
-							<xp:this.converter>
-								<xp:convertNumber type="number"
-									integerOnly="true">
-								</xp:convertNumber>
-							</xp:this.converter>
-							<xp:this.value><![CDATA[#{javascript://KEY
-var doc:NotesDocument = viewEntry.getDocument()
-var key =doc.getItemValueString("UniqueID");
-
-//回答文書検索
-var aview:NotesView = database.getView("V_Answer_All");
-var adc:NotesDocumentCollection = aview.getAllDocumentsByKey(key,true);
-
-return adc.getCount();
+						<xp:text escape="true" style="font-size:14pt;color:rgb(255,255,255)" id="Count_Answer">
+									<xp:this.converter>
+										<xp:convertNumber type="number" integerOnly="true">
+										</xp:convertNumber>
+									</xp:this.converter>
+									<xp:this.value><![CDATA[#{javascript:viewEntry.getColumnValue("$Count_Answer")
 
 
 }]]></xp:this.value>
-						</xp:text>
+								</xp:text>
 						<xp:br></xp:br>
 						<xp:label value="回答" id="label5"
 							style="color:rgb(255,255,255)">
@@ -84,14 +189,13 @@ return adc.getCount();
 					<xp:td styleClass="Column_count_V"
 						style="text-align:center;">
 						<xp:text escape="true" id="Count_view"
-							value="#{viewEntry.Count_view}"
 							style="font-size:14pt;color:rgb(255,255,255)">
 							<xp:this.converter>
 								<xp:convertNumber type="number"
 									integerOnly="true">
 								</xp:convertNumber>
 							</xp:this.converter>
-						</xp:text>
+						<xp:this.value><![CDATA[#{javascript:viewEntry.getColumnValue("$Count_view")}]]></xp:this.value></xp:text>
 						<xp:br></xp:br>
 						<xp:label value="閲覧" id="label6"
 							style="color:rgb(255,255,255)">
@@ -142,16 +246,12 @@ return doc.getItemValueString("Body");
 				<div>
 
 
-					<xe:djextListTextBox id="djextListTextBox1"
-						value="#{viewEntry.Tag}">
-						<xp:eventHandler event="onClick" submit="true"
-							refreshMode="complete">
-							<xe:this.action>
-								<xp:openPage name="/x_Tag.xsp">
-								</xp:openPage>
-							</xe:this.action>
-						</xp:eventHandler>
-					</xe:djextListTextBox>
+					<xc:cc_Taglist>
+								<xc:this.TagField><![CDATA[#{javascript:var Tag =viewEntry.getColumnValue("Tag");
+
+return @Implode(Tag,",")
+}]]></xc:this.TagField>
+							</xc:cc_Taglist>
 				</div>
 			</xp:panel>
 		</xp:column>

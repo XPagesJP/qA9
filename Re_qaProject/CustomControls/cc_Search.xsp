@@ -129,9 +129,11 @@ if(getComponent("inputSearchEdit").getValue()!=""){
 
 				<xp:actionGroup>
 
+
+
 					<xp:executeScript>
 						<xp:this.script><![CDATA[#{javascript://手入力
-viewScope.searchEdit = "";
+sessionScope.searchEdit = "";
 if(getComponent("inputSearchEdit").getValue()!=""){
     var fromList = new Array("　"," ");  //検索対象
     var searchEdit = getComponent("inputSearchEdit").getValue();

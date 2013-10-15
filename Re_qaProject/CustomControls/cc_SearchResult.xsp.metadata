@@ -1,23 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?><note class="form" replicaid="49257BB30040F45C" version="9.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="112a" sequence="8" unid="E469D2680E36577E49257BE4004857EA">
-<created><datetime>20130912T221010,98+09</datetime></created>
-<modified><datetime>20130912T221016,33+09</datetime></modified>
-<revised><datetime>20130912T221016,32+09</datetime></revised>
-<lastaccessed><datetime>20130912T221016,33+09</datetime></lastaccessed>
-<addedtofile><datetime>20130912T221011,00+09</datetime></addedtofile></noteinfo>
+<noteinfo noteid="11fe" sequence="4" unid="A243B51D2282B40849257C05003F057E">
+<created><datetime>20131015T202821,74+09</datetime></created>
+<modified><datetime>20131015T202822,30+09</datetime></modified>
+<revised><datetime>20131015T202822,29+09</datetime></revised>
+<lastaccessed><datetime>20131015T202822,30+09</datetime></lastaccessed>
+<addedtofile><datetime>20131015T202821,75+09</datetime></addedtofile></noteinfo>
 <updatedby><name>CN=System Administrator/O=rskkgdev852</name></updatedby>
 <wassignedby><name>CN=System Administrator/O=rskkgdev852</name></wassignedby>
-<item name="$Comment"><text>ヘルプ</text></item>
+<item name="$Comment"><text>タグのみのコントロール</text></item>
 <item name="$TITLE"><text>cc_SearchResult.xsp</text></item>
 <item name="$Flags"><text>gC~4;</text></item>
 
 
 <item name="$FileNames" sign="true"><text>cc_SearchResult.xsp</text></item>
-
-
-<item name="$DesignerVersion"><text>8.5.2</text></item>
-
-
-
 
 </note>

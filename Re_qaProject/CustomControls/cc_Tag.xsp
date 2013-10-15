@@ -37,8 +37,8 @@
 					<xp:td styleClass="Column_count_G"
 						style="text-align:center">
 						<xp:text escape="true"
-							style="font-size:14pt;color:rgb(255,255,255)" id="Count_good">
-							<xp:this.value><![CDATA[#{javascript:viewEntry.getColumnValue("Count_good")}]]></xp:this.value>
+							style="font-size:14pt;color:rgb(255,255,255)" id="user_good">
+							<xp:this.value><![CDATA[#{javascript:viewEntry.getColumnValue("$user_good")}]]></xp:this.value>
 							<xp:this.converter>
 								<xp:convertNumber type="number"
 									integerOnly="true">
@@ -52,26 +52,16 @@
 					</xp:td>
 					<xp:td styleClass="Column_count_A"
 						style="text-align:center">
-						<xp:text escape="true"
-							style="font-size:14pt;color:rgb(255,255,255)" id="Count_Ans">
-							<xp:this.converter>
-								<xp:convertNumber type="number"
-									integerOnly="true">
-								</xp:convertNumber>
-							</xp:this.converter>
-							<xp:this.value><![CDATA[#{javascript://KEY
-var doc:NotesDocument = viewEntry.getDocument()
-var key =doc.getItemValueString("UniqueID");
-
-//回答文書検索
-var aview:NotesView = database.getView("V_Answer_All");
-var adc:NotesDocumentCollection = aview.getAllDocumentsByKey(key,true);
-
-return adc.getCount();
+						<xp:text escape="true" style="font-size:14pt;color:rgb(255,255,255)" id="Count_Answer">
+									<xp:this.converter>
+										<xp:convertNumber type="number" integerOnly="true">
+										</xp:convertNumber>
+									</xp:this.converter>
+									<xp:this.value><![CDATA[#{javascript:viewEntry.getColumnValue("$Count_Answer")
 
 
 }]]></xp:this.value>
-						</xp:text>
+								</xp:text>
 						<xp:br></xp:br>
 						<xp:label value="回答" id="label5"
 							style="color:rgb(255,255,255)">
@@ -80,14 +70,13 @@ return adc.getCount();
 					<xp:td styleClass="Column_count_V"
 						style="text-align:center;">
 						<xp:text escape="true" id="Count_view"
-							value="#{viewEntry.Count_view}"
 							style="font-size:14pt;color:rgb(255,255,255)">
 							<xp:this.converter>
 								<xp:convertNumber type="number"
 									integerOnly="true">
 								</xp:convertNumber>
 							</xp:this.converter>
-						</xp:text>
+						<xp:this.value><![CDATA[#{javascript:viewEntry.getColumnValue("$Count_view")}]]></xp:this.value></xp:text>
 						<xp:br></xp:br>
 						<xp:label value="閲覧" id="label6"
 							style="color:rgb(255,255,255)">
@@ -138,17 +127,13 @@ return doc.getItemValueString("Body");
 				<div>
 
 
-					<xe:djextListTextBox id="djextListTextBox1"
-						value="#{viewEntry.Tag}">
-						<xp:eventHandler event="onClick" submit="true"
-							refreshMode="complete">
-							<xe:this.action>
-								<xp:openPage name="/x_Tag.xsp">
-								</xp:openPage>
-							</xe:this.action>
-						</xp:eventHandler>
-					</xe:djextListTextBox>
-				</div>
+					
+				<xc:cc_Taglist>
+								<xc:this.TagField><![CDATA[#{javascript:var Tag =viewEntry.getColumnValue("Tag");
+
+return @Implode(Tag,",")
+}]]></xc:this.TagField>
+							</xc:cc_Taglist></div>
 			</xp:panel>
 		</xp:column>
 		<xp:column id="column2" styleClass="Column_status">

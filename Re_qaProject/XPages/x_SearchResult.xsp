@@ -6,7 +6,8 @@
     </xp:this.resources>
     <xc:cc_AppLayout>
         <xp:this.facets>
-      	 <xc:cc_SearchResult xp:key="facetLeft"></xc:cc_SearchResult>
-      	 </xp:this.facets>
+        	<xc:cc_SearchResult xp:key="facetMiddle"></xc:cc_SearchResult>
+
+        </xp:this.facets>
     </xc:cc_AppLayout>
 </xp:view>

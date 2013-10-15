@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xp:view xmlns:xp="http://www.ibm.com/xsp/core"
-	xmlns:xe="http://www.ibm.com/xsp/coreex">
+	xmlns:xe="http://www.ibm.com/xsp/coreex"
+	xmlns:xc="http://www.ibm.com/xsp/custom">
 
 	<xp:this.resources>
 		<xp:styleSheet href="/qa.css"></xp:styleSheet>
@@ -285,18 +286,15 @@ return vPoint;}]]></xp:this.value>
 										<xp:td>タグ</xp:td>
 										<xp:td colspan="3">
 											：
-											<xe:djextListTextBox
-												id="djextListTextBox1">
-												<xe:this.value><![CDATA[#{javascript:var profileDoc =PFLDoc.getDocument();
+											
+											<xc:cc_Taglist>
+												<xc:this.TagField><![CDATA[#{javascript:var profileDoc =PFLDoc.getDocument();
 
 var Tag =profileDoc.getItemValue("Tag");
 
-return Tag;
-
-}]]></xe:this.value>
-
-											</xe:djextListTextBox>
-										</xp:td>
+return @Implode(Tag,",")
+}]]></xc:this.TagField>
+											</xc:cc_Taglist></xp:td>
 
 
 									</xp:tr>
@@ -335,7 +333,8 @@ return vPoint;}]]></xp:this.value>
 
 								</div>
 								<xp:div style="text-align:center">
-								<xp:text escape="false" id="ProfileLink">
+									<xp:text escape="false"
+										id="ProfileLink">
 										<xp:this.value><![CDATA[#{javascript:var profileDoc =PFLDoc.getDocument();
 
 var userNmae =profileDoc.getItemValueString("UserID");
