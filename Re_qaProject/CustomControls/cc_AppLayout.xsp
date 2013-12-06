@@ -24,9 +24,21 @@
 				placeBarName="#{javascript:compositeData.placeBarName;}">
 				<xe:this.footerLinks></xe:this.footerLinks>
 				<xe:this.titleBarTabs>
-					<xe:basicLeafNode label="トップ" href="top.xsp"></xe:basicLeafNode>
+					<xe:basicLeafNode label="トップ" href="top.xsp">
+
+
+					</xe:basicLeafNode>
 					<xe:basicLeafNode label="マイページ"
 						href="x_ProfileEdit.xsp">
+						<xe:this.rendered><![CDATA[#{javascript:var userName:NotesName = session.createName(@UserName());
+if (userName.getCommon()=="Anonymous")
+{
+       return false;
+}
+else
+{
+       return true;
+}}]]></xe:this.rendered>
 					</xe:basicLeafNode>
 					<xe:basicLeafNode label="履歴" href="x_History.xsp"
 						loaded="false">
@@ -107,14 +119,15 @@ else
 
 
 
-					
+
 				</xe:this.bannerUtilityLinks>
 				<xe:this.bannerApplicationLinks>
 
 				</xe:this.bannerApplicationLinks>
 				<xe:this.placeBarActions>
-					<xe:basicLeafNode label="新しい質問を投稿する"
-						style="font-size:12pt" href="x_QuestionCompose.xsp">
+					<xe:basicLeafNode label="新しい質問の投稿"
+						style="font-size:12pt" href="x_QuestionCompose.xsp"
+						image="/1871.png">
 						<xe:this.rendered><![CDATA[#{javascript:var userName:NotesName = session.createName(@UserName());
 if (userName.getCommon()=="Anonymous")
 {
@@ -126,7 +139,8 @@ else
 }}]]></xe:this.rendered>
 					</xe:basicLeafNode>
 				</xe:this.placeBarActions>
+
 			</xe:oneuiApplication>
 		</xe:this.configuration>
-	</xe:applicationLayout>
+		</xe:applicationLayout>
 </xp:view>

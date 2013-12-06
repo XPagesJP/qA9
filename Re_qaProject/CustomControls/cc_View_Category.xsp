@@ -18,6 +18,12 @@
 var Status = sessionScope.Status;
 var CategoryName = sessionScope.CategoryName;
 var viewName = "V_Date_All";
+if (Status==null){
+	Status= "All";
+}
+if (sortColumn==null){
+	sortColumn= "Created";
+}
 
 if (Status == "All" && sortColumn == "Created" ){
 	viewName = "V_Date_All"
@@ -45,10 +51,10 @@ if (Status == "All" && sortColumn == "Created" ){
 	viewName = "V_AnswerCount_Close"
 }	
 
-if (CategoryName != null){
+if (CategoryName != null && CategoryName != ""){
 	viewName = viewName + "_Cate"
 }
-
+//print(viewName + " Status:"+ Status +" sortColumn:" +sortColumn + " CategoryName:"+ CategoryName);
 return viewName}]]></xp:this.viewName>
 			</xp:dominoView>
 		</xp:this.data>
@@ -253,7 +259,21 @@ sessionScope.CategoryName = rowCate;
 						</xp:tr>
 					</xp:table>
 				</xp:column>
-				<xp:column id="column1" styleClass="Column_Main">
+				<xp:column id="column2" styleClass="Column_status">
+					
+					<xp:label value="質問中" id="label7" style="color:rgb(255,0,0);text-align:left"><xp:this.rendered><![CDATA[#{javascript:if (viewEntry.getColumnValue("Status")=="1"){
+  true
+}else if(viewEntry.getColumnValue("Status")=="2"){
+  false
+}else{
+ false
+}}]]></xp:this.rendered></xp:label><xp:label value="解決済み" id="label8" style="text-align:left"><xp:this.rendered><![CDATA[#{javascript:if (viewEntry.getColumnValue("Status")=="1"){
+  false
+}else if(viewEntry.getColumnValue("Status")=="2"){
+  true
+}else{
+ false
+}}]]></xp:this.rendered></xp:label></xp:column><xp:column id="column1" styleClass="Column_Main">
 					<xp:text escape="false" id="Title"
 						style="margin-left:0.0px;margin-right:0.0px;margin-top:3px;margin-bottom:3px"
 						tagName="h4">
@@ -266,13 +286,22 @@ sessionScope.CategoryName = rowCate;
 					</xp:text>
 					<xp:panel id="detail"
 						style="margin-top:5px;margin-bottom:5px;">
-						<xp:text escape="true" id="details">
+						<xp:text escape="false" id="details">
 							<xp:this.value><![CDATA[#{javascript:var doc:NotesDocument = viewEntry.getDocument()
-return doc.getItemValueString("Body")
-}]]></xp:this.value>
+//return doc.getItemValueString("Body")
+//var mime:NotesMIMEEntity = doc.getMIMEEntity();
+//var mime2:NotesMIMEEntity = mime.GetFirstChildEntity()
+
+if (doc.hasItem("body")) {
+	var entity:NotesMIMEEntity = doc.getMIMEEntity("body");
+	if (entity != null) {
+		return entity.getContentAsText();
+	}
+}}]]></xp:this.value>
 						</xp:text>
 					</xp:panel>
 					<xp:panel id="meta" styleClass="lotusMeta">
+							<xp:panel id="meta2" styleClass="inlineB">
 						<xp:label id="label1" value="質問日時:"></xp:label>
 						<xp:text escape="true" id="Created"
 							value="#{viewEntry.Created}">
@@ -288,32 +317,30 @@ return doc.getItemValueString("Body")
 
 
 						<xp:label value="カテゴリ:" id="label3"></xp:label>
-						<xp:text escape="true" id="Category"
-							value="#{viewEntry.Category}">
+						
+						<xp:link escape="true" id="category_link">
+							<xp:this.text><![CDATA[#{javascript:viewEntry.getColumnValue("Category")
+}]]></xp:this.text>
+							<xp:eventHandler event="onclick"
+								submit="true" refreshMode="complete">
+								<xp:this.action><![CDATA[#{javascript:var Target = viewEntry.getColumnValue("Category");
+
+sessionScope.CategoryName = Target;}]]></xp:this.action>
+							</xp:eventHandler>
+						</xp:link>
+						<xp:text escape="true" id="divider2"
+							styleClass="lotusDivider">
+							<xp:this.value><![CDATA[#{javascript:"  |  "}]]></xp:this.value>
 						</xp:text>
-						<div>
-
-
-							
 							<xc:cc_Taglist>
 								<xc:this.TagField><![CDATA[#{javascript:var Tag =viewEntry.getColumnValue("Tag");
 
 return @Implode(Tag,",")
 }]]></xc:this.TagField>
-							</xc:cc_Taglist></div>
-					</xp:panel>
+							</xc:cc_Taglist>
+					</xp:panel></xp:panel>
 				</xp:column>
-				<xp:column id="column2" styleClass="Column_status">
-					<xp:text escape="true" id="computedField1">
-						<xp:this.value><![CDATA[#{javascript:if (viewEntry.getColumnValue("Status")=="1"){
-  "質問中"
-}else if(viewEntry.getColumnValue("Status")=="2"){
-  "解決済み"
-}else{
-  ""
-}}]]></xp:this.value>
-					</xp:text>
-				</xp:column>
+				
 				<xp:column id="column4">
 					<xc:cc_UserProfile>
 						<xc:this.userName><![CDATA[#{javascript:var Author =viewEntry.getColumnValue("質問者名");;

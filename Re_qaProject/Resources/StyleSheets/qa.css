@@ -16,6 +16,22 @@
     #xsnazzy .xboxcontent { display:block; background:#FFFFFF; border:0 solid #708090; border-width:0 1px; }
     
 
+/*2013.11.26 nishi ADD >> */
+.CursorPoint{
+	cursor:pointer;
+}
+
+.button01{
+	height:40px;
+}
+.StartIcon{
+	height:40px;
+	width:40px;
+	cursor:pointer;
+}
+
+/*2013.11.26 nishi ADD << */
+
 
 /*2013.07.25 nishi ADD >> */
 /*ユーザー情報（小）*/
@@ -23,7 +39,6 @@
 	height:40px;
 	width:40px;
 	cursor:pointer;
-	box-shadow:2px 2px 4px rgba(0,0,0,0.5);
 }
 
 /*ユーザー情報（大）*/
@@ -34,7 +49,18 @@
 	border-collapse: separate;
 }
 
+
+/*編集ダイアログ*/
+.editDialog{
+	padding: 10px 10px 10px 10px;
+	background:#FFFFFF;
+}
+
 .allUserList > div{
+	display: inline-block;
+}
+
+.inlineB > div{
 	display: inline-block;
 }
 

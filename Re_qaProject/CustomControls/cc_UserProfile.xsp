@@ -284,9 +284,8 @@ return vPoint;}]]></xp:this.value>
 
 									<xp:tr>
 										<xp:td>タグ</xp:td>
-										<xp:td colspan="3">
+										<xp:td colspan="3" styleClass="inlineB">
 											：
-											
 											<xc:cc_Taglist>
 												<xc:this.TagField><![CDATA[#{javascript:var profileDoc =PFLDoc.getDocument();
 

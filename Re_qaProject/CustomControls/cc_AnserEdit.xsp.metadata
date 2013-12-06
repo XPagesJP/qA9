@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?><note class="form" replicaid="49257BB30040F45C" version="9.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="120e" sequence="4" unid="09E36E416AD80C2C49257C05003F06F5">
+<noteinfo noteid="120e" sequence="8" unid="09E36E416AD80C2C49257C05003F06F5">
 <created><datetime>20131015T202825,49+09</datetime></created>
-<modified><datetime>20131015T202826,27+09</datetime></modified>
-<revised><datetime>20131015T202826,26+09</datetime></revised>
-<lastaccessed><datetime>20131015T202826,27+09</datetime></lastaccessed>
+<modified><datetime>20131015T202831,16+09</datetime></modified>
+<revised><datetime>20131015T202831,15+09</datetime></revised>
+<lastaccessed><datetime>20131015T202831,16+09</datetime></lastaccessed>
 <addedtofile><datetime>20131015T202825,51+09</datetime></addedtofile></noteinfo>
 <updatedby><name>CN=System Administrator/O=rskkgdev852</name></updatedby>
 <wassignedby><name>CN=System Administrator/O=rskkgdev852</name></wassignedby>
@@ -13,5 +13,11 @@
 
 
 <item name="$FileNames" sign="true"><text>cc_AnserEdit.xsp</text></item>
+
+
+<item name="$DesignerVersion"><text>8.5.2</text></item>
+
+
+
 
 </note>

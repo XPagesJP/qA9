@@ -1,12 +1,12 @@
 <?xml version='1.0' encoding='utf-8'?>
 <note class='view' xmlns='http://www.lotus.com/dxl' version='9.0' replicaid='49257BB30040F45C'>
-<noteinfo noteid='486' unid='412FFBC8F1E2643449257BB3004123D8' sequence='8'>
+<noteinfo noteid='486' unid='412FFBC8F1E2643449257BB3004123D8' sequence='9'>
 <created><datetime>20130725T205130,16+09</datetime></created>
-<modified><datetime>20130828T140122,34+09</datetime></modified>
-<revised><datetime>20130828T140122,33+09</datetime></revised>
-<lastaccessed><datetime>20130828T140122,34+09</datetime></lastaccessed>
+<modified><datetime>20131206T091959,29+09</datetime></modified>
+<revised><datetime>20131126T213146,68+09</datetime></revised>
+<lastaccessed><datetime>20131206T091959,29+09</datetime></lastaccessed>
 <addedtofile><datetime>20130725T205130,17+09</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Administrator/O=ZEBRA</name><name>CN=System Administrator/O=rskkgdev852</name></updatedby>
+<updatedby><name>CN=System Administrator/O=rskkgdev852</name></updatedby>
 <wassignedby><name>CN=System Administrator/O=rskkgdev852</name></wassignedby>
 <item name='$FormatNote' summary='true'>
 <rawitemdata type='4'>
@@ -25,13 +25,13 @@ DwABAABEgGYAAAACACQ1
 </rawitemdata></item>
 <item name='$ViewFormat' summary='true' sign='true'>
 <rawitemdata type='5'>
-AQABAAYACAAAAFZDAQACAAUAEgAHAFAAAQAACgAAAAAAAAAAAAICAAAAJDUoS0VZKRIAAgAQAAIA
+AQABAAcACAAAAFZDAQACAAUAEgAHAFAAAQAACgAAAAAAAAAAAAICAAAAJDUoS0VZKRIAAgAQAAIA
 JDUBAAEAMQADAAEFAQABADEmAAEAAAABAQAJAQAACgEBDgoAAAEArSsBAAEAAQAAAAAAAAAAAFdD
 AQAACQAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAP//AAAAAAAAAAAAAAAAAABCAAAAAAABAP///wAF
 AP///wABAAAAAAAAAAAAAAAAAAEA////AAEA////AAAAAQAAAAAAAQAAAAAAAQAAAAAAAAAIAAAA
 AAABAA==
 </rawitemdata></item>
 <item name='$Comment' sign='true'><text/></item>
-<item name='$DesignerVersion'><text>8.5.3</text></item>
-<item name='$Flags'><text>Y</text></item></note>
+<item name='$Flags'><text>Y</text></item>
+<item name='$DesignerVersion'><text>8.5.3</text></item></note>
 

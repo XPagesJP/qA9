@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?><note class="form" replicaid="49257BB30040F45C" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="128a" sequence="4" unid="6E0F085D37CC168E49257BB700183E62">
+<created><datetime>20130729T132448,34+09</datetime></created>
+<modified><datetime>20131206T091959,31+09</datetime></modified>
+<revised><datetime>20130729T133818,21+09</datetime></revised>
+<lastaccessed><datetime>20131206T091959,31+09</datetime></lastaccessed>
+<addedtofile><datetime>20131206T091959,31+09</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=System Administrator/O=rskkgdev852</name></updatedby>
+<wassignedby><name>CN=System Administrator/O=rskkgdev852</name></wassignedby>
+<item name="$TITLE"><text>best2_s.png</text></item>
+<item name="$FlagsExt"><text>D</text></item>
+<item name="$ImagesWide" sign="true"><number>1</number></item>
+<item name="$ImagesHigh" sign="true"><number>1</number></item>
+<item name="$ImagesColorize" sign="true"><number>0</number></item>
+<item name="$DesignerVersion"><text>8.5.3</text></item>
+
+
+<item name="$MimeType" sign="true"><text>image/png</text></item>
+<item name="$FileModDT" sign="true"><datetime>20130729T125928,21+09</datetime></item>
+<item name="$ImageNames" sign="true"><text>best2_s.png</text></item>
+<item name="$Flags"><text>34CiQ</text></item></note>

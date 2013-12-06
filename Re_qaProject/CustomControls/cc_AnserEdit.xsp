@@ -2,7 +2,18 @@
 <!-- Author: Tony McGuckin, IBM -->
 <xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom"
     enableModifiedFlag="true" xmlns:xe="http://www.ibm.com/xsp/coreex">
-    <h3>回答入力</h3>
+    <h3>
+    	  	<xp:label value="回答入力" id="label1"><xp:this.rendered><![CDATA[#{javascript://編集の場合、プロパティ定義より取得
+var EditID = compositeData.property_editID;
+
+if(@Length(EditID)!=0){
+	//編集
+	false
+}else{
+	//新規
+	true
+}
+}]]></xp:this.rendered></xp:label></h3>
     <p style="text-align: right;">
         <a href="#showQuestion">
             質問を確認する>>
@@ -10,8 +21,29 @@
     </p>
     <xp:panel id="panel_Res">
         <xp:this.data>
-            <xp:dominoDocument var="docAnsRes"
-                formName="FM_Answer">
+            <xp:dominoDocument var="docAnsRes" formName="FM_Answer">
+            	<xp:this.action><![CDATA[#{javascript://編集の場合、プロパティ定義より取得
+var EditID = compositeData.property_editID;
+
+if(@Length(EditID)!=0){
+	//編集
+	return "editDocument"
+}else{
+	//新規
+	return ""
+}
+}]]></xp:this.action>
+            	<xp:this.documentId><![CDATA[#{javascript://編集の場合、プロパティ定義より取得
+var EditID = compositeData.property_editID;
+
+if(@Length(EditID)!=0){
+	//編集
+	return EditID
+}else{
+	//新規
+	return ""
+}
+}]]></xp:this.documentId>
             </xp:dominoDocument>
         </xp:this.data>
         <p>
@@ -19,7 +51,7 @@
                 <xp:this.defaultValue><![CDATA[#{javascript://解決済みか否かを判定
 var targetdoc = docQues.getDocument();
 var status = targetdoc.getItemValueString("Status");
-print( status);
+
 if (status=="9"){
 return "C"
 }else{
@@ -70,13 +102,30 @@ return "回答|A"
             </xp:eventHandler>
         </div>
         <div class="inputAnswerActions">
-            <xp:button value="投稿する" id="button1">
+            
+            	
+            	<xp:panel id="NewActionButtonP"><xp:this.rendered><![CDATA[#{javascript://編集の場合、プロパティ定義より取得
+var EditID = compositeData.property_editID;
+
+if(@Length(EditID)!=0){
+	//編集
+	false
+}else{
+	//新規
+	true
+}
+}]]></xp:this.rendered><xp:button value="投稿する" id="button1" style="font-size:12pt" icon="/3096_32.png">
 
                 
             <xp:eventHandler event="onclick" submit="true" refreshMode="complete">
             	<xp:this.action>
 
             		<xp:actionGroup>
+
+
+
+
+
 
 
 
@@ -97,7 +146,9 @@ docAnsRes.save();
 var targetdoc = docAnsRes.getDocument();
 qa_JsLib.SetPersonHistory(targetdoc,2);
 
-print("aaaa"+docAnsRes.getItemValueString("res_AorC"));
+
+
+
 //質問数の回答カウント数アップ
 if(docAnsRes.getItemValueString("AorC")=="A"){
 		if(docQues.getItemValueString("Count_Answer")==""){
@@ -106,7 +157,14 @@ if(docAnsRes.getItemValueString("AorC")=="A"){
 			var ca_count = 1 + parseInt(docQues.getItemValueString("Count_Answer"));
 		}
 		docQues.replaceItemValue("Count_Answer",ca_count.toString());
-docQues.save();
+		docQues.save();
+		//ログ出力(回答　+1)
+		qa_JsLib.ComposeAccess_log(docAnsRes,null ,'5','1')
+		
+}else{
+		//ログ出力(コメント　+1)
+		qa_JsLib.ComposeAccess_log(docAnsRes,null ,'6','1')
+		
 }
 
 //context.reloadPage();
@@ -114,9 +172,66 @@ docQues.save();
             			</xp:executeScript>
             			<xp:openPage name="/top.xsp"></xp:openPage>
             		</xp:actionGroup>
-            	</xp:this.action></xp:eventHandler></xp:button>
-            
-        </div>
+            	</xp:this.action></xp:eventHandler></xp:button><xp:button value="キャンセル" id="button2" style="font-size:12pt"><xp:eventHandler event="onclick" submit="true" refreshMode="complete" immediate="true" save="false">
+	<xp:this.action>
+		<xp:openPage name="/top.xsp"></xp:openPage>
+	</xp:this.action></xp:eventHandler></xp:button></xp:panel>
+	<xp:panel id="EditActionButtonP"><xp:this.rendered><![CDATA[#{javascript://編集の場合、プロパティ定義より取得
+var EditID = compositeData.property_editID;
+
+if(@Length(EditID)!=0){
+	//編集
+	true
+}else{
+	//新規
+	false
+}
+}]]></xp:this.rendered><xp:button value="編集内容を保存" id="button3" style="font-size:12pt" icon="/3096_32.png">
+
+                
+            <xp:eventHandler event="onclick" submit="true" refreshMode="complete">
+            	<xp:this.action>
+
+            		<xp:actionGroup>
+
+
+
+
+
+
+
+
+
+
+
+
+            			<xp:executeScript>
+            				<xp:this.script><![CDATA[#{javascript:docAnsRes.replaceItemValue("Author",Common.getCurrentUser().name);
+docAnsRes.replaceItemValue("Created",@Now());
+docAnsRes.replaceItemValue("ParentDocId", docQues.getItemValueString('UniqueID'));
+docAnsRes.replaceItemValue("User_good","");
+docAnsRes.replaceItemValue("BestAns","");
+
+
+docAnsRes.save();
+
+//プロフィールへの履歴回答履歴の追加
+var targetdoc = docAnsRes.getDocument();
+qa_JsLib.SetPersonHistory(targetdoc,2);
+
+
+//質問数の回答カウント数アップ　＞＞＞＞＞＞＞＞しない
+
+//var dlg =getComponent("dialog1");
+//dlg.hide();}]]></xp:this.script>
+            			</xp:executeScript>
+            			<xp:openPage name="/top.xsp"></xp:openPage>
+            		</xp:actionGroup>
+            	</xp:this.action></xp:eventHandler></xp:button><xp:button value="キャンセル" id="button4" style="font-size:12pt">
+	<xp:eventHandler event="onclick" submit="true"
+		refreshMode="complete" immediate="true" save="false">
+		<xp:this.script><![CDATA[XSP.closeDialog("#{id:dialog1}")]]></xp:this.script>
+	</xp:eventHandler></xp:button></xp:panel></div>
     </xp:panel>
     <p id="inputAnswer"></p>
     

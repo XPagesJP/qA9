@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom">
     <xp:this.resources>
-        <xp:script src="/qa_JsLib.jss" clientSide="false"></xp:script>
+    	<xp:script src="/qa_JsLib.jss" clientSide="false"></xp:script>
 
 
+    	<xp:styleSheet href="/qa.css"></xp:styleSheet>
     </xp:this.resources>
 
 
@@ -17,10 +18,20 @@
         <xp:this.facets>
             <xp:div xp:key="facetMiddle" styleClass="qalist">
                 <xp:panel disableOutputTag="true">
+                	<xp:panel></xp:panel>
                 	<xp:this.loaded><![CDATA[${javascript:param.containsKey('docId');}]]></xp:this.loaded>
 
+                	<xp:this.rendered><![CDATA[#{javascript:var targetdoc = docQues.getDocument();
+var fmname = targetdoc.getItemValueString("form");
+print(@Right(fmname,4));
+
+if(@Right(fmname,4) =="_del"){
+	false;
+}else{
+	true;
+}}]]></xp:this.rendered>
                 	<p id="showQuestion"></p>
-                	
+
                 	<xp:panel
                 		style="text-align:left;margin-bottom:10.0px">
 
@@ -33,30 +44,27 @@ else
        return true;
 }
 }]]></xp:this.rendered>
-<div><xp:label id="Countup_label" value="【カウントアップアクション】" rendered="false" style="background-color:rgb(192,192,192);width:324.0px">
-				
-		</xp:label></div>
-                		<xp:button value="お気に入りに登録する" id="button1"
-                			style="font-size:9pt">
-                			<xp:eventHandler event="onclick"
-                				submit="true" refreshMode="complete">
-                				<xp:this.action><![CDATA[#{javascript:var targetdoc = docQues.getDocument();
-qa_JsLib.SetPersonHistory(targetdoc,3);
-}]]></xp:this.action>
-                			</xp:eventHandler>
-                		</xp:button>
-                		
-                			<xp:eventHandler event="onClientLoad" submit="true"
-			refreshMode="norefresh">
-			<xp:this.action><![CDATA[#{javascript://閲覧のカウントアップ
+                		<div>
+                			<xp:label id="Countup_label"
+                				value="【カウントアップアクション】" rendered="false"
+                				style="background-color:rgb(192,192,192);width:324.0px">
+
+                			</xp:label>
+                		</div>
+
+
+
+                		<xp:eventHandler event="onClientLoad"
+                			submit="true" refreshMode="norefresh">
+                			<xp:this.action><![CDATA[#{javascript://閲覧のカウントアップ
 var targetdoc = docQues.getDocument();
 qa_JsLib.SetViewCountUD(targetdoc)}]]></xp:this.action>
-		</xp:eventHandler>
+                		</xp:eventHandler>
                 	</xp:panel>
                 	<xc:cc_QTable
                 		docId="#{javascript:param.get('docId');}">
                 	</xc:cc_QTable>
-                	
+
                 	<xp:panel>
                 		<xp:this.rendered><![CDATA[#{javascript:if (Common.getCurrentUser().name=="Anonymous")
 {
@@ -95,6 +103,17 @@ else
                 		</xc:cc_AnserEdit>
                 	</div>
                 </xp:panel>
+                <xp:panel>
+                	<xp:this.rendered><![CDATA[#{javascript:var targetdoc = docQues.getDocument();
+var fmname = targetdoc.getItemValueString("form");
+print(@Right(fmname,4));
+
+if(@Right(fmname,4) =="_del"){
+	true;
+}else{
+	false;
+}}]]></xp:this.rendered><xp:label id="label1" value="該当の質問は、削除されました。" style="font-size:22pt"></xp:label></xp:panel>
+
             </xp:div>
         </xp:this.facets>
     </xc:cc_AppLayout>

@@ -2,34 +2,43 @@
 <xp:view xmlns:xp="http://www.ibm.com/xsp/core"
 	xmlns:xe="http://www.ibm.com/xsp/coreex">
 
-	
-	
-	
-	
-	
-	
-	
+
+
+
+
+
+
+
+	<xp:this.resources>
+		<xp:styleSheet href="/qa.css"></xp:styleSheet>
+	</xp:this.resources>
 	<xp:repeat id="repeat1" rows="30" var="oneTag">
 
-		<xp:this.value><![CDATA[#{javascript:return @Explode(compositeData.TagField);
+		<xp:this.value><![CDATA[#{javascript:return @Explode(compositeData.TagField,",");
 }]]></xp:this.value>
 
-		
-		
-	
-	
-	
-	
-	
-	
 
 
-		<xp:inputText id="TagName" defaultValue="#{javascript:oneTag}" style="color:rgb(192,192,192);display:none"></xp:inputText>
-		
-		<xe:djextListTextBox id="djextListTag" value="#{javascript:oneTag}">
 
-		<xp:eventHandler event="onClick" submit="false">
-			<xe:this.script><![CDATA[var tmp =document.getElementById("#{id:TagName}").value
+
+
+
+
+
+
+
+
+
+		<xp:inputText id="TagName" defaultValue="#{javascript:oneTag}"
+			style="color:rgb(192,192,192);display:none">
+		</xp:inputText>
+		<xe:djextListTextBox id="djextListTag"
+			value="#{javascript:oneTag}">
+
+			<xp:eventHandler event="onClick" submit="false">
+				<xe:this.script><![CDATA[var tmp =document.getElementById("#{id:TagName}").value
 window.open("x_Tag.xsp?CategoryFilter=" + tmp,"_self","")]]></xe:this.script>
-		</xp:eventHandler></xe:djextListTextBox></xp:repeat>
-	</xp:view>
+			</xp:eventHandler>
+		</xe:djextListTextBox>
+	</xp:repeat>
+</xp:view>
