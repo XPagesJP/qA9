@@ -55,12 +55,8 @@ else
 					<xe:userTreeNode userField="commonName">
 					</xe:userTreeNode>
 					<xe:loginTreeNode label="ログイン"></xe:loginTreeNode>
-
-
-
 					<xe:basicContainerNode label="編集">
 						<xe:this.children>
-
 							<xe:pageTreeNode label="プロフィール変更"
 								page="/x_ProfileEdit.xsp">
 								<xe:this.rendered><![CDATA[#{javascript://非表示
@@ -78,7 +74,7 @@ else
 }}]]></xe:this.rendered>
 							</xe:pageTreeNode>
 							<xe:pageTreeNode label="パスワード変更"
-								page="/x_passwordReissue.xsp">
+								page="/x_passwordChange.xsp">
 								<xe:this.rendered><![CDATA[#{javascript:var userName:NotesName = session.createName(@UserName());
 if (userName.getCommon()=="Anonymous")
 {
