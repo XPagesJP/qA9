@@ -18,10 +18,10 @@
 var Status = sessionScope.Status;
 var CategoryName = sessionScope.CategoryName;
 var viewName = "V_Date_All";
-if (Status==null){
+if (Status==null | Status==""){
 	Status= "All";
 }
-if (sortColumn==null){
+if (sortColumn==null | sortColumn==""){
 	sortColumn= "Created";
 }
 
@@ -54,7 +54,7 @@ if (Status == "All" && sortColumn == "Created" ){
 if (CategoryName != null && CategoryName != ""){
 	viewName = viewName + "_Cate"
 }
-//print(viewName + " Status:"+ Status +" sortColumn:" +sortColumn + " CategoryName:"+ CategoryName);
+
 return viewName}]]></xp:this.viewName>
 			</xp:dominoView>
 		</xp:this.data>
@@ -285,61 +285,69 @@ sessionScope.CategoryName = rowCate;
 }]]></xp:this.value>
 					</xp:text>
 					<xp:panel id="detail"
-						style="margin-top:5px;margin-bottom:5px;">
-						<xp:text escape="false" id="details">
-							<xp:this.value><![CDATA[#{javascript:var doc:NotesDocument = viewEntry.getDocument()
-//return doc.getItemValueString("Body")
-//var mime:NotesMIMEEntity = doc.getMIMEEntity();
-//var mime2:NotesMIMEEntity = mime.GetFirstChildEntity()
+						style="margin-top:5px;margin-bottom:10.0px;margin-left:10.0px;">
+						<xp:text escape="true" id="details"
+							style="color:rgb(128,128,128)">
+							<xp:this.value><![CDATA[#{javascript:var max=300;
+var doc:NotesDocument = viewEntry.getDocument();
 
-if (doc.hasItem("body")) {
-	var entity:NotesMIMEEntity = doc.getMIMEEntity("body");
-	if (entity != null) {
-		return entity.getContentAsText();
+
+var xspDoc = com.ibm.xsp.model.domino.wrapped.DominoDocument.wrap(doc.getParentDatabase().getFilePath(), doc, null, null, false, null);
+session.setConvertMime(true);
+var ANS = xspDoc.getItemValueString("Body");
+session.setConvertMime(false);
+if(ANS == "") {
+	return ""
+} else {
+	if(@Length(ANS)> max){
+		return @Left(ANS,max) + " ...";
+	}else{
+		return ANS;
 	}
 }}]]></xp:this.value>
 						</xp:text>
 					</xp:panel>
-					<xp:panel id="meta" styleClass="lotusMeta">
-							<xp:panel id="meta2" styleClass="inlineB">
-						<xp:label id="label1" value="質問日時:"></xp:label>
-						<xp:text escape="true" id="Created"
-							value="#{viewEntry.Created}">
-							<xp:this.converter>
-								<xp:convertDateTime type="both"></xp:convertDateTime>
-							</xp:this.converter>
-						</xp:text>
-						<xp:text escape="true" id="divider1"
-							styleClass="lotusDivider">
-							<xp:this.value><![CDATA[#{javascript:"  |  "}]]></xp:this.value>
-						</xp:text>
+					<xp:panel id="meta">
+						<xp:panel id="meta2" styleClass="inlineB">
+							<xp:label id="label1" value="質問日時:"></xp:label>
+							<xp:text escape="true" id="Created"
+								value="#{viewEntry.Created}">
+								<xp:this.converter>
+									<xp:convertDateTime type="both"></xp:convertDateTime>
+								</xp:this.converter>
+							</xp:text>
+							<xp:text escape="true" id="divider1"
+								styleClass="lotusDivider">
+								<xp:this.value><![CDATA[#{javascript:"  |  "}]]></xp:this.value>
+							</xp:text>
 
 
 
-						<xp:label value="カテゴリ:" id="label3"></xp:label>
-						
-						<xp:link escape="true" id="category_link">
-							<xp:this.text><![CDATA[#{javascript:viewEntry.getColumnValue("Category")
+							<xp:label value="カテゴリ:" id="label3"></xp:label>
+
+							<xp:link escape="true" id="category_link">
+								<xp:this.text><![CDATA[#{javascript:viewEntry.getColumnValue("Category")
 }]]></xp:this.text>
-							<xp:eventHandler event="onclick"
-								submit="true" refreshMode="complete">
-								<xp:this.action><![CDATA[#{javascript:var Target = viewEntry.getColumnValue("Category");
+								<xp:eventHandler event="onclick"
+									submit="true" refreshMode="complete">
+									<xp:this.action><![CDATA[#{javascript:var Target = viewEntry.getColumnValue("Category");
 
 sessionScope.CategoryName = Target;}]]></xp:this.action>
-							</xp:eventHandler>
-						</xp:link>
-						<xp:text escape="true" id="divider2"
-							styleClass="lotusDivider">
-							<xp:this.value><![CDATA[#{javascript:"  |  "}]]></xp:this.value>
-						</xp:text>
+								</xp:eventHandler>
+							</xp:link>
+							<xp:text escape="true" id="divider2"
+								styleClass="lotusDivider">
+								<xp:this.value><![CDATA[#{javascript:"  |  "}]]></xp:this.value>
+							</xp:text>
 							<xc:cc_Taglist>
 								<xc:this.TagField><![CDATA[#{javascript:var Tag =viewEntry.getColumnValue("Tag");
 
 return @Implode(Tag,",")
 }]]></xc:this.TagField>
 							</xc:cc_Taglist>
-					</xp:panel></xp:panel>
-				</xp:column>
+						</xp:panel>
+					</xp:panel>
+</xp:column>
 				
 				<xp:column id="column4">
 					<xc:cc_UserProfile>

@@ -52,18 +52,17 @@ return PRF_view.getAllEntriesByKey(Targetuser);}]]></xp:this.value>
 							<xp:this.url><![CDATA[#{javascript:var profileDoc:NotesDocument =PFLDoc.getDocument();
 var imageName:String = "xpPhotoPlaceholder.gif";
 
-var attachment:NotesRichTextItem = profileDoc.getFirstItem("Photo");
-var attachment_vector = attachment.getEmbeddedObjects();
-
-var sv =getComponent("Profile_SV").getValue();
-var path = getComponent("Profile_Path").getValue();
-
-return "http://"+@Left(sv[0],"/")+"/"+path[0]+"/0/" + profileDoc.getUniversalID() + "/$FILE/" + attachment_vector.firstElement().getName();
-
-
-
+if (profileDoc.hasItem("Photo")){
+	var attachment:NotesRichTextItem = profileDoc.getFirstItem("Photo");
+	var attachment_vector = attachment.getEmbeddedObjects();
+	if (!attachment_vector.isEmpty()){
+		var sv =getComponent("Profile_SV").getValue();
+		var path = getComponent("Profile_Path").getValue();
+	
+		return "http://"+@Left(sv[0],"/")+"/"+path[0]+"/0/" + profileDoc.getUniversalID() + "/$FILE/" + attachment_vector.firstElement().getName();
+	}
+}
 return(imageName);
-
 }]]></xp:this.url>
 
 							<xp:eventHandler event="onclick"
@@ -125,18 +124,17 @@ return User_Point;}]]></xp:this.value>
 									<xp:this.url><![CDATA[#{javascript:var profileDoc:NotesDocument =PFLDoc.getDocument();
 var imageName:String = "xpPhotoPlaceholder.gif";
 
-var attachment:NotesRichTextItem = profileDoc.getFirstItem("Photo");
-var attachment_vector = attachment.getEmbeddedObjects();
-
-var sv =getComponent("Profile_SV").getValue();
-var path = getComponent("Profile_Path").getValue();
-
-return "http://"+@Left(sv[0],"/")+"/"+path[0]+"/0/" + profileDoc.getUniversalID() + "/$FILE/" + attachment_vector.firstElement().getName();
-
-
-
+if (profileDoc.hasItem("Photo")){
+	var attachment:NotesRichTextItem = profileDoc.getFirstItem("Photo");
+	var attachment_vector = attachment.getEmbeddedObjects();
+	if (!attachment_vector.isEmpty()){
+		var sv =getComponent("Profile_SV").getValue();
+		var path = getComponent("Profile_Path").getValue();
+	
+		return "http://"+@Left(sv[0],"/")+"/"+path[0]+"/0/" + profileDoc.getUniversalID() + "/$FILE/" + attachment_vector.firstElement().getName();
+	}
+}
 return(imageName);
-
 }]]></xp:this.url>
 
 								</xp:image>

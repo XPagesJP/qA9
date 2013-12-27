@@ -500,6 +500,11 @@ qa_JsLib.SetTag = function(){
 
 	var inputTag =getComponent("taginput").getValue();
 
+	
+
+	
+	
+	
 	var NowTag2 =@Explode(getComponent("djextListTextBox1").getValue(),",");
 	var NowTag =getComponent("djextListTextBox1").getValue();
 
@@ -509,8 +514,15 @@ qa_JsLib.SetTag = function(){
 		var sIT = @Element(inputTag, i);
 		 	 //既存値チェック
 		 	 
+		var input:com.ibm.xsp.component.xp.XspInputText = @Trim(sIT); 
+		//var sourceString = input.getValueAsString(); 
+		var sourceString = input;
+		var transITag = com.ibm.icu.text.Normalizer.normalize(sourceString,
+		com.ibm.icu.text.Normalizer.NFKC); 
+
+		
 			 //質問文書上で検索
-			var TagChkQ =@DbLookup(@DbName(),"V_TagSearch",@LowerCase(@Trim(sIT)),2);
+			var TagChkQ =@DbLookup(@DbName(),"V_TagSearch",@LowerCase(@Trim(transITag)),2);
 			if( TagChkQ==undefined){
 					 
 					//プロフィール文書上 で検索
@@ -518,9 +530,9 @@ qa_JsLib.SetTag = function(){
 					var path = getComponent("Profile_Path").getValue();
 
 					var PRF_dbname = new Array((sv.size() === 0) ? '' : sv[0], path[0]);
-					var TagChkP =@DbLookup(PRF_dbname,"V_Profile_Tag",@LowerCase(@Trim(sIT)),2);
+					var TagChkP =@DbLookup(PRF_dbname,"V_Profile_Tag",@LowerCase(@Trim(transITag)),2);
 					if( TagChkP==undefined){	 
-						StrTag = sIT
+						StrTag = transITag
 					 }else{
 						 StrTag = TagChkP
 					 }

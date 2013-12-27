@@ -16,7 +16,7 @@ if(helpdoc == null){
 	<xp:this.resources>
 		<xp:styleSheet href="/qa.css"></xp:styleSheet>
 	</xp:this.resources>
-	<xp:label value="ヘルプのページ" id="label1" styleClass="subTittle"></xp:label>
+	
 	<xp:panel style="margin-top:20.0px">
 		<xp:inputRichText value="#{document1.Body}" id="body1" readonly="true">
 		</xp:inputRichText>

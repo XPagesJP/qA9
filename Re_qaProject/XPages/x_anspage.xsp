@@ -23,7 +23,7 @@
 
                 	<xp:this.rendered><![CDATA[#{javascript:var targetdoc = docQues.getDocument();
 var fmname = targetdoc.getItemValueString("form");
-print(@Right(fmname,4));
+
 
 if(@Right(fmname,4) =="_del"){
 	false;
@@ -106,7 +106,7 @@ else
                 <xp:panel>
                 	<xp:this.rendered><![CDATA[#{javascript:var targetdoc = docQues.getDocument();
 var fmname = targetdoc.getItemValueString("form");
-print(@Right(fmname,4));
+
 
 if(@Right(fmname,4) =="_del"){
 	true;

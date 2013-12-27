@@ -4,6 +4,9 @@
     <xp:this.resources>
         <xp:styleSheet href="/qa.css"></xp:styleSheet>
     </xp:this.resources>
+    <xp:this.afterPageLoad><![CDATA[#{javascript:sessionScope.CategoryName = null;
+sessionScope.Status = null;
+sessionScope.sortColumn=null;}]]></xp:this.afterPageLoad>
     <xc:cc_AppLayout>
         <xp:this.facets>
         	<xc:cc_View_Category xp:key="facetMiddle"></xc:cc_View_Category>

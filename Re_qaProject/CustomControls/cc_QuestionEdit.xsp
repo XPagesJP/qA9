@@ -152,6 +152,11 @@ return PRF_path;}]]></xp:this.value>
 									<xp:inputText id="taginput"
 										style="height:23px;width:200px"
 										title=",(カンマ)区切りで複数入力可能。入力後に、右のボタンを押してください。">
+										<xp:this.attrs>
+											<xp:attr name="placeholder"
+												value="　,(カンマ)区切りで複数入力可">
+											</xp:attr>
+										</xp:this.attrs>
 										<xp:typeAhead mode="full"
 											minChars="1" id="typeAhead2" ignoreCase="true" tokens=","
 											valueListSeparator=",">
@@ -175,7 +180,8 @@ return @Unique(TagList)}]]></xp:this.valueList>
 										<xp:eventHandler event="onblur"
 											submit="true" refreshMode="partial" refreshId="TagPanel">
 											<xp:this.action><![CDATA[#{javascript:qa_JsLib.SetTag();}]]></xp:this.action>
-										</xp:eventHandler></xp:inputText>
+										</xp:eventHandler>
+									</xp:inputText>
 
 
 									<xp:image url="/3161.png"

@@ -6,7 +6,7 @@
 		<xe:this.facets>
 			
 			<xp:panel xp:key="MastFooter" styleClass="lotusRight">
-				ver 0.0.0
+				ver 1.0.3β
 			</xp:panel>
 			<xp:callback facetName="facetRight" id="facetRight"
 				xp:key="RightColumn">

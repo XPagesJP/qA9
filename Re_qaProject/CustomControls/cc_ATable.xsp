@@ -97,7 +97,7 @@ qa_JsLib.DeleteDocument(targetdoc,2);
 
 //質問数の回答カウント数ダウン
 if(targetdoc.getItemValueString("AorC")=="A"){
-		print (parentdoc.getItemValueString("Count_Answer"));
+		
 		if(parentdoc.getItemValueString("Count_Answer")==""){
 			var ca_count = 0;
 		}else{

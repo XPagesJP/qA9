@@ -218,13 +218,28 @@ getComponent("inputSearchEdit").setValue("");}]]></xp:this.action>
 			</xp:text>
 			<xp:panel id="detail"
 				style="margin-top:5px;margin-bottom:5px;">
-				<xp:text escape="false" id="details">
-					<xp:this.value><![CDATA[#{javascript:var doc:NotesDocument = viewEntry.getDocument()
-return doc.getItemValueString("Body");
-}]]></xp:this.value>
-				</xp:text>
+				<xp:text escape="true" id="details"
+							style="color:rgb(128,128,128)">
+							<xp:this.value><![CDATA[#{javascript:var max=300;
+var doc:NotesDocument = viewEntry.getDocument();
+
+
+var xspDoc = com.ibm.xsp.model.domino.wrapped.DominoDocument.wrap(doc.getParentDatabase().getFilePath(), doc, null, null, false, null);
+session.setConvertMime(true);
+var ANS = xspDoc.getItemValueString("Body");
+session.setConvertMime(false);
+if(ANS == "") {
+	return ""
+} else {
+	if(@Length(ANS)> max){
+		return @Left(ANS,max) + " ...";
+	}else{
+		return ANS;
+	}
+}}]]></xp:this.value>
+						</xp:text>
 			</xp:panel>
-			<xp:panel id="meta" styleClass="lotusMeta">
+			<xp:panel id="meta">
 				<xp:label id="label1" value="質問日時:"></xp:label>
 				<xp:text escape="true" id="Created"
 					value="#{viewEntry.Created}">
