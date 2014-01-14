@@ -639,3 +639,30 @@ targetDoc.save();
 	}
 
 }
+//////////////////////////////////////////
+//[IsSameUrlFileName]URLのファイル名と一致するか確認
+//引数
+//pageName  string or [string]: URLのファイル名が同じかチェックする名前。配列の場合は、いずれかに一致するか確認する
+//戻り値
+//boolean: 同じ場合は true そうでない場合は false を返す
+//////////////////////////////////////////
+qa_JsLib.IsSameUrlFileName = function IsSameUrlFileName(pageName){
+	var _fileName = context.getUrl().getPath(),
+	    _pageName = [],
+	    _result = false, _reg;
+	print('_fileName:' + _fileName);
+	if(pageName instanceof Array){
+	    _pageName = pageName;
+	}else{
+	    _pageName = [pageName];
+	}
+	for(var i=0,max=_pageName.length; i < max; i++){
+	    _reg = new RegExp('/' + _pageName[i] + '$');
+	    print(_pageName[i] + '$');
+	    if(_reg.test(_fileName)){
+	        _result = true;
+	        break;
+	    }
+	}
+	return _result;
+}
