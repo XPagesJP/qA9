@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='utf-8'?>
 <note default='true' class='icon' xmlns='http://www.lotus.com/dxl' version='9.0'
  replicaid='49257BB30040F45C'>
-<noteinfo noteid='11a' unid='220A8B37C086A21749257BB30040F487' sequence='35'>
+<noteinfo noteid='11a' unid='220A8B37C086A21749257BB30040F487' sequence='36'>
 <created><datetime>20130725T204929,03+09</datetime></created>
-<modified><datetime>20131206T092034,42+09</datetime></modified>
-<revised><datetime>20131206T092034,41+09</datetime></revised>
-<lastaccessed><datetime>20131206T092034,42+09</datetime></lastaccessed>
+<modified><datetime>20140115T151115,10+09</datetime></modified>
+<revised><datetime>20140115T151115,09+09</datetime></revised>
+<lastaccessed><datetime>20140115T151115,10+09</datetime></lastaccessed>
 <addedtofile><datetime>20130725T204929,07+09</datetime></addedtofile></noteinfo>
 <updatedby><name>CN=System Administrator/O=rskkgdev852</name></updatedby>
 <wassignedby><name>CN=System Administrator/O=rskkgdev852</name></wassignedby>
@@ -27,7 +27,6 @@ AAAAAAACICABAAD/////+A4DgA==
 <item name='$DBTheme'><text>oneUI.theme</text></item>
 <item name='$Daos'><text>0</text></item>
 <item name='$TemplateServerName'><text>CN=System Administrator/O=rskkgdev852</text></item>
-<item name='$Flags'><text>J!</text></item>
 <item name='$LaunchXPageRunOnServer'><text>0</text></item>
 <item name='$FlagsNoRefresh'><text/></item>
 <item name='$DefaultXPage'><text>top.xsp</text></item>
@@ -36,5 +35,6 @@ AAAAAAACICABAAD/////+A4DgA==
 <item name='$TemplateFileName'><text>c:\Lotus\Notes9\Data\qa_9p_n_1206.ntf</text></item>
 <item name='$DefaultClientXPage'><text>top.xsp</text></item>
 <item name='$TITLE'><text>【テンプレート】Q&amp;A
-#1qa_9p</text></item></note>
+#1qa_9p</text></item>
+<item name='$Flags'><text>J!z</text></item></note>
 
