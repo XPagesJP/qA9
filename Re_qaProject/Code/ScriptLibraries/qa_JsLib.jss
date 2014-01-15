@@ -2,7 +2,7 @@
 import Common_jss;
 //名前空間は設計要素名と同一にする(ローカルルール)
 var qa_JsLib = {};
-//comment
+//comment2
 //////////////////////////////////////////
 //[SetGoodCountUD]いいね！アクション
 //引数
