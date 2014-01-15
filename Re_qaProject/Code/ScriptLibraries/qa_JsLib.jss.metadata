@@ -1,12 +1,12 @@
-<?xml version="1.0" encoding="UTF-8"?><note class="filter" replicaid="49257C6000296709" version="9.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="352" sequence="4" unid="8A9F1080640E221849257C60002BB165">
-<created><datetime>20140114T165714,61+09</datetime></created>
-<modified><datetime>20140114T180643,95+09</datetime></modified>
-<revised><datetime>20140114T180643,93+09</datetime></revised>
-<lastaccessed><datetime>20140114T180643,93+09</datetime></lastaccessed>
-<addedtofile><datetime>20140114T165715,49+09</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Kenji Ebihara/OU=R/O=RSI</name></updatedby>
-<wassignedby><name>CN=Kenji Ebihara/OU=R/O=RSI</name></wassignedby>
+<?xml version="1.0" encoding="UTF-8"?><note class="filter" replicaid="49257BB30040F45C" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="3ca" sequence="27" unid="B04896A8F11608CB49257BB3004120A4">
+<created><datetime>20130725T205121,96+09</datetime></created>
+<modified><datetime>20140115T171850,13+09</datetime></modified>
+<revised><datetime>20140115T171850,12+09</datetime></revised>
+<lastaccessed><datetime>20140115T171850,13+09</datetime></lastaccessed>
+<addedtofile><datetime>20130725T205124,41+09</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=System Administrator/O=rskkgdev852</name></updatedby>
+<wassignedby><name>CN=System Administrator/O=rskkgdev852</name></wassignedby>
 <item name="$POID"><datetime>20131203T205712,68+09</datetime></item>
 <item name="$TITLE" sign="true"><text>qa_JsLib</text></item>
 <item name="$Flags"><text>.5834Q</text></item>
