@@ -33,8 +33,12 @@ if(EditID!=""){
 		<xp:styleSheet href="/qa.css"></xp:styleSheet>
 	</xp:this.resources>
 
-	
-	<xp:panel styleClass="questionBox">
+	<xp:panel id="inputmodePanel">
+	<xp:this.rendered><![CDATA[#{javascript:if (getComponent('FlagDisplay').value != '1'){
+			return true;
+		}else{
+			return false;
+		}}]]></xp:this.rendered><xp:panel styleClass="questionBox">
 		
 		<xp:table>
 			<xp:tr>
@@ -49,6 +53,7 @@ if(@Length(editId)==0){
 }}]]></xp:this.value></xp:label></xp:td>
 			</xp:tr>
 		</xp:table>
+		
 		<xp:table style="width:86%;margin-bottom:20.0px;margin-top:10.0px;margin-left:10.0px">
 
 		<xp:tr>
@@ -235,6 +240,31 @@ return @Unique(TagList)}]]></xp:this.valueList>
 	</xp:table>
 
 	
+	<xp:panel>
+		<xp:this.rendered><![CDATA[#{javascript:if (getComponent('FlagDisplay').value == '9'){
+			return true;
+		}else{
+			return false;
+		}}]]></xp:this.rendered>
+		
+		
+		<xp:table>
+			<xp:tr>
+				<xp:td><xp:image url="/1168_32.png" id="image3">
+			
+		</xp:image></xp:td>
+				<xp:td><xp:span style="font-size:12pt;color:rgb(255,0,0);font-weight:bold">エラー</xp:span></xp:td>
+			</xp:tr>
+			<xp:tr>
+				<xp:td></xp:td>
+				<xp:td><xp:text escape="true" id="Errorlog" style="color:rgb(255,0,0)">
+			<xp:this.value><![CDATA[#{javascript:var ErrMsg = sessionScope.ErrMsg;
+sessionScope.ErrMsg = "";
+return ErrMsg}]]></xp:this.value>
+		</xp:text></xp:td>
+			</xp:tr>
+		</xp:table>
+		</xp:panel>
 	<xp:panel style="text-align:center;margin-top:20.0px">
 		<xp:button id="button1" value="投稿する" style="font-size:12pt" icon="/3096_32.png">
 			<xp:eventHandler event="onclick" submit="true"
@@ -259,8 +289,25 @@ return @Unique(TagList)}]]></xp:this.valueList>
 
 
 
+
+
+
+
+
+
+
+
+
 						<xp:executeScript>
-							<xp:this.script><![CDATA[#{javascript:var uid = docQues.getDocument().getUniversalID();
+							<xp:this.script><![CDATA[#{javascript:getComponent('FlagDisplay').setValue(null);
+
+	if(docQues.getItemValueString("Title")==""){
+		sessionScope.ErrMsg = "質問は必ず入力してください。";
+		getComponent('FlagDisplay').setValue('9');
+		return false;
+	}
+
+var uid = docQues.getDocument().getUniversalID();
 docQues.replaceItemValue("UniqueID",uid);
 //docQues.replaceItemValue("count_good","0");
 var userName:NotesName = session.createName(@UserName());
@@ -282,10 +329,10 @@ if(targetdoc.isNewNote()) {
 	docQues.save();
 }
 
+	getComponent('FlagDisplay').setValue('1');
 
 }]]></xp:this.script>
 						</xp:executeScript>
-						<xp:openPage name="/top.xsp"></xp:openPage>
 					</xp:actionGroup>
 				</xp:this.action>
 			</xp:eventHandler>
@@ -294,6 +341,21 @@ if(targetdoc.isNewNote()) {
 		<xp:button value="キャンセル" id="button2" style="font-size:12pt"><xp:eventHandler event="onclick" submit="true" refreshMode="complete" immediate="true" save="false">
 	<xp:this.action>
 		<xp:openPage name="/top.xsp"></xp:openPage>
-	</xp:this.action></xp:eventHandler></xp:button></xp:panel>
-
-</xp:view>
+	</xp:this.action></xp:eventHandler></xp:button></xp:panel></xp:panel>
+<xp:panel id="compleatPanel" style="text-align:center">質問を投稿しました。
+	<xp:this.rendered><![CDATA[#{javascript:if (getComponent('FlagDisplay').value == '1'){
+			return true;
+		}else{
+			return false;
+		}}]]></xp:this.rendered><xp:panel style="text-align:center">
+		<xp:button id="button3" style="text-align:center" value="トップに戻る">
+			<xp:eventHandler event="onclick" submit="true"
+				refreshMode="complete" immediate="true" save="false">
+				<xp:this.action>
+					<xp:openPage name="/top.xsp"></xp:openPage>
+				</xp:this.action>
+			</xp:eventHandler>
+		</xp:button>
+	</xp:panel></xp:panel>
+<xp:inputHidden id="FlagDisplay"></xp:inputHidden>
+	</xp:view>
