@@ -1,13 +1,13 @@
 <?xml version='1.0' encoding='utf-8'?>
-<note class='filter' xmlns='http://www.lotus.com/dxl' version='9.0' replicaid='49257C61002B95D3'>
-<noteinfo noteid='342' unid='A7D6A1B1D9764E4549257C3600458514' sequence='2'>
+<note class='filter' xmlns='http://www.lotus.com/dxl' version='9.0' replicaid='49257BB30040F45C'>
+<noteinfo noteid='1296' unid='A7D6A1B1D9764E4549257C3600458514' sequence='104'>
 <created><datetime>20131203T213920,52+09</datetime></created>
-<modified><datetime>20140115T170045,17+09</datetime></modified>
-<revised><datetime>20140115T170045,16+09</datetime></revised>
-<lastaccessed><datetime>20140115T170045,17+09</datetime></lastaccessed>
-<addedtofile><datetime>20140115T170045,15+09</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Kenji Ebihara/OU=R/O=RSI</name></updatedby>
-<wassignedby><name>CN=Kenji Ebihara/OU=R/O=RSI</name></wassignedby>
+<modified><datetime>20131227T095738,88+09</datetime></modified>
+<revised><datetime>20131227T095738,87+09</datetime></revised>
+<lastaccessed><datetime>20131227T095738,88+09</datetime></lastaccessed>
+<addedtofile><datetime>20131206T091959,40+09</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=System Administrator/O=rskkgdev852</name></updatedby>
+<wassignedby><name>CN=System Administrator/O=rskkgdev852</name></wassignedby>
 <item name='$POID'><datetime>20131205T202012,59+09</datetime></item>
 <item name='$TITLE' sign='true'><text>履歴チェック|AG_Log_Chk</text></item>
 <item name='$AssistType' sign='true'><number>65413</number></item>
@@ -35,7 +35,7 @@ gQYAAAAA
 <item name='$DesignerVersion'><text>8.5.3</text></item>
 <item name='$AssistRunInfo' summary='true'>
 <rawitemdata type='3'>
-BgABAAAACAA+AwAAAAAAAAUAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+BgABAAAACADmEgAAAAAAAAUAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAACEcFAE58JUlc9EAAs3slSQAAAAAAAAAAAAAAAAAAAAAAAAAAqqqqqqqq
 qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq
 qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq
