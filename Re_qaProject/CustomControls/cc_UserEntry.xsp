@@ -180,6 +180,7 @@ return ErrMsg}]]></xp:this.value></xp:text>
 		Prodoc.appendItemValue("Status", "0");
 		Prodoc.appendItemValue("Process", "0");
 		Prodoc.appendItemValue("LastName", getComponent('LoginName').value);
+		Prodoc.appendItemValue("UserNameKj", getComponent('LoginName').value);
 		Prodoc.appendItemValue("UserID", getComponent('LoginName').value + "/" + Domain);
 		Prodoc.appendItemValue("HTTPPassword", getComponent('Password1').value);
 		Prodoc.appendItemValue("Address", getComponent('MailAddress').value);

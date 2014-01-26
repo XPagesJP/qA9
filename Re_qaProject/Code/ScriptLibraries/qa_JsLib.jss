@@ -370,9 +370,9 @@ qa_JsLib.InputChkAccount = function(accDoc, type){
 		var Password1 = getComponent("Password1").value;
 		var Password2 = getComponent("Password2").value;
 		
-		if (getComponent("LoginName").value == ""){
-			sessionScope.ErrMsg =  "ログインユーザー名が入力されていません。"
-				
+		if (getComponent("CrrPassword").value == ""){
+			sessionScope.ErrMsg = "現在のパスワードが入力されていません。"
+			
 		}else if (Password1 == "" || Password2 == "" ){
 			sessionScope.ErrMsg =  "パスワードが入力されていません。"
 
