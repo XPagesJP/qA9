@@ -5,9 +5,10 @@
         <xp:styleSheet href="/qa.css"></xp:styleSheet>
     </xp:this.resources>
     <xc:cc_AppLayout>
-        <xp:this.facets>
-        	<xc:cc_Tag xp:key="facetMiddle"></xc:cc_Tag>
+    	<xc:this.pageTitle><![CDATA[#{javascript:context.getUrlParameter("CategoryFilter");}]]></xc:this.pageTitle>
+    	<xp:this.facets>
+    		<xc:cc_Tag xp:key="facetMiddle"></xc:cc_Tag>
 
-        </xp:this.facets>
+    	</xp:this.facets>
     </xc:cc_AppLayout>
 </xp:view>

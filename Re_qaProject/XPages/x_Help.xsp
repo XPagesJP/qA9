@@ -4,10 +4,10 @@
     <xp:this.resources>
         <xp:styleSheet href="/qa.css"></xp:styleSheet>
     </xp:this.resources>
-    <xc:cc_AppLayout>
-        <xp:this.facets>
-        	<xc:cc_Help xp:key="facetMiddle"></xc:cc_Help>
+    <xc:cc_AppLayout pageTitle="ヘルプ">
+    	<xp:this.facets>
+    		<xc:cc_Help xp:key="facetMiddle"></xc:cc_Help>
 
-        </xp:this.facets>
+    	</xp:this.facets>
     </xc:cc_AppLayout>
 </xp:view>

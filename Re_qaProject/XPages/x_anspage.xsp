@@ -14,14 +14,17 @@
         </xp:dominoDocument>
     </xp:this.data>
     <xc:cc_AppLayout
-        placeBarName="#{javascript:docQues.getItemValueString('Title');}">
-        <xp:this.facets>
-            <xp:div xp:key="facetMiddle" styleClass="qalist">
-                <xp:panel disableOutputTag="true">
-                	<xp:panel></xp:panel>
-                	<xp:this.loaded><![CDATA[${javascript:param.containsKey('docId');}]]></xp:this.loaded>
+    	placeBarName="#{javascript:docQues.getItemValueString('Title');}">
+    	<xc:this.pageTitle><![CDATA[#{javascript:currentDocument.isNewNote() ?
+	'新規質問' :
+	currentDocument.getItemValueString('title');}]]></xc:this.pageTitle>
+    	<xp:this.facets>
+    		<xp:div xp:key="facetMiddle" styleClass="qalist">
+    			<xp:panel disableOutputTag="true">
+    				<xp:panel></xp:panel>
+    				<xp:this.loaded><![CDATA[${javascript:param.containsKey('docId');}]]></xp:this.loaded>
 
-                	<xp:this.rendered><![CDATA[#{javascript:var targetdoc = docQues.getDocument();
+    				<xp:this.rendered><![CDATA[#{javascript:var targetdoc = docQues.getDocument();
 var fmname = targetdoc.getItemValueString("form");
 
 
@@ -30,12 +33,12 @@ if(@Right(fmname,4) =="_del"){
 }else{
 	true;
 }}]]></xp:this.rendered>
-                	<p id="showQuestion"></p>
+    				<p id="showQuestion"></p>
 
-                	<xp:panel
-                		style="text-align:left;margin-bottom:10.0px">
+    				<xp:panel
+    					style="text-align:left;margin-bottom:10.0px">
 
-                		<xp:this.rendered><![CDATA[#{javascript:if (Common.getCurrentUser().name=="Anonymous")
+    					<xp:this.rendered><![CDATA[#{javascript:if (Common.getCurrentUser().name=="Anonymous")
 {
        return false;
 }
@@ -44,29 +47,29 @@ else
        return true;
 }
 }]]></xp:this.rendered>
-                		<div>
-                			<xp:label id="Countup_label"
-                				value="【カウントアップアクション】" rendered="false"
-                				style="background-color:rgb(192,192,192);width:324.0px">
+    					<div>
+    						<xp:label id="Countup_label"
+    							value="【カウントアップアクション】" rendered="false"
+    							style="background-color:rgb(192,192,192);width:324.0px">
 
-                			</xp:label>
-                		</div>
+    						</xp:label>
+    					</div>
 
 
 
-                		<xp:eventHandler event="onClientLoad"
-                			submit="true" refreshMode="norefresh">
-                			<xp:this.action><![CDATA[#{javascript://閲覧のカウントアップ
+    					<xp:eventHandler event="onClientLoad"
+    						submit="true" refreshMode="norefresh">
+    						<xp:this.action><![CDATA[#{javascript://閲覧のカウントアップ
 var targetdoc = docQues.getDocument();
 qa_JsLib.SetViewCountUD(targetdoc)}]]></xp:this.action>
-                		</xp:eventHandler>
-                	</xp:panel>
-                	<xc:cc_QTable
-                		docId="#{javascript:param.get('docId');}">
-                	</xc:cc_QTable>
+    					</xp:eventHandler>
+    				</xp:panel>
+    				<xc:cc_QTable
+    					docId="#{javascript:param.get('docId');}">
+    				</xc:cc_QTable>
 
-                	<xp:panel>
-                		<xp:this.rendered><![CDATA[#{javascript:if (Common.getCurrentUser().name=="Anonymous")
+    				<xp:panel>
+    					<xp:this.rendered><![CDATA[#{javascript:if (Common.getCurrentUser().name=="Anonymous")
 {
        return false;
 }
@@ -75,23 +78,23 @@ else
        return true;
 }
 }]]></xp:this.rendered>
-                		<p class="jumpAnchor">
-                			<a href="#inputAnswer">回答する≫</a>
-                		</p>
-                	</xp:panel>
-                	<h3>回答・コメント</h3>
-                	<xp:repeat id="repeat1" rows="30" var="entryAns"
-                		style="height:0.0auto" styleClass="answerList">
-                		<xp:this.value><![CDATA[#{javascript:var answerlist = database.getView("V_Answer_All");
+    					<p class="jumpAnchor">
+    						<a href="#inputAnswer">回答する≫</a>
+    					</p>
+    				</xp:panel>
+    				<h3>回答・コメント</h3>
+    				<xp:repeat id="repeat1" rows="30" var="entryAns"
+    					style="height:0.0auto" styleClass="answerList">
+    					<xp:this.value><![CDATA[#{javascript:var answerlist = database.getView("V_Answer_All");
 return answerlist.getAllEntriesByKey(docQues.getItemValueString('UniqueID'));
 }]]></xp:this.value>
-                		<xc:cc_ATable
-                			docId="#{javascript:entryAns.getUniversalID();}">
-                		</xc:cc_ATable>
-                	</xp:repeat>
-                	<div class="newAnswerInputBox">
-                		<xc:cc_AnserEdit>
-                			<xc:this.rendered><![CDATA[#{javascript:if (Common.getCurrentUser().name=="Anonymous")
+    					<xc:cc_ATable
+    						docId="#{javascript:entryAns.getUniversalID();}">
+    					</xc:cc_ATable>
+    				</xp:repeat>
+    				<div class="newAnswerInputBox">
+    					<xc:cc_AnserEdit>
+    						<xc:this.rendered><![CDATA[#{javascript:if (Common.getCurrentUser().name=="Anonymous")
 {
        return false;
 }
@@ -100,11 +103,11 @@ else
        return true;
 }
 }]]></xc:this.rendered>
-                		</xc:cc_AnserEdit>
-                	</div>
-                </xp:panel>
-                <xp:panel>
-                	<xp:this.rendered><![CDATA[#{javascript:var targetdoc = docQues.getDocument();
+    					</xc:cc_AnserEdit>
+    				</div>
+    			</xp:panel>
+    			<xp:panel>
+    				<xp:this.rendered><![CDATA[#{javascript:var targetdoc = docQues.getDocument();
 var fmname = targetdoc.getItemValueString("form");
 
 
@@ -112,10 +115,14 @@ if(@Right(fmname,4) =="_del"){
 	true;
 }else{
 	false;
-}}]]></xp:this.rendered><xp:label id="label1" value="該当の質問は、削除されました。" style="font-size:22pt"></xp:label></xp:panel>
+}}]]></xp:this.rendered>
+    				<xp:label id="label1" value="該当の質問は、削除されました。"
+    					style="font-size:22pt">
+    				</xp:label>
+    			</xp:panel>
 
-            </xp:div>
-        </xp:this.facets>
+    		</xp:div>
+    	</xp:this.facets>
     </xc:cc_AppLayout>
 </xp:view>
 

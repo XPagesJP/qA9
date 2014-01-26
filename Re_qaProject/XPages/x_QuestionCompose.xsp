@@ -2,7 +2,10 @@
 <xp:view xmlns:xp="http://www.ibm.com/xsp/core"
 	xmlns:xc="http://www.ibm.com/xsp/custom">
 
-	<xc:cc_AppLayout><xp:this.facets>
-	<xc:cc_QuestionEdit xp:key="facetMiddle"
-		property_editID="#{javascript:param.get('docId');}">
-	</xc:cc_QuestionEdit></xp:this.facets></xc:cc_AppLayout></xp:view>
+	<xc:cc_AppLayout pageTitle="質問の投稿">
+		<xp:this.facets>
+			<xc:cc_QuestionEdit xp:key="facetMiddle"
+				property_editID="#{javascript:param.get('docId');}">
+			</xc:cc_QuestionEdit>
+		</xp:this.facets>
+	</xc:cc_AppLayout></xp:view>

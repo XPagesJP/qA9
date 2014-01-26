@@ -5,9 +5,9 @@
 
 
 	
-	<xc:cc_AppLayout>
+	<xc:cc_AppLayout pageTitle="ユーザー">
 		<xp:this.facets>
-		
+
 			<xc:cc_AllUserList xp:key="facetMiddle"></xc:cc_AllUserList>
 		</xp:this.facets>
 	</xc:cc_AppLayout>

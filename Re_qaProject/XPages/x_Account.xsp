@@ -4,9 +4,9 @@
     <xp:this.resources>
         <xp:styleSheet href="/qa.css"></xp:styleSheet>
     </xp:this.resources>
-    <xc:cc_AppLayout>
-        <xp:this.facets>
-        	<xc:cc_UserEntry xp:key="facetMiddle"></xc:cc_UserEntry>
-        </xp:this.facets>
+    <xc:cc_AppLayout pageTitle="アカウント登録">
+    	<xp:this.facets>
+    		<xc:cc_UserEntry xp:key="facetMiddle"></xc:cc_UserEntry>
+    	</xp:this.facets>
     </xc:cc_AppLayout>
 </xp:view>
