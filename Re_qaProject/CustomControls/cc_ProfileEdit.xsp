@@ -152,7 +152,7 @@ return PRF_path;}]]></xp:this.value>
 								style="font-weight:bold;font-size:14pt">
 							</xp:span>
 							<xp:text escape="true" id="UserID"
-								style="color:rgb(128,128,128)">
+								style="color:rgb(128,128,128)" rendered="false">
 								<xp:this.value><![CDATA[#{javascript:var userNmae =docAcc.getItemValue("UserID");
 return @Name("[ABBREVIATE]",userNmae);
 
