@@ -3,7 +3,7 @@
 <xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom"
     xmlns:xe="http://www.ibm.com/xsp/coreex">
     <h3>
-    	  	<xp:label value="回答入力" id="label1"><xp:this.rendered><![CDATA[#{javascript://編集の場合、プロパティ定義より取得
+    	  	<xp:label value="回答・コメント入力" id="label1"><xp:this.rendered><![CDATA[#{javascript://編集の場合、プロパティ定義より取得
 var EditID = compositeData.property_editID;
 
 if(@Length(EditID)!=0){
@@ -52,7 +52,7 @@ if(@Length(EditID)!=0){
 var targetdoc = docQues.getDocument();
 var status = targetdoc.getItemValueString("Status");
 
-if (status=="9"){
+if (status=="2"){
 return "C"
 }else{
 return "A"

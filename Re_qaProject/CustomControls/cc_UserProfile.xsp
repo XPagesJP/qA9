@@ -7,6 +7,14 @@
 		<xp:styleSheet href="/qa.css"></xp:styleSheet>
 	</xp:this.resources>
 	<xp:span style="color:rgb(128,128,255)"></xp:span>
+		<xp:inputHidden id="Host_name">
+		<xp:this.value><![CDATA[#{javascript:var accountlist = database.getView("V_Setting");
+var Settingdoc =accountlist.getFirstDocument();
+var hostName =Settingdoc.getItemValue("Host_name");
+
+
+return hostName;}]]></xp:this.value>
+	</xp:inputHidden>
 	<xp:inputHidden id="Profile_SV">
 		<xp:this.value><![CDATA[#{javascript:var accountlist = database.getView("V_Setting");
 var Settingdoc =accountlist.getFirstDocument();
@@ -56,10 +64,10 @@ if (profileDoc.hasItem("Photo")){
 	var attachment:NotesRichTextItem = profileDoc.getFirstItem("Photo");
 	var attachment_vector = attachment.getEmbeddedObjects();
 	if (!attachment_vector.isEmpty()){
-		var sv =getComponent("Profile_SV").getValue();
+		var Hostname =getComponent("Host_name").getValue();
 		var path = getComponent("Profile_Path").getValue();
 	
-		return "http://"+@Left(sv[0],"/")+"/"+path[0]+"/0/" + profileDoc.getUniversalID() + "/$FILE/" + attachment_vector.firstElement().getName();
+		return Hostname[0] +"/"+path[0]+"/0/" + profileDoc.getUniversalID() + "/$FILE/" + attachment_vector.firstElement().getName();
 	}
 }
 return(imageName);
@@ -67,7 +75,7 @@ return(imageName);
 
 							<xp:eventHandler event="onclick"
 								submit="false">
-								<xp:this.script><![CDATA[XSP.openTooltipDialog("#{id:tDuser}",'#{id:UserID}')]]></xp:this.script>
+								<xp:this.script><![CDATA[XSP.openTooltipDialog("#{id:tDuser}",'#{id:image1}')]]></xp:this.script>
 							</xp:eventHandler>
 						</xp:image>
 					</xp:td>
@@ -81,7 +89,7 @@ var userNmae =profileDoc.getItemValueString("UserNameKj");
 return userNmae;}]]></xp:this.text>
 								<xp:eventHandler event="onclick"
 									submit="false">
-									<xp:this.script><![CDATA[XSP.openTooltipDialog("#{id:tDuser}",'#{id:UserID}')]]></xp:this.script>
+									<xp:this.script><![CDATA[XSP.openTooltipDialog("#{id:tDuser}",'#{id:image1}')]]></xp:this.script>
 								</xp:eventHandler>
 							</xp:link>
 						</div>
@@ -128,10 +136,10 @@ if (profileDoc.hasItem("Photo")){
 	var attachment:NotesRichTextItem = profileDoc.getFirstItem("Photo");
 	var attachment_vector = attachment.getEmbeddedObjects();
 	if (!attachment_vector.isEmpty()){
-		var sv =getComponent("Profile_SV").getValue();
+		var Hostname =getComponent("Host_name").getValue();
 		var path = getComponent("Profile_Path").getValue();
 	
-		return "http://"+@Left(sv[0],"/")+"/"+path[0]+"/0/" + profileDoc.getUniversalID() + "/$FILE/" + attachment_vector.firstElement().getName();
+		return Hostname[0] +"/"+path[0]+"/0/" + profileDoc.getUniversalID() + "/$FILE/" + attachment_vector.firstElement().getName();
 	}
 }
 return(imageName);

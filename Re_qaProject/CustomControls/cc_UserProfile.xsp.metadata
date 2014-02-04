@@ -1,24 +1,24 @@
-<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.0" replicaid="49257C6D00226CC7" version="9.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="2a2" sequence="10" unid="A09ED71230FCC90F49257C05003F0477">
+<?xml version="1.0" encoding="UTF-8"?><note class="form" replicaid="49257BB30040F45C" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="11f6" sequence="22" unid="A09ED71230FCC90F49257C05003F0477">
 <created><datetime>20131015T202819,11+09</datetime></created>
-<modified><datetime>20140127T162125,94+09</datetime></modified>
-<revised><datetime>20140127T162125,93+09</datetime></revised>
-<lastaccessed><datetime>20140127T162125,94+09</datetime></lastaccessed>
-<addedtofile><datetime>20140127T151636,36+09</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Masahiko Matsumoto/O=SystemPlanet</name></updatedby>
-<wassignedby><name>CN=Masahiko Matsumoto/O=SystemPlanet</name></wassignedby>
+<modified><datetime>20140204T224146,70+09</datetime></modified>
+<revised><datetime>20140204T224146,69+09</datetime></revised>
+<lastaccessed><datetime>20140204T224146,70+09</datetime></lastaccessed>
+<addedtofile><datetime>20131015T202819,13+09</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=System Administrator/O=rskkgdev852</name></updatedby>
+<wassignedby><name>CN=System Administrator/O=rskkgdev852</name></wassignedby>
 <item name="$Comment"><text>タグのみのコントロール</text></item>
 <item name="$TITLE"><text>cc_UserProfile.xsp</text></item>
 <item name="$Flags"><text>gC~4;</text></item>
+
+
+<item name="$FileNames" sign="true"><text>cc_UserProfile.xsp</text></item>
+
+
 <item name="$DesignerVersion"><text>8.5.1</text></item>
 
 
 
 
-
-
-
-
-<item name="$FileNames" sign="true"><text>cc_UserProfile.xsp</text></item>
 
 </note>
