@@ -30,7 +30,6 @@ response.setHeader("X-UA-Compatible", "IE=EmulateIE10");
   ga('create', 'UA-46663140-2', 'xpages.jp');
   ga('send', 'pageview');]]></xp:this.value>
 	</xp:scriptBlock>
-	<xp:br></xp:br>
 	<xe:applicationLayout id="applicationLayout1">
 		<xp:callback facetName="facetMiddle" id="facetMiddle"></xp:callback>
 		<xe:this.facets>
