@@ -651,7 +651,6 @@ qa_JsLib.IsSameUrlFileName = function IsSameUrlFileName(pageName){
 	var _fileName = context.getUrl().getPath(),
 	    _pageName = [],
 	    _result = false, _reg;
-	print('_fileName:' + _fileName);
 	if(pageName instanceof Array){
 	    _pageName = pageName;
 	}else{
@@ -659,7 +658,6 @@ qa_JsLib.IsSameUrlFileName = function IsSameUrlFileName(pageName){
 	}
 	for(var i=0,max=_pageName.length; i < max; i++){
 	    _reg = new RegExp('/' + _pageName[i] + '$');
-	    print(_pageName[i] + '$');
 	    if(_reg.test(_fileName)){
 	        _result = true;
 	        break;
