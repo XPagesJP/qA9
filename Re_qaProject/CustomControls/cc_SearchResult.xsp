@@ -130,9 +130,13 @@ if(getComponent("inputSearchEdit").getValue()!=""){
 		<img src="/oneuiv2/images/iconSearch16.png" />
 	</xp:button>
 	<xp:button id="button2" value="クリア">
-		<xp:eventHandler event="onclick" submit="true" refreshMode="partial" refreshId="#{javascript:compositeData.id_ForPartialRefresh}" id="eventHandler9">
+		<xp:eventHandler event="onclick" submit="true"
+			refreshMode="partial" refreshId="opportunitiesDataTable"
+			id="eventHandler9">
 			<xp:this.action><![CDATA[#{javascript:sessionScope.searchEdit = "";
 getComponent("inputSearchEdit").setValue("");}]]></xp:this.action>
+
+			<xp:this.script><![CDATA[dojo.byId('#{id:inputSearchEdit}').value = '';]]></xp:this.script>
 		</xp:eventHandler>
 	</xp:button></xp:panel>
 	<xp:dataTable id="opportunitiesDataTable" rows="10" var="viewEntry"
