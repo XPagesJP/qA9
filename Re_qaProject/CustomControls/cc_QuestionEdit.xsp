@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xp:view xmlns:xp="http://www.ibm.com/xsp/core"
-	xmlns:xe="http://www.ibm.com/xsp/coreex">
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xe="http://www.ibm.com/xsp/coreex">
 
 	<xp:this.data>
 		<xp:dominoDocument var="docQues" formName="FM_Question">
@@ -33,139 +32,138 @@ if(EditID!=""){
 		<xp:styleSheet href="/qa.css"></xp:styleSheet>
 	</xp:this.resources>
 
+	
 	<xp:panel id="inputmodePanel">
-	<xp:this.rendered><![CDATA[#{javascript:if (getComponent('FlagDisplay').value != '1'){
-			return true;
-		}else{
-			return false;
-		}}]]></xp:this.rendered><xp:panel styleClass="questionBox">
-		
-		<xp:table>
-			<xp:tr>
-				<xp:td><xp:image url="/Q01.jpg" id="image1" style="margin-left:10.0px;margin-top:10.0px"></xp:image></xp:td>
-				<xp:td valign="middle">
-					<xp:label style="font-size:28pt;font-family:メイリオ" id="Title"><xp:this.value><![CDATA[#{javascript:var editId = param.get('docId');
+		<xp:panel styleClass="questionBox">
+			<xp:table>
+				<xp:tr>
+					<xp:td>
+						<xp:image url="/Q01.jpg" id="image1"
+							style="margin-left:10.0px;margin-top:10.0px"></xp:image>
+					</xp:td>
+					<xp:td valign="middle">
+						<xp:label style="font-size:28pt;font-family:メイリオ" id="Title">
+							<xp:this.value><![CDATA[#{javascript:var editId = param.get('docId');
 
 if(@Length(editId)==0){
 	return "新規質問";
 }else{
 	return "質問編集";
-}}]]></xp:this.value></xp:label></xp:td>
-			</xp:tr>
-		</xp:table>
-		
-		<xp:table style="width:86%;margin-bottom:20.0px;margin-top:10.0px;margin-left:10.0px">
+}}]]></xp:this.value>
+						</xp:label>
+					</xp:td>
+				</xp:tr>
+			</xp:table>
 
-		<xp:tr>
-			
-			<xp:td style="background-color:rgb(246,246,246)">
-			質問タイトルを入力してください。
+			<xp:table
+				style="width:86%;margin-bottom:20.0px;margin-top:10.0px;margin-left:10.0px">
+
+				<xp:tr>
+
+					<xp:td style="background-color:rgb(246,246,246)">
+						質問タイトルを入力してください。
 			</xp:td>
-		</xp:tr>
-		<xp:tr>
-			
+				</xp:tr>
+				<xp:tr>
 
-			<xp:td style="padding-left:10.0px;padding-top:10.0px">
-				<xp:inputText value="#{docQues.Title}" id="title1"
-					style="height:23px;width:86%">
-					<xp:this.defaultValue><![CDATA[#{javascript:var doc =docQues.getDocument();
+
+					<xp:td style="padding-left:10.0px;padding-top:10.0px">
+						<xp:inputText value="#{docQues.Title}" id="title1"
+							style="height:23px;width:86%">
+							<xp:this.defaultValue><![CDATA[#{javascript:var doc =docQues.getDocument();
 doc.getItemValueString("Title");
 }]]></xp:this.defaultValue>
-				</xp:inputText>
+						</xp:inputText>
 
-			</xp:td>
-		</xp:tr>
-	</xp:table>
-	</xp:panel>
-	
-	<xp:span style="color:rgb(128,128,255)"></xp:span>
-	<xp:inputHidden id="Profile_SV">
-		<xp:this.value><![CDATA[#{javascript:var accountlist = database.getView("V_Setting");
+					</xp:td>
+				</xp:tr>
+			</xp:table>
+		</xp:panel>
+
+		<xp:span style="color:rgb(128,128,255)"></xp:span>
+		<xp:inputHidden id="Profile_SV">
+			<xp:this.value><![CDATA[#{javascript:var accountlist = database.getView("V_Setting");
 var Settingdoc =accountlist.getFirstDocument();
 var PRF_server =Settingdoc.getItemValue("Profile_server");
 
 
 return PRF_server;}]]></xp:this.value>
-	</xp:inputHidden>
-	<xp:inputHidden id="Profile_Path">
-		<xp:this.value><![CDATA[#{javascript:var accountlist = database.getView("V_Setting");
+		</xp:inputHidden>
+		<xp:inputHidden id="Profile_Path">
+			<xp:this.value><![CDATA[#{javascript:var accountlist = database.getView("V_Setting");
 var Settingdoc =accountlist.getFirstDocument();
 var PRF_path =Settingdoc.getItemValue("Profile_path");
 
 return PRF_path;}]]></xp:this.value>
-	</xp:inputHidden>
-	<div></div>
-	
-	<xp:table style="width:86%;margin-bottom:20.0px;margin-left:10.0px"><xp:tr><xp:td style="background-color:rgb(246,246,246)">
-			質問内容</xp:td>
-		</xp:tr>
-		<xp:tr>
-			
+		</xp:inputHidden>
+		<div></div>
 
-			<xp:td style="height:550px;padding-top:10.0px"
-				valign="top">
-				<xp:table style="margin-bottom:10.0px">
-
-					<xp:tr>
-						<xp:td style="width:42px">カテゴリ</xp:td>
-						<xp:td>
-							<xp:label id="label6" for="category1"
-								value=":">
-							</xp:label>
-						</xp:td>
-						<xp:td>
-
-							<xp:comboBox id="InputCategory"
-								value="#{docQues.Category}" style="height:23px;width:200px">
+		<xp:table style="width:86%;margin-bottom:20.0px;margin-left:10.0px">
+			<xp:tr>
+				<xp:td style="background-color:rgb(246,246,246)">
+					質問内容</xp:td>
+			</xp:tr>
+			<xp:tr>
 
 
-
-
-
-
-								<xp:selectItems>
-									<xp:this.value><![CDATA[#{javascript://@DbColumn(@DbName(),"V_Setting",2)
-@DbLookup(@DbName(),"V_Setting","1","CategoryList")}]]></xp:this.value>
-								</xp:selectItems>
-							</xp:comboBox>
-						</xp:td>
-
-
-
-
-					</xp:tr>
-
-
-
-				</xp:table>
-				<xp:panel id="TagPanel">
+				<xp:td style="height:550px;padding-top:10.0px" valign="top">
 					<xp:table style="margin-bottom:10.0px">
 
 						<xp:tr>
-
-							<xp:td style="width:42px">タグ</xp:td>
+							<xp:td style="width:42px">カテゴリ</xp:td>
 							<xp:td>
-								<xp:label id="label5" for="category1"
-									value=":">
+								<xp:label id="label6" for="category1" value=":">
 								</xp:label>
 							</xp:td>
 							<xp:td>
 
+								<xp:comboBox id="InputCategory" value="#{docQues.Category}"
+									style="height:23px;width:200px">
 
-								<div>
 
-									<xp:inputText id="taginput"
-										style="height:23px;width:200px"
-										title=",(カンマ)区切りで複数入力可能。入力後に、右のボタンを押してください。">
-										<xp:this.attrs>
-											<xp:attr name="placeholder"
-												value="　,(カンマ)区切りで複数入力可">
-											</xp:attr>
-										</xp:this.attrs>
-										<xp:typeAhead mode="full"
-											minChars="1" id="typeAhead2" ignoreCase="true" tokens=","
-											valueListSeparator=",">
-											<xp:this.valueList><![CDATA[#{javascript://質問文書上のタグ
+
+
+
+
+									<xp:selectItems>
+										<xp:this.value><![CDATA[#{javascript://@DbColumn(@DbName(),"V_Setting",2)
+@DbLookup(@DbName(),"V_Setting","1","CategoryList")}]]></xp:this.value>
+									</xp:selectItems>
+								</xp:comboBox>
+							</xp:td>
+
+
+
+
+						</xp:tr>
+
+
+
+					</xp:table>
+					<xp:panel id="TagPanel">
+						<xp:table style="margin-bottom:10.0px">
+
+							<xp:tr>
+
+								<xp:td style="width:42px">タグ</xp:td>
+								<xp:td>
+									<xp:label id="label5" for="category1" value=":">
+									</xp:label>
+								</xp:td>
+								<xp:td>
+
+
+									<div>
+
+										<xp:inputText id="taginput" style="height:23px;width:200px"
+											title=",(カンマ)区切りで複数入力可能。入力後に、右のボタンを押してください。">
+											<xp:this.attrs>
+												<xp:attr name="placeholder" value="　,(カンマ)区切りで複数入力可">
+												</xp:attr>
+											</xp:this.attrs>
+											<xp:typeAhead mode="full" minChars="1" id="typeAhead2"
+												ignoreCase="true" tokens="," valueListSeparator=",">
+												<xp:this.valueList><![CDATA[#{javascript://質問文書上のタグ
 var TagListQ =@DbColumn(@DbName(),"V_Tag",1);
 
 //プロフィール文書上のタグ
@@ -181,132 +179,115 @@ var TagListP =@DbColumn(PRF_dbname,"V_Profile_Tag",2);
 TagList = TagListQ.concat(TagListP);
 
 return @Unique(TagList)}]]></xp:this.valueList>
-										</xp:typeAhead>
-										<xp:eventHandler event="onblur"
-											submit="true" refreshMode="partial" refreshId="TagPanel">
-											<xp:this.action><![CDATA[#{javascript:qa_JsLib.SetTag();}]]></xp:this.action>
-										</xp:eventHandler>
-									</xp:inputText>
+											</xp:typeAhead>
+											<xp:eventHandler event="onblur" submit="true"
+												refreshMode="partial" refreshId="TagPanel">
+												<xp:this.action><![CDATA[#{javascript:qa_JsLib.SetTag();}]]></xp:this.action>
+											</xp:eventHandler>
+										</xp:inputText>
 
 
-									<xp:image url="/3161.png"
-										id="image2" styleClass="CursorPoint"
-										title="左に入力したタグを追加します。">
+										<xp:image url="/3161.png" id="image2" styleClass="CursorPoint"
+											title="左に入力したタグを追加します。">
 
-										<xp:eventHandler event="onclick"
-											submit="true" refreshMode="partial" refreshId="TagPanel">
-											<xp:this.action><![CDATA[#{javascript:qa_JsLib.SetTag();
+											<xp:eventHandler event="onclick" submit="true"
+												refreshMode="partial" refreshId="TagPanel">
+												<xp:this.action><![CDATA[#{javascript:qa_JsLib.SetTag();
 
 		
 		
 		
 }]]></xp:this.action>
-										</xp:eventHandler>
-									</xp:image>
-								</div>
+											</xp:eventHandler>
+										</xp:image>
+									</div>
 
-							</xp:td>
-							<xp:td>
-								
-							<xe:djextListTextBox id="djextListTextBox1" value="#{docQues.Tag}" multipleTrim="true" multipleSeparator=",">
-								</xe:djextListTextBox></xp:td>
-						</xp:tr>
+								</xp:td>
+								<xp:td>
+
+									<xe:djextListTextBox id="djextListTextBox1"
+										value="#{docQues.Tag}" multipleTrim="true" multipleSeparator=",">
+									</xe:djextListTextBox>
+								</xp:td>
+							</xp:tr>
 
 
 
-					</xp:table>
-				</xp:panel>
-				<xp:inputRichText value="#{docQues.Body}"
-					id="inputRichText1" style="height:400px">
-				</xp:inputRichText>
-			</xp:td>
-		</xp:tr>
-	</xp:table>
-	<xp:table style="width:86%;margin-bottom:20.0px;margin-top:10.0px">
-	<xp:tr><xp:td style="background-color:rgb(246,246,246)">ファイル添付</xp:td>
-		</xp:tr>
-		<xp:tr>
-				<xp:td><xp:fileUpload id="res_Fileupload" value="#{docQues.TempFile}" style="margin-top:10.0px;width:80%">
-		<xp:eventHandler event="onchange" submit="true" refreshMode="complete" disableValidators="true" id="eventHandler1">
-		</xp:eventHandler>
-	</xp:fileUpload>
-					<xp:fileDownload rows="30" id="Res_Filedownload" displayLastModified="false" hideWhen="true" allowDelete="true" value="#{docQues.TempFile}">
-		<xp:eventHandler event="onclick" submit="true" refreshMode="complete" disableValidators="true" id="eventHandler3">
-		</xp:eventHandler>
-	</xp:fileDownload></xp:td>
-
-		
-		</xp:tr>
-	</xp:table>
-
-	
-	<xp:panel>
-		<xp:this.rendered><![CDATA[#{javascript:if (getComponent('FlagDisplay').value == '9'){
-			return true;
-		}else{
-			return false;
-		}}]]></xp:this.rendered>
-		
-		
-		<xp:table>
-			<xp:tr>
-				<xp:td><xp:image url="/1168_32.png" id="image3">
-			
-		</xp:image></xp:td>
-				<xp:td><xp:span style="font-size:12pt;color:rgb(255,0,0);font-weight:bold">エラー</xp:span></xp:td>
-			</xp:tr>
-			<xp:tr>
-				<xp:td></xp:td>
-				<xp:td><xp:text escape="true" id="Errorlog" style="color:rgb(255,0,0)">
-			<xp:this.value><![CDATA[#{javascript:var ErrMsg = sessionScope.ErrMsg;
-sessionScope.ErrMsg = "";
-return ErrMsg}]]></xp:this.value>
-		</xp:text></xp:td>
+						</xp:table>
+					</xp:panel>
+					<xp:inputRichText value="#{docQues.Body}" id="inputRichText1"
+						style="height:400px">
+					</xp:inputRichText>
+				</xp:td>
 			</xp:tr>
 		</xp:table>
+		<xp:table style="width:86%;margin-bottom:20.0px;margin-top:10.0px">
+			<xp:tr>
+				<xp:td style="background-color:rgb(246,246,246)">ファイル添付</xp:td>
+			</xp:tr>
+			<xp:tr>
+				<xp:td>
+					<xp:fileUpload id="res_Fileupload" value="#{docQues.TempFile}"
+						style="margin-top:10.0px;width:80%">
+						<xp:eventHandler event="onchange" submit="true"
+							refreshMode="complete" disableValidators="true" id="eventHandler1">
+						</xp:eventHandler>
+					</xp:fileUpload>
+					<xp:fileDownload rows="30" id="Res_Filedownload"
+						displayLastModified="false" hideWhen="true" allowDelete="true"
+						value="#{docQues.TempFile}">
+						<xp:eventHandler event="onclick" submit="true"
+							refreshMode="complete" disableValidators="true" id="eventHandler3">
+						</xp:eventHandler>
+					</xp:fileDownload>
+				</xp:td>
+
+
+			</xp:tr>
+		</xp:table>
+
+
+		<xp:panel rendered="#{javascript:!!(viewScope.get('isInputError'));}">
+			<xp:table>
+				<xp:tr>
+					<xp:td>
+						<xp:image url="/1168_32.png" id="image3">
+
+						</xp:image>
+					</xp:td>
+					<xp:td>
+						<xp:span style="font-size:12pt;color:rgb(255,0,0);font-weight:bold">
+							エラー
+						</xp:span>
+					</xp:td>
+				</xp:tr>
+				<xp:tr>
+					<xp:td></xp:td>
+					<xp:td>
+						<xp:text escape="true" id="Errorlog" style="color:rgb(255,0,0)">
+							<xp:this.value><![CDATA[#{javascript:var ErrMsg = sessionScope.ErrMsg;
+sessionScope.ErrMsg = "";
+return ErrMsg}]]></xp:this.value>
+						</xp:text>
+					</xp:td>
+				</xp:tr>
+			</xp:table>
 		</xp:panel>
-	<xp:panel style="text-align:center;margin-top:20.0px">
-		<xp:button id="button1" value="投稿する" style="font-size:12pt" icon="/3096_32.png">
-			<xp:eventHandler event="onclick" submit="true"
-				refreshMode="complete">
-				<xp:this.action>
+		<xp:panel style="text-align:center;margin-top:20.0px">
+			<xp:button id="button1" value="投稿する" style="font-size:12pt"
+				icon="/3096_32.png">
+				<xp:eventHandler event="onclick" submit="true"
+					refreshMode="complete">
+					<xp:this.action>
+						<xp:actionGroup>
 
-					<xp:actionGroup>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-						<xp:executeScript>
-							<xp:this.script><![CDATA[#{javascript:getComponent('FlagDisplay').setValue(null);
-
-	if(docQues.getItemValueString("Title")==""){
-		sessionScope.ErrMsg = "質問タイトルは必ず入力してください。";
-		getComponent('FlagDisplay').setValue('9');
-		return false;
-	}
+							<xp:executeScript>
+								<xp:this.script><![CDATA[#{javascript:viewScope.put('isInputError', false);
+if(docQues.getItemValueString("Title")==""){
+	sessionScope.ErrMsg = "質問タイトルは必ず入力してください。";
+	viewScope.put('isInputError', true);
+	return false;
+}
 
 var uid = docQues.getDocument().getUniversalID();
 docQues.replaceItemValue("UniqueID",uid);
@@ -329,45 +310,16 @@ if(targetdoc.isNewNote()) {
 }else{
 	docQues.save();
 }
-
-	getComponent('FlagDisplay').setValue('1');
-
+sessionScope.put('saveSuccess', 'question');
+context.redirectToPage('x_anspage.xsp?docId=' + docQues.getItemValueString('UniqueID'));
 }]]></xp:this.script>
-						</xp:executeScript>
-					</xp:actionGroup>
-				</xp:this.action>
-			</xp:eventHandler>
-		</xp:button>
+							</xp:executeScript>
+						</xp:actionGroup>
+					</xp:this.action>
+				</xp:eventHandler>
+			</xp:button>
 
-		<xp:button value="キャンセル" id="button2" style="font-size:12pt"><xp:eventHandler event="onclick" submit="true" refreshMode="complete" immediate="true" save="false">
-	<xp:this.action>
-		<xp:openPage name="/top.xsp"></xp:openPage>
-	</xp:this.action></xp:eventHandler></xp:button></xp:panel></xp:panel>
-	<xp:panel id="compleatPanel"
-		style="text-align:center;margin-top:20.0px">
-		質問を投稿しました。
-		<xp:this.rendered><![CDATA[#{javascript:if (getComponent('FlagDisplay').value == '1'){
-			return true;
-		}else{
-			return false;
-		}}]]></xp:this.rendered>
-		<xp:panel style="margin-top:30.0px;margin-bottom:30.0px">
-			<xp:text escape="false" id="comdoclink"
-				style="margin-left:0.0px;margin-right:0.0px;margin-top:3px;margin-bottom:3px"
-				tagName="h4">
-				<xp:this.value><![CDATA[#{javascript:
-
-"<a href=\"x_anspage.xsp?docId=" 
-+ docQues.getDocument().getUniversalID() + "\">" 
-+ docQues.getItemValueString("Title") + "</a>"
-
-
-}]]></xp:this.value>
-			</xp:text>
-		</xp:panel>
-		<xp:panel style="text-align:center">
-			<xp:button id="button3" style="text-align:center"
-				value="トップに戻る">
+			<xp:button value="キャンセル" id="button2" style="font-size:12pt">
 				<xp:eventHandler event="onclick" submit="true"
 					refreshMode="complete" immediate="true" save="false">
 					<xp:this.action>
@@ -377,5 +329,4 @@ if(targetdoc.isNewNote()) {
 			</xp:button>
 		</xp:panel>
 	</xp:panel>
-	<xp:inputHidden id="FlagDisplay"></xp:inputHidden>
-	</xp:view>
+</xp:view>

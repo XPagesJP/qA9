@@ -132,6 +132,8 @@ if(@Length(EditID)!=0){
 
 
 
+
+
             			<xp:executeScript>
             				<xp:this.script><![CDATA[#{javascript:docAnsRes.replaceItemValue("Author",Common.getCurrentUser().name);
 docAnsRes.replaceItemValue("Created",@Now());
@@ -166,11 +168,12 @@ if(docAnsRes.getItemValueString("AorC")=="A"){
 		qa_JsLib.ComposeAccess_log(docAnsRes,null ,'6','1')
 		
 }
+sessionScope.put('saveSuccess', 'reply');
+context.redirectToPage('x_anspage.xsp?docId=' + docQues.getItemValueString('UniqueID'));
 
 //context.reloadPage();
 }]]></xp:this.script>
             			</xp:executeScript>
-            			<xp:openPage name="/top.xsp"></xp:openPage>
             		</xp:actionGroup>
             	</xp:this.action></xp:eventHandler></xp:button><xp:button value="キャンセル" id="button2" style="font-size:12pt"><xp:eventHandler event="onclick" submit="true" refreshMode="complete" immediate="true" save="false">
 	<xp:this.action>
@@ -219,13 +222,15 @@ docAnsRes.save();
 var targetdoc = docAnsRes.getDocument();
 qa_JsLib.SetPersonHistory(targetdoc,2);
 
+sessionScope.put('saveSuccess', 'reply');
+context.redirectToPage('x_anspage.xsp?docId=' + docQues.getItemValueString('UniqueID'));
 
 //質問数の回答カウント数アップ　＞＞＞＞＞＞＞＞しない
 
 //var dlg =getComponent("dialog1");
 //dlg.hide();}]]></xp:this.script>
             			</xp:executeScript>
-            			<xp:openPage name="/top.xsp"></xp:openPage>
+
             		</xp:actionGroup>
             	</xp:this.action></xp:eventHandler></xp:button><xp:button value="キャンセル" id="button4" style="font-size:12pt">
 	<xp:eventHandler event="onclick" submit="true"
