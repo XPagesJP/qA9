@@ -15,7 +15,6 @@
     </xp:this.data>
     <xp:this.beforePageLoad><![CDATA[#{javascript:(function(){
 	var _saveSuccess = sessionScope.get('saveSuccess');
-	print('_saveSuccess:' + _saveSuccess); 
 	if(!!(_saveSuccess)){
 		requestScope.put('saveSuccess', _saveSuccess);
 		sessionScope.remove('saveSuccess');
