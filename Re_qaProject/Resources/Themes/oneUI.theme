@@ -21,13 +21,11 @@
 	<!--
 		このパターンを使用して、コントロール用のプロパティ名と値のペアを定義します。
 	-->
-	<!--
 	<control>
-		<name>[Control Name]</name>
+		<name>ViewRoot</name>
 		<property>
-			<name>[property Name]</name>
-			<value>[property Value]</value>
+			<name>pageIcon</name>
+			<value>/favicon.ico</value>
 		</property>
 	</control>
-	-->
 </theme>

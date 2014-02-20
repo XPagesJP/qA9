@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='utf-8'?>
+<note class='form' xmlns='http://www.lotus.com/dxl' version='9.0' maintenanceversion='1.0'
+ replicaid='49257C830082264D'>
+<noteinfo noteid='1ba' unid='9810BA8E4A3D4B5949257C85003AC4A1' sequence='1'>
+<created><datetime>20140220T194154,25+09</datetime></created>
+<modified><datetime>20140220T194154,26+09</datetime></modified>
+<revised><datetime>20140220T194154,25+09</datetime></revised>
+<lastaccessed><datetime>20140220T194154,26+09</datetime></lastaccessed>
+<addedtofile><datetime>20140220T194154,26+09</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Kenji Ebihara/OU=R/O=RSI</name></updatedby>
+<wassignedby><name>CN=Kenji Ebihara/OU=R/O=RSI</name></wassignedby>
+<item name='$TITLE'><text>$DBIcon</text></item>
+<item name='$Flags'><text>34Ci~Q</text></item>
+<item name='$ImagesWide' sign='true'><number>1</number></item>
+<item name='$ImagesHigh' sign='true'><number>1</number></item>
+<item name='$ImagesColorize' sign='true'><number>0</number></item>
+<item name='$FileSize' sign='true'><number>1916</number></item>
+<item name='$ImageData' sign='true'>
+<rawitemdata type='1'>
+mQAcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAH0AHAAAAAIAAAAAAHwHAAABAAAAAQAAAAAAAAB8
+AIYHAAB8B3wHiVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAA
+AARnQU1BAACxjwv8YQUAAAAJcEhZcwAACxMAAAsTAQCanBgAAAAGYktHRAD/AP8A/6C9p5MAAAAH
+dElNRQfeAhQKHSCIzo1VAAAG7ElEQVRYR81Wa2wU1xX+ZnZmvet9eM3aEGxs7ASUBFOSEtoUSlEg
+EVKbUtGGiIhWKf+qlioVVp1GFVIjpDZNTSNV/dcfqVJCJKo6qkBBTqJikwCN0iRSVNmkPGxwHbDN
+eo33ae/szOk5d3bW6/WGRK2q9pOP5965557znce9s1p7+2rC/xAay/8vAU2T5f8MRJ8cn9j/rxGo
+dByLxbBhwwZMTU1hZGQEhUKhtOJCNGsKE/i3xbPR0dFBvb29NDQ0RP39/dTd3U1NTU2k67qns9hp
+pdQy/Gni7ZOnaZrU09NDN2/e5IS4kPGxY8eora3N87PUsSfVxpVhecq6N6/Sq9y/ZcsWGh4eJsdx
+yLbtEgWiVCpF+/fvJ8MwSGfFTwfXUyxWQrtNcwmam5tx4MABrF27Vs2ZXLkvmIwSb67Y1pJFUVVF
+dzuR1O/bt4/y+byK3hMPp0+fVr1R0l9qwJNaaYXPT3fGY/TYXXG6Lx4iXw1imzdvpsHBQeXMcy4l
+kOfo6Cht27btMzahPMsZ0Gl5NEwH7mmkE1+M0MXtYXrhczEKBwMUjTWoere2tlJXVxcdP36ccrlc
+mYBX/0QiQUeOHKn2s2hSQwxaEa6nPavC9OL9ERrfHiB6mMvH8qcNIVre2EiP7tpFZ86cob6+Pjp1
+6hRls9ly5J4IBgYGaOPGjWXbKsAFR9WiU2MkQo93NtLL9wfp71sCVNihl51bj/joRSbQxmf6p4cO
+KQeV8Jx6z4mJCdq7d6/qfM+HEKhxCjRE/CaeaK9H7xodv1pdwLfjeawPzsHUHDiyleGwzMpVquuI
+RaM8I7AzJezP1eGxdD9nBEePHsXJkydRLBbVmkC0lhCoM3RsbQ7iuU4L+5el0eHLeilR4oHdIFWw
+2QHgDzXwjAdMRgiJU1ngTlO6iWwBL/edAPeFmgtYQ8HH8qw7dOHTfeiM+PFkUxF+MFuxVVoTu2rO
+TOY5gW8mCUNODHseaEFX6j3g8l+BS2eBK+fVU7t8Dhg5B/+Vs7iHrkG3shieyKnseRCTlYEp1AcC
+OLy+Ad8PJRA07NJbl4AocyWQJh96Rv14XVuF3393Ix4Kj8N2jLKOQmnARw5aNIiX3hrHmpCFD65n
+8dTJMXdN/a/CnGXjn0UfimzAY6iil7HQ5122ZiBrRqCbfpY6fueHY9SBWFAljm5yyhzl7C+XZrHt
+zgZsXR1S9moQ0NAaNrE7lON+kEq7kL5S49ILhwzkNB98hgnTMOR+5Zc2/1UIz215x0JFG1tXcVGL
+Fl55/wZawryHsYRA1O/D461BPBRMcde73wC9lAapvRozNMfCrVweBuvr3Lhwipwdmw9vkffZMHQH
+Jl92ft4kT41sdC6P4PDuLjy/Zx0OfqUFYVOrJqDj8zFuwPg8jznX4pRHKu1cg2nbRH8qgIF0EOfz
+flydZQKcYskAWQVW0THG7z/8OIe/XUni/D8mcP7iBM7xU+TMhUmMTcywaY3L7MBm+24eSmgKGHiy
+xcA6M+s696JlmSYTv5sJ46WxeQQMH+oNDdfSGaxKpzAzk4TmK+JKRsfP3rVwYfgq0qkULEVK43LJ
+ja4hU3Bw6Mtx/PjREJfUPQul5PLx49F3Wv349RpCXLfK96QoWHxfvZoO40cXCVOzaVF32UljmPV4
+4evtOPiFMBLJNKayc8qWuguqYLPPBu7LlhV34PRHU9j1yuhCBtg3nlpZQJT3cYbKkOGIVYc/XMeC
+c4GizbByuHGdF/W78M54Bj94bZLvElJHTyC3okcmyxl4+sEouh9Zxu/d4y0rxL2AHY1A/ybVSyo4
+uXIlkjx3e28iit9cyiKZl95wN4mSd+X+ZHMMv/xaO0YmZjE0Na8IlLQWwWKjnWEf1nc0YeBSEt84
+/rFLoI7J7mQCJx7gGROQ9AscHrydC+GJjzRMzmYknAWzpaiExDNfiuK5r7bi6Ps3cfCNJBMoLy9C
+xiJ0bwrh8M42vHlxFrv/eMMlIIsruQS/vVfHjrgPjZqlDuiFuSB6xgJ47Rp3bgnKboV1IfD0gxE8
+v/MOXJ7M4OqtAhNwf+9Xo8g9sKIeuLulEYMjKXyzb2qhB24UNHTz1fo9J4idkXk+x0DftImzk3Ou
+QplqDUi9uKZvj8/jmcFbvJcJ1GCQ5Qz88L4Anm3hr2epfEvMRoJB3LsshBB/pj5MZJDMCQFW4wul
+VlySgZ5N9fjFjmZcns5jdMZyL6saBOQUrKjXsW5lGG9dzeJbf55eSqAmxH8tiwyXQAA/3x5Hrqir
+zN0Ocvn4OJhzY0LgVq1vwQJUIMpvbeceLLaam5tHOj+HZCZflhm+EypF3qU4o1k+TfP8W8IN7DYZ
+WPD9yQQkA3Knx+o0Fd1ngQQl/hN5B/8Cl7cSQSQOYv4AAAAASUVORK5CYII=
+</rawitemdata></item>
+<item name='$MimeType' sign='true'><text>image/png</text></item>
+<item name='$FileModDT' sign='true'><datetime>20140220T194300,55+09</datetime></item>
+<item name='$ImageNames' sign='true'><text>C:\Users\ebihara\Pictures\Qa9\qa9-icon-view.png</text></item>
+<item name='$DesignerVersion'><text>8.5.3</text></item></note>
+

@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='utf-8'?>
+<note class='form' xmlns='http://www.lotus.com/dxl' version='9.0' maintenanceversion='1.0'
+ replicaid='49257C8300820851'>
+<noteinfo noteid='3be' unid='139D4FD6E72226AC49257C8500398A80' sequence='1'>
+<created><datetime>20140220T192830,08+09</datetime></created>
+<modified><datetime>20140220T192830,09+09</datetime></modified>
+<revised><datetime>20140220T192830,08+09</datetime></revised>
+<lastaccessed><datetime>20140220T192830,09+09</datetime></lastaccessed>
+<addedtofile><datetime>20140220T192830,09+09</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Kenji Ebihara/OU=R/O=RSI</name></updatedby>
+<wassignedby><name>CN=Kenji Ebihara/OU=R/O=RSI</name></wassignedby>
+<item name='$TITLE'><text>$DBIcon</text></item>
+<item name='$Flags'><text>34Ci~Q</text></item>
+<item name='$ImagesWide' sign='true'><number>1</number></item>
+<item name='$ImagesHigh' sign='true'><number>1</number></item>
+<item name='$ImagesColorize' sign='true'><number>0</number></item>
+<item name='$FileSize' sign='true'><number>1146</number></item>
+<item name='$ImageData' sign='true'>
+<rawitemdata type='1'>
+mQAcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAH0AHAAAAAIAAAAAAHoEAAABAAAAAQAAAAAAAAB8
+AIQEAAB6BHoEiVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAIAAAD8GO2jAAAABmJLR0QA/wD/AP+g
+vaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gIUCh0giM6NVQAABAdJREFUSMfVVktM
+JFUUPfdV9Y+u7h4+TRjMMDEyw0K7SVioM3EhzCRuWBrGREmvh0RiXOBsxpjAAhQMiRtDgPTaDSyM
+gYUJGxcOGhMYgy7GkDQEHcb+QEFDddW7Ll51TdF8HISNd9Gp6rx3zn3nnnvr0cTEl/hfB538L9EF
+cZlZgVwaATOfiKNdnMCDjkQiPT09yWRyc3NTCHGmcOePUCi0sLDAzIeHh9lstr29/RIIvJUAhoeH
+mdm2bcdxpJSmaaZSqRclUJLVgPpp0ul0qVSqVCpSSimlbdvMPDY2BkB/IStUy8KnqD8+Ph6Px2vq
+vLKy8i8nQDVB9wRC89N56Q8NDTGzUkYFMy8uLp5lFm+zawU9lL7WMnHrWn9HssbZnZ2dhULBw3Uc
+x7btjY2Ntra2MwkAIlLozU0NX73RetAd4G78ejsO44phRAcGBlKpVDqdXl1d9XJ3HEc9Dw4Oeime
+3tx68LVkYqKzfvvtMN+BvAPnLpbfjCEYee/ePWa2LMtxHGaWvmDmpaWlQCCg+kCcWGSGaG1ufPhK
+8P3wtkGWJEiAAMEwQ0FYB1dbWtTxmVkV1nsuFov9/f2VSkVByeMEiUj44xvR+41mksoMMLllYAIx
+ChKAjMUMAEIITwcppdo+Ojqay+WEEFJK5TrdrwwD77wUe9j4zBEqsSo6gxgg5PctQNZFjRoPq1fb
+tpeXl2vmkvApAwDf/Vn+ttygMxgAQ610W4CxY0mAYrGY32neczAYzGQy4XDY5aajBCpM0/y8EIdU
+9odCYAYTQFTSohAUM4zTGiiTyfT29vozPlZk0rrryhDsKkN+BfWdcANRPhaP1zSzSnl3d3d2dnZ+
+ft7dwUdroOLVq/UfJkrqAILADBAkgwEB3imXNSGMqkTKOUKIQqGQzWanp6fX1tb8mtOxIovPrmtN
+WpkBomoBJDR3OW8WTV3XDMNQ9tc0zbKsmZmZkZGRra0t5SvfOABAut/+H9xserfumWJWEhLwi7zy
+yRPhEHXEQz/89bem6YFAgIjy+fzc3Nzk5KTKmog8syoaBoGZvPSbo6G1W4GEY5Lw9EVJRG//Hv8t
+t0UgFkRSgqivr6+rq2tqamp9fd1xHKWV93vyXCBg4gY+ug4pIchtQmJ68DT5xeOnrk2Jagay21Aq
+35PQnxN01OHR64gKCAFmEECMZaeh+6eD8t6+rG49jnIabm2jvRxGPACB59+UAwrd/0Pf29uXALHb
+cuQ7hDeFzr4SuASPdvFj0XWOJBDj0+3Ez7ltUmckwpEv2zluHi5BvoK7j0PfVFrBmm7Tkp38+sm+
+AIPIbbnLudkFw2+11rdEtO9zhYK5p2YQgS7z6kgAV5vsjKvfhe+mAAj+UfSfQ5yb/JzxD7OjCvSq
+0G+mAAAAAElFTkSuQmCC
+</rawitemdata></item>
+<item name='$MimeType' sign='true'><text>image/png</text></item>
+<item name='$FileModDT' sign='true'><datetime>20140220T192932,30+09</datetime></item>
+<item name='$ImageNames' sign='true'><text>C:\Users\ebihara\Pictures\Qa9\qa9-icon.png</text></item>
+<item name='$DesignerVersion'><text>8.5.3</text></item></note>
+

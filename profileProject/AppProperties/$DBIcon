@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='utf-8'?>
+<note class='form' xmlns='http://www.lotus.com/dxl' version='9.0' maintenanceversion='1.0'
+ replicaid='49257C8300821D1A'>
+<noteinfo noteid='1e2' unid='E33259DDD53E9A9A49257C85003A5FD8' sequence='1'>
+<created><datetime>20140220T193736,24+09</datetime></created>
+<modified><datetime>20140220T193736,28+09</datetime></modified>
+<revised><datetime>20140220T193736,24+09</datetime></revised>
+<lastaccessed><datetime>20140220T193736,28+09</datetime></lastaccessed>
+<addedtofile><datetime>20140220T193736,28+09</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Kenji Ebihara/OU=R/O=RSI</name></updatedby>
+<wassignedby><name>CN=Kenji Ebihara/OU=R/O=RSI</name></wassignedby>
+<item name='$TITLE'><text>$DBIcon</text></item>
+<item name='$Flags'><text>34Ci~Q</text></item>
+<item name='$ImagesWide' sign='true'><number>1</number></item>
+<item name='$ImagesHigh' sign='true'><number>1</number></item>
+<item name='$ImagesColorize' sign='true'><number>0</number></item>
+<item name='$FileSize' sign='true'><number>2085</number></item>
+<item name='$ImageData' sign='true'>
+<rawitemdata type='1'>
+mQAcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAH0AHAAAAAIAAAAAACUIAAABAAAAAQAAAAAAAAB8
+AC8IAAAlCCYIiVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAA
+AARnQU1BAACxjwv8YQUAAAAJcEhZcwAACxMAAAsTAQCanBgAAAAGYktHRAD/AP8A/6C9p5MAAAAH
+dElNRQfeAhQKHSCIzo1VAAAHlUlEQVRYR81Xa2wcVxX+ZmZn37ve9SuJXdtJnKh1DCG4tDRWcQj0
+IVoVpWqjpE5UXCoVVItIpAoCmioqfypwWiSEqJSoVUtwVVPcpo1qIhBO0kdQiEE1yK7iJOvWedle
+v/e9s7OXc+7urF+bBoEQHOvszH2d77vnnHvuWKmtrRP4H4pC+v9LQFF4+D8TIa6/P7b/XyOwEDgQ
+CGDjxo0YHx9HKBRCOp3Oj+SEZxZVIvBvq2Vj9erVoqOjQwwMDIjjx4+LvXv3ivLycqGqqjVnMehC
+LWb4Rmqt46eu62Lfvn0iHA6TQ3LC752dnaKmpsbCWQ5s6VLj0jA/edxqL5m3cH1zc7MYHBwU2WxW
+mKaZpyDE3NycaGtrEzabTag08cZC8WSLC0X5jORiqaioQHt7O9avXy/bRK6QF0RGqtWWbIvpol0t
+2d1nKbu+tbVVJBIJuXtLLent7ZW5kZ+/3IClxdwKzS7WlgXEQ/Vl4gtlHqEVIbZ582Zx8uRJCWaB
+cwj4OTw8LFpaWv7FJORnwQOqqPR7RfstQfHO7T4xtNUrXvh8QHhdTuEPlMh4V1dXi8bGRtHV1SXi
+8XiBgBX/iYkJcfDgwaU4ixpF1CZWeN3i4Zu84uVNPnF5q1OIr1P4SH+30SMqg0Fx/wMPiFOnTonu
+7m7R09MjYrFYYeeWspw4cUI0NTUVbMsNzgMtVVUEfT6xfU1Q/GaTS/yj2SnSX1ML4MZdmniZCNTQ
+mf7x/v0SYKFYoNZzdHRU7NixQ2a+hcEEipwCBT67jp21bnSsU/GzujR2lSXwOVcSupJFlpeSZEln
+uZSqKgJ+P7UECEwq4eXm0DtnP3kER44cwbFjx5DJZOQYC89aRsBhU3FnhQvPrTHQVhrBai1muUSq
+JQSDubRJALTG5c73UoN/Fxw5lrlIFEePvg3Ki3yPNbMIAco2Tn+U8oigHeW6pTCYIvvpLNNANG1Q
+W4Hb7SLA/Dj/kFCWkx0VV8IzGDh3Hg5/gAZtcmyhLCOQJhe9N5HC4UgAKVMrMF0qWYrgrKlD0XT4
+PN4CsPU0SaMX/4rqo9/FXae/h9/fm8W2L9fzDDnOCcCyjABL0jBxKaMhw7uiNjszb5edIlcZsGFa
+9UhDeiEE8zIdS8P750MwJz+F6VkFu5rBs3cGsNJvz03IR6gIAQXVXh3bPHHKB450TtjFkgipYQBh
+xY7W5ko8t8UPZaQfEYNLxnzsRSoG89M+CLsPImNAkEsaKxyoDywOwzICfruG7dUufNU1R1mfuwMo
+zBKdSxJrTLeh9o412HbrSuzcVI775t7F1fe7keZxIpGg3Aj9/SxVENpA1kTWzFDtN6CpWWnTEja7
+hICKLwbseLQsRe/kazZIb9LtZHiSYt49Zccn/jLoJT76sDCRolOlZTNYMXIC0bkohobO48irr2DP
+gZ/iwmScAOnSoeNoI3uXwxFcjeaPIRlmKosIlDtteLTKhg16IgfO6CT8mBI6Dk378P2LGj5M6dBo
+QtZMk2vJvfSXmb6GY12v4ulnnsEPfvQ0/vJeL544ehnZeAQOO4FmYvjl6SsYmsx/DeUdITfILxq9
+7a624/l1AmUqGc0z5AkG1as3I17sGRIIz0aw5/ZSvPDNekpEOmo0yakBJ4ejaH17HKPjYdSXaNi/
+pQKv9M/g3KSBB2/x4fSlBMZjJp6/uwJvDEbw1rkow857gLCxZ1UafsVANg/OwgRChgO/vkqJR+As
+bwzMYHhsGk6KqUOluz0ZQ8efLkpwn13B2SfWou0rNfjJ1hUYjZp4sW8G/WMpfKcpgEe+VIXXd9Th
+oZs90pYkoBNKA7WbgjlPMCjvjAcTwobfzrpwZorzAnScaD7p7jcv4Y8DV9EXGseT74wgNGNi0wo7
+IpSJvSHaXSKNBqqo96x1yXUrPSq+sc6LFCWoptnwOIGxLUmAs5yIS5Ed/KS2SXE4E3fiVyMGphIp
+6eoLT9big8fqqG3ins4r2PzSCA5/NIef312Gs4/X4qnbfHjkrWs4E5pEqUtFayMVKbJ33zo3mqqc
+RCCDOGXuHVUOrCJSEi9FWd5H3u0eUzENqm7UxyV3yHDi4DUdYzM51/9hZyWqgm7UlNixa0Ou+PAB
+uX+tAy11HlmcDmwpw5oSGw7/bRIZI4MHG0ow3H4TfnFvJWLprDyOrEGXgMumFDaMa2kFe4fteDHs
+RV/CjY9IX5uw44OxpBxvrtbRUG5HNGEgksxQDN0IOuQQdjd6iLRAMpWGrmnY1eBE18dJmOkkbHSU
+KrwOGiUwqkZ8HJ10q85QpYyb3Dufb1J8LhcaSj3wkLv7J6KYiucIPHWrE89uraT7IR8rMtZzPoqZ
+pIntG/ywU3Hiq9pJu+qmJP1Wzww+/nYFnSYNBg2oFFNeSZ8HmE5m0TkYxaH+xHIC15Mf3ubEgZZS
+RDO8V2JO+cFgXCuSdGnkirYCL31vdJPxx45HKFm5PweQpy0bHHJLCiEoJrzIKkbdFwz0XY7Dq2QQ
+JJASnY4gVTkH3Xt+ujO4L6CZGJtN491Qgi4yAcpT8hjdsPmn1AI4k7/R/4b5HyHvToFKt4KVLool
+3/VFl9FHCp3WTyL8VcTk8+yvK8A/AVV/STp+okdMAAAAAElFTkSuQmCCAA==
+</rawitemdata></item>
+<item name='$MimeType' sign='true'><text>image/png</text></item>
+<item name='$FileModDT' sign='true'><datetime>20140220T193752,09+09</datetime></item>
+<item name='$ImageNames' sign='true'><text>C:\Users\ebihara\Pictures\Qa9\qa9-icon-profile.png</text></item>
+<item name='$DesignerVersion'><text>8.5.3</text></item></note>
+
