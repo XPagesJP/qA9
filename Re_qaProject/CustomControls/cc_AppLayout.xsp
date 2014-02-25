@@ -8,7 +8,7 @@
 	<xp:this.beforePageLoad><![CDATA[#{javascript:var response = facesContext.getExternalContext().getResponse();
 response.setHeader("X-UA-Compatible", "IE=EmulateIE10");
   }]]></xp:this.beforePageLoad>
-	
+
 	<xp:this.afterPageLoad><![CDATA[#{javascript:(function(){
 	var _title =
 		(!!compositeData.pageTitle ? 
@@ -91,7 +91,22 @@ else
 				<xe:this.bannerUtilityLinks>
 					<xe:userTreeNode userField="commonName">
 					</xe:userTreeNode>
-					<xe:loginTreeNode label="ログイン"></xe:loginTreeNode>
+					<xe:loginTreeNode label="ログイン"
+						loaded="${javascript:context.getUser().isAnonymous();}">
+					</xe:loginTreeNode>
+					<xe:basicLeafNode label="ログアウト"
+						loaded="${javascript:!(context.getUser().isAnonymous());}">
+						<xe:this.href><![CDATA[#{javascript:(function(){
+	var accountlist = database.getView("V_Setting");
+	var Settingdoc =accountlist.getFirstDocument();
+	var hostName =Settingdoc.getItemValueString("Host_name");
+	var url = new XSPUrl(hostName);
+	url.setParameter('logout','');
+	url.setParameter('RedirectTo', hostName);
+	return url.toString();
+})();
+}]]></xe:this.href>
+					</xe:basicLeafNode>
 					<xe:basicContainerNode label="編集">
 						<xe:this.children>
 							<xe:pageTreeNode label="プロフィール変更"
@@ -149,6 +164,7 @@ else
 							</xe:pageTreeNode>
 						</xe:this.children>
 					</xe:basicContainerNode>
+
 
 
 
