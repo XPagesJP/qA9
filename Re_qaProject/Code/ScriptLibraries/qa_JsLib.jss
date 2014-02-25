@@ -83,12 +83,12 @@ qa_JsLib.SetGoodCountUD = function(key:int ,targetDoc:NotesXspDocument){
 qa_JsLib.SetFavoriteCountUD = function(key:int ,targetDoc:NotesXspDocument){
 
 	var su = Common.getCurrentUser().name;
-	var members = targetdoc.getItemValue("User_Favorite");
+	var members = targetDoc.getItemValue("User_Favorite");
 
 	if (key == 1) {
 		//お気に入り！ユーザーの追加
 		if (members.length == 0) {
-			 targetdoc.replaceItemValue("User_Favorite",su);
+			targetDoc.replaceItemValue("User_Favorite",su);
 		} else {
 			 var result = "";
 			 for (var i=0; i<members.length; i++) {
@@ -99,11 +99,10 @@ qa_JsLib.SetFavoriteCountUD = function(key:int ,targetDoc:NotesXspDocument){
 			 		result  = result + members[i] + "\n";
 		 	}
 		 	result  =result  + su;
-		 	targetdoc.replaceItemValue("User_Favorite",@Explode(result,"\n"));
+		 	targetDoc.replaceItemValue("User_Favorite",@Explode(result,"\n"));
 		}
-		
 		//ログ出力
-		qa_JsLib.ComposeAccess_log(targetDoc,null ,'3','1')
+		qa_JsLib.ComposeAccess_log(targetDoc ,null ,'3','1')
 	
 	}else{
 		//お気に入り！ユーザーのクリア
@@ -122,14 +121,14 @@ qa_JsLib.SetFavoriteCountUD = function(key:int ,targetDoc:NotesXspDocument){
 				 	}	
 				 }
 				if (ugcount < 0 )ugcount=0;
-				 targetdoc.replaceItemValue("User_Favorite",@Explode(result,"\n"));
+				targetDoc.replaceItemValue("User_Favorite",@Explode(result,"\n"));
 		}
 		
 		//ログ出力
-		qa_JsLib.ComposeAccess_log(targetDoc,null ,'3','-1')
+		qa_JsLib.ComposeAccess_log(targetDoc ,null ,'3','-1')
 		
 	}
-	targetdoc.save();
+	targetDoc.save();
 
 }
 
@@ -294,8 +293,7 @@ qa_JsLib.SetBestAnswer = function(targetDoc:NotesXspDocument,parentdoc:NotesXspD
 //戻り値
 //なし
 //////////////////////////////////////////
-qa_JsLib.ComposeAccess_log = function(targetDoc:NotesXspDocument,Chkkey , Action ,Key1){
-
+qa_JsLib.ComposeAccess_log = function(targetDoc:NotesDocument,Chkkey , Action ,Key1){
 	var accountlist = database.getView("V_Setting");
 	var Settingdoc =accountlist.getFirstDocument();
 	var QAV_server =Settingdoc.getItemValue("QAview_server");
@@ -304,6 +302,11 @@ qa_JsLib.ComposeAccess_log = function(targetDoc:NotesXspDocument,Chkkey , Action
 	        QAV_server.size() === 0 ? '' : QAV_server[0],
 	        QAV_path[0]);
 
+	//引数の targetDoc が NotesXspDocument と NotesDocument の時がある
+	//NotesDocument に揃える
+	if(targetDoc instanceof NotesXspDocument){
+		targetDoc = targetDoc.getDocument();
+	}
 
 	//チェックキーがある場合、同キーのチェック。あった場合、処理しない
 	//
@@ -322,8 +325,8 @@ qa_JsLib.ComposeAccess_log = function(targetDoc:NotesXspDocument,Chkkey , Action
 	QAV_doc.replaceItemValue("server",database.getServer());
 	QAV_doc.replaceItemValue("path",database.getFilePath());
 	QAV_doc.replaceItemValue("Db_id",database.getReplicaID());
-	QAV_doc.replaceItemValue("doc_id",targetdoc.getUniversalID());
-	QAV_doc.replaceItemValue("Doc_Author",targetdoc.getItemValue("Author"));
+	QAV_doc.replaceItemValue("doc_id",targetDoc.getUniversalID());
+	QAV_doc.replaceItemValue("Doc_Author",targetDoc.getItemValue("Author"));
 	QAV_doc.replaceItemValue("AccessUser",Common.getCurrentUser().name);
 	var date_notes = session.createDateTime(@Now()); 
 	QAV_doc.replaceItemValue("AccessDate", date_notes);
