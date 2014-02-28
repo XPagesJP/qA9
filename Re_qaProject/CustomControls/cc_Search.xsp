@@ -14,7 +14,8 @@
 	<xp:panel>
 
 
-		<xe:tagCloud id="tagCloud1">
+		<xe:tagCloud id="tagCloud1"
+			rendererType="com.ibm.xsp.extlib.OneUITagCloud">
 			<xe:this.cloudData>
 				<xe:dominoViewCloudData sortTags="alphabet"
 					viewName="V_Tag" linkTargetPage="/x_Tag.xsp"

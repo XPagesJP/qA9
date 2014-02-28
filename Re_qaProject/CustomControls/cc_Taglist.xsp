@@ -36,7 +36,7 @@
 			value="#{javascript:oneTag}">
 
 			<xp:eventHandler event="onClick" submit="false">
-				<xe:this.script><![CDATA[var tmp =document.getElementById("#{id:TagName}").value
+				<xe:this.script><![CDATA[var tmp =encodeURIComponent(document.getElementById("#{id:TagName}").value)
 window.open("x_Tag.xsp?CategoryFilter=" + tmp,"_self","")]]></xe:this.script>
 			</xp:eventHandler>
 		</xe:djextListTextBox>

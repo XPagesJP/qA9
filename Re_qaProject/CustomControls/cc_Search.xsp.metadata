@@ -1,23 +1,23 @@
-<?xml version="1.0" encoding="UTF-8"?><note class="form" replicaid="49257BB30040F45C" version="9.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="11de" sequence="8" unid="DDD7439977F9E05C49257C0000442413">
-<created><datetime>20131010T212416,83+09</datetime></created>
-<modified><datetime>20131010T212424,08+09</datetime></modified>
-<revised><datetime>20131010T212424,07+09</datetime></revised>
-<lastaccessed><datetime>20131010T212424,08+09</datetime></lastaccessed>
-<addedtofile><datetime>20131010T212416,85+09</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=System Administrator/O=rskkgdev852</name></updatedby>
-<wassignedby><name>CN=System Administrator/O=rskkgdev852</name></wassignedby>
-<item name="$Comment"><text>トップページ</text></item>
+<?xml version="1.0" encoding="UTF-8"?><note class="form" replicaid="49257C8C0044266B" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="2ce" sequence="27" unid="769F37F4638B5F9549257C8C004455B2">
+<created><datetime>20140227T212623,86+09</datetime></created>
+<modified><datetime>20140228T171526,25+09</datetime></modified>
+<revised><datetime>20140228T171526,24+09</datetime></revised>
+<lastaccessed><datetime>20140228T171526,25+09</datetime></lastaccessed>
+<addedtofile><datetime>20140227T212624,35+09</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Administrator/O=SISE2</name></updatedby>
+<wassignedby><name>CN=Administrator/O=SISE2</name></wassignedby>
 <item name="$TITLE"><text>cc_Search.xsp</text></item>
 <item name="$Flags"><text>gC~4;</text></item>
 
 
+
+
+
+
+
 <item name="$FileNames" sign="true"><text>cc_Search.xsp</text></item>
-
-
+<item name="$Comment" sign="true"><text>検索ページ</text></item>
 <item name="$DesignerVersion"><text>8.5.1</text></item>
-
-
-
 
 </note>

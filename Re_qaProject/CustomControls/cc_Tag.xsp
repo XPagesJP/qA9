@@ -14,11 +14,13 @@
 
 
 	<xp:panel>
-		<xe:tagCloud id="tagCloud1" sliderVisible="true">
+		<xe:tagCloud id="tagCloud1" sliderVisible="true"
+			rendererType="com.ibm.xsp.extlib.OneUITagCloud">
 			<xe:this.cloudData>
 				<xe:dominoViewCloudData sortTags="alphabet"
 					viewName="V_Tag" linkTargetPage="/x_Tag.xsp"
 					linkRequestParam="CategoryFilter">
+
 				</xe:dominoViewCloudData>
 			</xe:this.cloudData>
 		</xe:tagCloud>

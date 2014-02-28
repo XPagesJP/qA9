@@ -87,7 +87,10 @@ sessionScope.CategoryName = "";
 }else{
 sessionScope.CategoryName = rowCate;
 }
-}]]></xp:this.action>
+
+//ページャ 1ページ目に移動
+var view1:com.ibm.xsp.component.xp.XspViewPanel=getComponent("opportunitiesDataTable");
+view1.gotoFirstPage()}]]></xp:this.action>
 			</xp:eventHandler></xp:link>
 			<xp:label value=" | " id="label2" style="font-size:12pt;color:rgb(128,128,128)"></xp:label></xp:repeat>
 		</xp:panel>
@@ -109,7 +112,11 @@ sessionScope.CategoryName = rowCate;
 }}]]></xp:this.style>
 							<xp:eventHandler event="onclick"
 								submit="true" refreshMode="partial" refreshId="contentBody">
-								<xp:this.action><![CDATA[#{javascript:sessionScope.sortColumn="Count_good"}]]></xp:this.action>
+								<xp:this.action><![CDATA[#{javascript:sessionScope.sortColumn="Count_good"
+
+//ページャ 1ページ目に移動
+var view1:com.ibm.xsp.component.xp.XspViewPanel=getComponent("opportunitiesDataTable");
+view1.gotoFirstPage()}]]></xp:this.action>
 							</xp:eventHandler>
 						</xp:link>
 					</li>
@@ -122,7 +129,11 @@ sessionScope.CategoryName = rowCate;
 }}]]></xp:this.style>
 							<xp:eventHandler event="onclick"
 								submit="true" refreshMode="partial" refreshId="contentBody">
-								<xp:this.action><![CDATA[#{javascript:sessionScope.sortColumn="Count_Answer"}]]></xp:this.action>
+								<xp:this.action><![CDATA[#{javascript:sessionScope.sortColumn="Count_Answer"
+
+//ページャ 1ページ目に移動
+var view1:com.ibm.xsp.component.xp.XspViewPanel=getComponent("opportunitiesDataTable");
+view1.gotoFirstPage()}]]></xp:this.action>
 							</xp:eventHandler>
 						</xp:link>
 					</li>
@@ -135,7 +146,11 @@ sessionScope.CategoryName = rowCate;
 }}]]></xp:this.style>
 							<xp:eventHandler event="onclick"
 								submit="true" refreshMode="partial" refreshId="contentBody">
-								<xp:this.action><![CDATA[#{javascript:sessionScope.sortColumn="Count_view"}]]></xp:this.action>
+								<xp:this.action><![CDATA[#{javascript:sessionScope.sortColumn="Count_view"
+
+//ページャ 1ページ目に移動
+var view1:com.ibm.xsp.component.xp.XspViewPanel=getComponent("opportunitiesDataTable");
+view1.gotoFirstPage()}]]></xp:this.action>
 							</xp:eventHandler>
 						</xp:link>
 					</li>
@@ -148,7 +163,11 @@ sessionScope.CategoryName = rowCate;
 }}]]></xp:this.style>
 							<xp:eventHandler event="onclick"
 								submit="true" refreshMode="partial" refreshId="contentBody">
-								<xp:this.action><![CDATA[#{javascript:sessionScope.sortColumn="Created"}]]></xp:this.action>
+								<xp:this.action><![CDATA[#{javascript:sessionScope.sortColumn="Created"
+
+//ページャ 1ページ目に移動
+var view1:com.ibm.xsp.component.xp.XspViewPanel=getComponent("opportunitiesDataTable");
+view1.gotoFirstPage()}]]></xp:this.action>
 							</xp:eventHandler>
 						</xp:link>
 					</li>
@@ -171,7 +190,11 @@ sessionScope.CategoryName = rowCate;
 }}]]></xp:this.style>
 							<xp:eventHandler event="onclick"
 								submit="true" refreshMode="partial" refreshId="contentBody">
-								<xp:this.action><![CDATA[#{javascript:sessionScope.Status = "All"}]]></xp:this.action>
+								<xp:this.action><![CDATA[#{javascript:sessionScope.Status = "All"
+
+//ページャ 1ページ目に移動
+var view1:com.ibm.xsp.component.xp.XspViewPanel=getComponent("opportunitiesDataTable");
+view1.gotoFirstPage()}]]></xp:this.action>
 							</xp:eventHandler>
 						</xp:link>
 					</li>
@@ -183,7 +206,11 @@ sessionScope.CategoryName = rowCate;
 }}]]></xp:this.style>
 							<xp:eventHandler event="onclick"
 								submit="true" refreshMode="partial" refreshId="contentBody">
-								<xp:this.action><![CDATA[#{javascript:sessionScope.Status = "Close"}]]></xp:this.action>
+								<xp:this.action><![CDATA[#{javascript:sessionScope.Status = "Close"
+
+//ページャ 1ページ目に移動
+var view1:com.ibm.xsp.component.xp.XspViewPanel=getComponent("opportunitiesDataTable");
+view1.gotoFirstPage()}]]></xp:this.action>
 							</xp:eventHandler>
 						</xp:link>
 					</li>
@@ -195,7 +222,11 @@ sessionScope.CategoryName = rowCate;
 }}]]></xp:this.style>
 							<xp:eventHandler event="onclick"
 								submit="true" refreshMode="partial" refreshId="contentBody">
-								<xp:this.action><![CDATA[#{javascript:sessionScope.Status = "Open"}]]></xp:this.action>
+								<xp:this.action><![CDATA[#{javascript:sessionScope.Status = "Open"
+
+//ページャ 1ページ目に移動
+var view1:com.ibm.xsp.component.xp.XspViewPanel=getComponent("opportunitiesDataTable");
+view1.gotoFirstPage()}]]></xp:this.action>
 							</xp:eventHandler>
 						</xp:link>
 					</li>
