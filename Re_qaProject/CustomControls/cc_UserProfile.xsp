@@ -54,7 +54,7 @@ return PRF_view.getAllEntriesByKey(Targetuser);}]]></xp:this.value>
 
 			<xp:table styleClass="oneuser">
 				<xp:tr>
-					<xp:td>
+					<xp:td> 
 						<xp:image id="image1"
 							styleClass="userImage01">
 							<xp:this.url><![CDATA[#{javascript:var profileDoc:NotesDocument =PFLDoc.getDocument();
@@ -79,7 +79,7 @@ return(imageName);
 							</xp:eventHandler>
 						</xp:image>
 					</xp:td>
-					<xp:td>
+					<xp:td style="text-align:left; width:114px;">
 						<div>
 							<xp:link escape="true" id="UserNameKj">
 								<xp:this.text><![CDATA[#{javascript:var profileDoc =PFLDoc.getDocument();
