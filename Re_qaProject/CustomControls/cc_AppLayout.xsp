@@ -33,9 +33,8 @@ response.setHeader("X-UA-Compatible", "IE=EmulateIE10");
 	<xe:applicationLayout id="applicationLayout1">
 		<xp:callback facetName="facetMiddle" id="facetMiddle"></xp:callback>
 		<xe:this.facets>
-
 			<xp:panel xp:key="MastFooter" styleClass="lotusRight">
-				ver 1.0.3β
+				ver 0.9.0 (Public Beta 1)
 			</xp:panel>
 			<xp:callback facetName="facetRight" id="facetRight"
 				xp:key="RightColumn">
@@ -47,7 +46,7 @@ response.setHeader("X-UA-Compatible", "IE=EmulateIE10");
 
 		<xe:this.configuration>
 			<xe:oneuiApplication footer="false"
-				legalText="九州地区ノーツパートナー会 Copyright © 2013 Kyushu Notes Partner Community. All Rights Reserved."
+				legalText="Copyright © 2013 Kyushu Notes Partner Community. (九州地区ノーツパートナー会 ) All Rights Reserved."
 				productLogo="/logo.png" productLogoHeight="45px"
 				productLogoWidth="360px"
 				placeBarName="#{javascript:compositeData.placeBarName;}">
@@ -100,7 +99,7 @@ else
 	var accountlist = database.getView("V_Setting");
 	var Settingdoc =accountlist.getFirstDocument();
 	var hostName =Settingdoc.getItemValueString("Host_name");
-	var url = new XSPUrl(hostName);
+	var url = new XSPUrl(hostName + '/names.nsf');
 	url.setParameter('logout','');
 	url.setParameter('RedirectTo', hostName);
 	return url.toString();
