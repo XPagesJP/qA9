@@ -1,14 +1,14 @@
 <?xml version='1.0' encoding='utf-8'?>
-<note default='true' class='view' xmlns='http://www.lotus.com/dxl' version='9.0'
- replicaid='49257BB30040F45C'>
-<noteinfo noteid='48e' unid='7DCC27576BECDDA849257BB3004123EE' sequence='8'>
-<created><datetime>20130725T205130,38+09</datetime></created>
-<modified><datetime>20130828T140122,38+09</datetime></modified>
-<revised><datetime>20130828T140122,37+09</datetime></revised>
-<lastaccessed><datetime>20130828T140122,38+09</datetime></lastaccessed>
-<addedtofile><datetime>20130725T205130,39+09</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Administrator/O=ZEBRA</name><name>CN=System Administrator/O=rskkgdev852</name></updatedby>
-<wassignedby><name>CN=System Administrator/O=rskkgdev852</name></wassignedby>
+<note class='view' xmlns='http://www.lotus.com/dxl' version='9.0' maintenanceversion='1.0'
+ replicaid='49257C7D00225761'>
+<noteinfo noteid='19a' unid='36C191739935A45D49257C7D002299FA' sequence='13'>
+<created><datetime>20140212T151756,42+09</datetime></created>
+<modified><datetime>20140315T093232,89+09</datetime></modified>
+<revised><datetime>20140315T093232,88+09</datetime></revised>
+<lastaccessed><datetime>20140315T093232,89+09</datetime></lastaccessed>
+<addedtofile><datetime>20140212T151756,45+09</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Admin/O=LotusLab</name></updatedby>
+<wassignedby><name>CN=Admin/O=LotusLab</name></wassignedby>
 <item name='$FormulaClass' sign='true'><text>1</text></item>
 <item name='$TITLE' sign='true'><text>質問/回答一覧|V_QA_ALL</text></item>
 <item name='$Index' sign='true'><text/></item>

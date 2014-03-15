@@ -1,13 +1,14 @@
 <?xml version='1.0' encoding='utf-8'?>
-<note class='filter' xmlns='http://www.lotus.com/dxl' version='9.0' replicaid='49257BB30040F45C'>
-<noteinfo noteid='73e' unid='76DDD8750EE41EC249257BB900032F73' sequence='3'>
-<created><datetime>20130731T093447,55+09</datetime></created>
-<modified><datetime>20130828T140121,90+09</datetime></modified>
-<revised><datetime>20130828T140121,89+09</datetime></revised>
-<lastaccessed><datetime>20130828T140121,90+09</datetime></lastaccessed>
-<addedtofile><datetime>20130731T093447,58+09</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Administrator/O=ZEBRA</name><name>CN=System Administrator/O=rskkgdev852</name></updatedby>
-<wassignedby><name>CN=System Administrator/O=rskkgdev852</name></wassignedby>
+<note class='filter' xmlns='http://www.lotus.com/dxl' version='9.0' maintenanceversion='1.0'
+ replicaid='49257C7D00225761'>
+<noteinfo noteid='156' unid='2CB234C24DFEC16849257C7D00229852' sequence='11'>
+<created><datetime>20140212T151752,18+09</datetime></created>
+<modified><datetime>20140315T093229,71+09</datetime></modified>
+<revised><datetime>20140315T093229,70+09</datetime></revised>
+<lastaccessed><datetime>20140315T093229,71+09</datetime></lastaccessed>
+<addedtofile><datetime>20140212T151752,18+09</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Admin/O=LotusLab</name></updatedby>
+<wassignedby><name>CN=Admin/O=LotusLab</name></wassignedby>
 <item name='$TITLE' sign='true'><text>Database Script</text></item>
 <item name='$Flags'><text>t34Q</text></item>
 <item name='$PublicAccess'><text>1</text></item>

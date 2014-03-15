@@ -1,13 +1,14 @@
 <?xml version='1.0' encoding='utf-8'?>
-<note class='filter' xmlns='http://www.lotus.com/dxl' version='9.0' replicaid='49257BB30040F45C'>
-<noteinfo noteid='1296' unid='A7D6A1B1D9764E4549257C3600458514' sequence='104'>
-<created><datetime>20131203T213920,52+09</datetime></created>
-<modified><datetime>20131227T095738,88+09</datetime></modified>
-<revised><datetime>20131227T095738,87+09</datetime></revised>
-<lastaccessed><datetime>20131227T095738,88+09</datetime></lastaccessed>
-<addedtofile><datetime>20131206T091959,40+09</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=System Administrator/O=rskkgdev852</name></updatedby>
-<wassignedby><name>CN=System Administrator/O=rskkgdev852</name></wassignedby>
+<note class='filter' xmlns='http://www.lotus.com/dxl' version='9.0' maintenanceversion='1.0'
+ replicaid='49257C7D00225761'>
+<noteinfo noteid='4b6' unid='8AEFE0C7DFDD9F6D49257C9C0002ECEA' sequence='3'>
+<created><datetime>20140315T093157,22+09</datetime></created>
+<modified><datetime>20140315T093232,91+09</datetime></modified>
+<revised><datetime>20140315T093232,90+09</datetime></revised>
+<lastaccessed><datetime>20140315T093232,91+09</datetime></lastaccessed>
+<addedtofile><datetime>20140315T093159,87+09</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Admin/O=LotusLab</name></updatedby>
+<wassignedby><name>CN=Admin/O=LotusLab</name></wassignedby>
 <item name='$POID'><datetime>20131205T202012,59+09</datetime></item>
 <item name='$TITLE' sign='true'><text>履歴チェック|AG_Log_Chk</text></item>
 <item name='$AssistType' sign='true'><number>65413</number></item>
@@ -35,7 +36,7 @@ gQYAAAAA
 <item name='$DesignerVersion'><text>8.5.3</text></item>
 <item name='$AssistRunInfo' summary='true'>
 <rawitemdata type='3'>
-BgABAAAACADmEgAAAAAAAAUAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+BgABAAAACACyBAAAAAAAAAUAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAACEcFAE58JUlc9EAAs3slSQAAAAAAAAAAAAAAAAAAAAAAAAAAqqqqqqqq
 qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq
 qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq
@@ -1693,5 +1694,5 @@ aZtKsGaWVwMHAKiWIzEaTQEaTgE3iGmf/xs6DQAxGzoIABtXAgEAOiH+GlEBGlcBYQIAAISlGlgB
 HBpZARpaARwaWwEaXAF9HMaPCgMGQpOsFKx9PMasFpOsm44QfQS+mwYHGl0BHBpeAR0CAAAAEQAY
 AAAAAAD//wEAAwALAAAAEAA4ABoATMIGAQoAAAA=
 </rawitemdata></item>
-<item name='$AssistVersion'><datetime>20131227T095739,12+09</datetime></item></note>
+<item name='$AssistVersion'><datetime>20140315T093232,05+09</datetime></item></note>
 

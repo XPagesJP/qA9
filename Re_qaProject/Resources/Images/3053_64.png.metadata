@@ -1,21 +1,20 @@
-<?xml version="1.0" encoding="UTF-8"?><note class="form" replicaid="49257BB30040F45C" version="9.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="1272" sequence="2" unid="D3AC36DAC32EE3B249257C2F003D0772">
-<created><datetime>20131126T200636,02+09</datetime></created>
-<modified><datetime>20131206T091959,17+09</datetime></modified>
-<revised><datetime>20131126T200636,04+09</datetime></revised>
-<lastaccessed><datetime>20131206T091959,17+09</datetime></lastaccessed>
-<addedtofile><datetime>20131206T091959,17+09</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=System Administrator/O=rskkgdev852</name></updatedby>
-<wassignedby><name>CN=System Administrator/O=rskkgdev852</name></wassignedby>
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.0" replicaid="49257C7D00225761" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="3ea" sequence="4" unid="1EF0DD4A362EC49F49257C9C0002EBF8">
+<created><datetime>20140315T093154,80+09</datetime></created>
+<modified><datetime>20140315T093228,57+09</datetime></modified>
+<revised><datetime>20140315T093228,56+09</datetime></revised>
+<lastaccessed><datetime>20140315T093228,57+09</datetime></lastaccessed>
+<addedtofile><datetime>20140315T093156,37+09</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Admin/O=LotusLab</name></updatedby>
+<wassignedby><name>CN=Admin/O=LotusLab</name></wassignedby>
 <item name="$TITLE"><text>3053_64.png</text></item>
 <item name="$FlagsExt"><text>D</text></item>
 <item name="$ImagesWide" sign="true"><number>1</number></item>
 <item name="$ImagesHigh" sign="true"><number>1</number></item>
 <item name="$ImagesColorize" sign="true"><number>0</number></item>
-
-
-<item name="$MimeType" sign="true"><text>image/png</text></item>
 <item name="$FileModDT" sign="true"><datetime>20131126T195345,30+09</datetime></item>
 <item name="$ImageNames" sign="true"><text>3053_64.png</text></item>
+<item name="$Flags"><text>D34CiQ</text></item>
 <item name="$DesignerVersion"><text>8.5.3</text></item>
-<item name="$Flags"><text>D34CiQ</text></item></note>
+
+</note>
