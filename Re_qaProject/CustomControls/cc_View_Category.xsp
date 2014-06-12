@@ -9,6 +9,11 @@
 	<xp:this.resources>
 		<xp:styleSheet href="/qa.css"></xp:styleSheet>
 	</xp:this.resources>
+	
+	
+	
+	<xp:panel><xc:cc_topComment></xc:cc_topComment></xp:panel>
+	
 	<xp:panel id="contentBody">
 		<xp:this.data>
 			<xp:dominoView var="view1"
@@ -382,7 +387,7 @@ return @Implode(Tag,",")
 				
 				<xp:column id="column4">
 					<xc:cc_UserProfile>
-						<xc:this.userName><![CDATA[#{javascript:var Author =viewEntry.getColumnValue("質問者名");;
+						<xc:this.userName><![CDATA[#{javascript:var Author =viewEntry.getColumnValue("質問者名");
 return @Name("[ABBREVIATE]",Author)}]]></xc:this.userName>
 					</xc:cc_UserProfile>
 				</xp:column>

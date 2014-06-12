@@ -1,14 +1,13 @@
 <?xml version='1.0' encoding='utf-8'?>
-<note class='view' xmlns='http://www.lotus.com/dxl' version='9.0' maintenanceversion='1.0'
- replicaid='49257C7D00225761'>
-<noteinfo noteid='1ba' unid='676B234937F25F0549257C7D00229A0B' sequence='13'>
-<created><datetime>20140212T151756,59+09</datetime></created>
-<modified><datetime>20140315T093232,65+09</datetime></modified>
-<revised><datetime>20140315T093232,64+09</datetime></revised>
-<lastaccessed><datetime>20140315T093232,65+09</datetime></lastaccessed>
-<addedtofile><datetime>20140212T151756,77+09</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Admin/O=LotusLab</name></updatedby>
-<wassignedby><name>CN=Admin/O=LotusLab</name></wassignedby>
+<note class='view' xmlns='http://www.lotus.com/dxl' version='9.0' replicaid='49257CC8003A9E74'>
+<noteinfo noteid='30e' unid='9FB3C5967C218E4F49257CC8003F1915' sequence='2'>
+<created><datetime>20140428T202911,89+09</datetime></created>
+<modified><datetime>20140428T202911,94+09</datetime></modified>
+<revised><datetime>20140428T202911,93+09</datetime></revised>
+<lastaccessed><datetime>20140428T202911,94+09</datetime></lastaccessed>
+<addedtofile><datetime>20140428T202911,92+09</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Admin Admin/O=Domino</name></updatedby>
+<wassignedby><name>CN=Admin Admin/O=Domino</name></wassignedby>
 <item name='$FormatNote' summary='true' sign='true'>
 <rawitemdata type='4'>
 AQD2tdcUWCG3Z9J8QAAEeyVJ

@@ -128,7 +128,7 @@ return @Name("[ABBREVIATE]",Author)}]]></xc:this.userName>
 
         </div>
         <div class="bestAnswerBox">
-            <xp:button style="margin-top:10.0px;font-size:11pt" id="CloseB">
+            <xp:button style="margin-top:0.0px;font-size:11pt;margin-bottom:10.0px" id="CloseB">
                 <xp:this.value><![CDATA[#{javascript:
 var parentdoc = docQues.getDocument();
 if(parentdoc.getItemValueString("status")=="2"){

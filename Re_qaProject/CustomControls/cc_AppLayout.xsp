@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xp:view xmlns:xp="http://www.ibm.com/xsp/core"
-	xmlns:xe="http://www.ibm.com/xsp/coreex">
+	xmlns:xe="http://www.ibm.com/xsp/coreex"
+	xmlns:xc="http://www.ibm.com/xsp/custom">
 
 	<xp:this.resources>
 		<xp:script src="/qa_JsLib.jss" clientSide="false"></xp:script>
+		<xp:styleSheet href="/qa.css"></xp:styleSheet>
 	</xp:this.resources>
 	<xp:this.beforePageLoad><![CDATA[#{javascript:var response = facesContext.getExternalContext().getResponse();
 response.setHeader("X-UA-Compatible", "IE=EmulateIE10");
@@ -33,8 +35,40 @@ response.setHeader("X-UA-Compatible", "IE=EmulateIE10");
 	<xe:applicationLayout id="applicationLayout1">
 		<xp:callback facetName="facetMiddle" id="facetMiddle"></xp:callback>
 		<xe:this.facets>
+			<xc:c_Login allowBrowserCaching="false"
+				loggedInMessage="ログイン成功。 読み込み中..."
+				loginFailMessage="Username / password incorrect, please try again"
+				loginFailReason1Message="You are not authorized to access this website."
+				loginFailReason3Message="Session has expired. You must log in again."
+				loginFailReason4Message="Session out of sync, server clocks may be out of sync."
+				loginFailReason5Message="Your account has been locked out."
+				loginButtonText="ログイン" labelName="ユーザー名" labelPassword="パスワード"
+				urlLoginNSF="/names.nsf" logoutLinkText="ログアウト"
+				displayLogoutLink="true" showRememberMe="false"
+				textRememberMe="パスワードを記憶する" xDaysRememberMe="90" xp:key="SearchBar"
+				cookieDomain="bureaubos.nl"
+				loginFailReason2Message="認証に失敗しました。入力内容を確認してください。"
+				loginDialogTitle="ログイン" loginMessage="””" loginLinkText="ログイン">
+
+				<xc:this.urlAfterLogout><![CDATA[#{javascript:facesContext.getExternalContext().getRequestContextPath() + "/top.xsp"}]]></xc:this.urlAfterLogout>
+				<xc:this.urlAfterLogin><![CDATA[#{javascript:facesContext.getExternalContext().getRequestContextPath()  + "/top.xsp"}]]></xc:this.urlAfterLogin>
+				<xp:this.facets>
+					<xp:span xp:key="customLoginHeader"></xp:span>
+					<xp:span xp:key="customAfterLoginButton">
+						<xp:panel xp:key="MastHeader">
+							<xp:link escape="true"
+								text="パスワードを忘れた方は、こちら" id="link2"
+								value="x_passwordReissue.xsp">
+							</xp:link>
+						</xp:panel>
+					</xp:span>
+
+				</xp:this.facets>
+			</xc:c_Login>
+
+
 			<xp:panel xp:key="MastFooter" styleClass="lotusRight">
-				ver 0.9.0 (Public Beta 1)
+				ver 1.0.1
 			</xp:panel>
 			<xp:callback facetName="facetRight" id="facetRight"
 				xp:key="RightColumn">
@@ -88,13 +122,16 @@ else
 
 
 				<xe:this.bannerUtilityLinks>
-					<xe:userTreeNode userField="commonName">
+					<xe:userTreeNode userField="commonName"
+						rendered="false">
 					</xe:userTreeNode>
 					<xe:loginTreeNode label="ログイン"
-						loaded="${javascript:context.getUser().isAnonymous();}">
+						loaded="${javascript:context.getUser().isAnonymous();}"
+						rendered="false">
 					</xe:loginTreeNode>
 					<xe:basicLeafNode label="ログアウト"
-						loaded="${javascript:!(context.getUser().isAnonymous());}">
+						loaded="${javascript:!(context.getUser().isAnonymous());}"
+						rendered="false">
 						<xe:this.href><![CDATA[#{javascript:(function(){
 	var accountlist = database.getView("V_Setting");
 	var Settingdoc =accountlist.getFirstDocument();
@@ -106,7 +143,8 @@ else
 })();
 }]]></xe:this.href>
 					</xe:basicLeafNode>
-					<xe:basicContainerNode label="編集">
+					<xe:basicContainerNode label="編集"
+						rendered="false">
 						<xe:this.children>
 							<xe:pageTreeNode label="プロフィール変更"
 								page="/x_ProfileEdit.xsp">
@@ -126,7 +164,10 @@ else
 							</xe:pageTreeNode>
 							<xe:pageTreeNode label="パスワード変更"
 								page="/x_passwordChange.xsp">
-								<xe:this.rendered><![CDATA[#{javascript:var userName:NotesName = session.createName(@UserName());
+								<xe:this.rendered><![CDATA[#{javascript://非表示
+return false;
+
+var userName:NotesName = session.createName(@UserName());
 if (userName.getCommon()=="Anonymous")
 {
        return false;
@@ -138,7 +179,10 @@ else
 							</xe:pageTreeNode>
 							<xe:pageTreeNode label="パスワード再発行"
 								page="/x_passwordReissue.xsp">
-								<xe:this.rendered><![CDATA[#{javascript:var userName:NotesName = session.createName(@UserName());
+								<xe:this.rendered><![CDATA[#{javascript://非表示
+return false;
+
+var userName:NotesName = session.createName(@UserName());
 if (userName.getCommon()=="Anonymous")
 {
        return true;
@@ -150,7 +194,9 @@ else
 							</xe:pageTreeNode>
 							<xe:pageTreeNode label="アカウント登録"
 								page="/x_Account.xsp">
-								<xe:this.rendered><![CDATA[#{javascript:var userName:NotesName = session.createName(@UserName());
+								<xe:this.rendered><![CDATA[#{javascript://非表示
+return false;
+var userName:NotesName = session.createName(@UserName());
 if (userName.getCommon()=="Anonymous")
 {
        return true;
@@ -168,6 +214,15 @@ else
 
 
 
+
+
+
+
+					
+					<xe:pageTreeNode page="/x_Account.xsp"
+						label="新規ユーザー登録" rendered="false">
+
+					</xe:pageTreeNode>
 				</xe:this.bannerUtilityLinks>
 				<xe:this.bannerApplicationLinks>
 

@@ -1,13 +1,14 @@
 <?xml version='1.0' encoding='utf-8'?>
 <note default='true' class='icon' xmlns='http://www.lotus.com/dxl' version='9.0'
- replicaid='49257BB40014330B'>
-<noteinfo noteid='11e' unid='19A12624668364EA49257B78003AC57D' sequence='24'>
-<created><datetime>20130527T194156,45+09</datetime></created>
-<modified><datetime>20131205T192922,76+09</datetime></modified>
-<revised><datetime>20131205T192922,75+09</datetime></revised>
-<lastaccessed><datetime>20131205T192922,76+09</datetime></lastaccessed>
-<addedtofile><datetime>20130726T124041,21+09</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=System Administrator/O=rskkgdev852</name></updatedby>
+ replicaid='49257CC8003F8C70'>
+<noteinfo noteid='11a' unid='4F3440FD3D4D69E949257CC8003F8C76' sequence='11'>
+<created><datetime>20140428T203407,26+09</datetime></created>
+<modified><datetime>20140612T213908,22+09</datetime></modified>
+<revised><datetime>20140612T213908,21+09</datetime></revised>
+<lastaccessed><datetime>20140612T213908,22+09</datetime></lastaccessed>
+<addedtofile><datetime>20140428T203407,29+09</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Admin Admin/O=Domino</name></updatedby>
+<wassignedby><name>CN=Admin Admin/O=Domino</name></wassignedby>
 <item name='IconBitmap' summary='true'>
 <rawitemdata type='6'>
 AiAgAQAA///////wD///gAH//gAAf/wAAD/4AAAf8AAAD+AAAAfgAAAHwAAAA8AAAAPAAAADgAAA
@@ -25,13 +26,11 @@ AAAAAAACICABAAD/////+A4DgA==
 </rawitemdata></item>
 <item name='$DBTheme'><text>oneUI.theme</text></item>
 <item name='$Daos'><text>0</text></item>
-<item name='$TemplateServerName'><text>CN=System Administrator/O=rskkgdev852</text></item>
-<item name='$PIRCRefreshModTime'><datetime>20131205T192552,51+09</datetime></item>
-<item name='$TemplateModTime'><datetime>20131205T192426,55+09</datetime></item>
-<item name='$TemplateFileName'><text>c:\Lotus\Notes9\Data\profile_v7.ntf</text></item>
-<item name='$Flags'><text>J</text></item>
 <item name='$LaunchXPageRunOnServer'><text>0</text></item>
-<item name='$FlagsNoRefresh'><text/></item>
-<item name='$TITLE'><text>【テンプレート】プロフィール
-#1profile</text></item></note>
+<item name='$Flags'><text>J</text></item>
+<item name='$TITLE'><text>【テンプレート】プロフィール</text></item>
+<item name='$PIRCRefreshModTime'><datetime>20140612T213907,70+09</datetime></item>
+<item name='$TemplateModTime'><datetime>20140612T213724,36+09</datetime></item>
+<item name='$TemplateServerName'><text>CN=Admin Admin/O=Domino</text></item>
+<item name='$TemplateFileName'><text>c:\lotus\notes9\Data\qa9profiel_0612.ntf</text></item></note>
 

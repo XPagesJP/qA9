@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='utf-8'?>
+<note class='view' xmlns='http://www.lotus.com/dxl' version='9.0' replicaid='49257CC8003F8C70'>
+<noteinfo noteid='1d6' unid='AE5BEF4DC0C8D16849257CF5003FCF21' sequence='3'>
+<created><datetime>20140612T203657,93+09</datetime></created>
+<modified><datetime>20140612T213908,18+09</datetime></modified>
+<revised><datetime>20140612T203743,49+09</datetime></revised>
+<lastaccessed><datetime>20140612T213908,18+09</datetime></lastaccessed>
+<addedtofile><datetime>20140612T213908,18+09</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Admin Admin/O=Domino</name></updatedby>
+<wassignedby><name>CN=Admin Admin/O=Domino</name></wassignedby>
+<item name='$FormatNote' summary='true' sign='true'>
+<rawitemdata type='4'>
+AQCussKH/LnAt6YAOwB4eyVJ
+</rawitemdata></item>
+<item name='$FormulaClass' sign='true'><text>1</text></item>
+<item name='$TITLE' sign='true'><text>(検索\プロフィールメール送信対象者)|V_Profile_Mail</text></item>
+<item name='$Index' sign='true'><text/></item>
+<item name='$Formula' summary='true' sign='true'><formula compiled='true'>
+gAACAA4AAgAkN5AAVgEDAAUAJgAhAAQABgACAAkABABVc2VySUQkNyRDb25mbGljdCRSRUYABAAE
+AAAAMAAFAAQARm9ybQEABgBQZXJzb24KAgUABwBNYWlsY2hrAAEAAQAxAAoCHAIDAAcAFgAQAAlM
+MVMyUzNTNFM1UzZTN1M=
+</formula></item>
+<item name='$Collation' summary='true'>
+<rawitemdata type='2'>
+HAACAABEgGYAAAAGAIBmAAYAAgBVc2VySUQkNw==
+</rawitemdata></item>
+<item name='$ViewFormat' summary='true' sign='true'>
+<rawitemdata type='5'>
+AQACAAoACAAAAFZDAQAGAAYAAAAAAKAAAQAACgAAAAAAAAAAAAICAAAAVkMBAAIABAAcAAAAoAAB
+AAAKAAAAAAAAAAAAAgIAAABVc2VySURVc2VySUQkN1VOSUQcAAIADgACACQ3kABWAQMABwAMAAUA
+CTBTMEUAJgABAAAAAQEACQEAAAoBAQ4KAAABAK0rAQABAAEAAAAAAAAAAABXQwEAAAkAAAAAAAAA
+AAAAAAAAAAAAAAAEAAAAAAD//wAAAAAAAAAAAAAAAAAAV0MBAAAJAAAAAAAAAAAAAAAAAAAAAAAA
+BAAAAAAA//8AAAAAAAAAAAAAAAAAAEIAAAAAAAEA////AAUA////AAEAAAAAAAAAAAAAAAAAAQD/
+//8AAQD///8AAAABAAAAAAABAAAAAAABAAAAAAAAAAgAAAAAAAEA
+</rawitemdata></item>
+<item name='$Comment' sign='true'><text/></item>
+<item name='$DesignerVersion'><text>8.5.3</text></item>
+<item name='$Flags'><text>Y</text></item></note>
+

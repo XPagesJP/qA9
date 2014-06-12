@@ -110,9 +110,10 @@ return answerlist.getAllEntriesByKey(docQues.getItemValueString('UniqueID'));
     						docId="#{javascript:entryAns.getUniversalID();}">
     					</xc:cc_ATable>
     				</xp:repeat>
-    				<div class="newAnswerInputBox">
-    					<xc:cc_AnserEdit>
-    						<xc:this.rendered><![CDATA[#{javascript:if (Common.getCurrentUser().name=="Anonymous")
+    				<xp:div styleClass="ansbox">
+    					<div class="newAnswerInputBox">
+    						<xc:cc_AnserEdit>
+    							<xc:this.rendered><![CDATA[#{javascript:if (Common.getCurrentUser().name=="Anonymous")
 {
        return false;
 }
@@ -121,8 +122,9 @@ else
        return true;
 }
 }]]></xc:this.rendered>
-    					</xc:cc_AnserEdit>
-    				</div>
+    						</xc:cc_AnserEdit>
+    					</div>
+    				</xp:div>
     			</xp:panel>
     			<xp:panel>
     				<xp:this.rendered><![CDATA[#{javascript:var targetdoc = docQues.getDocument();

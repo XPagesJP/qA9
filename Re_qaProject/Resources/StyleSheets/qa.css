@@ -81,8 +81,14 @@
 }
 
 /*2013.07.25 nishi ADD << */div.qalist{
-    width: 800px;
+    width: 900px;
 }
+
+/*2013.07.25 nishi ADD << */div.ansbox{
+    width: 790px;
+    margin-left:60.0px;
+}
+
 div.qalist h3{
     margin-top: 1em;
     font-size: 120%;
@@ -93,7 +99,7 @@ div.qalist h3{
 }
 div.questionBox,
 div.answerBox {
-	border-radius: 10px;
+	border-radius: 5px;
 	border: 1px solid #666;
 	overflow: hidden;
 	margin-bottom: 1em;
@@ -103,15 +109,20 @@ div.answerBox .attachmentFiles
 {
     border-top: 1px dotted #aaa;
 }
+.bodys{
+	width :1000px
+	}
+
 div.questionBox .body,
 div.answerBox .body {
-	float: left;
+	/*float: left;*/
 	padding: 1em;
+	margin-left:95px;
 }
 
 div.questionBox .controle,
 div.answerBox .controle {
-    padding-bottom: 1em;
+    padding-bottom: 2em;
 	float: left;
 	text-align: center;
 	width: 90px;
@@ -174,7 +185,7 @@ div.qaInfo .separator{
 
 .BestAnwerImage {
 	position: absolute;
-	left: 750px;
+	left: 880px;
 }
 
 .EndImage {

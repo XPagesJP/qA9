@@ -1,14 +1,14 @@
 <?xml version='1.0' encoding='utf-8'?>
 <note default='true' class='icon' xmlns='http://www.lotus.com/dxl' version='9.0'
- maintenanceversion='1.0' replicaid='49257C8300820851'>
-<noteinfo noteid='11a' unid='0F58BAA56C6A52DE49257C8300820860' sequence='11'>
-<created><datetime>20140219T084018,24+09</datetime></created>
-<modified><datetime>20140220T180939,36+09</datetime></modified>
-<revised><datetime>20140220T180939,35+09</datetime></revised>
-<lastaccessed><datetime>20140220T180939,36+09</datetime></lastaccessed>
-<addedtofile><datetime>20140219T084018,30+09</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Kenji Ebihara/OU=R/O=RSI</name></updatedby>
-<wassignedby><name>CN=Kenji Ebihara/OU=R/O=RSI</name></wassignedby>
+ replicaid='49257CC8003A9E74'>
+<noteinfo noteid='11a' unid='11D6B6D3A11FC17249257CC8003A9E7F' sequence='21'>
+<created><datetime>20140428T194016,63+09</datetime></created>
+<modified><datetime>20140612T214239,27+09</datetime></modified>
+<revised><datetime>20140612T214239,26+09</datetime></revised>
+<lastaccessed><datetime>20140612T214239,27+09</datetime></lastaccessed>
+<addedtofile><datetime>20140428T194016,66+09</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Admin Admin/O=Domino</name></updatedby>
+<wassignedby><name>CN=Admin Admin/O=Domino</name></wassignedby>
 <item name='IconBitmap' summary='true'>
 <rawitemdata type='6'>
 AiAgAQAA///////wD///gAH//gAAf/wAAD/4AAAf8AAAD+AAAAfgAAAHwAAAA8AAAAPAAAADgAAA
@@ -26,15 +26,13 @@ AAAAAAACICABAAD/////+A4DgA==
 </rawitemdata></item>
 <item name='$DBTheme'><text>oneUI.theme</text></item>
 <item name='$Daos'><text>0</text></item>
-<item name='$TemplateServerName'><text>CN=System Administrator/O=rskkgdev852</text></item>
 <item name='$LaunchXPageRunOnServer'><text>0</text></item>
-<item name='$PIRCRefreshModTime'><datetime>20131206T091957,74+09</datetime></item>
-<item name='$TemplateModTime'><datetime>20131206T091935,68+09</datetime></item>
-<item name='$TemplateFileName'><text>c:\Lotus\Notes9\Data\qa_9p_n_1206.ntf</text></item>
 <item name='$DefaultClientXPage'><text>top.xsp</text></item>
 <item name='$DefaultXPage'><text>top.xsp</text></item>
-<item name='$TITLE'><text>【テンプレート】Q&amp;A
-#1qa_9p</text></item>
 <item name='$Flags'><text>Jz!</text></item>
-<item name='$FlagsNoRefresh'><text>rv</text></item></note>
+<item name='$TemplateServerName'><text>CN=Admin Admin/O=Domino</text></item>
+<item name='$TemplateFileName'><text>c:\lotus\notes9\Data\qa9_0612.ntf</text></item>
+<item name='$TITLE'><text>【テンプレート】Q&amp;A</text></item>
+<item name='$PIRCRefreshModTime'><datetime>20140612T214228,63+09</datetime></item>
+<item name='$TemplateModTime'><datetime>20140612T214113,56+09</datetime></item></note>
 

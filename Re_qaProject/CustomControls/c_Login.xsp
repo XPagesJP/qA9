@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" dojoTheme="true"
+	dojoParseOnLoad="true" >
+	<xp:this.resources>
+		<xp:dojoModule name="dijit.Dialog" />
+		<xp:dojoModule name="dijit.form.TextBox" />
+		<xp:dojoModule name="dijit.form.CheckBox" />
+		<xp:dojoModule name="dijit.form.Button" />
+		<xp:styleSheet href="/c_login.css"></xp:styleSheet>
+		<xp:dojoModule name="dojo.cookie"></xp:dojoModule>
+	</xp:this.resources>
+
+
+	
+	
+	<xp:scriptBlock id="scr_Caching"
+		rendered="#{javascript:return compositeData.allowBrowserCaching;}">
+		<xp:this.value><![CDATA["<meta http-equiv=\"pragma\" content=\"no-cache\" />"]]></xp:this.value>
+	</xp:scriptBlock>
+
+	
+	
+	<xp:scriptBlock id="scriptBlock1">
+		<xp:this.value><![CDATA[/* You may (should) safely remove this if you are using Dojo 1.6 or higher, this fixes IE9 not displaying dialogs in Dojo < 1.6*/
+
+dijit._frames = new function(){
+        var queue = [];
+        this.pop = function(){
+                var iframe;
+                if(queue.length){
+                        iframe = queue.pop();
+                        iframe.style.display="";
+                }else{
+                        iframe = dojo.create("iframe");
+                        iframe.src = 'javascript:""';
+                        iframe.className = "dijitBackgroundIframe";
+                        dojo.style(iframe, "opacity", 0.1);
+                        iframe.tabIndex = -1; // Magic to prevent iframe from getting focus on tab keypress - as style didn't work.
+                        dijit.setWaiRole(iframe,"presentation");
+               }
+               return iframe;
+        };
+       this.push = function(iframe){
+                iframe.style.display="none";
+                queue.push(iframe);
+        }
+}();
+]]></xp:this.value>
+	</xp:scriptBlock><div dojoType="dijit.Dialog" id="dialogLogin"
+		title="#{javascript:compositeData.loginDialogTitle}" class="tundra"
+		execute="login(arguments[0]);" style="display:none">
+		
+		<xp:table id="tableLogin">
+			<xp:tr>
+				<xp:td>
+					<xp:callback facetName="customLoginHeader"
+						id="callback2" rendered="false">
+					</xp:callback>
+
+					<xp:text escape="true" id="lblLoginMessage"
+						value="#{javascript:return compositeData.loginMessage}" rendered="false">
+					</xp:text><div name="divLoginMessage" id="divLoginMessage">
+
+						
+					</div>
+
+				</xp:td>
+			</xp:tr>
+			<xp:tr>
+				<xp:td>
+					<xp:label
+						value="#{javascript:return compositeData.labelName}" id="lblName"
+						styleClass="label">
+					</xp:label>
+				</xp:td>
+				
+				
+				
+			</xp:tr>
+
+			<xp:tr>
+				<xp:td><xp:inputText id="username" styleClass="userid_Field">
+
+
+						<xp:eventHandler event="onkeyup" submit="false" id="eventHandler1">
+							<xp:this.script><![CDATA[
+					if (thisEvent.keyCode == 13) {
+						login();
+						return true
+					}]]></xp:this.script>
+						</xp:eventHandler>
+					</xp:inputText></xp:td>
+				
+				
+				
+			</xp:tr>
+			<xp:tr>
+				<xp:td>
+					<xp:label value="#{javascript:return compositeData.labelPassword}" id="lblPassword" styleClass="label">
+					</xp:label>
+				</xp:td>
+				
+				
+				
+			</xp:tr>
+			<xp:tr>
+				<xp:td><xp:inputText id="password" password="true" styleClass="password_Field">
+
+						<xp:eventHandler event="onkeyup" submit="false" id="eventHandler2">
+							<xp:this.script><![CDATA[if (thisEvent.keyCode == 13) {
+	login();
+	return true
+}]]></xp:this.script>
+						</xp:eventHandler>
+					</xp:inputText></xp:td>
+				
+				
+				
+			</xp:tr>
+			<xp:tr>
+				<xp:td><xp:checkBox text="#{javascript:compositeData.textRememberMe}" id="checkRememberMe" rendered="#{javascript:return compositeData.showRememberMe}">
+						<xp:this.defaultChecked><![CDATA[#{javascript:return compositeData.showRememberMe
+}]]></xp:this.defaultChecked>
+					</xp:checkBox></xp:td>
+
+				
+				
+				
+			</xp:tr>
+			<xp:tr>
+				<xp:td>
+					<xp:callback facetName="customBeforeLoginButton"
+						id="callback1">
+					</xp:callback>
+				</xp:td>
+
+
+
+			</xp:tr>
+			<xp:tr>
+				<xp:td>
+					<xp:button
+						value="#{javascript:return compositeData.loginButtonText}"
+						id="loginButton" dojoType="dijit.form.Button">
+						<xp:eventHandler event="onclick" submit="false"
+							immediate="false" save="false" id="eventHandler3">
+							<xp:this.script><![CDATA[login();]]></xp:this.script>
+
+
+						</xp:eventHandler>
+					</xp:button>
+
+				</xp:td>
+				
+				
+			</xp:tr>
+			<xp:tr>
+				<xp:td>
+					<xp:callback facetName="customAfterLoginButton"
+						id="callback3">
+					</xp:callback>
+				</xp:td>
+			</xp:tr>
+		</xp:table>
+</div>
+	
+	<xp:scriptBlock id="scr_Login">
+		<xp:this.value><![CDATA[function login(data){
+		var loginurl = '#{javascript:compositeData.urlLoginNSF;}'; 
+		var expireCookie = '#{javascript:compositeData.xDaysRememberMe;}';
+		
+		// disable loginbutton when trying to log in
+		dojo.byId('#{id:loginButton}').disabled=true;
+		
+		loginurl = loginurl.split('.nsf')[0] + '.nsf?Login';
+		
+		
+		 
+        dojo.xhrPost({ 
+                url: loginurl,
+                handleAs: "text",
+                content: {
+					"username" : dojo.byId('#{id:username}').value,
+					"password" : dojo.byId('#{id:password}').value
+					},
+				load : function(response, data) {
+						var responseLogin = response;
+						responseLogin.toLowerCase();
+				
+                        if ( dojo.cookie('DomAuthSessId') != null || dojo.cookie('LtpaToken') != null ) {
+                        	// we are logged in, but do we have access to the next url?
+                        	// response could be to the same url, this code contains the same code 
+                        	dojo.xhrGet({
+							        url: "#{javascript:compositeData.urlAfterLogin}", 
+							        preventCache: true,
+							        handleAs: "text",
+							        load: function(response){
+										var responseCheckURL = response;
+										
+			                     		// response could be to the same url, this code contains the same code 
+							            if (responseCheckURL.toLowerCase().indexOf('input name' + '=\"reasontype\"')==-1) { 
+							            	// ok, we have access, now continue
+							                                  
+			                               	dojo.byId("divLoginMessage").display="block";
+			                              	dojo.byId("divLoginMessage").style.color="green";
+											dojo.byId("divLoginMessage").style.backgroundColor="transparent";
+			                                dojo.byId("divLoginMessage").innerHTML = '#{javascript:compositeData.loggedInMessage;}';
+											
+											if (dojo.byId('#{id:checkRememberMe}') == null) {
+												dojo.cookie('username', null, { expires: -1, domain: '#{javascript:compositeData.cookieDomain;}' });
+											}else{
+												if (dojo.byId('#{id:checkRememberMe}').checked == true) {
+												    // before version 1.4.2 password was stored in plain text, dojo does not a allow a default value for a password textinput
+													dojo.cookie('username', dojo.byId('#{id:username}').value, { expires: parseFloat(expireCookie), domain: '#{javascript:compositeData.cookieDomain;}' });
+												}else{
+													dojo.cookie('username', null, { expires: -1, domain: '#{javascript:compositeData.cookieDomain;}' });
+												};
+											}
+
+			
+			  								window.location.href = "#{javascript:compositeData.urlAfterLogin}";
+							            
+							            }else{
+							            	// no, user does not have access!
+								            dojo.byId("divLoginMessage").display="block";
+			                              	dojo.byId("divLoginMessage").style.color="red";
+											dojo.byId("divLoginMessage").style.backgroundColor="transparent";
+			                               
+			                             	var reasonFail = responseCheckURL.toLowerCase().substring(responseCheckURL.toLowerCase().indexOf('input name' +  '=\"reasontype\"'), (responseCheckURL.toLowerCase().indexOf('input name' +  '=\"reasontype\"') + 80));
+			                              	var reasonNr = reasonFail.substring(reasonFail.indexOf('value') + 7, (reasonFail.indexOf('value') + 8)) ; //last character will be the error
+									        if ( reasonNr == "1") {
+			                                 	dojo.byId("divLoginMessage").innerHTML = '#{javascript:compositeData.loginFailReason1Message;}';
+			                        		}else{
+			                       			 	dojo.byId("divLoginMessage").innerHTML = "You are logged in, but do not have access (unknown reasonType " + reasonNr +  " )...";
+			                        		};
+							            
+							            };
+							            dijit.byId('#{id:loginButton}').attr("disabled", true);
+							        }
+							  });
+                           } else {
+                                dojo.byId("divLoginMessage").display="block";
+                              	dojo.byId("divLoginMessage").style.color="red";
+								dojo.byId("divLoginMessage").style.backgroundColor="transparent";
+                               
+                               	if (responseLogin.toLowerCase().indexOf('input name' + '=\"reasontype\"')==-1) { 
+                               		// response does not have a 'reasonType' field, display default FailMessage;
+                               	    dojo.byId("divLoginMessage").innerHTML = '#{javascript:compositeData.loginFailMessage;}';
+                               	}else{
+                               		var reasonFail = responseLogin.toLowerCase().substring(responseLogin.toLowerCase().indexOf('input name' + '=\"reasontype\"'), (responseLogin.toLowerCase().indexOf('input name' + '=\"reasontype\"') + 80));
+                               		var reasonNr = reasonFail.substring(reasonFail.indexOf('value') + 7, (reasonFail.indexOf('value') + 8)) ; //last character will be the error
+                               	    if ( reasonNr == "2") {
+                                     	    dojo.byId("divLoginMessage").innerHTML = '#{javascript:compositeData.loginFailReason2Message;}';
+                               		}
+                               		if ( reasonNr == "3") {
+                                     	    dojo.byId("divLoginMessage").innerHTML = '#{javascript:compositeData.loginFailReason3Message;}';
+                               		}
+									if ( reasonNr == "4") {
+                                     	    dojo.byId("divLoginMessage").innerHTML = '#{javascript:compositeData.loginFailReason4Message;}';
+                               		}
+                               		if ( reasonNr == "5") {
+                                     	    dojo.byId("divLoginMessage").innerHTML = '#{javascript:compositeData.loginFailReason5Message;}';
+                               		}
+                               	}
+                               	// bug in 1.5.2, signin button was still disabled after a login fail 
+                                dijit.byId('#{id:loginButton}').attr("disabled", false);
+
+                               } 
+                        }, 
+                error: function (error) {
+                		alert(error);
+                        } 
+                }); 
+                
+             
+};
+
+function returnCookieVal(cookiename){
+	var cookieval = dojo.cookie(cookiename);
+	if (cookieval != undefined) {
+		return cookieval;
+	}else{
+		return "";
+	}
+};
+
+ ]]></xp:this.value>
+	</xp:scriptBlock>
+	
+	
+	<xp:link escape="true" id="link2" style="margin-left:10.0px;font-weight:bold;color:rgb(255,255,255);font-size:11pt;margin-right:15.0px" value="x_ProfileEdit.xsp"><xp:this.text><![CDATA[#{javascript:var userName:NotesName = session.createName(@UserName());
+if (userName.getCommon()=="Anonymous")
+{
+       return "";
+}
+else
+{
+       return userName.getCommon();
+}}]]></xp:this.text><xp:this.rendered><![CDATA[#{javascript:var userName:NotesName = session.createName(@UserName());
+if (userName.getCommon()=="Anonymous")
+{
+       return false;
+}
+else
+{
+       return true;
+}}]]></xp:this.rendered></xp:link>
+
+	<xp:link escape="true" id="lnkLogin"
+		text="#{javascript:compositeData.loginLinkText}"
+		style="color:rgb(255,255,255);font-size:11pt;text-decoration:underline">
+
+
+		<xp:this.rendered><![CDATA[#{javascript:var userName:NotesName = session.createName(@UserName());
+if (userName.getCommon()=="Anonymous")
+{
+	return true;
+}
+else
+{
+	return false;
+}}]]></xp:this.rendered>
+
+		<xp:eventHandler event="onclick" submit="false">
+			<xp:this.script><![CDATA[dijit.byId('#{id:dialogLogin}').show();
+if ('#{javascript:compositeData.showRememberMe}' == 'true') {
+	dojo.byId('#{id:username}').setAttribute("value", returnCookieVal('username'));
+}else{
+	dojo.cookie('username', null, { expires: -1, domain: '#{javascript:compositeData.cookieDomain;}' });
+}
+
+]]></xp:this.script>
+
+		</xp:eventHandler>
+	</xp:link>
+
+	<xp:link escape="true"
+		text="#{javascript:compositeData.logoutLinkText}" id="lnkLogout"
+		style="color:rgb(255,255,255);font-size:11pt;text-decoration:underline">
+
+		<xp:this.rendered><![CDATA[#{javascript:var userName:NotesName = session.createName(@UserName());
+if (userName.getCommon()=="Anonymous")
+{
+	return false;
+}
+else
+{
+	return compositeData.displayLogoutLink;
+}}]]></xp:this.rendered>
+		<xp:this.value><![CDATA[#{javascript:facesContext.getExternalContext().getRequestContextPath() + "?logout&redirectTo=" + compositeData.urlAfterLogout}]]></xp:this.value>
+	</xp:link>
+	
+	<xp:eventHandler event="onClientLoad" submit="false">
+		<xp:this.script><![CDATA[// from version 1.5.1
+// the use of a url parameter to invoke the login dialog is not required, you may leave the parameter empty
+
+if ('#{javascript:@UserName()}' == 'Anonymous')
+{
+	var result = "#{javascript:if (compositeData.loginUrlParameter != null){ return context.getUrl().getParameter(compositeData.loginUrlParameter); }else{ return ""};}";  
+	
+	if (result == "true") {
+		dijit.byId('#{id:dialogLogin}').show();
+		dojo.byId('#{id:username}').setAttribute("value", returnCookieVal('username'));
+	}
+}
+
+
+
+
+]]></xp:this.script>
+	</xp:eventHandler></xp:view>

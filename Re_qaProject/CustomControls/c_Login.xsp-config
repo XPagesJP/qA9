@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<faces-config>
+  <faces-config-extension>
+    <namespace-uri>http://www.ibm.com/xsp/custom</namespace-uri>
+    <default-prefix>xc</default-prefix>
+  </faces-config-extension>
+  <composite-component>
+    <component-type>c_Login</component-type>
+    <composite-name>c_Login</composite-name>
+    <composite-file>/c_Login.xsp</composite-file>
+    <composite-extension>
+      <designer-extension>
+        <in-palette>true</in-palette>
+        <render-markup>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&#xd;
+&lt;xp:view xmlns:xp="http://www.ibm.com/xsp/core"&gt;&#xd;
+&lt;xp:panel&gt;Xpages Dojo Login custom control v1.6.1 - by Ferry Kranenburg&lt;/xp:panel&gt;&#xd;
+&lt;xp:br/&gt;&#xd;
+&lt;xp:callback facetName="customLoginHeader" id="callback2"&gt;&lt;/xp:callback&gt;&#xd;
+&lt;xp:br/&gt;&#xd;
+&lt;xp:callback facetName="customBeforeLoginButton" id="callback1"&gt;&lt;/xp:callback&gt;&#xd;
+&lt;xp:br/&gt;&#xd;
+&lt;xp:callback facetName="customAfterLoginButton" id="callback3"&gt;&lt;/xp:callback&gt;&#xd;
+&#xd;
+&lt;/xp:view&gt;</render-markup>
+      </designer-extension>
+    </composite-extension>
+    <property>
+      <property-name>allowBrowserCaching</property-name>
+      <property-class>boolean</property-class>
+      <property-extension>
+        <designer-extension>
+          <default-value>false</default-value>
+        </designer-extension>
+        <required>true</required>
+      </property-extension>
+      <description>prevents browsers of caching this page</description>
+    </property>
+    <property>
+      <property-name>loginMessage</property-name>
+      <property-class>string</property-class>
+      <property-extension>
+        <required>true</required>
+        <designer-extension>
+          <default-value>Please enter your username and password</default-value>
+        </designer-extension>
+        <localizable>true</localizable>
+      </property-extension>
+      <description/>
+    </property>
+    <property>
+      <property-name>loggedInMessage</property-name>
+      <property-class>string</property-class>
+      <property-extension>
+        <required>true</required>
+        <designer-extension>
+          <default-value>Login successful, redirecting...</default-value>
+        </designer-extension>
+        <localizable>true</localizable>
+      </property-extension>
+      <description>Display message when login is successful, let users know they are being redirected.</description>
+    </property>
+    <property>
+      <property-name>loginFailMessage</property-name>
+      <property-class>string</property-class>
+      <property-extension>
+        <required>true</required>
+        <designer-extension>
+          <default-value>Username / password incorrect, please try again</default-value>
+        </designer-extension>
+        <localizable>true</localizable>
+      </property-extension>
+      <description>'Default' login fail message if the login was failed.&#xd;
+This is only needed when the sign-in form does not have a reasonType field.&#xd;
+Check out the form (customLoginForm) in this application for more information.</description>
+    </property>
+    <property>
+      <property-name>loginFailReason1Message</property-name>
+      <property-class>string</property-class>
+      <property-extension>
+        <required>true</required>
+        <designer-extension>
+          <default-value>You are not authorized to access this website.</default-value>
+        </designer-extension>
+        <localizable>true</localizable>
+      </property-extension>
+      <description>login fail reason error 1 means not authorized to use this website.</description>
+    </property>
+    <property>
+      <property-name>loginFailReason2Message</property-name>
+      <property-class>string</property-class>
+      <property-extension>
+        <required>true</required>
+        <designer-extension>
+          <default-value>Username / password incorrect, please try again.</default-value>
+        </designer-extension>
+        <localizable>true</localizable>
+      </property-extension>
+      <description>login fail reason error 2 means username / password combo does not match</description>
+    </property>
+    <property>
+      <property-name>loginFailReason3Message</property-name>
+      <property-class>string</property-class>
+      <description>login fail reason error 3 means session is expired, user needs to log back in.</description>
+      <property-extension>
+        <designer-extension>
+          <default-value>Session has expired. You must log in again.</default-value>
+        </designer-extension>
+        <required>true</required>
+        <localizable>true</localizable>
+      </property-extension>
+    </property>
+    <property>
+      <property-name>loginFailReason4Message</property-name>
+      <property-class>string</property-class>
+      <description>login fail reason error 4 means server clocks are out of sync, can not log in.</description>
+      <property-extension>
+        <designer-extension>
+          <default-value>Session out of sync, server clocks may be out of sync.</default-value>
+        </designer-extension>
+        <required>true</required>
+        <localizable>true</localizable>
+      </property-extension>
+    </property>
+    <property>
+      <property-name>loginFailReason5Message</property-name>
+      <property-class>string</property-class>
+      <description>login fail reason error 5 means account is locked out</description>
+      <property-extension>
+        <designer-extension>
+          <default-value>Your account has been locked out.</default-value>
+        </designer-extension>
+        <required>true</required>
+        <localizable>true</localizable>
+      </property-extension>
+    </property>
+    <property>
+      <property-name>loginDialogTitle</property-name>
+      <property-class>string</property-class>
+      <property-extension>
+        <required>true</required>
+        <designer-extension>
+          <default-value>Dojo Login Control example by Ferry Kranenburg</default-value>
+        </designer-extension>
+        <localizable>true</localizable>
+      </property-extension>
+      <description>The title of the login dialog itself</description>
+    </property>
+    <property>
+      <property-name>loginButtonText</property-name>
+      <property-class>string</property-class>
+      <property-extension>
+        <required>true</required>
+        <designer-extension>
+          <default-value>Sign in</default-value>
+        </designer-extension>
+        <localizable>true</localizable>
+      </property-extension>
+      <description>text on the 'login' button</description>
+    </property>
+    <property>
+      <property-name>labelName</property-name>
+      <property-class>string</property-class>
+      <property-extension>
+        <designer-extension>
+          <default-value>Username:</default-value>
+        </designer-extension>
+        <required>true</required>
+        <localizable>true</localizable>
+      </property-extension>
+    </property>
+    <property>
+      <property-name>labelPassword</property-name>
+      <property-class>string</property-class>
+      <property-extension>
+        <designer-extension>
+          <default-value>Password:</default-value>
+        </designer-extension>
+        <required>true</required>
+        <localizable>true</localizable>
+      </property-extension>
+    </property>
+    <property>
+      <property-name>urlLoginNSF</property-name>
+      <property-class>string</property-class>
+      <property-extension>
+        <designer-extension>
+          <default-value>/names.nsf</default-value>
+        </designer-extension>
+        <required>true</required>
+      </property-extension>
+      <description>Specify the URL to .NSF this control should use to log in. &#xd;
+If you're users have access to names.nsf, use '/names.nsf'.&#xd;
+If users need to login in current application, use "facesContext.getExternalContext().getRequest().getContextPath()"&#xd;
+&#xd;
+Use 'context.getUrl()' to login and to return to the exact location you came from.&#xd;
+&#xd;
+</description>
+    </property>
+    <property>
+      <property-name>urlAfterLogin</property-name>
+      <property-class>string</property-class>
+      <property-extension>
+        <designer-extension>
+          <default-value>/</default-value>
+        </designer-extension>
+        <required>true</required>
+      </property-extension>
+      <description>specify URL after successful login, use '/' to stay at the same page</description>
+    </property>
+    <property>
+      <property-name>urlAfterLogout</property-name>
+      <property-class>string</property-class>
+      <property-extension>
+        <designer-extension>
+          <default-value>/</default-value>
+        </designer-extension>
+        <required>true</required>
+      </property-extension>
+      <description>specify URL after successful logout, use '/' to stay at the same page</description>
+    </property>
+    <property>
+      <property-name>loginLinkText</property-name>
+      <property-class>string</property-class>
+      <property-extension>
+        <required>true</required>
+        <designer-extension>
+          <default-value>login</default-value>
+        </designer-extension>
+        <localizable>true</localizable>
+      </property-extension>
+    </property>
+    <property>
+      <property-name>logoutLinkText</property-name>
+      <property-class>string</property-class>
+      <property-extension>
+        <designer-extension>
+          <default-value>logout</default-value>
+        </designer-extension>
+        <localizable>true</localizable>
+      </property-extension>
+    </property>
+    <property>
+      <property-name>displayLogoutLink</property-name>
+      <property-class>boolean</property-class>
+      <property-extension>
+        <designer-extension>
+          <default-value>true</default-value>
+        </designer-extension>
+        <required>true</required>
+      </property-extension>
+      <description>if the logout link should not be rendered, specify false.</description>
+    </property>
+    <property>
+      <property-name>showRememberMe</property-name>
+      <property-class>boolean</property-class>
+      <property-extension>
+        <designer-extension>
+          <default-value>true</default-value>
+        </designer-extension>
+        <required>true</required>
+      </property-extension>
+      <description>if true, username and password will be stored in a cookie</description>
+    </property>
+    <property>
+      <property-name>textRememberMe</property-name>
+      <property-class>string</property-class>
+      <property-extension>
+        <designer-extension>
+          <default-value>Remember me?</default-value>
+        </designer-extension>
+        <required>true</required>
+        <localizable>true</localizable>
+      </property-extension>
+      <description>text on the 'remember me' checkbox</description>
+    </property>
+    <property>
+      <property-name>xDaysRememberMe</property-name>
+      <property-class>int</property-class>
+      <property-extension>
+        <designer-extension>
+          <default-value>90</default-value>
+        </designer-extension>
+        <required>true</required>
+      </property-extension>
+      <description>count of days to remember username and password, afterwards the cookie will be deleted. Specify -1 to delete the cookie.</description>
+    </property>
+    <property>
+      <property-name>cookieDomain</property-name>
+      <property-class>string</property-class>
+      <description>your domainname e.g. 'openntf.org' or 'home.mysite.com'. This is for storing the username cookie, so it works accross you domain.</description>
+      <property-extension>
+        <required>true</required>
+      </property-extension>
+    </property>
+    <property>
+      <property-name>loginUrlParameter</property-name>
+      <property-class>string</property-class>
+      <property-extension>
+        <required>false</required>
+        <localizable>true</localizable>
+      </property-extension>
+      <description>If you would like to invoke the login dialog automatically when users open a xpage, use this parameter.&#xd;
+If you enter here 'logmein', then users may use the url 'www.mysite.com/xpage.xsp?logmein=true'. &#xd;
+When using the parameter set to 'true', the dialog will be displayed immediately.&#xd;
+This function may come in handy when yourapplication sends e-mail reminders or e-mail notifications. &#xd;
+You can use a direct url including this parameter to let users login and automatically redirect them to the notification or file.</description>
+    </property>
+  </composite-component>
+</faces-config>

@@ -1,0 +1,72 @@
+.lnkLogin{
+	color: #ffffff;
+	text-decoration: none;
+}
+
+.lnkLogin:hover {
+	text-decoration: underline;
+}
+
+.lnkLogout:hover {
+	text-decoration: underline;
+}
+
+.label {
+	color: #888;
+	font-family: Arial;
+	font-size: 80%;
+}
+.password_Field{
+	width:220px;
+	border-radius: 4px;
+	border: 1px solid #ccc;
+	padding: 6px 12px;
+}
+.userid_Field{
+	width:220px;
+	border-radius: 4px;
+	border: 1px solid #ccc;
+	padding: 6px 12px;
+}
+
+.btnLoginout{
+	font-family: Arial;
+	font-size: 10pt;
+	background-color: #FFFFFF;
+	border-color: #adadad;
+	padding: 6px 12px;
+	margin-bottom: 0;
+	font-size: 14px;
+	font-weight: normal;
+	line-height: 1.8;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	cursor: pointer;
+	-webkit-user-select: none;
+	background-image: none;
+	border: 1px solid transparent;
+	border-radius: 4px;
+}
+
+
+#lblLoginMessage{
+	font-family: Arial;
+	font-size: 12pt;
+}
+
+
+#dialogLogin{
+	width:350px;
+	height:250px;
+	
+	
+}
+
+#dialogLogin_underlay { 
+    background-color:#61656a;
+    opacity:0.8; 
+}
+
+
+

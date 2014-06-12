@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core">
+	
+
+	<xp:this.resources>
+		<xp:styleSheet href="/css00.css"></xp:styleSheet>
+	</xp:this.resources>
+	<xp:table style="width:100.0%">
+		<xp:tr>
+			<xp:td styleClass="topimage">
+				<xp:image url="/logo.png" id="image1" style="height:75.0px"></xp:image>
+			</xp:td>
+			<xp:td></xp:td>
+		</xp:tr>
+		<xp:tr>
+			<xp:td valign="top">
+				
+				<xp:panel styleClass="mainbar"
+					style="text-align:left">
+
+
+					<xp:br></xp:br>
+					このサイトは、IBMが提供しているグループウェア用ミドルウェア「IBM
+					Notes/Domino（IBMノーツ/ドミノ）」専用のＱ＆Ａサイトです。
+					<xp:br></xp:br>
+					Notesの開発（NotesScript、Xpages）はじめ、Dominoの設定など何でも質問してください。
+					<xp:br></xp:br>
+					<xp:br></xp:br>
+					　【質問内容】
+					<xp:br></xp:br>
+					　　・Notesの使い方
+					<xp:br></xp:br>
+					　　・アプリ開発における実装手段（Notes アプリ／Domino web／Xpages）
+					<xp:br></xp:br>
+					　　・Dominoの設定
+					<xp:br></xp:br>
+					　　・その他トラブルシューティング等
+					<xp:br></xp:br>
+					<xp:br></xp:br>&#160; 尚、
+					閲覧のみは、ユーザー登録なしで利用可能ですが、質問の投稿やその他機能を利用する場合、ユーザー登録が必要です。
+					<xp:br></xp:br>
+					<xp:br></xp:br>
+					<xp:br></xp:br>
+				
+					<xp:div styleClass="NewUserLink">
+						新規ユーザー登録は、
+						<xp:link escape="true" id="link1" text="コチラ" value="/x_Account.xsp"></xp:link>
+					</xp:div>
+				</xp:panel>
+			</xp:td>
+			<xp:td>
+				<xp:panel styleClass="SiteStatus">
+					<h4>サイト ステータス</h4>
+					<xp:table>
+						<xp:tr>
+							<xp:td styleClass="statusvalue0">
+								<xp:label id="label1" value="質問数"></xp:label>
+							</xp:td>
+							<xp:td styleClass="statusvalue1">
+							
+							<xp:text escape="true"
+								id="qcount">
+								<xp:this.value><![CDATA[#{javascript:var vView = database.getView("V_Date_All");
+vView.getEntryCount()
+}]]></xp:this.value>
+								<xp:this.converter>
+									<xp:convertNumber type="number"
+										integerOnly="true">
+									</xp:convertNumber>
+								</xp:this.converter>
+							</xp:text>
+							&#160;件<xp:br></xp:br>（うち、未解決&#160;<xp:link escape="true" id="OpenCount" style="text-decoration:underline">
+									<xp:this.text><![CDATA[#{javascript:var vView = database.getView("V_Date_Open");
+vView.getEntryCount()
+}]]></xp:this.text>
+									<xp:eventHandler event="onclick"
+										submit="true" refreshMode="complete">
+										<xp:this.action><![CDATA[#{javascript:sessionScope.Status = "Open"
+
+//ページャ 1ページ目に移動
+var view1:com.ibm.xsp.component.xp.XspViewPanel=getComponent("opportunitiesDataTable");
+view1.gotoFirstPage()}]]></xp:this.action>
+									</xp:eventHandler>
+								</xp:link>&#160;件）</xp:td>
+						</xp:tr>
+						<xp:tr>
+							<xp:td styleClass="statusvalue0">
+								<xp:label id="label2" value="解答数"></xp:label>
+							</xp:td>
+							<xp:td styleClass="statusvalue1"><xp:text escape="true" id="acount">
+								<xp:this.value><![CDATA[#{javascript:var vView = database.getView("V_Answer_All");
+vView.getEntryCount()
+}]]></xp:this.value>
+								<xp:this.converter>
+									<xp:convertNumber type="number" integerOnly="true">
+									</xp:convertNumber>
+								</xp:this.converter>
+							</xp:text>
+							
+							 件</xp:td>
+						</xp:tr>
+						<xp:tr>
+							<xp:td styleClass="statusvalue0">
+								<xp:label id="label3" value="ユーザー数"></xp:label>
+							</xp:td>
+							<xp:td styleClass="statusvalue1"><xp:text escape="true" id="userCount">
+								<xp:this.value><![CDATA[#{javascript:var userName:NotesName = session.createName(compositeData.userName);
+var Targetuser = userName.getAbbreviated();
+
+var sv =getComponent("Profile_SV").getValue();
+var path = getComponent("Profile_Path").getValue();
+
+var PRF_db = session.getDatabase(
+    (sv.size() === 0) ? '' : sv[0],
+    path[0]);
+    
+var vView = PRF_db.getView("V_Profile_P");
+
+
+vView.getEntryCount()
+}]]></xp:this.value>
+								<xp:this.converter>
+									<xp:convertNumber type="number" integerOnly="true">
+									</xp:convertNumber>
+								</xp:this.converter>
+							</xp:text>
+							
+							 件</xp:td>
+						</xp:tr>
+						
+						<xp:tr>
+							<xp:td></xp:td>
+							<xp:td></xp:td>
+						</xp:tr>
+					</xp:table>
+
+				</xp:panel>
+
+				</xp:td>
+		</xp:tr>
+	</xp:table>
+
+	<hr size="1" color="#808080" style="margin-bottom:20.0px"></hr>
+	<xp:panel styleClass="original_h4">質問一覧</xp:panel>
+	</xp:view>
