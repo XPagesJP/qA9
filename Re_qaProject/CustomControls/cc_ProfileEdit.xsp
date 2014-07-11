@@ -144,15 +144,13 @@ return PRF_path;}]]></xp:this.value>
 
 
 					<xp:tr>
-						<xp:td valign="top" colspan="5">
+						<xp:td valign="top" colspan="5" style="font-size:11pt">
 
 
 
 							<xp:span
 								style="font-weight:bold;font-size:16pt">
-								<xp:text escape="true" id="UserNameKj"
-									value="#{docAcc.UserNameKj}" style="color:rgb(0,128,255)">
-								</xp:text>
+								
 							</xp:span>
 							<xp:span
 								style="font-weight:bold;font-size:14pt">
@@ -160,14 +158,27 @@ return PRF_path;}]]></xp:this.value>
 							<xp:span
 								style="font-weight:bold;font-size:14pt">
 							</xp:span>
+							
+							<xp:text escape="true" id="LastName" value="#{docAcc.LastName}" style="color:rgb(0,128,255);font-size:16pt"></xp:text>   <xp:span style="font-size:10pt"></xp:span>
+							表示名： 
+							<xp:inputText id="UserNameKj"
+								style="color:rgb(0,0,0)" value="#{docAcc.UserNameKj}"
+								required="true" disableClientSideValidation="true">
+								<xp:this.validators>
+									<xp:validateRequired
+										message="表示名を入力してください。">
+									</xp:validateRequired>
+								</xp:this.validators>
+							</xp:inputText>
+
+							<xp:message id="message1" for="UserNameKj"></xp:message>
 							<xp:text escape="true" id="UserID"
 								style="color:rgb(128,128,128)" rendered="false">
 								<xp:this.value><![CDATA[#{javascript:var userNmae =docAcc.getItemValue("UserID");
 return @Name("[ABBREVIATE]",userNmae);
 
 }]]></xp:this.value>
-							</xp:text>
-						</xp:td>
+							</xp:text></xp:td>
 
 
 
