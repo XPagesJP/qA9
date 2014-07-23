@@ -240,14 +240,13 @@ view1.gotoFirstPage()}]]></xp:this.action>
 			<xp:pager layout="Previous Group Next" id="pager1" for="opportunitiesDataTable" styleClass="lotusPaging">
 			</xp:pager><xp:dataTable id="opportunitiesDataTable" rows="10"
 				var="viewEntry" value="#{view1}" styleClass="lotusTable">
-				<xp:column id="column3">
+				<xp:column id="column3" styleClass="Column_3">
 					<xp:table>
 						<xp:tr>
 							<xp:td styleClass="Column_count_G"
 								style="text-align:center">
 								<xp:text escape="true"
-									style="font-size:14pt;color:rgb(255,255,255)"
-									id="user_good">
+									style="font-size:14pt;color:rgb(255,255,255)" id="user_good">
 									<xp:this.value><![CDATA[#{javascript:viewEntry.getColumnValue("$user_good")}]]></xp:this.value>
 									<xp:this.converter>
 										<xp:convertNumber type="number"
@@ -263,7 +262,8 @@ view1.gotoFirstPage()}]]></xp:this.action>
 							<xp:td styleClass="Column_count_A"
 								style="text-align:center">
 								<xp:text escape="true"
-									style="font-size:14pt;color:rgb(255,255,255)" id="Count_Answer">
+									style="font-size:14pt;color:rgb(255,255,255)"
+									id="Count_Answer">
 									<xp:this.converter>
 										<xp:convertNumber type="number"
 											integerOnly="true">
@@ -285,7 +285,8 @@ view1.gotoFirstPage()}]]></xp:this.action>
 											integerOnly="true">
 										</xp:convertNumber>
 									</xp:this.converter>
-								<xp:this.value><![CDATA[#{javascript:viewEntry.getColumnValue("$Count_view")}]]></xp:this.value></xp:text>
+									<xp:this.value><![CDATA[#{javascript:viewEntry.getColumnValue("$Count_view")}]]></xp:this.value>
+								</xp:text>
 								<xp:br></xp:br>
 								<xp:label value="閲覧" id="label6"
 									style="color:rgb(255,255,255)">

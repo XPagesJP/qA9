@@ -178,19 +178,8 @@ else
 }}]]></xe:this.rendered>
 							</xe:pageTreeNode>
 							<xe:pageTreeNode label="パスワード再発行"
-								page="/x_passwordReissue.xsp">
-								<xe:this.rendered><![CDATA[#{javascript://非表示
-return false;
+								page="/x_passwordReissue.xsp" rendered="false">
 
-var userName:NotesName = session.createName(@UserName());
-if (userName.getCommon()=="Anonymous")
-{
-       return true;
-}
-else
-{
-       return false;
-}}]]></xe:this.rendered>
 							</xe:pageTreeNode>
 							<xe:pageTreeNode label="アカウント登録"
 								page="/x_Account.xsp">
@@ -218,9 +207,9 @@ else
 
 
 
-					
+
 					<xe:pageTreeNode page="/x_Account.xsp"
-						label="新規ユーザー登録" rendered="false">
+						rendered="true" label="　" image="/newAcount.png" title="新規登録">
 
 					</xe:pageTreeNode>
 				</xe:this.bannerUtilityLinks>

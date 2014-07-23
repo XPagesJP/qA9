@@ -65,14 +65,14 @@ font-weight: normal;
 }
 .statusvalue0{
 text-align: left;
-width: 70px;
+width: 60px;
 padding: 5px 10px 5px 0px;
 font-family: 'Helvetica Neue',Arial,sans-serif;
 border-bottom: 1px solid #D5E5EC;
 }
 .statusvalue1{
 text-align: right;
-width: 100px;
+width: 120px;
 padding: 5px 10px 5px 0px;
 font-family: 'Helvetica Neue',Arial,sans-serif;
 border-bottom: 1px solid #D5E5EC;

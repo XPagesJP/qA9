@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='utf-8'?>
 <note default='true' class='icon' xmlns='http://www.lotus.com/dxl' version='9.0'
  replicaid='49257CC8003A9E74'>
-<noteinfo noteid='11a' unid='11D6B6D3A11FC17249257CC8003A9E7F' sequence='21'>
+<noteinfo noteid='11a' unid='11D6B6D3A11FC17249257CC8003A9E7F' sequence='24'>
 <created><datetime>20140428T194016,63+09</datetime></created>
-<modified><datetime>20140612T214239,27+09</datetime></modified>
-<revised><datetime>20140612T214239,26+09</datetime></revised>
-<lastaccessed><datetime>20140612T214239,27+09</datetime></lastaccessed>
+<modified><datetime>20140723T130145,83+09</datetime></modified>
+<revised><datetime>20140723T130145,82+09</datetime></revised>
+<lastaccessed><datetime>20140723T130145,83+09</datetime></lastaccessed>
 <addedtofile><datetime>20140428T194016,66+09</datetime></addedtofile></noteinfo>
 <updatedby><name>CN=Admin Admin/O=Domino</name></updatedby>
 <wassignedby><name>CN=Admin Admin/O=Domino</name></wassignedby>
@@ -31,8 +31,8 @@ AAAAAAACICABAAD/////+A4DgA==
 <item name='$DefaultXPage'><text>top.xsp</text></item>
 <item name='$Flags'><text>Jz!</text></item>
 <item name='$TemplateServerName'><text>CN=Admin Admin/O=Domino</text></item>
-<item name='$TemplateFileName'><text>c:\lotus\notes9\Data\qa9_0612.ntf</text></item>
 <item name='$TITLE'><text>【テンプレート】Q&amp;A</text></item>
-<item name='$PIRCRefreshModTime'><datetime>20140612T214228,63+09</datetime></item>
-<item name='$TemplateModTime'><datetime>20140612T214113,56+09</datetime></item></note>
+<item name='$PIRCRefreshModTime'><datetime>20140723T130137,71+09</datetime></item>
+<item name='$TemplateModTime'><datetime>20140723T125523,72+09</datetime></item>
+<item name='$TemplateFileName'><text>c:\lotus\notes9\Data\qa9_0723.ntf</text></item></note>
 

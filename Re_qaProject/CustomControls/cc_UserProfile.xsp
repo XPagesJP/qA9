@@ -52,7 +52,7 @@ return PRF_view.getAllEntriesByKey(Targetuser);}]]></xp:this.value>
 
 
 
-			<xp:table styleClass="oneuser">
+			<xp:table styleClass="oneuser" >
 				<xp:tr>
 					<xp:td style="width:1px">
 						<xp:image id="image1"

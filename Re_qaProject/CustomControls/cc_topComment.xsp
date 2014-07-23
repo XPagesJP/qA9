@@ -5,7 +5,7 @@
 	<xp:this.resources>
 		<xp:styleSheet href="/css00.css"></xp:styleSheet>
 	</xp:this.resources>
-	<xp:table style="width:100.0%">
+	<xp:section id="section1" header="ようこそ！！　qA9 for ICS(Louts) Developersへ" initClosed="true"><xp:table style="width:100.0%">
 		<xp:tr>
 			<xp:td styleClass="topimage">
 				<xp:image url="/logo.png" id="image1" style="height:75.0px"></xp:image>
@@ -15,8 +15,7 @@
 		<xp:tr>
 			<xp:td valign="top">
 				
-				<xp:panel styleClass="mainbar"
-					style="text-align:left">
+				<xp:panel styleClass="mainbar" style="text-align:left">
 
 
 					<xp:br></xp:br>
@@ -58,14 +57,12 @@
 							</xp:td>
 							<xp:td styleClass="statusvalue1">
 							
-							<xp:text escape="true"
-								id="qcount">
+							<xp:text escape="true" id="qcount">
 								<xp:this.value><![CDATA[#{javascript:var vView = database.getView("V_Date_All");
 vView.getEntryCount()
 }]]></xp:this.value>
 								<xp:this.converter>
-									<xp:convertNumber type="number"
-										integerOnly="true">
+									<xp:convertNumber type="number" integerOnly="true">
 									</xp:convertNumber>
 								</xp:this.converter>
 							</xp:text>
@@ -73,8 +70,7 @@ vView.getEntryCount()
 									<xp:this.text><![CDATA[#{javascript:var vView = database.getView("V_Date_Open");
 vView.getEntryCount()
 }]]></xp:this.text>
-									<xp:eventHandler event="onclick"
-										submit="true" refreshMode="complete">
+									<xp:eventHandler event="onclick" submit="true" refreshMode="complete">
 										<xp:this.action><![CDATA[#{javascript:sessionScope.Status = "Open"
 
 //ページャ 1ページ目に移動
@@ -138,8 +134,9 @@ vView.getEntryCount()
 
 				</xp:td>
 		</xp:tr>
-	</xp:table>
+	</xp:table></xp:section>
+	
 
 	<hr size="1" color="#808080" style="margin-bottom:20.0px"></hr>
-	<xp:panel styleClass="original_h4">質問一覧</xp:panel>
-	</xp:view>
+	<xp:panel styleClass="original_h4" rendered="false">質問一覧</xp:panel>
+</xp:view>

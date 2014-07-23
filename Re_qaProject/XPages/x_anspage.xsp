@@ -42,15 +42,7 @@
 
     				<xp:this.loaded><![CDATA[${javascript:param.containsKey('docId');}]]></xp:this.loaded>
 
-    				<xp:this.rendered><![CDATA[#{javascript:var targetdoc = docQues.getDocument();
-var fmname = targetdoc.getItemValueString("form");
 
-
-if(@Right(fmname,4) =="_del"){
-	false;
-}else{
-	true;
-}}]]></xp:this.rendered>
     				<p id="showQuestion"></p>
 
     				<xp:panel
@@ -100,7 +92,12 @@ else
     						<a href="#inputAnswer">回答する≫</a>
     					</p>
     				</xp:panel>
-    				<h3>回答・コメント</h3>
+    				<h3>
+    					回答・コメント
+    					<hr size="1" color="#808080"
+    						style="margin-bottom:20.0px">
+    					</hr>
+    				</h3>
     				<xp:repeat id="repeat1" rows="30" var="entryAns"
     					style="height:0.0auto" styleClass="answerList">
     					<xp:this.value><![CDATA[#{javascript:var answerlist = database.getView("V_Answer_All");
@@ -110,6 +107,7 @@ return answerlist.getAllEntriesByKey(docQues.getItemValueString('UniqueID'));
     						docId="#{javascript:entryAns.getUniversalID();}">
     					</xc:cc_ATable>
     				</xp:repeat>
+    				
     				<xp:div styleClass="ansbox">
     					<div class="newAnswerInputBox">
     						<xc:cc_AnserEdit>

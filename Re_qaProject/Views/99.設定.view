@@ -1,10 +1,10 @@
 <?xml version='1.0' encoding='utf-8'?>
 <note class='view' xmlns='http://www.lotus.com/dxl' version='9.0' replicaid='49257CC8003A9E74'>
-<noteinfo noteid='31e' unid='DC0F67FBF1A4C82349257CC8003F193B' sequence='2'>
+<noteinfo noteid='31e' unid='DC0F67FBF1A4C82349257CC8003F193B' sequence='3'>
 <created><datetime>20140428T202912,27+09</datetime></created>
-<modified><datetime>20140428T202912,31+09</datetime></modified>
-<revised><datetime>20140428T202912,30+09</datetime></revised>
-<lastaccessed><datetime>20140428T203959,75+09</datetime></lastaccessed>
+<modified><datetime>20140723T130137,97+09</datetime></modified>
+<revised><datetime>20140717T220936,16+09</datetime></revised>
+<lastaccessed><datetime>20140723T130137,97+09</datetime></lastaccessed>
 <addedtofile><datetime>20140428T202912,29+09</datetime></addedtofile></noteinfo>
 <updatedby><name>CN=Admin Admin/O=Domino</name></updatedby>
 <wassignedby><name>CN=Admin Admin/O=Domino</name></wassignedby>
@@ -33,5 +33,14 @@ AAABAA==
 </rawitemdata></item>
 <item name='$Comment' sign='true'><text/></item>
 <item name='$Flags'><text>Y</text></item>
-<item name='$DesignerVersion'><text>8.5.3</text></item></note>
+<item name='$DesignerVersion'><text>8.5.3</text></item>
+<item name='$V5ACTIONS' sign='true'>
+<rawitemdata type='1'>
+vRw/AAAAAQABAAAAAQAAAAAAAAAAAAAACAACAHn/bAABAPDw8AABAAAAAAAJAAAAAAABAPDw8AAA
+AB8AAAAAAAAAAAADAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAPz/OgAAAAAAAQAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAEAAAAAAAAAAAAAAAAAAAC+/4QAAAABAAAAnwEAABsAAAAAAAAAEJDdEJLoEJW2EI+R
+EI3sEJCsEIFFEJXSEI9XAFIAAABCAAIA6AcAAAAAAADtAVoBrwAsACAAAgDoAwAAAAAAAAEACgBG
+TV9TZXR0aW5n7QKuAAwAAQAAAK4ABAC1AwMABwAOAAcACTE0UzE3UwA=
+</rawitemdata></item></note>
 

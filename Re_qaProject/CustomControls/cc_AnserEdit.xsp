@@ -97,9 +97,7 @@ return "回答|A"
             </xp:fileDownload>
 
 
-            <xp:eventHandler event="onclick" submit="true"
-                refreshMode="complete" id="eventHandler3">
-            </xp:eventHandler>
+            
         </div>
         <div class="inputAnswerActions">
             
@@ -134,6 +132,7 @@ if(@Length(EditID)!=0){
 
 
 
+
             			<xp:executeScript>
             				<xp:this.script><![CDATA[#{javascript:docAnsRes.replaceItemValue("Author",Common.getCurrentUser().name);
 docAnsRes.replaceItemValue("Created",@Now());
@@ -149,10 +148,8 @@ var targetdoc = docAnsRes.getDocument();
 qa_JsLib.SetPersonHistory(targetdoc,2);
 
 
-
-
 //質問数の回答カウント数アップ
-if(docAnsRes.getItemValueString("AorC")=="A"){
+
 		if(docQues.getItemValueString("Count_Answer")==""){
 			var ca_count = 1;
 		}else{
@@ -160,9 +157,9 @@ if(docAnsRes.getItemValueString("AorC")=="A"){
 		}
 		docQues.replaceItemValue("Count_Answer",ca_count.toString());
 		docQues.save();
+if(docAnsRes.getItemValueString("AorC")=="A"){
 		//ログ出力(回答　+1)
 		qa_JsLib.ComposeAccess_log(docAnsRes,null ,'5','1')
-		
 }else{
 		//ログ出力(コメント　+1)
 		qa_JsLib.ComposeAccess_log(docAnsRes,null ,'6','1')
