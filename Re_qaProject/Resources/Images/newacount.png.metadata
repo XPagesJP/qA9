@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?><note class="form" replicaid="49257CC8003A9E74" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="3aa" sequence="2" unid="8199E126A5BB730149257CF6004A11E1">
+<created><datetime>20140613T222902,41+09</datetime></created>
+<modified><datetime>20140723T130145,79+09</datetime></modified>
+<revised><datetime>20140613T222902,40+09</datetime></revised>
+<lastaccessed><datetime>20140723T130145,79+09</datetime></lastaccessed>
+<addedtofile><datetime>20140723T130145,79+09</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Yuuki Nishi/OU=R/O=RSI</name></updatedby>
+<wassignedby><name>CN=Yuuki Nishi/OU=R/O=RSI</name></wassignedby>
+<item name="$TITLE"><text>newacount.png</text></item>
+<item name="$Flags"><text>34CiQ</text></item>
+<item name="$FlagsExt"><text>D</text></item>
+<item name="$ImagesWide" sign="true"><number>1</number></item>
+<item name="$ImagesHigh" sign="true"><number>1</number></item>
+<item name="$ImagesColorize" sign="true"><number>0</number></item>
+
+
+<item name="$MimeType" sign="true"><text>image/png</text></item>
+<item name="$FileModDT" sign="true"><datetime>20140613T222843,87+09</datetime></item>
+<item name="$ImageNames" sign="true"><text>newacount.png</text></item>
+<item name="$DesignerVersion"><text>8.5.3</text></item></note>
