@@ -50,7 +50,7 @@ dijit._frames = new function(){
 		title="#{javascript:compositeData.loginDialogTitle}" class="tundra"
 		execute="login(arguments[0]);" style="display:none">
 		
-		<xp:table id="tableLogin">
+		<xp:table id="tableLogin" style="padding-left:20.0px">
 			<xp:tr>
 				<xp:td>
 					<xp:callback facetName="customLoginHeader"
@@ -58,10 +58,12 @@ dijit._frames = new function(){
 					</xp:callback>
 
 					<xp:text escape="true" id="lblLoginMessage"
-						value="#{javascript:return compositeData.loginMessage}" rendered="false">
-					</xp:text><div name="divLoginMessage" id="divLoginMessage">
+						value="#{javascript:return compositeData.loginMessage}"
+						rendered="false">
+					</xp:text>
+					<div name="divLoginMessage" id="divLoginMessage">
 
-						
+
 					</div>
 
 				</xp:td>
@@ -73,59 +75,74 @@ dijit._frames = new function(){
 						styleClass="label">
 					</xp:label>
 				</xp:td>
-				
-				
-				
+
+
+
 			</xp:tr>
 
 			<xp:tr>
-				<xp:td><xp:inputText id="username" styleClass="userid_Field">
+				<xp:td>
+					<xp:inputText id="username"
+						styleClass="userid_Field">
 
 
-						<xp:eventHandler event="onkeyup" submit="false" id="eventHandler1">
+						<xp:eventHandler event="onkeyup" submit="false"
+							id="eventHandler1">
 							<xp:this.script><![CDATA[
 					if (thisEvent.keyCode == 13) {
 						login();
 						return true
 					}]]></xp:this.script>
 						</xp:eventHandler>
-					</xp:inputText></xp:td>
-				
-				
-				
+					</xp:inputText>
+				</xp:td>
+
+
+
 			</xp:tr>
 			<xp:tr>
 				<xp:td>
-					<xp:label value="#{javascript:return compositeData.labelPassword}" id="lblPassword" styleClass="label">
+					<xp:label
+						value="#{javascript:return compositeData.labelPassword}"
+						id="lblPassword" styleClass="label">
 					</xp:label>
 				</xp:td>
-				
-				
-				
+
+
+
 			</xp:tr>
 			<xp:tr>
-				<xp:td><xp:inputText id="password" password="true" styleClass="password_Field">
+				<xp:td>
+					<xp:inputText id="password" password="true"
+						styleClass="password_Field">
 
-						<xp:eventHandler event="onkeyup" submit="false" id="eventHandler2">
+						<xp:eventHandler event="onkeyup" submit="false"
+							id="eventHandler2">
 							<xp:this.script><![CDATA[if (thisEvent.keyCode == 13) {
 	login();
 	return true
 }]]></xp:this.script>
 						</xp:eventHandler>
-					</xp:inputText></xp:td>
-				
-				
-				
+					</xp:inputText>
+				</xp:td>
+
+
+
 			</xp:tr>
 			<xp:tr>
-				<xp:td><xp:checkBox text="#{javascript:compositeData.textRememberMe}" id="checkRememberMe" rendered="#{javascript:return compositeData.showRememberMe}">
+				<xp:td>
+					<xp:checkBox
+						text="#{javascript:compositeData.textRememberMe}"
+						id="checkRememberMe"
+						rendered="#{javascript:return compositeData.showRememberMe}">
 						<xp:this.defaultChecked><![CDATA[#{javascript:return compositeData.showRememberMe
 }]]></xp:this.defaultChecked>
-					</xp:checkBox></xp:td>
+					</xp:checkBox>
+				</xp:td>
 
-				
-				
-				
+
+
+
 			</xp:tr>
 			<xp:tr>
 				<xp:td>
@@ -151,8 +168,8 @@ dijit._frames = new function(){
 					</xp:button>
 
 				</xp:td>
-				
-				
+
+
 			</xp:tr>
 			<xp:tr>
 				<xp:td>

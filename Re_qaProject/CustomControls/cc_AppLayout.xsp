@@ -56,10 +56,27 @@ response.setHeader("X-UA-Compatible", "IE=EmulateIE10");
 					<xp:span xp:key="customLoginHeader"></xp:span>
 					<xp:span xp:key="customAfterLoginButton">
 						<xp:panel xp:key="MastHeader">
-							<xp:link escape="true"
+							
+							<xp:table>
+								<xp:tr>
+									<xp:td><xp:link escape="true"
 								text="パスワードを忘れた方は、こちら" id="link2"
 								value="x_passwordReissue.xsp">
-							</xp:link>
+							</xp:link></xp:td>
+								</xp:tr>
+								<xp:tr>
+									<xp:td
+										style="padding-top:20.0px;padding-left:50.0px">
+										<xp:link escape="true"
+											text="新規アカウント登録" id="link1" value="x_Account.xsp">
+											<xp:image id="image1"
+												url="/add.png">
+											</xp:image>
+										</xp:link>
+									</xp:td>
+								</xp:tr>
+							</xp:table>
+							
 						</xp:panel>
 					</xp:span>
 
@@ -68,7 +85,7 @@ response.setHeader("X-UA-Compatible", "IE=EmulateIE10");
 
 
 			<xp:panel xp:key="MastFooter" styleClass="lotusRight">
-				ver 1.0.1
+				ver 0.9.1 (Public Beta 1)
 			</xp:panel>
 			<xp:callback facetName="facetRight" id="facetRight"
 				xp:key="RightColumn">
@@ -209,7 +226,7 @@ else
 
 
 					<xe:pageTreeNode page="/x_Account.xsp"
-						rendered="true" label="　" image="/newAcount.png" title="新規登録">
+						rendered="false" label="　" image="/newAcount.png" title="新規登録">
 
 					</xe:pageTreeNode>
 				</xe:this.bannerUtilityLinks>

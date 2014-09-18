@@ -6,12 +6,7 @@
 		<xp:styleSheet href="/css00.css"></xp:styleSheet>
 	</xp:this.resources>
 	<xp:section id="section1" header="ようこそ！！　qA9 for ICS(Louts) Developersへ" initClosed="true"><xp:table style="width:100.0%">
-		<xp:tr>
-			<xp:td styleClass="topimage">
-				<xp:image url="/logo.png" id="image1" style="height:75.0px"></xp:image>
-			</xp:td>
-			<xp:td></xp:td>
-		</xp:tr>
+		
 		<xp:tr>
 			<xp:td valign="top">
 				

@@ -571,54 +571,72 @@ return @Unique(TagList)}]]></xp:this.valueList>
 	return false;
 }}]]></xp:this.rendered><xp:tabbedPanel id="tabbedPanel1" selectedTab="tabPanel1">
 					<xp:tabPanel id="tabPanel1" label="質問履歴" style="margin-left:5.0px;margin-right:20.0px;margin-top:20.0px;margin-bottom:0.0px">
-						<xp:repeat id="repeat1" rows="30"
-									var="repeatQs">
-									<xp:this.value><![CDATA[#{javascript:return docAcc.getItemValue("History_Qs");}]]></xp:this.value>
-									
-									<xc:cc_quesDatalist
-										Targetkey="#{javascript:repeatQs}">
-										<xc:this.ViewName><![CDATA[#{javascript:"V_Date_All_Unique"}]]></xc:this.ViewName>
-									</xc:cc_quesDatalist>
+					<xp:pager layout="Previous Group Next" id="pager1"
+						for="repeat1" styleClass="lotusPaging"
+						style="margin-top:10.0px">
+					</xp:pager>
+					<xp:repeat id="repeat1" rows="10" var="repeatQs">
+						<xp:this.value><![CDATA[#{javascript:return docAcc.getItemValue("History_Qs");}]]></xp:this.value>
 
-								</xp:repeat>
+						<xc:cc_quesDatalist
+							Targetkey="#{javascript:repeatQs}">
+							<xc:this.ViewName><![CDATA[#{javascript:"V_Date_All_Unique"}]]></xc:this.ViewName>
+						</xc:cc_quesDatalist>
+
+					</xp:repeat>
 					</xp:tabPanel>
 					<xp:tabPanel label="回答履歴" id="tabPanel2" style="margin-left:5.0px;margin-right:20.0px;margin-top:20.0px;margin-bottom:0.0px">
-							<xp:repeat id="repeat2" rows="30"
-									var="repeatAns">
-									<xp:this.value><![CDATA[#{javascript:return docAcc.getItemValue("History_Ans");}]]></xp:this.value>
-									<xc:cc_quesDatalist
-										Targetkey="#{javascript:repeatAns}">
-										<xc:this.ViewName><![CDATA[#{javascript:"V_Date_All_Unique"}]]></xc:this.ViewName>
-									</xc:cc_quesDatalist>
-									
-								</xp:repeat>
+						<xp:pager layout="Previous Group Next" id="pager2"
+						for="repeat2" styleClass="lotusPaging"
+						style="margin-top:10.0px">
+					</xp:pager>
+						<xp:repeat id="repeat2" rows="10"
+							var="repeatAns">
+							<xp:this.value><![CDATA[#{javascript:return docAcc.getItemValue("History_Ans");}]]></xp:this.value>
+							<xc:cc_quesDatalist
+								Targetkey="#{javascript:repeatAns}">
+								<xc:this.ViewName><![CDATA[#{javascript:"V_Date_All_Unique"}]]></xc:this.ViewName>
+							</xc:cc_quesDatalist>
+
+						</xp:repeat>
 					</xp:tabPanel>
 					<xp:tabPanel label="お気に入り" id="tabPanel3" style="margin-left:5.0px;margin-right:20.0px;margin-top:20.0px;margin-bottom:0.0px">
-						<xp:repeat id="repeat3" rows="30"
-									var="repeatFavorite">
-									<xp:this.value><![CDATA[#{javascript:return docAcc.getItemValue("Favorite");}]]></xp:this.value>
-									<xc:cc_quesDatalist
-										Targetkey="#{javascript:repeatFavorite}">
-										<xc:this.ViewName><![CDATA[#{javascript:"V_Date_All_Unique"}]]></xc:this.ViewName>
-									</xc:cc_quesDatalist>
-									
-								</xp:repeat>
+						<xp:pager layout="Previous Group Next" id="pager3"
+						for="repeat3" styleClass="lotusPaging"
+						style="margin-top:10.0px">
+					</xp:pager>
+						<xp:repeat id="repeat3" rows="10"
+							var="repeatFavorite">
+							<xp:this.value><![CDATA[#{javascript:return docAcc.getItemValue("Favorite");}]]></xp:this.value>
+							<xc:cc_quesDatalist
+								Targetkey="#{javascript:repeatFavorite}">
+								<xc:this.ViewName><![CDATA[#{javascript:"V_Date_All_Unique"}]]></xc:this.ViewName>
+							</xc:cc_quesDatalist>
+
+						</xp:repeat>
 					</xp:tabPanel>
 					<xp:tabPanel label="おすすめ" id="tabPanel4" style="margin-left:5.0px;margin-right:20.0px;margin-top:20.0px;margin-bottom:0.0px">
-					<xp:repeat id="repeat4" rows="30" var="taga">
-								
-								<xp:this.value><![CDATA[#{javascript:docAcc.getItemValue("Tag");}]]></xp:this.value>
-								<xp:panel style="margin-top:10.0px;background-color:rgb(240,240,240);padding-top:2.0px;padding-bottom:2.0px;text-align:left">
-								
-								<xp:label value="#{javascript:taga}" id="TagName" style="margin-left:2.0px" styleClass="bold"></xp:label>
-								</xp:panel>
-								
-								<xc:cc_quesDatalist
-									Targetkey="#{javascript:taga}">
+						<xp:pager layout="Previous Group Next" id="pager4"
+						for="repeat4" styleClass="lotusPaging"
+						style="margin-top:10.0px">
+					</xp:pager>
+						<xp:repeat id="repeat4" rows="10" var="taga">
 
-									<xc:this.ViewName><![CDATA[#{javascript:"V_Date_All_Tag"}]]></xc:this.ViewName>
-								</xc:cc_quesDatalist>
-					</xp:repeat>
+							<xp:this.value><![CDATA[#{javascript:docAcc.getItemValue("Tag");}]]></xp:this.value>
+							<xp:panel
+								style="margin-top:10.0px;background-color:rgb(240,240,240);padding-top:2.0px;padding-bottom:2.0px;text-align:left">
+
+								<xp:label value="#{javascript:taga}"
+									id="TagName" style="margin-left:2.0px" styleClass="bold">
+								</xp:label>
+							</xp:panel>
+
+							<xc:cc_quesDatalist
+								Targetkey="#{javascript:taga}">
+
+								<xc:this.ViewName><![CDATA[#{javascript:"V_Date_All_Tag"}]]></xc:this.ViewName>
+							</xc:cc_quesDatalist>
+						</xp:repeat>
 					</xp:tabPanel>
 				</xp:tabbedPanel>
 					

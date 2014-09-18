@@ -85,8 +85,7 @@ return @Implode(Tag,",")
     			<xp:text styleClass="value" escape="true"
     				id="Ques_Created" value="#{docQues.Created}">
     				<xp:this.converter>
-    					<xp:convertDateTime type="both"
-    						dateStyle="short">
+    					<xp:convertDateTime type="both">
     					</xp:convertDateTime>
     				</xp:this.converter>
     			</xp:text>

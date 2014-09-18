@@ -30,9 +30,9 @@ return PRF_path;}]]></xp:this.value>
 		<xp:label value="ユーザー情報をポイントの高い順に表示します。" id="label2"></xp:label>
 	</xp:panel>
 	<xp:panel style="background-color:rgb(255,255,255)">
-
-		<xp:repeat id="repeat" rows="30" var="TargetUser"
-			styleClass="allUserList">
+		
+		<xp:repeat id="repeat" var="TargetUser" styleClass="allUserList"
+			rows="100">
 
 
 			<xp:this.value><![CDATA[#{javascript:var userName:NotesName = session.createName(compositeData.userName);
@@ -58,6 +58,8 @@ var profileuserName = profileDoc.getItemValueString("UserID");
 return @Name("[ABBREVIATE]",profileuserName)}]]></xc:this.userName>
 			</xc:cc_UserProfile>
 		</xp:repeat>
-
+		<xp:pager layout="Previous Group Next" partialRefresh="true"
+			id="pager2" for="repeat">
+		</xp:pager>
 	</xp:panel>
 </xp:view>
