@@ -48,7 +48,8 @@ response.setHeader("X-UA-Compatible", "IE=EmulateIE10");
 				textRememberMe="パスワードを記憶する" xDaysRememberMe="90" xp:key="SearchBar"
 				cookieDomain="bureaubos.nl"
 				loginFailReason2Message="認証に失敗しました。入力内容を確認してください。"
-				loginDialogTitle="ログイン" loginMessage="””" loginLinkText="ログイン">
+				loginDialogTitle="ログイン or 新規登録" loginMessage="””"
+				loginLinkText="ログイン">
 
 				<xc:this.urlAfterLogout><![CDATA[#{javascript:facesContext.getExternalContext().getRequestContextPath() + "/top.xsp"}]]></xc:this.urlAfterLogout>
 				<xc:this.urlAfterLogin><![CDATA[#{javascript:facesContext.getExternalContext().getRequestContextPath()  + "/top.xsp"}]]></xc:this.urlAfterLogin>
@@ -56,13 +57,15 @@ response.setHeader("X-UA-Compatible", "IE=EmulateIE10");
 					<xp:span xp:key="customLoginHeader"></xp:span>
 					<xp:span xp:key="customAfterLoginButton">
 						<xp:panel xp:key="MastHeader">
-							
+
 							<xp:table>
 								<xp:tr>
-									<xp:td><xp:link escape="true"
-								text="パスワードを忘れた方は、こちら" id="link2"
-								value="x_passwordReissue.xsp">
-							</xp:link></xp:td>
+									<xp:td>
+										<xp:link escape="true"
+											text="パスワードを忘れた方は、こちら" id="link2"
+											value="x_passwordReissue.xsp">
+										</xp:link>
+									</xp:td>
 								</xp:tr>
 								<xp:tr>
 									<xp:td
@@ -76,7 +79,7 @@ response.setHeader("X-UA-Compatible", "IE=EmulateIE10");
 									</xp:td>
 								</xp:tr>
 							</xp:table>
-							
+
 						</xp:panel>
 					</xp:span>
 
