@@ -49,7 +49,7 @@ response.setHeader("X-UA-Compatible", "IE=EmulateIE10");
 				cookieDomain="bureaubos.nl"
 				loginFailReason2Message="認証に失敗しました。入力内容を確認してください。"
 				loginDialogTitle="ログイン or 新規登録" loginMessage="””"
-				loginLinkText="ログイン">
+				loginLinkText="ログイン or 新規登録">
 
 				<xc:this.urlAfterLogout><![CDATA[#{javascript:facesContext.getExternalContext().getRequestContextPath() + "/top.xsp"}]]></xc:this.urlAfterLogout>
 				<xc:this.urlAfterLogin><![CDATA[#{javascript:facesContext.getExternalContext().getRequestContextPath()  + "/top.xsp"}]]></xc:this.urlAfterLogin>
