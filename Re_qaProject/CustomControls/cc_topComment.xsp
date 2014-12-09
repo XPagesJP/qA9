@@ -116,7 +116,7 @@ vView.getEntryCount()
 								</xp:this.converter>
 							</xp:text>
 							
-							 件</xp:td>
+							 名</xp:td>
 						</xp:tr>
 						
 						<xp:tr>
