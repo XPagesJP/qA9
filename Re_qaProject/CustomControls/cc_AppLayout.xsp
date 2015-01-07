@@ -40,6 +40,18 @@ response.setHeader("X-UA-Compatible", "IE=EmulateIE10");
   ga('create', 'UA-46663140-2', 'xpages.jp');
   ga('send', 'pageview');]]></xp:this.value>
 	</xp:scriptBlock>
+	<xp:scriptBlock><xp:this.value><![CDATA[
+		XSP.addOnLoad(function(){
+			var ank = dojo.create('a', {'href':'./top.xsp'});
+			var img = dojo.query(".lotusBanner .siteBanner img")[0];
+			dojo.place(img, ank, "first");
+			dojo.query(".lotusBanner .siteBanner")
+				.style("cursor","pointer")
+				.addContent(ank);
+		});
+	]]>
+	</xp:this.value>
+	</xp:scriptBlock>
 	<xe:applicationLayout id="applicationLayout1">
 		<xp:callback facetName="facetMiddle" id="facetMiddle"></xp:callback>
 		<xe:this.facets>
@@ -111,7 +123,8 @@ response.setHeader("X-UA-Compatible", "IE=EmulateIE10");
 				legalText="Copyright © 2013 Kyushu Notes Partner Community. (九州地区ノーツパートナー会 ) All Rights Reserved."
 				productLogo="/logo.png" productLogoHeight="45px"
 				productLogoWidth="360px"
-				placeBarName="#{javascript:compositeData.placeBarName;}">
+				placeBarName="#{javascript:compositeData.placeBarName;}"
+				productLogoClass="siteBanner">
 				<xe:this.footerLinks></xe:this.footerLinks>
 				<xe:this.titleBarTabs>
 					<xe:basicLeafNode label="トップ" href="top.xsp">
