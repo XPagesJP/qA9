@@ -1,13 +1,14 @@
 <?xml version='1.0' encoding='utf-8'?>
-<note class='view' xmlns='http://www.lotus.com/dxl' version='9.0' replicaid='49257CC8003A9E74'>
-<noteinfo noteid='31e' unid='DC0F67FBF1A4C82349257CC8003F193B' sequence='3'>
-<created><datetime>20140428T202912,27+09</datetime></created>
-<modified><datetime>20140723T130137,97+09</datetime></modified>
-<revised><datetime>20140717T220936,16+09</datetime></revised>
-<lastaccessed><datetime>20140723T130137,97+09</datetime></lastaccessed>
-<addedtofile><datetime>20140428T202912,29+09</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Admin Admin/O=Domino</name></updatedby>
-<wassignedby><name>CN=Admin Admin/O=Domino</name></wassignedby>
+<note class='view' xmlns='http://www.lotus.com/dxl' version='9.0' maintenanceversion='1.0'
+ replicaid='49257C8300820851'>
+<noteinfo noteid='1b6' unid='089601C8A22B24EA49257C83008299DC' sequence='8'>
+<created><datetime>20140219T084630,68+09</datetime></created>
+<modified><datetime>20150107T152141,83+09</datetime></modified>
+<revised><datetime>20150107T152141,82+09</datetime></revised>
+<lastaccessed><datetime>20150107T152141,83+09</datetime></lastaccessed>
+<addedtofile><datetime>20140219T084630,75+09</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Kenji Ebihara/OU=R/O=RSI</name></updatedby>
+<wassignedby><name>CN=Kenji Ebihara/OU=R/O=RSI</name></wassignedby>
 <item name='$FormatNote' summary='true'>
 <rawitemdata type='4'>
 AQD2tdcUWCG3Z9J8QAAEeyVJ
@@ -40,7 +41,7 @@ vRw/AAAAAQABAAAAAQAAAAAAAAAAAAAACAACAHn/bAABAPDw8AABAAAAAAAJAAAAAAABAPDw8AAA
 AB8AAAAAAAAAAAADAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAPz/OgAAAAAAAQAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAEAAAAAAAAAAAAAAAAAAAC+/4QAAAABAAAAnwEAABsAAAAAAAAAEJDdEJLoEJW2EI+R
-EI3sEJCsEIFFEJXSEI9XAFIAAABCAAIA6AcAAAAAAADtAVoBrwAsACAAAgDoAwAAAAAAAAEACgBG
+EI3sEJCsEIFFEJXSEI9XSVIAAABCAAIA6AcAAAAAAADtAVoBrwAsACAAAgDoAwAAAAAAAAEACgBG
 TV9TZXR0aW5n7QKuAAwAAQAAAK4ABAC1AwMABwAOAAcACTE0UzE3UwA=
 </rawitemdata></item></note>
 

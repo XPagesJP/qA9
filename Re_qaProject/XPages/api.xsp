@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core"
+	xmlns:xe="http://www.ibm.com/xsp/coreex">
+
+	<xp:this.resources>
+		<xp:script src="/rss_jss.jss" clientSide="false"></xp:script>
+	</xp:this.resources>
+	<xe:restService id="rss" pathInfo="rss">
+
+		<xe:this.service>
+			<xe:customRestService contentType="text/xml"
+				doGet="#{javascript:rss.getRssFeeds();}">
+			</xe:customRestService>
+		</xe:this.service>
+	</xe:restService>
+</xp:view>
