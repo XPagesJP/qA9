@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.0" replicaid="49257C8300820851" version="9.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="2e6" sequence="59" unid="2B0E3F1701EAD5D749257C8300829AA5">
-<created><datetime>20140219T084632,69+09</datetime></created>
-<modified><datetime>20150107T123554,16+09</datetime></modified>
-<revised><datetime>20150107T123554,15+09</datetime></revised>
-<lastaccessed><datetime>20150107T123554,16+09</datetime></lastaccessed>
-<addedtofile><datetime>20140219T084635,05+09</datetime></addedtofile></noteinfo>
+<?xml version="1.0" encoding="UTF-8"?><note class="form" replicaid="49257C85004392C0" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="2ee" sequence="30" unid="B8AD87591F862ED549257C8500442584">
+<created><datetime>20140220T212420,52+09</datetime></created>
+<modified><datetime>20150109T153600,18+09</datetime></modified>
+<revised><datetime>20150109T153600,17+09</datetime></revised>
+<lastaccessed><datetime>20150109T153600,18+09</datetime></lastaccessed>
+<addedtofile><datetime>20140220T212420,65+09</datetime></addedtofile></noteinfo>
 <updatedby><name>CN=Kenji Ebihara/OU=R/O=RSI</name></updatedby>
 <wassignedby><name>CN=Kenji Ebihara/OU=R/O=RSI</name></wassignedby>
 <item name="$Comment"><text>タグのみのコントロール</text></item>
@@ -15,9 +15,4 @@
 
 
 
-
-
-
-<item name="$FileNames" sign="true"><text>cc_AppLayout.xsp</text></item>
-
-</note>
+<item name="$FileNames" sign="true"><text>cc_AppLayout.xsp</text></item></note>
