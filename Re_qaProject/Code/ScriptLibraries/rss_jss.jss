@@ -13,7 +13,7 @@ rss.getRssFeeds = function(){
 	var limit = 30;
 	var doc = newView.getFirstDocument();
 	var guid, title, docLink, desc, date;
-	while(!!doc){
+	while(!!doc || limit <= 0){
 		guid = doc.getItemValueString("UniqueID");
 		title = doc.getItemValueString("Title");
 		docLink = siteUrl + "/" + "x_anspage.xsp?docId=" + guid;
@@ -22,6 +22,7 @@ rss.getRssFeeds = function(){
 		date = doc.getCreated().toJavaDate();
 		feedCreator.setTextEntry(guid,title,docLink,desc,date);
 		doc = newView.getNextDocument(doc);
+		limit--;
 	}
 	
 	var feedString = feedCreator.createFeed();
