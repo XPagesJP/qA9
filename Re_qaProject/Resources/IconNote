@@ -1,13 +1,13 @@
 <?xml version='1.0' encoding='utf-8'?>
 <note default='true' class='icon' xmlns='http://www.lotus.com/dxl' version='9.0'
- replicaid='49257CC8003A9E74'>
-<noteinfo noteid='11a' unid='11D6B6D3A11FC17249257CC8003A9E7F' sequence='31'>
-<created><datetime>20140428T194016,63+09</datetime></created>
-<modified><datetime>20150108T231730,16+09</datetime></modified>
-<revised><datetime>20150108T231730,15+09</datetime></revised>
-<lastaccessed><datetime>20150108T231730,16+09</datetime></lastaccessed>
-<addedtofile><datetime>20140428T194016,66+09</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Admin Admin/O=Domino</name></updatedby>
+ replicaid='49257C85004392C0'>
+<noteinfo noteid='11a' unid='2B33CC4D2284370D49257C85004392E9' sequence='11'>
+<created><datetime>20140220T211805,21+09</datetime></created>
+<modified><datetime>20150109T153947,72+09</datetime></modified>
+<revised><datetime>20150109T153947,71+09</datetime></revised>
+<lastaccessed><datetime>20150109T153947,72+09</datetime></lastaccessed>
+<addedtofile><datetime>20140220T211805,27+09</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Kenji Ebihara/OU=R/O=RSI</name></updatedby>
 <item name='IconBitmap' summary='true'>
 <rawitemdata type='6'>
 AiAgAQAA///////wD///gAH//gAAf/wAAD/4AAAf8AAAD+AAAAfgAAAHwAAAA8AAAAPAAAADgAAA
