@@ -13,7 +13,7 @@ rss.getRssFeeds = function(){
 	var limit = 30;
 	var doc = newView.getFirstDocument();
 	var guid, title, docLink, desc, date;
-	while(!!doc || limit <= 0){
+	while(!!doc && 0 < limit){
 		guid = doc.getItemValueString("UniqueID");
 		title = doc.getItemValueString("Title");
 		docLink = siteUrl + "/" + "x_anspage.xsp?docId=" + guid;
