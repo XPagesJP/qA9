@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.0" replicaid="49257C8300820851" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="207a" sequence="2" unid="4BEEC08D5584C98B49257DEA003A8F17">
+<created><datetime>20150212T193937,19+09</datetime></created>
+<modified><datetime>20150212T193937,31+09</datetime></modified>
+<revised><datetime>20150212T193937,30+09</datetime></revised>
+<lastaccessed><datetime>20150212T193937,31+09</datetime></lastaccessed>
+<addedtofile><datetime>20150212T193937,20+09</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Kenji Ebihara/OU=R/O=RSI</name></updatedby>
+<wassignedby><name>CN=Kenji Ebihara/OU=R/O=RSI</name></wassignedby>
+<item name="$TITLE"><text>rome-1.0.jar</text></item>
+<item name="$DesignerVersion"><text>8.5.3</text></item>
+<item name="$Flags"><text>34567Cg~,</text></item>
+
+
+
+
+
+
+
+
+
+
+
+
+<item name="$FileNames" sign="true"><text>rome-1.0.jar</text></item></note>
