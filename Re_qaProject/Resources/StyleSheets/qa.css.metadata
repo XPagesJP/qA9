@@ -1,17 +1,8 @@
-<?xml version="1.0" encoding="UTF-8"?><note class="form" replicaid="49257CC8003A9E74" version="9.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="2a6" sequence="4" unid="A0158199A23F3CAA49257CC8003F181C">
-<created><datetime>20140428T202909,40+09</datetime></created>
-<modified><datetime>20140612T213758,27+09</datetime></modified>
-<revised><datetime>20140503T033128,98+09</datetime></revised>
-<lastaccessed><datetime>20140612T213758,27+09</datetime></lastaccessed>
-<addedtofile><datetime>20140428T202909,42+09</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Admin Admin/O=Domino</name></updatedby>
-<wassignedby><name>CN=Admin Admin/O=Domino</name></wassignedby>
-<item name="$TITLE"><text>qa.css</text></item>
-<item name="$MimeType"><text>text/css</text></item>
-<item name="$Flags"><text>34C=Q</text></item>
-<item name="$MimeCharSet"><text>UTF-8</text></item>
-<item name="$DesignerVersion"><text>8.5.3</text></item>
-
-
-<item name="$FileNames" sign="true"><text>qa.css</text></item></note>
+<?xml version="1.0" encoding="UTF-8"?><stylesheetresource charset="UTF-8" designerversion="8.5.3" maintenanceversion="1.0" name="qa.css" publicaccess="false" replicaid="49257C8300820851" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="22e" sequence="10" unid="1198D093AA5BE38849257C8300829A19">
+<created><datetime>20140219T084631,29+09</datetime></created>
+<modified><datetime>20150212T202228,94+09</datetime></modified>
+<revised><datetime>20150212T202228,93+09</datetime></revised>
+<lastaccessed><datetime>20150212T202228,94+09</datetime></lastaccessed>
+<addedtofile><datetime>20140219T084632,01+09</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Kenji Ebihara/OU=R/O=RSI</name></updatedby></stylesheetresource>

@@ -90,6 +90,13 @@
     margin-left:60.0px;
 }
 
+div#socialLinks{
+	text-align: left;
+}
+div#socialLinks .separater{
+	margin-left: 1em;
+}
+
 div.qalist h3{
     margin-top: 1em;
     font-size: 120%;
