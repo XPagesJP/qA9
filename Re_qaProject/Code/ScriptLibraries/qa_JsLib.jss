@@ -351,10 +351,13 @@ qa_JsLib.InputChkAccount = function(accDoc, type){
 
 	sessionScope.ErrMsg = "";
 	
+	var Seiki=/^[A-Za-z0-9]+[\w\.-]+@[\w\.-]+\.\w{2,}$/;
+	
 	if (type=="1"){
 		//新規登録
 		var Password1 = getComponent("Password1").value;
 		var Password2 = getComponent("Password2").value;
+		var MailAddress = getComponent("MailAddress").value;
 		
 		if (getComponent("LoginName").value == ""){
 			sessionScope.ErrMsg =  "ログインユーザー名が入力されていません。"
@@ -365,8 +368,12 @@ qa_JsLib.InputChkAccount = function(accDoc, type){
 		}else if (Password1 != Password2){
 			sessionScope.ErrMsg =  "パスワードが一致しません。パスワードを入力し直して下さい。"
 		
-		}else if (getComponent("MailAddress").value == ""){
-			sessionScope.ErrMsg =  "メールアドレスが入力されていません。"
+		}else{
+			if (MailAddress == ""){
+				sessionScope.ErrMsg =  "メールアドレスが入力されていません。"
+			}else if (!MailAddress.match(Seiki)){
+				sessionScope.ErrMsg =  "メールアドレスの形式が不正です。"
+			}
 		}
 	}else if(type=="2"){
 		//パスワード変更
@@ -384,13 +391,18 @@ qa_JsLib.InputChkAccount = function(accDoc, type){
 		}	
 	
 	}else if(type=="3"){
+		var MailAddress = getComponent("MailAddress").value;
+		
 		if (getComponent("LoginName").value == ""){
 			sessionScope.ErrMsg =  "ログインユーザー名が入力されていません。"
 				
-		}else if (getComponent("MailAddress").value == ""){
-			sessionScope.ErrMsg =  "メールアドレスが入力されていません。。"
-
-		}	
+		}else{
+			if (MailAddress == ""){
+				sessionScope.ErrMsg =  "メールアドレスが入力されていません。"
+			}else if (!MailAddress.match(Seiki)){
+				sessionScope.ErrMsg =  "メールアドレスの形式が不正です。"
+			}
+		}
 	}
 	
 	if (sessionScope.ErrMsg != ""){
