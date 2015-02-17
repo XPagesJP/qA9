@@ -133,6 +133,8 @@ if(@Length(EditID)!=0){
 
 
 
+
+
             			<xp:executeScript>
             				<xp:this.script><![CDATA[#{javascript:docAnsRes.replaceItemValue("Author",Common.getCurrentUser().name);
 docAnsRes.replaceItemValue("Created",@Now());
@@ -149,14 +151,15 @@ qa_JsLib.SetPersonHistory(targetdoc,2);
 
 
 //質問数の回答カウント数アップ
-
-		if(docQues.getItemValueString("Count_Answer")==""){
+		var _docId = docQues.getDocument().getUniversalID();
+		var _docQues = database.getDocumentByUNID(_docId);
+		if(_docQues.getItemValueString("Count_Answer")==""){
 			var ca_count = 1;
 		}else{
-			var ca_count = 1 + parseInt(docQues.getItemValueString("Count_Answer"));
+			var ca_count = 1 + parseInt(_docQues.getItemValueString("Count_Answer"));
 		}
-		docQues.replaceItemValue("Count_Answer",ca_count.toString());
-		docQues.save();
+		_docQues.replaceItemValue("Count_Answer",ca_count.toString());
+		_docQues.save(true);
 if(docAnsRes.getItemValueString("AorC")=="A"){
 		//ログ出力(回答　+1)
 		qa_JsLib.ComposeAccess_log(docAnsRes,null ,'5','1')

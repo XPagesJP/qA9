@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="UTF-8"?><note class="filter" maintenanceversion="1.0" replicaid="49257C8300820851" version="9.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="346" sequence="32" unid="EF04890D855FB1C049257C8300829AEE">
-<created><datetime>20140219T084633,42+09</datetime></created>
-<modified><datetime>20150212T194356,58+09</datetime></modified>
-<revised><datetime>20150212T194356,57+09</datetime></revised>
-<lastaccessed><datetime>20150212T194356,58+09</datetime></lastaccessed>
-<addedtofile><datetime>20140219T084636,61+09</datetime></addedtofile></noteinfo>
+<?xml version="1.0" encoding="UTF-8"?><note class="filter" replicaid="49257C85004392C0" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="34e" sequence="13" unid="111DE703ED19278D49257C850044441C">
+<created><datetime>20140220T212538,84+09</datetime></created>
+<modified><datetime>20150217T183621,07+09</datetime></modified>
+<revised><datetime>20150217T183621,06+09</datetime></revised>
+<lastaccessed><datetime>20150217T183621,07+09</datetime></lastaccessed>
+<addedtofile><datetime>20140220T212538,98+09</datetime></addedtofile></noteinfo>
 <updatedby><name>CN=Kenji Ebihara/OU=R/O=RSI</name></updatedby>
 <wassignedby><name>CN=Kenji Ebihara/OU=R/O=RSI</name></wassignedby>
 <item name="$POID"><datetime>20131203T205712,68+09</datetime></item>
