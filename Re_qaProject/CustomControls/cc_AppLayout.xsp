@@ -121,7 +121,7 @@ response.setHeader("X-UA-Compatible", "IE=EmulateIE10");
 
 
 			<xp:panel xp:key="MastFooter" styleClass="lotusRight">
-					ver 0.9.1 (Public Beta 1)
+					ver 0.9.3 (Public Beta 3)
 			</xp:panel>
 			<xp:callback facetName="facetRight" id="facetRight"
 				xp:key="RightColumn">
