@@ -28,9 +28,12 @@ Common.getCurrentUser = function(){
     sessionScope.put('user', user);
 }
 Common.getHost = function getHost(){
-	var accountlist = database.getView("V_Setting");
-	var settingdoc =accountlist.getFirstDocument();
-	return settingdoc.getItemValueString("Host_name"); 
+	//var accountlist = database.getView("V_Setting");
+	//var settingdoc =accountlist.getFirstDocument();
+	//return settingdoc.getItemValueString("Host_name"); 
+	var url = context.getUrl().getAddress().replace(/[^\/]*$/,'');
+	print(url);
+	return url;
 }
 /*
 '*********************************************************

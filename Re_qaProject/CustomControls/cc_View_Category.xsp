@@ -9,7 +9,7 @@
 		<xp:styleSheet href="/qa.css"></xp:styleSheet>
 		<xp:linkResource hreflang="ja" type="application/rss+xml"
 			rel="alternate">
-			<xp:this.href><![CDATA[#{javascript:Common.getHost() + "/api.xsp/rss";}]]></xp:this.href>
+			<xp:this.href><![CDATA[#{javascript:Common.getHost() + "api.xsp/rss";}]]></xp:this.href>
 		</xp:linkResource>
 	</xp:this.resources>
 
@@ -243,7 +243,7 @@ view1.gotoFirstPage()}]]></xp:this.action>
 			</xp:panel>
 			<div style="text-align: right; float: right;">
 				<xp:link escape="true" id="rss"
-					value="#{javascript:Common.getHost() + '/api.xsp/rss';}">
+					value="#{javascript:'./api.xsp/rss';}">
 					<xp:image id="image1" url="/rss_mini_typeA.png" alt="rss 2.0"
 						style="height:1.5em">
 					</xp:image>
@@ -400,14 +400,14 @@ return @Implode(Tag,",")
 									<xp:attr name="data-show-faces" value="false"></xp:attr>
 									<xp:attr name="data-share" value="false"></xp:attr>
 									<xp:attr name="data-href"
-										value="#{javascript: Common.getHost() + '/x_anspage.xsp?docId=' +  viewEntry.getDocument().getUniversalID();}"></xp:attr>
+										value="#{javascript: Common.getHost() + 'x_anspage.xsp?docId=' +  viewEntry.getDocument().getUniversalID();}"></xp:attr>
 								</xp:this.attrs>
 							</xp:div>
 							<span class="separater"></span>
 							<xp:link escape="true" text="Tweet" styleClass="twitter-share-button">
 								<xp:this.attrs>
 									<xp:attr name="data-url"
-										value="#{javascript:Common.getHost() + '/x_anspage.xsp?docId=' +  viewEntry.getDocument().getUniversalID();}">
+										value="#{javascript:Common.getHost() + 'x_anspage.xsp?docId=' +  viewEntry.getDocument().getUniversalID();}">
 									</xp:attr>
 									<xp:attr name="data-text">
 										<xp:this.value><![CDATA[#{javascript:viewEntry.getColumnValue('件名')+" - "+database.getTitle();}]]></xp:this.value>
@@ -418,7 +418,7 @@ return @Implode(Tag,",")
 								<xp:this.attrs>
 									<xp:attr name="data-size" value="medium"></xp:attr>
 									<xp:attr name="data-href"
-										value="#{javascript:Common.getHost() + '/x_anspage.xsp?docId=' +  viewEntry.getDocument().getUniversalID();}"></xp:attr>
+										value="#{javascript:Common.getHost() + 'x_anspage.xsp?docId=' +  viewEntry.getDocument().getUniversalID();}"></xp:attr>
 								</xp:this.attrs>
 							</xp:div>
 						</div>
