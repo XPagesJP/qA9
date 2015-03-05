@@ -74,6 +74,13 @@ var targetdoc = docQues.getDocument();
 qa_JsLib.SetViewCountUD(targetdoc)}]]></xp:this.action>
     					</xp:eventHandler>
     				</xp:panel>
+				<div id="socialLinks">
+					<div class="fb-like" data-layout="button" data-action="like" data-show-faces="false" data-share="false"></div>
+					<span class="separater"></span>
+					<a href="https://twitter.com/share" class="twitter-share-button">Tweet</a>
+					<div class="g-plusone" data-size="medium"></div>
+				</div>
+    				
     				<xc:cc_QTable
     					docId="#{javascript:param.get('docId');}">
     				</xc:cc_QTable>

@@ -1,12 +1,12 @@
-<?xml version="1.0" encoding="UTF-8"?><note class="filter" maintenanceversion="1.0" replicaid="49257C7D00225761" version="9.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="4ae" sequence="4" unid="FF9CD0EBB97D481349257C9C0002ECDF">
-<created><datetime>20140315T093157,11+09</datetime></created>
-<modified><datetime>20140315T093229,67+09</datetime></modified>
-<revised><datetime>20140315T093229,66+09</datetime></revised>
-<lastaccessed><datetime>20140315T093229,67+09</datetime></lastaccessed>
-<addedtofile><datetime>20140315T093159,80+09</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Admin/O=LotusLab</name></updatedby>
-<wassignedby><name>CN=Admin/O=LotusLab</name></wassignedby>
+<?xml version="1.0" encoding="UTF-8"?><note class="filter" maintenanceversion="1.3" replicaid="49257C8300820851" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="34a" sequence="10" unid="0DC37B088A06378949257C8300829AF8">
+<created><datetime>20140219T084633,52+09</datetime></created>
+<modified><datetime>20150305T090842,45+09</datetime></modified>
+<revised><datetime>20150305T090842,44+09</datetime></revised>
+<lastaccessed><datetime>20150305T090842,45+09</datetime></lastaccessed>
+<addedtofile><datetime>20140219T084636,68+09</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Kenji Ebihara/OU=R/O=RSI</name></updatedby>
+<wassignedby><name>CN=Kenji Ebihara/OU=R/O=RSI</name></wassignedby>
 <item name="$POID"><datetime>20130823T223955,51+09</datetime></item>
 <item name="$TITLE" sign="true"><text>Common_jss</text></item>
 <item name="$Flags"><text>.5834Q</text></item>

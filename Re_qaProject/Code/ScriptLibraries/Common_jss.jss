@@ -27,7 +27,11 @@ Common.getCurrentUser = function(){
     }
     sessionScope.put('user', user);
 }
-
+Common.getHost = function getHost(){
+	var accountlist = database.getView("V_Setting");
+	var settingdoc =accountlist.getFirstDocument();
+	return settingdoc.getItemValueString("Host_name"); 
+}
 /*
 '*********************************************************
 '【機能概要】
