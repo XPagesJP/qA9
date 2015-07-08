@@ -20,10 +20,14 @@
 		  var="viewEntry" value="#{view1}" styleClass="lotusTable">
 			<xp:column id="column1">
 
-			<xp:section id="section1" initClosed="true" type="wide">
+			<xp:section id="section1" type="wide"
+				style="font-size: 1.3em;">
 
 				<xp:this.header><![CDATA[#{javascript:var colVals = viewEntry.getColumnValues();
-return colVals.elementAt(0) + " " + colVals.elementAt(1);}]]></xp:this.header>
+return @Text(colVals.elementAt(0),"S0D0") + " " + colVals.elementAt(1);}]]></xp:this.header>
+				<xp:this.initClosed><![CDATA[#{javascript:var uid = viewEntry.getNoteID();
+var firstuid = view1.getFirstDocument().getNoteID();
+return uid == firstuid ? false : true;}]]></xp:this.initClosed>
 				<xp:panel>
 
 					<xp:this.data>
@@ -35,11 +39,7 @@ return colVals.elementAt(0) + " " + colVals.elementAt(1);}]]></xp:this.header>
 					</xp:this.data>
 
 					<div style="margin: 5px 20px;">
-					
-						<xp:text escape="true" id="Title"
-						value="#{viewdoc1.Title}" tagName="h2" style="padding: 0px;">
-						</xp:text>
-						
+
 						<xp:inputRichText id="body1" readonly="true"
 							value="#{viewdoc1.Body}">
 						</xp:inputRichText>

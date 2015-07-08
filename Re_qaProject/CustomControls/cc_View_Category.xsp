@@ -13,8 +13,6 @@
 		</xp:linkResource>
 	</xp:this.resources>
 
-
-
 	<xp:panel>
 		<xc:cc_topComment></xc:cc_topComment>
 	</xp:panel>

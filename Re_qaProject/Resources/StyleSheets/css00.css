@@ -35,9 +35,10 @@ font-weight: normal;
 
 .mainbar {
 	float: left;
-	margin: 10px 0px 10px 20px;
+	margin: 5px 0px 5px 20px;
 	border: 1px solid #D5E5EC;
 	padding: 10px 50px 10px 50px;
+	width: 80%;
 }
 
 .sidebar {
