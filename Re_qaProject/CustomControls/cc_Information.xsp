@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core">
+
+	<xp:this.resources>
+		<xp:styleSheet href="/qa.css"></xp:styleSheet>
+	</xp:this.resources>
+
+	<xp:this.data>
+		<xp:dominoView var="view1" viewName="V_Information" >
+		</xp:dominoView>
+	</xp:this.data>
+	
+	<xp:panel style="margin-top:20.0px">
+	
+		<xp:pager layout="Previous Group Next" id="pager1"
+			styleClass="lotusPaging" for="infoDataTable">
+		</xp:pager>
+
+		<xp:dataTable id="infoDataTable" rows="10"
+		  var="viewEntry" value="#{view1}" styleClass="lotusTable">
+			<xp:column id="column1">
+
+			<xp:section id="section1" initClosed="true" type="wide">
+
+				<xp:this.header><![CDATA[#{javascript:var colVals = viewEntry.getColumnValues();
+return colVals.elementAt(0) + " " + colVals.elementAt(1);}]]></xp:this.header>
+				<xp:panel>
+
+					<xp:this.data>
+						<xp:dominoDocument var="viewdoc1"
+							formName="FM_Information" ignoreRequestParams="true"
+							action="openDocument"
+							documentId="#{javascript:viewEntry.getNoteID();}">
+						</xp:dominoDocument>
+					</xp:this.data>
+
+					<div style="margin: 5px 20px;">
+					
+						<xp:text escape="true" id="Title"
+						value="#{viewdoc1.Title}" tagName="h2" style="padding: 0px;">
+						</xp:text>
+						
+						<xp:inputRichText id="body1" readonly="true"
+							value="#{viewdoc1.Body}">
+						</xp:inputRichText>
+					</div>
+
+				</xp:panel>
+
+
+
+			</xp:section>
+
+			</xp:column>
+		</xp:dataTable>
+
+		<xp:pager layout="Previous Group Next" id="pager2"
+			styleClass="lotusPaging" for="infoDataTable">
+		</xp:pager>
+
+	</xp:panel>
+</xp:view>

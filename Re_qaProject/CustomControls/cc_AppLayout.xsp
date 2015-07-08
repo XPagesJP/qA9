@@ -141,7 +141,7 @@ response.setHeader("X-UA-Compatible", "IE=EmulateIE10");
 
 
 
-					
+
 				</xe:this.footerLinks>
 				<xe:this.titleBarTabs>
 					<xe:basicLeafNode label="トップ" href="top.xsp">
@@ -173,9 +173,13 @@ else
 						href="x_Page_AlluserList.xsp"
 						selected="#{javascript:IsSameUrlFileName('x_Page_AlluserList.xsp');}">
 					</xe:basicLeafNode>
+					<xe:basicLeafNode label="お知らせ" href="x_Info.xsp"
+						selected="#{javascript:IsSameUrlFileName('x_Info.xsp');}">
+					</xe:basicLeafNode>
 					<xe:basicLeafNode label="ヘルプ" href="x_Help.xsp"
 						selected="#{javascript:IsSameUrlFileName('x_Help.xsp');}">
 					</xe:basicLeafNode>
+
 				</xe:this.titleBarTabs>
 
 
