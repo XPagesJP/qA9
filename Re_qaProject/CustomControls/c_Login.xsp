@@ -94,7 +94,10 @@ dijit._frames = new function(){
 						return true
 					}]]></xp:this.script>
 						</xp:eventHandler>
-					</xp:inputText>
+						<xp:eventHandler event="onfocus"
+							submit="false">
+							<xp:this.script><![CDATA[dojo.byId("divLoginMessage").innerHTML= "";]]></xp:this.script>
+						</xp:eventHandler></xp:inputText>
 				</xp:td>
 
 
@@ -123,7 +126,10 @@ dijit._frames = new function(){
 	return true
 }]]></xp:this.script>
 						</xp:eventHandler>
-					</xp:inputText>
+						<xp:eventHandler event="onfocus"
+							submit="false">
+							<xp:this.script><![CDATA[dojo.byId("divLoginMessage").innerHTML= "";]]></xp:this.script>
+						</xp:eventHandler></xp:inputText>
 				</xp:td>
 
 

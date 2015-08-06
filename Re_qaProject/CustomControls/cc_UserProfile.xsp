@@ -44,8 +44,8 @@ var PRF_db = session.getDatabase(
     (sv.size() === 0) ? '' : sv[0],
     path[0]);
 var PRF_view = PRF_db.getView("V_Profile");
-
-return PRF_view.getAllEntriesByKey(Targetuser);}]]></xp:this.value>
+//return PRF_view.getAllEntriesByKey(Targetuser,true);
+return PRF_view.getAllEntriesByKey(Targetuser + "/XPages",true);}]]></xp:this.value>
 		<xp:panel>
 
 
