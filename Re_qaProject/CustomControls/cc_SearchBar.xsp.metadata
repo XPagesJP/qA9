@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.0" replicaid="49257E99002C704C" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="5b6" sequence="4" unid="9B3D06F16945002C49257E99002C908D">
+<created><datetime>20150806T170645,89+09</datetime></created>
+<modified><datetime>20150806T170646,02+09</datetime></modified>
+<revised><datetime>20150806T170646,01+09</datetime></revised>
+<lastaccessed><datetime>20150806T170646,02+09</datetime></lastaccessed>
+<addedtofile><datetime>20150806T170645,90+09</datetime></addedtofile></noteinfo>
+<updatedby><name>Notes</name></updatedby>
+<item name="$Comment"><text>検索ページ</text></item>
+<item name="$TITLE"><text>cc_SearchBar.xsp</text></item>
+<item name="$Flags"><text>gC~4;</text></item>
+
+
+<item name="$FileNames" sign="true"><text>cc_SearchBar.xsp</text></item>
+
+</note>

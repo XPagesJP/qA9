@@ -74,6 +74,8 @@ response.setHeader("X-UA-Compatible", "IE=EmulateIE10");
 	<xe:applicationLayout id="applicationLayout1">
 		<xp:callback facetName="facetMiddle" id="facetMiddle"></xp:callback>
 		<xe:this.facets>
+			<xp:panel xp:key="SearchBar">
+			<xc:cc_SearchBar></xc:cc_SearchBar>
 			<xc:c_Login allowBrowserCaching="false" loggedInMessage="ログイン成功。 読み込み中..."
 				loginFailMessage="Username / password incorrect, please try again"
 				loginFailReason1Message="You are not authorized to access this website."
@@ -83,7 +85,7 @@ response.setHeader("X-UA-Compatible", "IE=EmulateIE10");
 				loginButtonText="ログイン" labelName="ユーザー名" labelPassword="パスワード"
 				urlLoginNSF="/names.nsf" logoutLinkText="ログアウト" displayLogoutLink="true"
 				showRememberMe="false" textRememberMe="パスワードを記憶する" xDaysRememberMe="90"
-				xp:key="SearchBar" cookieDomain="bureaubos.nl"
+				cookieDomain="bureaubos.nl"
 				loginFailReason2Message="認証に失敗しました。入力内容を確認してください。" loginDialogTitle="ログイン or 新規登録"
 				loginMessage="””" loginLinkText="ログイン or 新規登録">
 
@@ -118,6 +120,7 @@ response.setHeader("X-UA-Compatible", "IE=EmulateIE10");
 
 				</xp:this.facets>
 			</xc:c_Login>
+			</xp:panel>
 
 
 			<xp:panel xp:key="MastFooter" styleClass="lotusRight">

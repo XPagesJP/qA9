@@ -50,7 +50,9 @@
 
     					<xp:this.rendered><![CDATA[#{javascript:if (Common.getCurrentUser().name=="Anonymous")
 {
-       return false;
+	//2015/08/06 Anonymous時も閲覧ログを吐き出す。
+	// return false;
+	 return true;
 }
 else
 {
@@ -74,7 +76,7 @@ var targetdoc = docQues.getDocument();
 qa_JsLib.SetViewCountUD(targetdoc)}]]></xp:this.action>
     					</xp:eventHandler>
     				</xp:panel>
-				<div id="socialLinks">
+    				<div id="socialLinks">
 					<div class="fb-like" data-layout="button" data-action="like" data-show-faces="false" data-share="false"></div>
 					<span class="separater"></span>
 					<a href="https://twitter.com/share" class="twitter-share-button">Tweet</a>
@@ -108,13 +110,14 @@ else
     				<xp:repeat id="repeat1" rows="30" var="entryAns"
     					style="height:0.0auto" styleClass="answerList">
     					<xp:this.value><![CDATA[#{javascript:var answerlist = database.getView("V_Answer_All");
-return answerlist.getAllEntriesByKey(docQues.getItemValueString('UniqueID'));
+//return answerlist.getAllEntriesByKey(docQues.getItemValueString('UniqueID'));
+return answerlist.getAllEntriesByKey(docQues.getItemValueString('UniqueID'),true);
 }]]></xp:this.value>
     					<xc:cc_ATable
     						docId="#{javascript:entryAns.getUniversalID();}">
     					</xc:cc_ATable>
     				</xp:repeat>
-    				
+
     				<xp:div styleClass="ansbox">
     					<div class="newAnswerInputBox">
     						<xc:cc_AnserEdit>

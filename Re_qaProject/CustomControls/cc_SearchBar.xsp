@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core"
+	xmlns:xe="http://www.ibm.com/xsp/coreex">
+
+	<xp:this.resources>
+		<xp:script src="/Common_jss.jss" clientSide="false"></xp:script>
+	</xp:this.resources>
+	
+	<xp:inputText id="inputSearchEdit"
+		style="width:200.0px;height:21px">
+
+
+
+		<xp:eventHandler event="onkeypress" submit="false"
+			id="eventHandler3">
+			<xp:this.script><![CDATA[if(event.keyCode == 13){ 
+	event.keyCode = 0;
+	dojo.byId("#{id:lnkSearch}").click();
+} ]]></xp:this.script>
+
+			<xp:eventHandler event="onkeypress" submit="true"
+				refreshMode="complete" id="eventHandler4">
+				<xp:this.script><![CDATA[if(event.keyCode == 13){ 
+	return true; 
+}else{
+	return false;
+} ]]></xp:this.script>
+				<xp:this.action><![CDATA[#{javascript://申請書
+if(getComponent("inputSearch1").getValue()=="すべて"){
+	viewScope.searchVariable1 = "";
+}else{
+	viewScope.searchVariable1 = getComponent("inputSearch1").getValue();
+};
+
+//申請者
+if(getComponent("inputSearch2").getValue()=="すべて"){
+	viewScope.searchVariable2 = "";
+}else{
+	viewScope.searchVariable2 = getComponent("inputSearch2").getValue();
+};
+
+//手入力
+if(getComponent("inputSearchEdit").getValue()!=""){
+	var fromList = new Array("　"," ");	//検索対象
+	var searchEdit = @ReplaceSubstring(getComponent("inputSearchEdit").getValue(),fromList,"&");
+	viewScope.searchEdit = searchEdit;
+};	}]]></xp:this.action>
+			</xp:eventHandler>
+			<xp:eventHandler event="onkeypress" submit="true"
+				refreshMode="complete" id="eventHandler5">
+				<xp:this.script><![CDATA[if(event.keyCode == 13){ 
+	return true; 
+}else{
+	return false;
+} ]]></xp:this.script>
+
+			</xp:eventHandler>
+		</xp:eventHandler>
+		<xp:eventHandler event="onkeypress" submit="true"
+			refreshMode="complete" id="eventHandler6">
+			<xp:this.script><![CDATA[if(event.keyCode == 13){ 
+	return true; 
+}else{
+	return false;
+} ]]></xp:this.script>
+
+			<xp:eventHandler event="onkeypress" submit="true"
+				refreshMode="complete" id="eventHandler7">
+				<xp:this.script><![CDATA[if(event.keyCode == 13){ 
+	return true; 
+}else{
+	return false;
+} ]]></xp:this.script>
+				<xp:this.action><![CDATA[#{javascript://申請書
+if(getComponent("inputSearch1").getValue()=="すべて"){
+	viewScope.searchVariable1 = "";
+}else{
+	viewScope.searchVariable1 = getComponent("inputSearch1").getValue();
+};
+
+//申請者
+if(getComponent("inputSearch2").getValue()=="すべて"){
+	viewScope.searchVariable2 = "";
+}else{
+	viewScope.searchVariable2 = getComponent("inputSearch2").getValue();
+};
+
+//手入力
+if(getComponent("inputSearchEdit").getValue()!=""){
+	var fromList = new Array("　"," ");	//検索対象
+	var searchEdit = @ReplaceSubstring(getComponent("inputSearchEdit").getValue(),fromList,"&");
+	viewScope.searchEdit = searchEdit;
+};	}]]></xp:this.action>
+			</xp:eventHandler>
+		</xp:eventHandler>
+	</xp:inputText>
+	
+	&#160;
+
+	<xp:button id="lnkSearch"
+		navigate="false"
+		value="検索">
+		<xp:eventHandler event="onclick" submit="true"
+			refreshMode="complete" id="eventHandler8">
+			<xp:this.action>
+
+				<xp:actionGroup>
+
+
+
+					<xp:executeScript>
+						<xp:this.script><![CDATA[#{javascript://手入力
+sessionScope.searchEdit = "";
+if(getComponent("inputSearchEdit").getValue()!=""){
+    var fromList = new Array("　"," ");  //検索対象
+    var searchEdit = getComponent("inputSearchEdit").getValue();
+    searchEdit = @ReplaceSubstring(@Trim(searchEdit),fromList,"&");
+
+    if(isValidFTQuery(searchEdit)){
+        sessionScope.searchEdit=searchEdit;
+    }else{
+        //errmsg.setValue("「" + getComponent("inputSearchEdit").getValue()
+        // + "」は正しい検索条件ではありません。")
+    }
+};}]]></xp:this.script>
+					</xp:executeScript>
+					<xp:openPage name="/x_SearchResult.xsp"></xp:openPage>
+				</xp:actionGroup>
+			</xp:this.action>
+		</xp:eventHandler>
+		<img src="/oneuiv2/images/iconSearch16.png" />
+	</xp:button>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</xp:view>

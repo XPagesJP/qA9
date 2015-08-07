@@ -1,12 +1,12 @@
-<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.3" replicaid="49257C8300820851" version="9.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="172" sequence="77" unid="7EBD691B5CDA5F6249257C830082988C">
-<created><datetime>20140219T084627,32+09</datetime></created>
-<modified><datetime>20150305T094044,95+09</datetime></modified>
-<revised><datetime>20150305T094044,94+09</datetime></revised>
-<lastaccessed><datetime>20150305T094044,95+09</datetime></lastaccessed>
-<addedtofile><datetime>20140219T084627,50+09</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Kenji Ebihara/OU=R/O=RSI</name></updatedby>
-<wassignedby><name>CN=Kenji Ebihara/OU=R/O=RSI</name></wassignedby>
+<?xml version="1.0" encoding="UTF-8"?><note class="form" replicaid="49257CC8003A9E74" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="362" sequence="62" unid="0FC8B94BEC3BDCB049257CC8003F1EF3">
+<created><datetime>20140428T202926,91+09</datetime></created>
+<modified><datetime>20150806T202843,06+09</datetime></modified>
+<revised><datetime>20150806T202843,05+09</datetime></revised>
+<lastaccessed><datetime>20150806T202843,06+09</datetime></lastaccessed>
+<addedtofile><datetime>20140428T202926,95+09</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Admin Admin/O=Domino</name></updatedby>
+<wassignedby><name>CN=Admin Admin/O=Domino</name></wassignedby>
 <item name="$TITLE"><text>x_anspage.xsp</text></item>
 <item name="$Comment" sign="true"><text>質問回答ページ</text></item>
 <item name="$Flags"><text>gC~4K</text></item>

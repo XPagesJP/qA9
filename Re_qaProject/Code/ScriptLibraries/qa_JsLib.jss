@@ -150,8 +150,11 @@ qa_JsLib.SetViewCountUD = function(targetDoc:NotesXspDocument){
 	var su = Common.getCurrentUser().name;
 	Key.add(su);
 	//Key.add(getComponent("sessionUser").getValue());
+	
+	
 	//ログ出力
-	qa_JsLib.ComposeAccess_log(targetDoc,Key ,'0','')
+	//qa_JsLib.ComposeAccess_log(targetDoc,Key ,'0','')
+	qa_JsLib.ComposeAccess_log(targetDoc,null ,'0','')	//2015.08.06　キーを渡さず常に閲覧カウントを実施！
 	
 }
 
@@ -622,8 +625,8 @@ targetDoc.save();
 		
 		//質問文書の場合、回答も削除
 		var answerlist = database.getView("V_Answer_All");
-		var vec:NotesViewEntryCollection= answerlist.getAllEntriesByKey(targetDoc.getItemValueString('UniqueID'));
-
+		//var vec:NotesViewEntryCollection= answerlist.getAllEntriesByKey(targetDoc.getItemValueString('UniqueID'));
+		var vec:NotesViewEntryCollection= answerlist.getAllEntriesByKey(targetDoc.getItemValueString('UniqueID'),true);
 		if (vec.getCount() == 0) {
 			return;
 		}
