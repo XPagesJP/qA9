@@ -1,12 +1,12 @@
-<?xml version="1.0" encoding="UTF-8"?><note class="filter" replicaid="49257CC8003A9E74" version="9.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="18a" sequence="10" unid="0A069BF2A486BF9649257CC8003F145C">
-<created><datetime>20140428T202859,80+09</datetime></created>
-<modified><datetime>20150806T205611,68+09</datetime></modified>
-<revised><datetime>20150806T205611,67+09</datetime></revised>
-<lastaccessed><datetime>20150806T205611,68+09</datetime></lastaccessed>
-<addedtofile><datetime>20140428T202859,83+09</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Admin Admin/O=Domino</name></updatedby>
-<wassignedby><name>CN=Admin Admin/O=Domino</name></wassignedby>
+<?xml version="1.0" encoding="UTF-8"?><note class="filter" maintenanceversion="1.4" replicaid="49257DFD0030EE33" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="566" sequence="21" unid="111DE703ED19278D49257C850044441C">
+<created><datetime>20140220T212538,84+09</datetime></created>
+<modified><datetime>20150813T171254,25+09</datetime></modified>
+<revised><datetime>20150813T171254,20+09</datetime></revised>
+<lastaccessed><datetime>20150813T171254,25+09</datetime></lastaccessed>
+<addedtofile><datetime>20150614T092034,40+09</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Yuta Kawakami/O=SystemPlanet</name></updatedby>
+<wassignedby><name>CN=Yuta Kawakami/O=SystemPlanet</name></wassignedby>
 <item name="$POID"><datetime>20131203T205712,68+09</datetime></item>
 <item name="$TITLE" sign="true"><text>qa_JsLib</text></item>
 <item name="$Flags"><text>.5834Q</text></item>

@@ -1,12 +1,12 @@
-<?xml version="1.0" encoding="UTF-8"?><note class="form" replicaid="49257C85004392C0" version="9.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="2d6" sequence="10" unid="22EF000E9E01FD2A49257C85004421F1">
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.4" replicaid="49257DFD0030EE33" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="4e6" sequence="42" unid="22EF000E9E01FD2A49257C85004421F1">
 <created><datetime>20140220T212411,37+09</datetime></created>
-<modified><datetime>20150109T160430,31+09</datetime></modified>
-<revised><datetime>20150109T160430,30+09</datetime></revised>
-<lastaccessed><datetime>20150109T160430,31+09</datetime></lastaccessed>
-<addedtofile><datetime>20140220T212411,51+09</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Kenji Ebihara/OU=R/O=RSI</name></updatedby>
-<wassignedby><name>CN=Kenji Ebihara/OU=R/O=RSI</name></wassignedby>
+<modified><datetime>20150807T155426,72+09</datetime></modified>
+<revised><datetime>20150807T155426,71+09</datetime></revised>
+<lastaccessed><datetime>20150807T155426,72+09</datetime></lastaccessed>
+<addedtofile><datetime>20150614T092031,57+09</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Yuta Kawakami/O=SystemPlanet</name></updatedby>
+<wassignedby><name>CN=Yuta Kawakami/O=SystemPlanet</name></wassignedby>
 <item name="$TITLE"><text>cc_QAccount.xsp</text></item>
 <item name="$Flags"><text>gC~4;</text></item>
 
@@ -14,8 +14,8 @@
 
 
 <item name="$FileNames" sign="true"><text>cc_QAccount.xsp</text></item>
-
 <item name="$DesignerVersion"><text>8.5</text></item>
+
 
 
 

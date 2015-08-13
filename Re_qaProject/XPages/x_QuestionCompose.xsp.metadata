@@ -1,12 +1,12 @@
-<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.0" replicaid="49257C7D00225761" version="9.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="37e" sequence="8" unid="93ACEF9EADE6593049257C9C0002EB99">
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.4" replicaid="49257DFD0030EE33" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="366" sequence="37" unid="93ACEF9EADE6593049257C9C0002EB99">
 <created><datetime>20140315T093153,85+09</datetime></created>
-<modified><datetime>20140315T093231,99+09</datetime></modified>
-<revised><datetime>20140315T093231,98+09</datetime></revised>
-<lastaccessed><datetime>20140315T093231,99+09</datetime></lastaccessed>
-<addedtofile><datetime>20140315T093154,75+09</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Admin/O=LotusLab</name></updatedby>
-<wassignedby><name>CN=Admin/O=LotusLab</name></wassignedby>
+<modified><datetime>20150807T155424,80+09</datetime></modified>
+<revised><datetime>20150807T155424,79+09</datetime></revised>
+<lastaccessed><datetime>20150807T155424,80+09</datetime></lastaccessed>
+<addedtofile><datetime>20150614T092024,16+09</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Yuta Kawakami/O=SystemPlanet</name></updatedby>
+<wassignedby><name>CN=Yuta Kawakami/O=SystemPlanet</name></wassignedby>
 <item name="$Comment"><text>質問の投稿</text></item>
 <item name="$TITLE"><text>x_QuestionCompose.xsp</text></item>
 <item name="$Flags"><text>gC~4K</text></item>

@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='utf-8'?>
-<note class='view' xmlns='http://www.lotus.com/dxl' version='9.0' maintenanceversion='1.0'
+<note class='view' xmlns='http://www.lotus.com/dxl' version='9.0' maintenanceversion='1.4'
  replicaid='49257DFD0030EE33'>
-<noteinfo noteid='8c6' unid='A93F2657F7B4428E49257E73004159E6' sequence='16'>
+<noteinfo noteid='8c6' unid='A93F2657F7B4428E49257E73004159E6' sequence='18'>
 <created><datetime>20150629T205348,54+09</datetime></created>
-<modified><datetime>20150708T223842,23+09</datetime></modified>
-<revised><datetime>20150708T223842,22+09</datetime></revised>
-<lastaccessed><datetime>20150708T223842,23+09</datetime></lastaccessed>
+<modified><datetime>20150807T155416,54+09</datetime></modified>
+<revised><datetime>20150807T155416,53+09</datetime></revised>
+<lastaccessed><datetime>20150807T155416,54+09</datetime></lastaccessed>
 <addedtofile><datetime>20150629T205350,39+09</datetime></addedtofile></noteinfo>
 <updatedby><name>CN=Yuta Kawakami/O=SystemPlanet</name></updatedby>
 <wassignedby><name>CN=Yuta Kawakami/O=SystemPlanet</name></wassignedby>

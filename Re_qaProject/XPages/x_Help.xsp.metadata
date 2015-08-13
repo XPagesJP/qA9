@@ -1,21 +1,21 @@
-<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.0" replicaid="49257DFD0030EE33" version="9.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="376" sequence="35" unid="8B63A497606826D449257C9C0002EBA8">
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.4" replicaid="49257DFD0030EE33" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="376" sequence="42" unid="8B63A497606826D449257C9C0002EBA8">
 <created><datetime>20140315T093154,00+09</datetime></created>
-<modified><datetime>20150614T093055,94+09</datetime></modified>
-<revised><datetime>20150614T093055,93+09</datetime></revised>
-<lastaccessed><datetime>20150614T093055,94+09</datetime></lastaccessed>
+<modified><datetime>20150807T155425,20+09</datetime></modified>
+<revised><datetime>20150807T155425,19+09</datetime></revised>
+<lastaccessed><datetime>20150807T155425,20+09</datetime></lastaccessed>
 <addedtofile><datetime>20150614T092024,56+09</datetime></addedtofile></noteinfo>
 <updatedby><name>CN=Yuta Kawakami/O=SystemPlanet</name></updatedby>
 <wassignedby><name>CN=Yuta Kawakami/O=SystemPlanet</name></wassignedby>
 <item name="$TITLE"><text>x_Help.xsp</text></item>
 <item name="$Flags"><text>gC~4K</text></item>
+<item name="$Comment" sign="true"><text>ヘルプページ</text></item>
 
 
 <item name="$FileNames" sign="true"><text>x_Help.xsp</text></item>
-
-
-
-<item name="$Comment" sign="true"><text>ヘルプページ</text></item>
 <item name="$DesignerVersion"><text>8.5</text></item>
+
+
+
 
 </note>

@@ -1,12 +1,12 @@
-<?xml version="1.0" encoding="UTF-8"?><note class="filter" maintenanceversion="1.0" replicaid="49257C7D00225761" version="9.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="4a2" sequence="4" unid="D52C2506DF07767449257C9C0002ECBE">
+<?xml version="1.0" encoding="UTF-8"?><note class="filter" maintenanceversion="1.4" replicaid="49257DFD0030EE33" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="55a" sequence="17" unid="D52C2506DF07767449257C9C0002ECBE">
 <created><datetime>20140315T093156,78+09</datetime></created>
-<modified><datetime>20140315T093231,77+09</datetime></modified>
-<revised><datetime>20140315T093231,76+09</datetime></revised>
-<lastaccessed><datetime>20140315T093231,77+09</datetime></lastaccessed>
-<addedtofile><datetime>20140315T093159,59+09</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Admin/O=LotusLab</name></updatedby>
-<wassignedby><name>CN=Admin/O=LotusLab</name></wassignedby>
+<modified><datetime>20150807T155423,37+09</datetime></modified>
+<revised><datetime>20150807T155423,36+09</datetime></revised>
+<lastaccessed><datetime>20150807T155423,37+09</datetime></lastaccessed>
+<addedtofile><datetime>20150614T092034,13+09</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Yuta Kawakami/O=SystemPlanet</name></updatedby>
+<wassignedby><name>CN=Yuta Kawakami/O=SystemPlanet</name></wassignedby>
 <item name="$LastBuildTime" sign="true"><datetime>20121123T213928,78+08</datetime></item>
 <item name="$BabelInfo" sign="true"><textlist><text>F0CE760432912A2B80257917004BF463</text><text>ja-JP</text></textlist></item>
 <item name="$LANGUAGE" sign="true"><text>ja</text></item>

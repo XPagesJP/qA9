@@ -1,13 +1,14 @@
 <?xml version='1.0' encoding='utf-8'?>
-<note class='view' xmlns='http://www.lotus.com/dxl' version='9.0' replicaid='49257CC8003A9E74'>
-<noteinfo noteid='2be' unid='727637A0341654D449257CC8003F1858' sequence='3'>
+<note class='view' xmlns='http://www.lotus.com/dxl' version='9.0' maintenanceversion='1.4'
+ replicaid='49257DFD0030EE33'>
+<noteinfo noteid='41a' unid='727637A0341654D449257CC8003F1858' sequence='12'>
 <created><datetime>20140428T202910,00+09</datetime></created>
-<modified><datetime>20141209T213759,07+09</datetime></modified>
-<revised><datetime>20141205T220456,59+09</datetime></revised>
-<lastaccessed><datetime>20141209T213759,07+09</datetime></lastaccessed>
-<addedtofile><datetime>20140428T202910,03+09</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Admin Admin/O=Domino</name></updatedby>
-<wassignedby><name>CN=Admin Admin/O=Domino</name></wassignedby>
+<modified><datetime>20150807T155417,82+09</datetime></modified>
+<revised><datetime>20150807T155417,81+09</datetime></revised>
+<lastaccessed><datetime>20150807T155417,82+09</datetime></lastaccessed>
+<addedtofile><datetime>20150614T092027,31+09</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Yuta Kawakami/O=SystemPlanet</name></updatedby>
+<wassignedby><name>CN=Yuta Kawakami/O=SystemPlanet</name></wassignedby>
 <item name='$FormatNote' summary='true' sign='true'>
 <rawitemdata type='4'>
 AQD2tdcUWCG3Z9J8QAAEeyVJ

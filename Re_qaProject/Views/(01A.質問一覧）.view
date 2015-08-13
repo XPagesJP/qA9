@@ -1,13 +1,14 @@
 <?xml version='1.0' encoding='utf-8'?>
-<note class='view' xmlns='http://www.lotus.com/dxl' version='9.0' replicaid='49257CC8003A9E74'>
-<noteinfo noteid='2ae' unid='D3008430F4F52BA349257CC8003F1835' sequence='2'>
+<note class='view' xmlns='http://www.lotus.com/dxl' version='9.0' maintenanceversion='1.4'
+ replicaid='49257DFD0030EE33'>
+<noteinfo noteid='42a' unid='D3008430F4F52BA349257CC8003F1835' sequence='12'>
 <created><datetime>20140428T202909,65+09</datetime></created>
-<modified><datetime>20140428T202909,70+09</datetime></modified>
-<revised><datetime>20140428T202909,69+09</datetime></revised>
-<lastaccessed><datetime>20140428T202909,70+09</datetime></lastaccessed>
-<addedtofile><datetime>20140428T202909,67+09</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Admin Admin/O=Domino</name></updatedby>
-<wassignedby><name>CN=Admin Admin/O=Domino</name></wassignedby>
+<modified><datetime>20150807T155417,98+09</datetime></modified>
+<revised><datetime>20150807T155417,97+09</datetime></revised>
+<lastaccessed><datetime>20150807T155417,98+09</datetime></lastaccessed>
+<addedtofile><datetime>20150614T092027,59+09</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Yuta Kawakami/O=SystemPlanet</name></updatedby>
+<wassignedby><name>CN=Yuta Kawakami/O=SystemPlanet</name></wassignedby>
 <item name='$FormulaClass' sign='true'><text>1</text></item>
 <item name='$Index' sign='true'><text/></item>
 <item name='$Formula' summary='true' sign='true'><formula compiled='true'>

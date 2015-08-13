@@ -1,13 +1,14 @@
 <?xml version='1.0' encoding='utf-8'?>
 <note default='true' class='icon' xmlns='http://www.lotus.com/dxl' version='9.0'
- maintenanceversion='1.3' replicaid='49257C8300820851'>
-<noteinfo noteid='11a' unid='0F58BAA56C6A52DE49257C8300820860' sequence='27'>
-<created><datetime>20140219T084018,24+09</datetime></created>
-<modified><datetime>20150305T152656,75+09</datetime></modified>
-<revised><datetime>20150305T152656,74+09</datetime></revised>
-<lastaccessed><datetime>20150305T152656,75+09</datetime></lastaccessed>
-<addedtofile><datetime>20140219T084018,30+09</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Kenji Ebihara/OU=R/O=RSI</name></updatedby>
+ maintenanceversion='1.4' replicaid='49257DFD0030EE33'>
+<noteinfo noteid='11a' unid='1CAD6FA01630933C49257DFD0030EE4A' sequence='30'>
+<created><datetime>20150303T175427,30+09</datetime></created>
+<modified><datetime>20150807T155424,17+09</datetime></modified>
+<revised><datetime>20150807T155424,16+09</datetime></revised>
+<lastaccessed><datetime>20150807T155424,17+09</datetime></lastaccessed>
+<addedtofile><datetime>20150303T175427,33+09</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Yuta Kawakami/O=SystemPlanet</name></updatedby>
+<wassignedby><name>CN=Yuta Kawakami/O=SystemPlanet</name></wassignedby>
 <item name='IconBitmap' summary='true'>
 <rawitemdata type='6'>
 AiAgAQAA///////wD///gAH//gAAf/wAAD/4AAAf8AAAD+AAAAfgAAAHwAAAA8AAAAPAAAADgAAA
@@ -30,7 +31,7 @@ AAAAAAACICABAAD/////+A4DgA==
 <item name='$TemplateServerName'><text>CN=Admin Admin/O=Domino</text></item>
 <item name='$TemplateModTime'><datetime>20140918T220415,34+09</datetime></item>
 <item name='$TemplateFileName'><text>c:\lotus\notes9\Data\qa9_0918.ntf</text></item>
-<item name='$PIRCRefreshModTime'><datetime>20141209T213753,32+09</datetime></item>
+<item name='$PIRCRefreshModTime'><datetime>20150614T091923,95+09</datetime></item>
 <item name='$DefaultXPage'><text>top.xsp</text></item>
 <item name='$TITLE'><text>【テンプレート】Q&amp;A
 #1qa_9p</text></item>
