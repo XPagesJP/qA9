@@ -13,21 +13,20 @@
 	<xp:panel style="margin-top:20.0px">
 	
 		<xp:pager layout="Previous Group Next" id="pager1"
-			styleClass="lotusPaging" for="infoDataTable">
+			styleClass="lotusPaging" for="infoRepeat">
 		</xp:pager>
-
-		<xp:dataTable id="infoDataTable" rows="10"
-		  var="viewEntry" value="#{view1}" styleClass="lotusTable">
-			<xp:column id="column1">
+		<xp:repeat id="infoRepeat" rows="10" value="#{view1}"
+			var="viewEntry" indexVar="index">
+			<!-- DataTableよりRepeatのほうが簡素で望ましい -->
 
 			<xp:section id="section1" type="wide"
 				style="font-size: 1.3em;">
 
 				<xp:this.header><![CDATA[#{javascript:var colVals = viewEntry.getColumnValues();
 return @Text(colVals.elementAt(0),"S0D0") + " " + colVals.elementAt(1);}]]></xp:this.header>
-				<xp:this.initClosed><![CDATA[#{javascript:var uid = viewEntry.getNoteID();
-var firstuid = view1.getFirstDocument().getNoteID();
-return uid == firstuid ? false : true;}]]></xp:this.initClosed>
+				<xp:this.initClosed><![CDATA[#{javascript:return index !== 0;
+//indexを参照すると、初めかどうかの判断が簡単にできる。
+}]]></xp:this.initClosed>
 				<xp:panel>
 
 					<xp:this.data>
@@ -50,12 +49,10 @@ return uid == firstuid ? false : true;}]]></xp:this.initClosed>
 
 
 			</xp:section>
-
-			</xp:column>
-		</xp:dataTable>
+		</xp:repeat>
 
 		<xp:pager layout="Previous Group Next" id="pager2"
-			styleClass="lotusPaging" for="infoDataTable">
+			styleClass="lotusPaging" for="infoRepeat">
 		</xp:pager>
 
 	</xp:panel>
