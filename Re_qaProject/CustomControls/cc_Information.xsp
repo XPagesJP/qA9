@@ -10,8 +10,18 @@
 		</xp:dominoView>
 	</xp:this.data>
 	
-	<xp:panel style="margin-top:20.0px">
-	
+	<xp:panel style="margin-top:20.0px" styleClass="viewInfo">
+		<xp:button value="新規作成" id="createNewInfo">
+			<xp:this.rendered><![CDATA[#{javascript:context.getUser().getRoles().indexOf('[admin]') >= 0;}]]></xp:this.rendered>
+			<xp:eventHandler event="onclick" submit="true"
+				refreshMode="complete">
+				<xp:this.action>
+					<xp:openPage target="newDocument"
+						name="/x_EditInfo.xsp">
+					</xp:openPage>
+				</xp:this.action>
+			</xp:eventHandler>
+		</xp:button>
 		<xp:pager layout="Previous Group Next" id="pager1"
 			styleClass="lotusPaging" for="infoRepeat">
 		</xp:pager>
@@ -38,19 +48,27 @@ return @Text(colVals.elementAt(0),"S0D0") + " " + colVals.elementAt(1);}]]></xp:
 					</xp:this.data>
 
 					<div style="margin: 5px 20px;">
-
+						<xp:link styleClass="actionLink" escape="true"
+							text="編集" id="editLink">
+							<xp:this.rendered><![CDATA[#{javascript:print(context.getUser().getRoles());
+context.getUser().getRoles().indexOf("[admin]") >= 0;}]]></xp:this.rendered>
+							<xp:eventHandler event="onclick"
+								submit="true" refreshMode="complete">
+								<xp:this.action>
+									<xp:openPage name="/x_EditInfo.xsp"
+										target="editDocument"
+										documentId="#{javascript:viewdoc1.getNoteID();}">
+									</xp:openPage>
+								</xp:this.action>
+							</xp:eventHandler>
+						</xp:link>
 						<xp:inputRichText id="body1" readonly="true"
 							value="#{viewdoc1.Body}">
 						</xp:inputRichText>
 					</div>
-
 				</xp:panel>
-
-
-
 			</xp:section>
 		</xp:repeat>
-
 		<xp:pager layout="Previous Group Next" id="pager2"
 			styleClass="lotusPaging" for="infoRepeat">
 		</xp:pager>

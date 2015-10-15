@@ -232,3 +232,36 @@ div.qaInfo .separator{
 	width: 60px;
 	min-width: 60px;
 }
+.viewInfo{}
+.viewInfo .actionLink{
+	font-size: 80%;
+}
+.editInfo {}
+.editInfo .row{
+	margin-bottom: 1em;
+}
+.editInfo .title{
+	width: 50em;
+}
+.editInfo .form-label{
+	font-weight: bold;
+	color: #696969;
+	display: inline-block;
+	width: 8em;
+	text-align: right;
+}
+.editInfo .forRT{
+	float: left;
+}
+.editInfo .domino-richtext{
+	float: left;
+	width: 80em;
+}
+.editInfo .actions{
+	margin-top: 1em;
+	padding-left: 8em;
+}
+.editInfo .actions button.primary{
+	font-size: 140%;
+	margin-right: 1em;
+}
