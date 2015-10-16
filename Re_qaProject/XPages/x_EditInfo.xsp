@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core"
+	xmlns:xe="http://www.ibm.com/xsp/coreex"
+	xmlns:xc="http://www.ibm.com/xsp/custom">
+	<xp:this.resources>
+		<xp:styleSheet href="/qa.css"></xp:styleSheet>
+	</xp:this.resources>
+	<xp:this.acl>
+		<xp:acl>
+			<xp:this.entries>
+				<xp:aclEntry type="ROLE" right="EDITOR"
+					fullName="admin">
+					<xp:this.name><![CDATA[[admin]]]></xp:this.name>
+				</xp:aclEntry>
+			</xp:this.entries></xp:acl>
+	</xp:this.acl>
+	<xc:cc_AppLayout pageTitle="お知らせ">
+		<xp:this.facets>
+			<xc:cc_EditInfo xp:key="facetMiddle"></xc:cc_EditInfo>
+
+		</xp:this.facets>
+	</xc:cc_AppLayout>
+</xp:view>
