@@ -32,8 +32,13 @@
 			<xp:section id="section1" type="wide"
 				style="font-size: 1.3em;">
 
-				<xp:this.header><![CDATA[#{javascript:var colVals = viewEntry.getColumnValues();
-return @Text(colVals.elementAt(0),"S0D0") + " " + colVals.elementAt(1);}]]></xp:this.header>
+				<xp:this.header><![CDATA[#{javascript:(function(){
+	var colVals = viewEntry.getColumnValues();
+	var title = I18n.toString(colVals.elementAt(0).toJavaDate(), 'yyyy/MM/dd')
+    	        + " " + colVals.elementAt(1);
+	return title;
+})();
+}]]></xp:this.header>
 				<xp:this.initClosed><![CDATA[#{javascript:return index !== 0;
 //indexを参照すると、初めかどうかの判断が簡単にできる。
 }]]></xp:this.initClosed>
