@@ -125,7 +125,7 @@ response.setHeader("X-UA-Compatible", "IE=EmulateIE10");
 
 
 			<xp:panel xp:key="MastFooter" styleClass="lotusRight">
-					ver 0.9.4 (Public Beta 4)
+					ver 0.9.3 (Public Beta 3)
 			</xp:panel>
 			<xp:callback facetName="facetRight" id="facetRight"
 				xp:key="RightColumn">
@@ -177,8 +177,7 @@ else
 						href="x_Page_AlluserList.xsp"
 						selected="#{javascript:IsSameUrlFileName('x_Page_AlluserList.xsp');}">
 					</xe:basicLeafNode>
-					<xe:basicLeafNode label="お知らせ"
-						href="x_Info.xsp"
+					<xe:basicLeafNode label="お知らせ" href="x_Info.xsp"
 						selected="#{javascript:IsSameUrlFileName('x_Info.xsp');}">
 
 						<xe:this.image><![CDATA[#{javascript:
@@ -294,6 +293,8 @@ else
 						rendered="false" label="　" image="/newAcount.png" title="新規登録">
 
 					</xe:pageTreeNode>
+
+
 				</xe:this.bannerUtilityLinks>
 
 				<xe:this.placeBarActions>
@@ -312,6 +313,19 @@ else
 					</xe:basicLeafNode>
 				</xe:this.placeBarActions>
 
+				<xe:this.bannerApplicationLinks>
+
+
+					
+					<xe:basicLeafNode selected="true"
+						style="margin: 6px; border: solid 2px #aaa;" title="XSnippets"
+						label="OpenNTF XSnippets">
+
+						<xe:this.onClick><![CDATA[var w=window.open();
+w.location.href='http://code.xpages.jp/XSnippetsJ.nsf';]]></xe:this.onClick>
+
+					</xe:basicLeafNode>
+				</xe:this.bannerApplicationLinks>
 			</xe:oneuiApplication>
 		</xe:this.configuration>
 	</xe:applicationLayout>
