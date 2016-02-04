@@ -265,3 +265,8 @@ div.qaInfo .separator{
 	font-size: 140%;
 	margin-right: 1em;
 }
+
+.bannerOuterLink {
+	margin: 10px !important;
+	border: solid 2px #aaaaaa !important;
+}

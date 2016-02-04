@@ -1,12 +1,12 @@
-<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.3" replicaid="49257C8300820851" version="9.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="22e" sequence="21" unid="1198D093AA5BE38849257C8300829A19">
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.4" replicaid="49257DFD0030EE33" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="432" sequence="21" unid="1198D093AA5BE38849257C8300829A19">
 <created><datetime>20140219T084631,29+09</datetime></created>
-<modified><datetime>20151015T103146,67+09</datetime></modified>
-<revised><datetime>20151015T103146,66+09</datetime></revised>
-<lastaccessed><datetime>20151015T103146,67+09</datetime></lastaccessed>
-<addedtofile><datetime>20140219T084632,01+09</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Kenji Ebihara/OU=R/O=RSI</name></updatedby>
-<wassignedby><name>CN=Kenji Ebihara/OU=R/O=RSI</name></wassignedby>
+<modified><datetime>20160204T165120,91+09</datetime></modified>
+<revised><datetime>20160204T165120,90+09</datetime></revised>
+<lastaccessed><datetime>20160204T165120,91+09</datetime></lastaccessed>
+<addedtofile><datetime>20150614T092027,77+09</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Yuta Kawakami/O=SystemPlanet</name></updatedby>
+<wassignedby><name>CN=Yuta Kawakami/O=SystemPlanet</name></wassignedby>
 <item name="$TITLE" sign="true"><text>qa.css</text></item>
 <item name="$MimeCharSet"><text>UTF-8</text></item>
 <item name="$FileModDT" sign="true"><datetime>20150807T155416,82+09</datetime></item>

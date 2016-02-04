@@ -295,6 +295,27 @@ else
 					</xe:pageTreeNode>
 
 
+					<xe:basicLeafNode label="OpenNTF XSnippets"
+						title="XSnippets" styleClass="bannerOuterLink">
+						<xe:this.onClick><![CDATA[var url="#{javascript:
+  
+  var db:NotesDatabase = session.getCurrentDatabase();
+  var envvw:NotesView = db.getView('V_Setting');
+  var envdoc:NotesDocument = envvw.getFirstDocument();
+  if (envdoc == null){
+    return '';
+  }		
+  
+  // XSnippets URL取得
+  var linkurl = envdoc.getItemValueString('snippets_url');
+  return linkurl;
+}";
+
+if(url != ""){
+  var w=window.open();
+  w.location.href= url;
+}]]></xe:this.onClick>
+					</xe:basicLeafNode>
 				</xe:this.bannerUtilityLinks>
 
 				<xe:this.placeBarActions>
@@ -316,15 +337,8 @@ else
 				<xe:this.bannerApplicationLinks>
 
 
+
 					
-					<xe:basicLeafNode selected="true"
-						style="margin: 6px; border: solid 2px #aaa;" title="XSnippets"
-						label="OpenNTF XSnippets">
-
-						<xe:this.onClick><![CDATA[var w=window.open();
-w.location.href='http://code.xpages.jp/XSnippetsJ.nsf';]]></xe:this.onClick>
-
-					</xe:basicLeafNode>
 				</xe:this.bannerApplicationLinks>
 			</xe:oneuiApplication>
 		</xe:this.configuration>
