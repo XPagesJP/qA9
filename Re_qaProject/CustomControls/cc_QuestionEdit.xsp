@@ -30,9 +30,18 @@ if(EditID!=""){
 	<xp:this.resources>
 		<xp:script src="/qa_JsLib.jss" clientSide="false"></xp:script>
 		<xp:styleSheet href="/qa.css"></xp:styleSheet>
+		<xp:styleSheet
+			href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/styles/default.min.css">
+		</xp:styleSheet>
+		<xp:script
+			src='http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/highlight.min.js'
+			clientSide="true">
+		</xp:script>
+		<xp:script src="./showdown.js" clientSide="true"></xp:script>
+		<xp:script src="./highlight.pack.js" clientSide="true"></xp:script>
 	</xp:this.resources>
 
-	
+
 	<xp:panel id="inputmodePanel">
 		<xp:panel styleClass="questionBox">
 			<xp:table>
@@ -215,9 +224,57 @@ return @Unique(TagList)}]]></xp:this.valueList>
 
 						</xp:table>
 					</xp:panel>
-					<xp:inputRichText value="#{docQues.Body}" id="inputRichText1"
-						style="width:790px">
-					</xp:inputRichText>
+					<xp:div id="editor">
+						<xp:div rendered="#{javascript:docQues.isNewNote();}">
+							<xp:inputHidden id="editorType" value="#{docQues.EditorType}"
+								defaultValue="richtext">
+							</xp:inputHidden>
+							<xp:button value="Markdownエディタに切り替える" id="changeToMarkdown">
+								<xp:this.rendered><![CDATA[#{javascript:var editorType = docQues.getItemValueString('EditorType');
+editorType === "richtext" || editorType === "";}]]></xp:this.rendered>
+								<xp:eventHandler event="onclick" submit="true"
+									refreshMode="partial" refreshId="editor">
+									<xp:this.script><![CDATA[if(confirm("入力した内容は破棄されますが、よろしいですか？")){
+	dojo.byId('#{id:editorType}').value = "markdown";
+}]]></xp:this.script>
+								</xp:eventHandler>
+							</xp:button>
+							<xp:button value="リッチテキストエディタに切り替える" id="changeToRichtext">
+								<xp:this.rendered><![CDATA[#{javascript:var editorType = docQues.getItemValueString('EditorType');
+editorType === "markdown";}]]></xp:this.rendered>
+								<xp:eventHandler event="onclick" submit="true"
+									refreshMode="partial" refreshId="editor">
+									<xp:this.script><![CDATA[if(confirm("入力した内容は破棄されますが、よろしいですか？")){
+dojo.byId('#{id:editorType}').value = "richtext";
+}]]></xp:this.script>
+								</xp:eventHandler>
+							</xp:button>
+						</xp:div>
+						<xp:inputRichText value="#{docQues.Body}" id="inputRichText1"
+							style="width:790px">
+							<xp:this.rendered><![CDATA[#{javascript:var editorType = docQues.getItemValueString('EditorType');
+editorType === "richtext" || editorType === "";}]]></xp:this.rendered>
+						</xp:inputRichText>
+						<xp:div>
+							<xp:this.rendered><![CDATA[#{javascript:var editorType = docQues.getItemValueString('EditorType');
+editorType === "markdown";}]]></xp:this.rendered>
+							<xp:inputTextarea id="markdownEditor"
+								style="width: 790px; height: 200px;">
+							</xp:inputTextarea>
+							<p>
+								<xp:button value="プレビュー" id="button3">
+									<xp:eventHandler event="onclick"
+										submit="false">
+										<xp:this.script><![CDATA[var val = dojo.byId('#{id:markdownEditor}').value;
+var html = new showdown.Converter().makeHtml(val);
+dojo.html.set(dojo.byId('preview'), html);
+
+]]></xp:this.script>
+									</xp:eventHandler></xp:button>
+							</p>
+							<div id="preview"></div>
+						</xp:div>
+					</xp:div>
 				</xp:td>
 			</xp:tr>
 		</xp:table>

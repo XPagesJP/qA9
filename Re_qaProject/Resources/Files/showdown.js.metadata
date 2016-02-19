@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.5" replicaid="49257C8300820851" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="21a6" sequence="4" unid="FD7297472773DB7949257F5E0035382A">
+<created><datetime>20160219T184117,86+09</datetime></created>
+<modified><datetime>20160219T190838,20+09</datetime></modified>
+<revised><datetime>20160219T190838,19+09</datetime></revised>
+<lastaccessed><datetime>20160219T190838,20+09</datetime></lastaccessed>
+<addedtofile><datetime>20160219T184117,89+09</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Kenji Ebihara/OU=R/O=RSI</name></updatedby>
+<wassignedby><name>CN=Kenji Ebihara/OU=R/O=RSI</name></wassignedby>
+<item name="$TITLE"><text>showdown.js</text></item>
+<item name="$FlagsExt"><text>D</text></item>
+<item name="$DesignerVersion"><text>8.5.3</text></item>
+<item name="$MimeCharSet"><text>UTF-8</text></item>
+
+<item name="$FileModDT" sign="true"><datetime>20160219T192132,10+09</datetime></item>
+
+
+
+
+<item name="$Flags"><text>345CgQ</text></item>
+<item name="$FileNames" sign="true"><text>showdown.js</text></item></note>
