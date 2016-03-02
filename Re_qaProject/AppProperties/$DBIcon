@@ -1,14 +1,14 @@
 <?xml version='1.0' encoding='utf-8'?>
-<note class='form' xmlns='http://www.lotus.com/dxl' version='9.0' maintenanceversion='1.4'
- replicaid='49257DFD0030EE33'>
-<noteinfo noteid='632' unid='A6C55FE9FC5D5C2B49257DE100148BA4' sequence='11'>
+<note class='form' xmlns='http://www.lotus.com/dxl' version='9.0' maintenanceversion='1.5'
+ replicaid='49257F6A000E389C'>
+<noteinfo noteid='35e' unid='A6C55FE9FC5D5C2B49257DE100148BA4' sequence='15'>
 <created><datetime>20150203T124424,68+09</datetime></created>
-<modified><datetime>20150807T155423,91+09</datetime></modified>
-<revised><datetime>20150807T155423,90+09</datetime></revised>
-<lastaccessed><datetime>20150807T155423,91+09</datetime></lastaccessed>
-<addedtofile><datetime>20150614T091924,13+09</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Yuta Kawakami/O=SystemPlanet</name></updatedby>
-<wassignedby><name>CN=Yuta Kawakami/O=SystemPlanet</name></wassignedby>
+<modified><datetime>20160302T113522,92+09</datetime></modified>
+<revised><datetime>20160301T155335,25+09</datetime></revised>
+<lastaccessed><datetime>20160302T113522,92+09</datetime></lastaccessed>
+<addedtofile><datetime>20160302T113522,92+09</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Yuta Kawakami/O=SystemPlanet</name><name>CN=admin/O=Dev</name></updatedby>
+<wassignedby><name>CN=admin/O=Dev</name></wassignedby>
 <item name='$TITLE'><text>$DBIcon</text></item>
 <item name='$Flags'><text>34Ci~Q</text></item>
 <item name='$ImagesWide' sign='true'><number>1</number></item>
@@ -43,5 +43,5 @@ AIPIbbnLudkFw2+11rdEtO9zhYK5p2YQgS7z6kgAV5vsjKvfhe+mAAj+UfSfQ5yb/JzxD7OjCvSq
 <item name='$MimeType' sign='true'><text>image/png</text></item>
 <item name='$FileModDT' sign='true'><datetime>20140220T192932,30+09</datetime></item>
 <item name='$ImageNames' sign='true'><text>C:\Users\ebihara\Pictures\Qa9\qa9-icon.png</text></item>
-<item name='$DesignerVersion'><text>8.5.3</text></item></note>
+<item name='$DesignerVersion' sign='true'><text>8.5.3</text></item></note>
 

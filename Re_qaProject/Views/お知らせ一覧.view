@@ -1,14 +1,14 @@
 <?xml version='1.0' encoding='utf-8'?>
-<note class='view' xmlns='http://www.lotus.com/dxl' version='9.0' maintenanceversion='1.4'
- replicaid='49257DFD0030EE33'>
-<noteinfo noteid='8c6' unid='A93F2657F7B4428E49257E73004159E6' sequence='18'>
+<note class='view' xmlns='http://www.lotus.com/dxl' version='9.0' maintenanceversion='1.5'
+ replicaid='49257F6A000E389C'>
+<noteinfo noteid='59a' unid='A93F2657F7B4428E49257E73004159E6' sequence='22'>
 <created><datetime>20150629T205348,54+09</datetime></created>
-<modified><datetime>20150807T155416,54+09</datetime></modified>
-<revised><datetime>20150807T155416,53+09</datetime></revised>
-<lastaccessed><datetime>20150807T155416,54+09</datetime></lastaccessed>
-<addedtofile><datetime>20150629T205350,39+09</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Yuta Kawakami/O=SystemPlanet</name></updatedby>
-<wassignedby><name>CN=Yuta Kawakami/O=SystemPlanet</name></wassignedby>
+<modified><datetime>20160302T113525,76+09</datetime></modified>
+<revised><datetime>20160301T155337,81+09</datetime></revised>
+<lastaccessed><datetime>20160302T113525,76+09</datetime></lastaccessed>
+<addedtofile><datetime>20160302T113525,76+09</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Yuta Kawakami/O=SystemPlanet</name><name>CN=admin/O=Dev</name></updatedby>
+<wassignedby><name>CN=admin/O=Dev</name></wassignedby>
 <item name='$FormulaClass' sign='true'><text>1</text></item>
 <item name='$TITLE' sign='true'><text>お知らせ一覧|V_Information</text></item>
 <item name='$Index' sign='true'><text/></item>
@@ -32,7 +32,7 @@ AAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAC4svgA=
 </rawitemdata></item>
 <item name='$Comment' sign='true'><text/></item>
 <item name='$Flags'><text>Y</text></item>
-<item name='$DesignerVersion'><text>8.5.3</text></item>
+<item name='$DesignerVersion' sign='true'><text>8.5.3</text></item>
 <item name='$V5ACTIONS' sign='true'>
 <rawitemdata type='1'>
 vRw/AAAAAQABAAAAAQAAAAAAAAAAAAAACAACAHn/bAABAPDw8AABAAAAAAAJAAAAAAABAPDw8AAA

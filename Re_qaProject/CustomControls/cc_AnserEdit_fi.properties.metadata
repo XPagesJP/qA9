@@ -1,12 +1,12 @@
-<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.4" replicaid="49257DFD0030EE33" version="9.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="52a" sequence="17" unid="9068C4FEA74BCECA49257C9C0002EC92">
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.5" replicaid="49257F6A000E389C" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="2fe" sequence="21" unid="9068C4FEA74BCECA49257C9C0002EC92">
 <created><datetime>20140315T093156,34+09</datetime></created>
-<modified><datetime>20150807T155422,50+09</datetime></modified>
-<revised><datetime>20150807T155422,49+09</datetime></revised>
-<lastaccessed><datetime>20150807T155422,50+09</datetime></lastaccessed>
-<addedtofile><datetime>20150614T092033,07+09</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Yuta Kawakami/O=SystemPlanet</name></updatedby>
-<wassignedby><name>CN=Yuta Kawakami/O=SystemPlanet</name></wassignedby>
+<modified><datetime>20160302T113522,46+09</datetime></modified>
+<revised><datetime>20160210T095153,85+09</datetime></revised>
+<lastaccessed><datetime>20160302T113522,46+09</datetime></lastaccessed>
+<addedtofile><datetime>20160302T113522,46+09</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Yuta Kawakami/O=SystemPlanet</name><name>CN=admin/O=Dev</name></updatedby>
+<wassignedby><name>CN=admin/O=Dev</name></wassignedby>
 <item name="$Flags"><text>gC~4;2</text></item>
 <item name="$TITLE"><text>cc_AnserEdit_fi.properties</text></item>
 

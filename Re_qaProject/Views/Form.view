@@ -1,15 +1,15 @@
 <?xml version='1.0' encoding='utf-8'?>
-<note class='view' xmlns='http://www.lotus.com/dxl' version='9.0' maintenanceversion='1.4'
- replicaid='49257DFD0030EE33'>
-<noteinfo noteid='3aa' unid='33F64F54A4EA296749257CC8003F1944' sequence='12'>
+<note class='view' xmlns='http://www.lotus.com/dxl' version='9.0' maintenanceversion='1.5'
+ replicaid='49257F6A000E389C'>
+<noteinfo noteid='17e' unid='33F64F54A4EA296749257CC8003F1944' sequence='16'>
 <created><datetime>20140428T202912,36+09</datetime></created>
-<modified><datetime>20150807T155416,62+09</datetime></modified>
-<revised><datetime>20150807T155416,61+09</datetime></revised>
-<lastaccessed><datetime>20150807T155416,62+09</datetime></lastaccessed>
-<addedtofile><datetime>20150614T092025,30+09</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Yuta Kawakami/O=SystemPlanet</name></updatedby>
-<wassignedby><name>CN=Yuta Kawakami/O=SystemPlanet</name></wassignedby>
-<item name='$FormulaClass'><text>1</text></item>
+<modified><datetime>20160302T113520,54+09</datetime></modified>
+<revised><datetime>20160301T155332,74+09</datetime></revised>
+<lastaccessed><datetime>20160302T113520,54+09</datetime></lastaccessed>
+<addedtofile><datetime>20160302T113520,54+09</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Yuta Kawakami/O=SystemPlanet</name><name>CN=admin/O=Dev</name></updatedby>
+<wassignedby><name>CN=admin/O=Dev</name></wassignedby>
+<item name='$FormulaClass' sign='true'><text>1</text></item>
 <item name='$TITLE' sign='true'><text>Form</text></item>
 <item name='$Index' sign='true'><text/></item>
 <item name='$Formula' summary='true' sign='true'><formula compiled='true'>
@@ -28,7 +28,7 @@ AAEA////AAAAAQAAAAAAAQAAAAAAAQAAAAAAAAAIAAAAAAABAA==
 </rawitemdata></item>
 <item name='$Comment' sign='true'><text/></item>
 <item name='$Flags'><text>Y</text></item>
-<item name='$DesignerVersion'><text>8.5.3</text></item>
+<item name='$DesignerVersion' sign='true'><text>8.5.3</text></item>
 <item name='$V5ACTIONS' sign='true'>
 <rawitemdata type='1'>
 vRw/AAAAAQABAAAAAQAAAAAAAAAAAAAACAACAHn/bAABAPDw8AABAAAAAAAJAAAAAAABAPDw8AAA

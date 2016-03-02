@@ -1,20 +1,20 @@
-<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.4" replicaid="49257DFD0030EE33" version="9.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="452" sequence="17" unid="D1EF757E3D81FAB849257C9C0002EBCB">
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.5" replicaid="49257F6A000E389C" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="226" sequence="22" unid="D1EF757E3D81FAB849257C9C0002EBCB">
 <created><datetime>20140315T093154,35+09</datetime></created>
-<modified><datetime>20150807T155418,68+09</datetime></modified>
-<revised><datetime>20150807T155418,67+09</datetime></revised>
-<lastaccessed><datetime>20150807T155418,68+09</datetime></lastaccessed>
-<addedtofile><datetime>20150614T092028,41+09</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Yuta Kawakami/O=SystemPlanet</name></updatedby>
-<wassignedby><name>CN=Yuta Kawakami/O=SystemPlanet</name></wassignedby>
+<modified><datetime>20160302T113521,38+09</datetime></modified>
+<revised><datetime>20160301T155333,52+09</datetime></revised>
+<lastaccessed><datetime>20160302T113521,38+09</datetime></lastaccessed>
+<addedtofile><datetime>20160302T113521,38+09</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Yuta Kawakami/O=SystemPlanet</name><name>CN=admin/O=Dev</name></updatedby>
+<wassignedby><name>CN=admin/O=Dev</name></wassignedby>
 <item name="$TITLE"><text>best_s.png</text></item>
-<item name="$FlagsExt"><text>D</text></item>
+<item name="$FlagsExt" sign="true"><text>D</text></item>
 <item name="$ImagesWide" sign="true"><number>1</number></item>
 <item name="$ImagesHigh" sign="true"><number>1</number></item>
 <item name="$ImagesColorize" sign="true"><number>0</number></item>
 <item name="$FileModDT" sign="true"><datetime>20130729T125928,19+09</datetime></item>
 <item name="$Flags"><text>34CiQ</text></item>
 <item name="$ImageNames" sign="true"><text>best2_m.png</text></item>
-<item name="$DesignerVersion"><text>8.5.3</text></item>
+<item name="$DesignerVersion" sign="true"><text>8.5.3</text></item>
 
 </note>

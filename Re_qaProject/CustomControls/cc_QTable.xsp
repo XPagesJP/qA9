@@ -37,6 +37,9 @@ if(targetdoc.getItemValueString("Status")=="2"){
     		<xp:inputRichText id="inputRichText1"
     			value="#{docQues.Body}" readonly="true">
     		</xp:inputRichText>
+    		<xc:cc_AttachSnippets
+        		docQA="#{javascript:return docQues;}">
+        	</xc:cc_AttachSnippets>
     		<xp:fileDownload id="fileDownload1"
     			displayLastModified="false" displayCreated="false"
     			hideWhen="true" value="#{docQues.TempFile}">
@@ -185,7 +188,7 @@ if(@IsMember(su, Favmem) == @True()) {
 }}]]></xp:this.rendered>
     								<xp:eventHandler event="onclick"
     									submit="true" refreshMode="partial"
-    									refreshId="Bestpanel">
+    									refreshId="Bestpanel" id="eventHandler1">
     									<xp:this.action><![CDATA[#{javascript:var targetdoc = docQues.getDocument();
 //お気に入り！質問文書-ユーザー登録
 qa_JsLib.SetFavoriteCountUD(1,targetdoc);
@@ -206,7 +209,7 @@ if(@IsMember(su, Favmem) == @True()) {
 }}]]></xp:this.rendered>
     								<xp:eventHandler event="onclick"
     									submit="true" refreshMode="partial"
-    									refreshId="Bestpanel">
+    									refreshId="Bestpanel" id="eventHandler2">
     									<xp:this.action><![CDATA[#{javascript:var targetdoc = docQues.getDocument();
 //お気に入り！質問文書-ユーザー解除
 qa_JsLib.SetFavoriteCountUD(0,targetdoc);
@@ -217,6 +220,9 @@ qa_JsLib.SetPersonHistory(targetdoc,4);
     								</xp:eventHandler>
     							</xp:image>
     						</xp:panel>
+    					</xp:td>
+    					<xp:td>
+    						<xc:c_SelectSnippet></xc:c_SelectSnippet>
     					</xp:td>
     				</xp:tr>
     			</xp:table>

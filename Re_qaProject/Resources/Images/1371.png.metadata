@@ -1,20 +1,20 @@
-<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.4" replicaid="49257DFD0030EE33" version="9.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="496" sequence="17" unid="025376CC0E6C4C3849257C9C0002EC06">
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.5" replicaid="49257F6A000E389C" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="26a" sequence="22" unid="025376CC0E6C4C3849257C9C0002EC06">
 <created><datetime>20140315T093154,94+09</datetime></created>
-<modified><datetime>20150807T155419,70+09</datetime></modified>
-<revised><datetime>20150807T155419,69+09</datetime></revised>
-<lastaccessed><datetime>20150807T155419,70+09</datetime></lastaccessed>
-<addedtofile><datetime>20150614T092029,77+09</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Yuta Kawakami/O=SystemPlanet</name></updatedby>
-<wassignedby><name>CN=Yuta Kawakami/O=SystemPlanet</name></wassignedby>
+<modified><datetime>20160302T113521,72+09</datetime></modified>
+<revised><datetime>20160301T155333,84+09</datetime></revised>
+<lastaccessed><datetime>20160302T113521,72+09</datetime></lastaccessed>
+<addedtofile><datetime>20160302T113521,72+09</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Yuta Kawakami/O=SystemPlanet</name><name>CN=admin/O=Dev</name></updatedby>
+<wassignedby><name>CN=admin/O=Dev</name></wassignedby>
 <item name="$TITLE"><text>1371.png</text></item>
-<item name="$FlagsExt"><text>D</text></item>
+<item name="$FlagsExt" sign="true"><text>D</text></item>
 <item name="$ImagesWide" sign="true"><number>1</number></item>
 <item name="$ImagesHigh" sign="true"><number>1</number></item>
 <item name="$ImagesColorize" sign="true"><number>0</number></item>
 <item name="$FileModDT" sign="true"><datetime>20131126T200533,30+09</datetime></item>
 <item name="$ImageNames" sign="true"><text>1371.png</text></item>
 <item name="$Flags"><text>34CiQ</text></item>
-<item name="$DesignerVersion"><text>8.5.3</text></item>
+<item name="$DesignerVersion" sign="true"><text>8.5.3</text></item>
 
 </note>
