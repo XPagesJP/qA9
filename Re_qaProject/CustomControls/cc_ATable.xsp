@@ -23,7 +23,7 @@
             </xp:inputRichText>
             <xc:cc_AttachSnippets
         		docQA="#{javascript:return docAns;}">
-        	</xc:cc_AttachSnippets>
+            </xc:cc_AttachSnippets>
             <xp:fileDownload rows="30" id="fileDownload1"
                 displayLastModified="false" value="#{docAns.TempFile}"
                 displayType="true" displayCreated="false" displaySize="true"

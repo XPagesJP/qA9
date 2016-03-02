@@ -1,23 +1,21 @@
-<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.5" replicaid="49257F6A000E389C" version="9.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="5be" sequence="376" unid="CB442543E0FF376F49257F55001E2F36">
-<created><datetime>20160210T142941,66+09</datetime></created>
-<modified><datetime>20160302T113525,94+09</datetime></modified>
-<revised><datetime>20160302T114256,44+09</datetime></revised>
-<lastaccessed><datetime>20160302T113525,94+09</datetime></lastaccessed>
-<addedtofile><datetime>20160302T113525,94+09</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Yuta Kawakami/O=SystemPlanet</name><name>CN=admin/O=Dev</name><name>CN=Yuta Kawakami/O=SystemPlanet</name></updatedby>
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.5" replicaid="49257DFD0030EE33" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="111e" sequence="6" unid="FF1DBA5F87644D6A49257F6A0018B5A9">
+<created><datetime>20160302T132953,69+09</datetime></created>
+<modified><datetime>20160302T132956,61+09</datetime></modified>
+<revised><datetime>20160302T132956,60+09</datetime></revised>
+<lastaccessed><datetime>20160302T132956,61+09</datetime></lastaccessed>
+<addedtofile><datetime>20160302T132953,70+09</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Yuta Kawakami/O=SystemPlanet</name></updatedby>
 <wassignedby><name>CN=Yuta Kawakami/O=SystemPlanet</name></wassignedby>
-<item name="$Flags"><text>gC~4;</text></item>
+<item name="$Comment"><text>XSnippet添付ダイアログ</text></item>
 <item name="$TITLE"><text>c_SelectSnippet.xsp</text></item>
-<item name="$Comment" sign="true"><text>XSnippet添付ダイアログ</text></item>
-
-
-
-
-
-<item name="$DesignerVersion"><text>8.5.1</text></item>
+<item name="$Flags"><text>gC~4;</text></item>
 
 
 <item name="$FileNames" sign="true"><text>c_SelectSnippet.xsp</text></item>
+<item name="$DesignerVersion"><text>8.5.1</text></item>
+
+
+
 
 </note>
