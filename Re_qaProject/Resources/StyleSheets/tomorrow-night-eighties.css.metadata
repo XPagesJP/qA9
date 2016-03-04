@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.5" replicaid="49257C8300820851" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="2266" sequence="3" unid="493264E1628C4BC049257F6C003224ED">
+<created><datetime>20160304T180742,53+09</datetime></created>
+<modified><datetime>20160304T180742,59+09</datetime></modified>
+<revised><datetime>20160304T180742,58+09</datetime></revised>
+<lastaccessed><datetime>20160304T180742,59+09</datetime></lastaccessed>
+<addedtofile><datetime>20160304T180742,54+09</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Kenji Ebihara/OU=R/O=RSI</name></updatedby>
+<wassignedby><name>CN=Kenji Ebihara/OU=R/O=RSI</name></wassignedby>
+<item name="$Flags"><text>34C=Q</text></item>
+<item name="$TITLE"><text>tomorrow-night-eighties.css</text></item>
+<item name="$MimeType"><text>text/css</text></item>
+<item name="$DesignerVersion"><text>8.5.3</text></item>
+
+
+<item name="$FileNames" sign="true"><text>tomorrow-night-eighties.css</text></item>
+<item name="$MimeCharSet"><text>Shift_JIS</text></item></note>

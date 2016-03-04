@@ -5,6 +5,10 @@
 	<xp:this.resources>
 		<xp:script src="/qa_JsLib.jss" clientSide="false"></xp:script>
 		<xp:styleSheet href="/qa.css"></xp:styleSheet>
+		<xp:script src="./highlight.pack.js" clientSide="true"></xp:script>
+		<xp:styleSheet href="/tomorrow-night-eighties.css"></xp:styleSheet>
+
+		<xp:script src="/qa_JsLibClient.js" clientSide="true"></xp:script>
 	</xp:this.resources>
 	<xp:this.beforePageLoad><![CDATA[#{javascript:var response = facesContext.getExternalContext().getResponse();
 response.setHeader("X-UA-Compatible", "IE=EmulateIE10");

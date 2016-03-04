@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xe="http://www.ibm.com/xsp/coreex">
+	
+	<xp:this.afterPageLoad><![CDATA[#{javascript://viewScope.put('codeEditRtextId',getClientId('inputRichText1'));
+}]]></xp:this.afterPageLoad>
+
+	<p>
+		<button type="button"
+			onclick="dijit.byId('codeInputDialog').show();">コードを挿入</button>
+	</p>
+	<div dojoType="dijit.Dialog" id="codeInputDialog"
+		title="コードを挿入"
+		 style="display:none">
+		<div style="width: 50em;">
+			<div>
+				<p>
+					<xp:comboBox id="highlightLang">
+						<xp:selectItem itemLabel="JavaScript"
+							itemValue="javascript">
+						</xp:selectItem>
+
+						<xp:selectItem itemLabel="LotusScript/VBS"
+							itemValue="vbscript">
+						</xp:selectItem>
+						<xp:selectItem itemLabel="HTML,XPages(XML)"
+							itemValue="html">
+						</xp:selectItem>
+						
+							<xp:selectItem itemLabel="CSS" itemValue="css"> </xp:selectItem>
+						
+						<xp:selectItem itemLabel="JSON"
+							itemValue="json">
+						</xp:selectItem>
+
+					</xp:comboBox>
+				</p>
+				<div
+					style="width:45%; float:left; margin-right: 20px;">
+					<xp:inputTextarea id="codeEditor"
+						style="width:100%;height:20em">
+						
+					<xp:eventHandler event="onkeyup" submit="false">
+						<xp:this.script><![CDATA[var lang = dojo.byId('#{id:highlightLang}').value;
+insertHTML('#{id:codeEditor}','#{id:preview}', lang);]]></xp:this.script>
+					</xp:eventHandler>
+					<xp:eventHandler event="onchange" submit="false">
+						<xp:this.script><![CDATA[var lang = dojo.byId('#{id:highlightLang}').value;
+insertHTML('#{id:codeEditor}','#{id:preview}', lang);]]></xp:this.script>
+					</xp:eventHandler></xp:inputTextarea>
+				</div>
+				<xp:div id="previewBlock" style="width:45%; float:left; margin:0;">
+					<xp:panel id="preview" tagName="pre"
+						style="width:100%;height:20em;margin:0">
+						<code></code>
+					</xp:panel>
+				</xp:div>
+				<div style="clear:both"></div>
+			
+			</div>
+
+			<div>
+				<xp:button value="挿入" id="insert"
+					style="width:82.0px">
+
+				<xp:eventHandler event="onclick" submit="false">
+					<xp:this.script><![CDATA[var code = dojo.byId('#{id:previewBlock}');
+var editorId = eval("#{javascript:compositeData.target;}");
+var editor = CKEDITOR.instances[editorId];
+editor.insertHtml(code.innerHTML);
+dijit.byId('codeInputDialog').hide();]]></xp:this.script>
+				</xp:eventHandler></xp:button>
+				<xp:button id="cancel" style="width:82.0px"
+					value="キャンセル">
+				<xp:eventHandler event="onclick" submit="false">
+					<xp:this.script><![CDATA[dijit.byId('codeInputDialog').hide();]]></xp:this.script>
+				</xp:eventHandler></xp:button>
+			</div>
+		</div>
+	</div>
+</xp:view>
