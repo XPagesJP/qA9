@@ -1,14 +1,14 @@
 <?xml version='1.0' encoding='utf-8'?>
 <note default='true' class='helpaboutdocument' xmlns='http://www.lotus.com/dxl'
- version='9.0' maintenanceversion='1.4' replicaid='49257DFD0030EE33'>
-<noteinfo noteid='152' unid='CF6DE2605A79DEEF49257CF50045FD39' sequence='10'>
+ version='9.0' maintenanceversion='1.5' replicaid='49257F6A000E389C'>
+<noteinfo noteid='12a' unid='CF6DE2605A79DEEF49257CF50045FD39' sequence='14'>
 <created><datetime>20140612T214428,09+09</datetime></created>
-<modified><datetime>20150807T155419,80+09</datetime></modified>
-<revised><datetime>20150807T155419,79+09</datetime></revised>
-<lastaccessed><datetime>20150807T155419,80+09</datetime></lastaccessed>
-<addedtofile><datetime>20150303T175512,86+09</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Yuta Kawakami/O=SystemPlanet</name></updatedby>
-<wassignedby><name>CN=Yuta Kawakami/O=SystemPlanet</name></wassignedby>
+<modified><datetime>20160302T113520,12+09</datetime></modified>
+<revised><datetime>20160301T155332,29+09</datetime></revised>
+<lastaccessed><datetime>20160302T113520,12+09</datetime></lastaccessed>
+<addedtofile><datetime>20160302T113520,12+09</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Yuta Kawakami/O=SystemPlanet</name><name>CN=admin/O=Dev</name></updatedby>
+<wassignedby><name>CN=admin/O=Dev</name></wassignedby>
 <item name='$HTMLCode' sign='true'>
 <rawitemdata type='1'>
 </rawitemdata></item>
@@ -17,7 +17,7 @@
 hhgBAIAAAAAAgAAAAQABAP///wAQAAAA
 </rawitemdata></item>
 <item name='$Flags'><text/></item>
-<item name='$DesignerVersion'><text>8.5.3</text></item>
+<item name='$DesignerVersion' sign='true'><text>8.5.3</text></item>
 <item name='$Body' sign='true'>
 <rawitemdata type='1'>
 gQKC/1oAAQAAAAAAAAAAAKAFAACgBQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA

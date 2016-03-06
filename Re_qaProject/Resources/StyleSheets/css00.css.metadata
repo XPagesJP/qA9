@@ -1,18 +1,18 @@
-<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.4" replicaid="49257DFD0030EE33" version="9.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="436" sequence="28" unid="6516A9CF768CDD5F49257CC8003F1812">
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.5" replicaid="49257F6A000E389C" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="20a" sequence="33" unid="6516A9CF768CDD5F49257CC8003F1812">
 <created><datetime>20140428T202909,30+09</datetime></created>
-<modified><datetime>20150807T155418,20+09</datetime></modified>
-<revised><datetime>20150807T155418,19+09</datetime></revised>
-<lastaccessed><datetime>20150807T155418,20+09</datetime></lastaccessed>
-<addedtofile><datetime>20150614T092027,85+09</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Yuta Kawakami/O=SystemPlanet</name></updatedby>
-<wassignedby><name>CN=Yuta Kawakami/O=SystemPlanet</name></wassignedby>
-<item name="$FlagsExt"><text>D</text></item>
+<modified><datetime>20160302T113521,24+09</datetime></modified>
+<revised><datetime>20160301T155333,38+09</datetime></revised>
+<lastaccessed><datetime>20160302T113521,24+09</datetime></lastaccessed>
+<addedtofile><datetime>20160302T113521,24+09</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Yuta Kawakami/O=SystemPlanet</name><name>CN=admin/O=Dev</name></updatedby>
+<wassignedby><name>CN=admin/O=Dev</name></wassignedby>
+<item name="$FlagsExt" sign="true"><text>D</text></item>
 <item name="$FileModDT" sign="true"><datetime>20081002T185952,00+09</datetime></item>
-<item name="$MimeCharSet"><text>Shift_JIS</text></item>
+<item name="$MimeCharSet" sign="true"><text>Shift_JIS</text></item>
 <item name="$TITLE" sign="true"><text>css00.css</text></item>
 <item name="$Flags"><text>34C=Q</text></item>
-<item name="$DesignerVersion"><text>8.5.3</text></item>
+<item name="$DesignerVersion" sign="true"><text>8.5.3</text></item>
 
 
 <item name="$FileNames" sign="true"><text>css00.css</text></item></note>

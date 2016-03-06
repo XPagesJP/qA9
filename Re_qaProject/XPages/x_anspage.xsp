@@ -27,7 +27,7 @@
 	'新規質問' :
 	currentDocument.getItemValueString('title');}]]></xc:this.pageTitle>
     	<xp:this.facets>
-    		<xp:div xp:key="facetMiddle" styleClass="qalist">
+    		<xp:div xp:key="facetMiddle" styleClass="qalist" id="content">
     			<xp:panel disableOutputTag="true">
     				<xp:panel id="compleatPanel"
     					style="text-align:center; margin:2em; color:red; font-size: 120%; font-weight: bold;"

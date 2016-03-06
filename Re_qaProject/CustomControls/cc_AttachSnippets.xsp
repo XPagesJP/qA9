@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core"
+	xmlns:xc="http://www.ibm.com/xsp/custom">
+	<xp:panel id="panelAttachSnippets">
+		<div>
+			<xp:repeat id="repeatSnippets" rows="30" var="snippets"
+				indexVar="index">
+				<xp:this.value><![CDATA[#{javascript:var docQA:NotesDocument = compositeData.docQA;
+
+var strVal = docQA.getItemValueString("SnippetsRefs");
+var json;
+
+if(strVal.isEmpty()){
+	return null;
+}else{
+	json = fromJson(strVal);
+	return json.snippets;
+}}]]></xp:this.value>
+				<div>
+					<xp:link escape="true" id="lnkSnippet"
+						target="_blank" title="Snippets Link"
+						text="#{javascript:return snippets.title;}"
+						value="#{javascript:return snippets.url;}">
+						<xp:image id="image1" url="/quote.png"></xp:image>
+					</xp:link>
+				</div>
+			</xp:repeat>
+		</div>
+		
+		
+		</xp:panel>
+
+	<!--  ***** c_SelectSnippet を別の場所に配置 ***** -->
+	<xp:eventHandler event="onClientLoad" submit="true"
+		refreshMode="partial" refreshId="panelAttachSnippets">
+	</xp:eventHandler></xp:view>

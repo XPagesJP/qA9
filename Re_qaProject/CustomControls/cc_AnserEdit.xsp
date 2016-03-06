@@ -80,6 +80,11 @@ return "回答|A"
             <xp:inputRichText id="res_Body" value="#{docAnsRes.Body}">
             </xp:inputRichText>
         </div>
+        <div style="padding: 10px 0px 10px 0px;">
+        	<xc:cc_AttachSnippetsEdit
+        		docQA="#{javascript:return docAnsRes;}">
+        	</xc:cc_AttachSnippetsEdit>
+        </div>
         <div>
             <xp:fileUpload id="res_Fileupload" value="#{docAnsRes.TempFile}">
                 <xp:eventHandler event="onchange"

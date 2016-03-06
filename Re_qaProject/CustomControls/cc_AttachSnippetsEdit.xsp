@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core"
+	xmlns:xc="http://www.ibm.com/xsp/custom"
+	xmlns:xp_1="http://www.ibm.com/xsp/coreex">
+	<xp:panel id="panelAttachSnippets">
+		<xp:button value="XSnippetsの参照を添付" id="btnSnippet"
+			style="font-size:10pt" icon="/Snippet_24.png">
+
+			<xp:eventHandler event="onclick" submit="true"
+				refreshMode="partial" refreshId="dialogSnippets">
+				<xp:this.action><![CDATA[#{javascript:// ダイアログOK時にボタンを押して実際の反映処理を行う
+viewScope.SnippetRefs = compositeData.docQA.getItemValueString("SnippetsRefs");
+viewScope.btnAddSnippetId = getComponent("btnAddSnippet").getClientId(facesContext);
+getComponent("dialogSnippets").show();
+}]]></xp:this.action>
+
+			</xp:eventHandler>
+		</xp:button>
+		<div style="display:none;">
+			<xp:button id="btnAddSnippet" value="add">
+				<xp:eventHandler event="onclick" submit="true"
+					refreshMode="partial" refreshId="panelAttachSnippets">
+					<xp:this.action><![CDATA[#{javascript:var docQA:NotesDocument = compositeData.docQA;
+if( viewScope.SnippetJSON != null ){
+	docQA.replaceItemValue("SnippetsRefs", viewScope.SnippetJSON);
+	viewScope.SnippetJSON = null;
+}}]]></xp:this.action>
+
+
+				</xp:eventHandler>
+			</xp:button>
+		</div>
+
+		<div>
+			<xp:repeat id="repeatSnippets" rows="30" var="snippets"
+				indexVar="index">
+				<xp:this.value><![CDATA[#{javascript:var docQA:NotesDocument = compositeData.docQA;
+
+if( viewScope.docQA_JSON != null ){
+	//docQA.replaceItemValue("SnippetsRefs", viewScope.docQA_JSON);
+	//viewScope.docQA_JSON = null;
+}
+
+var strVal = docQA.getItemValueString("SnippetsRefs");
+var json;
+
+if(strVal.isEmpty()){
+	return null;
+}else{
+	json = fromJson(strVal);
+	return json.snippets;
+}}]]></xp:this.value>
+				<div>
+					<xp:link escape="true" id="lnkSnippet"
+						target="_blank" title="Snippets Link"
+						text="#{javascript:return snippets.title;}"
+						value="#{javascript:return snippets.url;}">
+						<xp:image id="image2" url="/quote.png"></xp:image>
+					</xp:link>
+					<xp:link escape="true" id="lnkDelSnippet">
+						<xp:image id="image1" url="/trash.gif" alt="削除"
+							style="padding-left: 10px;">
+						</xp:image>
+						<xp:eventHandler event="onclick" submit="true"
+							refreshMode="partial" refreshId="panelAttachSnippets">
+							<xp:this.action><![CDATA[#{javascript:var docQA:NotesDocument = compositeData.docQA;
+
+var strVal = docQA.getItemValueString("SnippetsRefs");
+var json = null;
+
+if(!strVal.isEmpty()){
+	json = fromJson(strVal);
+	json.snippets = json.snippets.splice(index, 1);
+	docQA.replaceItemValue("SnippetsRefs",toJson(json));
+}}]]></xp:this.action>
+
+
+							<xp:this.script><![CDATA[return confirm("この添付したXSnippetsの参照を削除しますか？");]]></xp:this.script>
+						</xp:eventHandler>
+					</xp:link>
+				</div>
+			</xp:repeat>
+		</div>
+
+
+	</xp:panel>
+
+	<!--  ***** c_SelectSnippet を別の場所に配置 ***** -->
+	<xp:eventHandler event="onClientLoad" submit="true"
+		refreshMode="partial" refreshId="panelAttachSnippets">
+	</xp:eventHandler>
+</xp:view>

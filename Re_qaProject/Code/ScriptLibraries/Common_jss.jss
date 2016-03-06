@@ -55,3 +55,41 @@ function isValidFTQuery(strQuery:String){
 		return false;
 	}
 }
+
+/**
+ * 【機能概要】
+ *   設定文書取得
+ * 【引数】
+ *   なし
+ * 【戻り値】
+ *   NotesDocument
+ */
+Common.getSettingDoc = function(){
+	var db:NotesDatabase = session.getCurrentDatabase();
+	var envvw:NotesView = db.getView('V_Setting');
+	var envdoc:NotesDocument = envvw.getFirstDocument();
+	
+	return envdoc;
+};
+
+/**
+ * 【機能概要】
+ *   Snipppets DB 取得
+ * 【引数】
+ *   なし
+ * 【戻り値】
+ *   NotesDatabase
+ */
+Common.getSnippetsDB = function(){
+	var envdoc:NotesDocument = Common.getSettingDoc();
+	if (envdoc == null){
+		return null;
+	}
+  
+	// XSnippets DB取得
+	var serverName = envdoc.getItemValueString('snippets_server');
+	var dbPath = envdoc.getItemValueString('snippets_path');
+	var sdb:NotesDatabase = session.getDatabase(serverName, dbPath);
+	
+	return sdb;
+};

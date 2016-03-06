@@ -1,12 +1,12 @@
-<?xml version="1.0" encoding="UTF-8"?><note class="filter" maintenanceversion="1.4" replicaid="49257DFD0030EE33" version="9.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="55a" sequence="17" unid="D52C2506DF07767449257C9C0002ECBE">
+<?xml version="1.0" encoding="UTF-8"?><note class="filter" maintenanceversion="1.5" replicaid="49257F6A000E389C" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="32e" sequence="22" unid="D52C2506DF07767449257C9C0002ECBE">
 <created><datetime>20140315T093156,78+09</datetime></created>
-<modified><datetime>20150807T155423,37+09</datetime></modified>
-<revised><datetime>20150807T155423,36+09</datetime></revised>
-<lastaccessed><datetime>20150807T155423,37+09</datetime></lastaccessed>
-<addedtofile><datetime>20150614T092034,13+09</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Yuta Kawakami/O=SystemPlanet</name></updatedby>
-<wassignedby><name>CN=Yuta Kawakami/O=SystemPlanet</name></wassignedby>
+<modified><datetime>20160302T113522,70+09</datetime></modified>
+<revised><datetime>20160301T155334,74+09</datetime></revised>
+<lastaccessed><datetime>20160302T113522,70+09</datetime></lastaccessed>
+<addedtofile><datetime>20160302T113522,70+09</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Yuta Kawakami/O=SystemPlanet</name><name>CN=admin/O=Dev</name></updatedby>
+<wassignedby><name>CN=admin/O=Dev</name></wassignedby>
 <item name="$LastBuildTime" sign="true"><datetime>20121123T213928,78+08</datetime></item>
 <item name="$BabelInfo" sign="true"><textlist><text>F0CE760432912A2B80257917004BF463</text><text>ja-JP</text></textlist></item>
 <item name="$LANGUAGE" sign="true"><text>ja</text></item>
@@ -14,5 +14,5 @@
 <item name="$TITLE" sign="true"><text>xpCGIVariables</text></item>
 <item name="$Flags"><text>.5834Q</text></item>
 <item name="$PublicAccess" sign="true"><text>1</text></item>
-<item name="$DesignerVersion"><text>8.5.3</text></item>
+<item name="$DesignerVersion" sign="true"><text>8.5.3</text></item>
 </note>

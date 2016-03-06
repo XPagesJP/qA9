@@ -34,7 +34,7 @@ if(EditID!=""){
 		<xp:styleSheet href="/qa.css"></xp:styleSheet>
 	</xp:this.resources>
 
-
+	
 	<xp:panel id="inputmodePanel">
 		<xp:panel styleClass="questionBox">
 			<xp:table>
@@ -248,8 +248,19 @@ return @Unique(TagList)}]]></xp:this.valueList>
 			style="width:86%;margin-bottom:20.0px;margin-top:10.0px">
 			<xp:tr>
 				<xp:td style="background-color:rgb(246,246,246)">
-					ファイル添付
+					XSnippetsの参照を添付
 				</xp:td>
+			</xp:tr>
+			<xp:tr>
+				<xp:td>
+					<xc:cc_AttachSnippetsEdit
+						docQA="#{javascript:return docQues;}">
+					</xc:cc_AttachSnippetsEdit>
+					<xc:c_SelectSnippet testid="cc_QuestionEdit"></xc:c_SelectSnippet>
+				</xp:td>
+			</xp:tr>
+			<xp:tr>
+				<xp:td style="background-color:rgb(246,246,246)">ファイル添付</xp:td>
 			</xp:tr>
 			<xp:tr>
 				<xp:td>

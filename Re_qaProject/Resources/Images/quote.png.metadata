@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.5" replicaid="49257F6A000E389C" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="5d6" sequence="1" unid="5D15CCCD95412FDB49257F69002EA61C">
+<created><datetime>20160301T172931,80+09</datetime></created>
+<modified><datetime>20160302T113526,06+09</datetime></modified>
+<revised><datetime>20160301T172931,81+09</datetime></revised>
+<lastaccessed><datetime>20160302T113526,06+09</datetime></lastaccessed>
+<addedtofile><datetime>20160302T113526,06+09</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Yuta Kawakami/O=SystemPlanet</name></updatedby>
+<wassignedby><name>CN=Yuta Kawakami/O=SystemPlanet</name></wassignedby>
+<item name="$TITLE"><text>quote.png</text></item>
+<item name="$Flags"><text>34CiQ</text></item>
+<item name="$FlagsExt"><text>D</text></item>
+<item name="$ImagesWide" sign="true"><number>1</number></item>
+<item name="$ImagesHigh" sign="true"><number>1</number></item>
+<item name="$ImagesColorize" sign="true"><number>0</number></item>
+
+
+<item name="$MimeType" sign="true"><text>image/png</text></item>
+<item name="$FileModDT" sign="true"><datetime>20160301T171531,96+09</datetime></item>
+<item name="$ImageNames" sign="true"><text>quote.png</text></item>
+<item name="$DesignerVersion"><text>8.5.3</text></item></note>

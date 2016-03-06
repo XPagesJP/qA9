@@ -5,8 +5,12 @@
 }]]></xp:this.afterPageLoad>
 
 	<p>
-		<button type="button"
-			onclick="dijit.byId('codeInputDialog').show();">コードを挿入</button>
+		<xp:button value="コードを挿入" id="button1">
+			<xp:eventHandler event="onclick" submit="false">
+				<xp:this.script><![CDATA[dojo.byId('#{id:codeEditor}').value = '';
+dojo.byId('#{id:preview}').firstChild.innerHTML = '';
+dijit.byId('codeInputDialog').show();]]></xp:this.script>
+			</xp:eventHandler></xp:button>
 	</p>
 	<div dojoType="dijit.Dialog" id="codeInputDialog"
 		title="コードを挿入"

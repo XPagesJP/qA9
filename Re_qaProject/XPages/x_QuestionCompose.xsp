@@ -8,8 +8,10 @@
 }}]]></xp:this.beforePageLoad>
 	<xc:cc_AppLayout pageTitle="質問の投稿">
 		<xp:this.facets>
-			<xc:cc_QuestionEdit xp:key="facetMiddle"
+			<xp:div xp:key="facetMiddle" id="content">
+				<xc:cc_QuestionEdit
 				property_editID="#{javascript:param.get('docId');}">
-			</xc:cc_QuestionEdit>
+				</xc:cc_QuestionEdit>
+			</xp:div>
 		</xp:this.facets>
 	</xc:cc_AppLayout></xp:view>
