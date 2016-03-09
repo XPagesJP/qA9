@@ -55,7 +55,7 @@
 					<div style="margin: 5px 20px;">
 						<xp:link styleClass="actionLink" escape="true"
 							text="編集" id="editLink">
-							<xp:this.rendered><![CDATA[#{javascript:print(context.getUser().getRoles());
+							<xp:this.rendered><![CDATA[#{javascript://print(context.getUser().getRoles());
 context.getUser().getRoles().indexOf("[admin]") >= 0;}]]></xp:this.rendered>
 							<xp:eventHandler event="onclick"
 								submit="true" refreshMode="complete">

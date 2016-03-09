@@ -1,19 +1,19 @@
-<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.5" replicaid="49257F6A000E389C" version="9.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="152" sequence="46" unid="ACF2EB86A0ABEB0949257C9C0002EBA0">
-<created><datetime>20140315T093153,92+09</datetime></created>
-<modified><datetime>20160302T113520,32+09</datetime></modified>
-<revised><datetime>20160301T155332,52+09</datetime></revised>
-<lastaccessed><datetime>20160302T113520,32+09</datetime></lastaccessed>
-<addedtofile><datetime>20160302T113520,32+09</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Yuta Kawakami/O=SystemPlanet</name><name>CN=admin/O=Dev</name></updatedby>
-<wassignedby><name>CN=admin/O=Dev</name></wassignedby>
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.5" replicaid="49257C8300820851" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="18a" sequence="43" unid="F2F32C81410B817D49257C8300829899">
+<created><datetime>20140219T084627,45+09</datetime></created>
+<modified><datetime>20160307T083655,46+09</datetime></modified>
+<revised><datetime>20160307T083655,45+09</datetime></revised>
+<lastaccessed><datetime>20160307T083655,46+09</datetime></lastaccessed>
+<addedtofile><datetime>20140219T084627,86+09</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Kenji Ebihara/OU=R/O=RSI</name></updatedby>
+<wassignedby><name>CN=Kenji Ebihara/OU=R/O=RSI</name></wassignedby>
 <item name="$Comment" sign="true"><text>ユーザー一覧用</text></item>
 <item name="$TITLE"><text>x_Page_AlluserList.xsp</text></item>
 <item name="$Flags"><text>gC~4K</text></item>
 
 
 <item name="$FileNames" sign="true"><text>x_Page_AlluserList.xsp</text></item>
-<item name="$DesignerVersion" sign="true"><text>8.5</text></item>
+<item name="$DesignerVersion"><text>8.5</text></item>
 
 
 

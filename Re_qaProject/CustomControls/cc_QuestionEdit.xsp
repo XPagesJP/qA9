@@ -232,13 +232,8 @@ return @Unique(TagList)}]]></xp:this.valueList>
 						<xp:inputRichText value="#{docQues.Body}"
 							id="inputRichText1" style="width:790px">
 						</xp:inputRichText>
-						<xp:scriptBlock id="scriptBlock1">
-							<xp:this.value><![CDATA[var questionRTextId = '#{id:inputRichText1}';
-]]></xp:this.value>
-						</xp:scriptBlock>
 						<xc:cc_CodeInputDialog
-							target="questionRTextId">
-
+							target="inputRichText1">
 						</xc:cc_CodeInputDialog>
 					</xp:div>
 				</xp:td>

@@ -1,19 +1,19 @@
-<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.5" replicaid="49257F6A000E389C" version="9.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="142" sequence="49" unid="800C846F87340B3449257C9C0002EB92">
-<created><datetime>20140315T093153,78+09</datetime></created>
-<modified><datetime>20160302T113520,24+09</datetime></modified>
-<revised><datetime>20160301T155332,44+09</datetime></revised>
-<lastaccessed><datetime>20160302T113520,24+09</datetime></lastaccessed>
-<addedtofile><datetime>20160302T113520,24+09</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Yuta Kawakami/O=SystemPlanet</name><name>CN=admin/O=Dev</name></updatedby>
-<wassignedby><name>CN=admin/O=Dev</name></wassignedby>
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.5" replicaid="49257C8300820851" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="17a" sequence="43" unid="D43862D961953C1849257C8300829891">
+<created><datetime>20140219T084627,37+09</datetime></created>
+<modified><datetime>20160307T083655,14+09</datetime></modified>
+<revised><datetime>20160307T083655,13+09</datetime></revised>
+<lastaccessed><datetime>20160307T083655,14+09</datetime></lastaccessed>
+<addedtofile><datetime>20140219T084627,62+09</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Kenji Ebihara/OU=R/O=RSI</name></updatedby>
+<wassignedby><name>CN=Kenji Ebihara/OU=R/O=RSI</name></wassignedby>
 <item name="$TITLE"><text>x_SearchResult.xsp</text></item>
 <item name="$Flags"><text>gC~4K</text></item>
 <item name="$Comment" sign="true"><text>検索結果ページ</text></item>
 
 
 <item name="$FileNames" sign="true"><text>x_SearchResult.xsp</text></item>
-<item name="$DesignerVersion" sign="true"><text>8.5</text></item>
+<item name="$DesignerVersion"><text>8.5</text></item>
 
 
 

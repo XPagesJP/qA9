@@ -32,7 +32,6 @@ Common.getHost = function getHost(){
 	//var settingdoc =accountlist.getFirstDocument();
 	//return settingdoc.getItemValueString("Host_name"); 
 	var url = context.getUrl().getAddress().replace(/[^\/]*$/,'');
-	print(url);
 	return url;
 }
 /*
