@@ -12,7 +12,46 @@
 	</xp:this.resources>
 	<xp:this.beforePageLoad><![CDATA[#{javascript:var response = facesContext.getExternalContext().getResponse();
 response.setHeader("X-UA-Compatible", "IE=EmulateIE10");
-  }]]></xp:this.beforePageLoad>
+  
+//テーマの変更
+var myTheme = "";
+if (sessionScope.myTheme!=null){
+	myTheme = sessionScope.myTheme;
+}else{
+	var user = @Name("[ABBREVIATE]", @UserName());
+	if (user!="Anonymous"){
+		//プロフィールよりテーマ取得
+		var db:NotesDatabase = session.getCurrentDatabase();
+		//環境設定文書取得
+		var envvw:NotesView = db.getView("V_Setting");
+		var envdoc:NotesDocument = envvw.getFirstDocument();
+		
+		//プロフィールDB取得
+		var ProServer = envdoc.getItemValueString("Profile_server");
+		var ProPath = envdoc.getItemValueString("Profile_path");
+		var Prodb:NotesDatabase = session.getDatabase(ProServer,ProPath);
+		
+		//自分のプロフィール取得
+		var Provw:NotesView = Prodb.getView("V_Profile");			
+		var Prodoc:NotesDocument = Provw.getDocumentByKey(user, true);
+		if(Prodoc != null){
+			myTheme = Prodoc.getItemValueString("MyTheme");
+			if (myTheme == ""){
+				myTheme = "oneuiv2.1_blue";
+			}
+			sessionScope.myTheme = myTheme;
+		}
+	}
+}
+
+if (myTheme != ""){
+	var nowTheme = context.getSessionProperty('xsp.theme');
+	if (nowTheme != myTheme) {
+		context.setSessionProperty('xsp.theme', myTheme);
+		var pagename = "/"+@RightBack(context.getUrl().getAddress(),"/");
+		context.redirectToPage(pagename);
+	}
+}}]]></xp:this.beforePageLoad>
 
 	<xp:this.afterPageLoad><![CDATA[#{javascript:(function(){
 	var _title =

@@ -1,12 +1,12 @@
-<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.5" replicaid="49257C8300820851" version="9.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="2e6" sequence="252" unid="2B0E3F1701EAD5D749257C8300829AA5">
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.0" replicaid="49257F7100352C34" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="566" sequence="10" unid="2B0E3F1701EAD5D749257C8300829AA5">
 <created><datetime>20140219T084632,69+09</datetime></created>
-<modified><datetime>20160304T180430,16+09</datetime></modified>
-<revised><datetime>20160304T180430,15+09</datetime></revised>
-<lastaccessed><datetime>20160304T180430,16+09</datetime></lastaccessed>
-<addedtofile><datetime>20140219T084635,05+09</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Kenji Ebihara/OU=R/O=RSI</name></updatedby>
-<wassignedby><name>CN=Kenji Ebihara/OU=R/O=RSI</name></wassignedby>
+<modified><datetime>20160309T185050,58+09</datetime></modified>
+<revised><datetime>20160309T185050,57+09</datetime></revised>
+<lastaccessed><datetime>20160309T185050,58+09</datetime></lastaccessed>
+<addedtofile><datetime>20160309T184732,07+09</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Administrator/O=OUG</name></updatedby>
+<wassignedby><name>CN=Administrator/O=OUG</name></wassignedby>
 <item name="$Comment"><text>タグのみのコントロール</text></item>
 <item name="$TITLE"><text>cc_AppLayout.xsp</text></item>
 <item name="$Flags"><text>gC~4;</text></item>
