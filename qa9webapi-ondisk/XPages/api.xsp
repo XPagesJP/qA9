@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core"
+	xmlns:xe="http://www.ibm.com/xsp/coreex">
+
+
+	<xp:this.resources>
+		<xp:script src="/QuestionApi.jss" clientSide="false"></xp:script>
+	</xp:this.resources>
+	<xe:restService id="restService1" pathInfo="questions">
+		<xe:this.service>
+			<xe:customRestService requestVar="json"
+				doPost="#{javascript:return QuestionApi.Create(json);}"
+				requestContentType="application/json">
+
+				<xe:this.doGet><![CDATA[#{javascript:var category = param.get('category');
+return QuestionApi.GetList(category);}]]></xe:this.doGet>
+			</xe:customRestService>
+		</xe:this.service>
+	</xe:restService>
+</xp:view>

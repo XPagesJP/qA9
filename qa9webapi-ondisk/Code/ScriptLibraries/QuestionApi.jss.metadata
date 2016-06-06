@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?><note class="filter" maintenanceversion="1.5" replicaid="49257F9400330996" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="176" sequence="19" unid="4CC29C43660E9A8949257FBD00291F05">
+<created><datetime>20160524T162909,17+09</datetime></created>
+<modified><datetime>20160527T172547,85+09</datetime></modified>
+<revised><datetime>20160527T172547,84+09</datetime></revised>
+<lastaccessed><datetime>20160527T172547,85+09</datetime></lastaccessed>
+<addedtofile><datetime>20160524T162909,19+09</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Kenji Ebihara/OU=R/O=RSI</name></updatedby>
+<wassignedby><name>CN=Kenji Ebihara/OU=R/O=RSI</name></wassignedby>
+<item name="$TITLE" sign="true"><text>QuestionApi</text></item>
+<item name="$Flags"><text>.5834Q</text></item>
+<item name="$PublicAccess" sign="true"><text>1</text></item>
+<item name="$DesignerVersion"><text>8.5.3</text></item>
+</note>
