@@ -1,14 +1,14 @@
 <?xml version='1.0' encoding='utf-8'?>
 <note class='view' xmlns='http://www.lotus.com/dxl' version='9.0' maintenanceversion='1.5'
- replicaid='49257F6A000E389C'>
-<noteinfo noteid='17a' unid='D43DF16EB19FFC9249257CC100823637' sequence='14'>
+ replicaid='49257C8300820851'>
+<noteinfo noteid='3de' unid='D43DF16EB19FFC9249257CC100823637' sequence='17'>
 <created><datetime>20140422T084215,59+09</datetime></created>
-<modified><datetime>20160302T113520,52+09</datetime></modified>
-<revised><datetime>20160301T155332,72+09</datetime></revised>
-<lastaccessed><datetime>20160302T113520,52+09</datetime></lastaccessed>
-<addedtofile><datetime>20160302T113520,52+09</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Yuta Kawakami/O=SystemPlanet</name><name>CN=admin/O=Dev</name></updatedby>
-<wassignedby><name>CN=admin/O=Dev</name></wassignedby>
+<modified><datetime>20160607T093557,99+09</datetime></modified>
+<revised><datetime>20160607T093557,98+09</datetime></revised>
+<lastaccessed><datetime>20160607T093557,99+09</datetime></lastaccessed>
+<addedtofile><datetime>20140422T084215,65+09</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Kenji Ebihara/OU=R/O=RSI</name></updatedby>
+<wassignedby><name>CN=Kenji Ebihara/OU=R/O=RSI</name></wassignedby>
 <item name='$FormatNote' summary='true' sign='true'>
 <rawitemdata type='4'>
 AQBsmyzEP9yJ09GZggCDfCVJ
@@ -34,7 +34,6 @@ BAAKAgMABwAOAAgACUwxUzJTM1M=
 KwADAABEgWYAAAAMAIBmAAwAAgCAZgAOAAIATGFzdE1vZGlmaWVkJDckOA==
 </rawitemdata></item>
 <item name='$Comment' sign='true'><text/></item>
-<item name='$Flags'><text>PY</text></item>
 <item name='$DesignerVersion' sign='true'><text>8.5.3</text></item>
 <item name='$ViewFormat' sign='true'>
 <rawitemdata type='5'>
@@ -67,5 +66,6 @@ AB8AAAAAAAAAAAADAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAPz/OgAAAAAAAQAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAEAAAAAAAAAAAAAAAAAAAC+/1IAAAABAAAAnwEAAAwAAAAAAAAAEI6/EJbiEI3sEJCs
 MAAAACIAAgDoAwAAAAAAAAEACwBGTV9RdWVzdGlvbgDtAgMABwAMAAUACTBTMEUA
-</rawitemdata></item></note>
+</rawitemdata></item>
+<item name='$Flags'><text>Y</text></item></note>
 

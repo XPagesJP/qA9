@@ -1,20 +1,20 @@
 <?xml version='1.0' encoding='utf-8'?>
 <note default='true' class='view' xmlns='http://www.lotus.com/dxl' version='9.0'
- replicaid='49257BB40014330B'>
-<noteinfo noteid='1ca' unid='0097A42E44F3962C49257BD5001CCA4A' sequence='6'>
-<created><datetime>20130828T141427,94+09</datetime></created>
-<modified><datetime>20130906T210429,54+09</datetime></modified>
-<revised><datetime>20130906T210429,53+09</datetime></revised>
-<lastaccessed><datetime>20130906T210429,76+09</datetime></lastaccessed>
-<addedtofile><datetime>20130906T210429,52+09</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=System Administrator/O=rskkgdev852</name></updatedby>
-<wassignedby><name>CN=System Administrator/O=rskkgdev852</name></wassignedby>
+ maintenanceversion='1.5' replicaid='49257C8300821D1A'>
+<noteinfo noteid='176' unid='F419F3E69E2047E049257C830082A314' sequence='8'>
+<created><datetime>20140219T084654,28+09</datetime></created>
+<modified><datetime>20160607T144802,72+09</datetime></modified>
+<revised><datetime>20160607T144802,71+09</datetime></revised>
+<lastaccessed><datetime>20160607T144802,72+09</datetime></lastaccessed>
+<addedtofile><datetime>20140219T084654,51+09</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Kenji Ebihara/OU=R/O=RSI</name></updatedby>
+<wassignedby><name>CN=Kenji Ebihara/OU=R/O=RSI</name></wassignedby>
 <item name='$FormatNote' summary='true'>
 <rawitemdata type='4'>
 AQCussKH/LnAt6YAOwB4eyVJ
 </rawitemdata></item>
 <item name='$FormulaClass' sign='true'><text>1</text></item>
-<item name='$TITLE' sign='true'><text>プロフィール一覧</text></item>
+<item name='$TITLE' sign='true'><text>プロフィール一覧|V_Profiles</text></item>
 <item name='$Index' sign='true'><text/></item>
 <item name='$Formula' summary='true' sign='true'><formula compiled='true'>
 hAACACAAAgAkNgIABQAAAAAAAAAFAAYAVXNlcklEtAIDAAUANgAxAAUAAgAKAAoACQAEACQ2VXNl

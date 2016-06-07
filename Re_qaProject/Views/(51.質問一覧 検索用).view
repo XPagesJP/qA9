@@ -1,0 +1,75 @@
+<?xml version='1.0' encoding='utf-8'?>
+<note class='view' xmlns='http://www.lotus.com/dxl' version='9.0' maintenanceversion='1.5'
+ replicaid='49257C8300820851'>
+<noteinfo noteid='230e' unid='4579D856330B788249257FCB0003407F' sequence='30'>
+<created><datetime>20160607T093531,19+09</datetime></created>
+<modified><datetime>20160607T103634,90+09</datetime></modified>
+<revised><datetime>20160607T103634,89+09</datetime></revised>
+<lastaccessed><datetime>20160607T103634,90+09</datetime></lastaccessed>
+<addedtofile><datetime>20160607T093531,22+09</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Kenji Ebihara/OU=R/O=RSI</name></updatedby>
+<wassignedby><name>CN=Kenji Ebihara/OU=R/O=RSI</name></wassignedby>
+<item name='$FormulaClass' sign='true'><text>1</text></item>
+<item name='$TITLE' sign='true'><text>(51.質問一覧 検索用)|V_Question_For_Search</text></item>
+<item name='$Index' sign='true'><text/></item>
+<item name='$Formula' summary='true' sign='true'><formula compiled='true'>
+mAEKAAQAAgBaAAwAQ291bnRPZkdvb2RzBQAKAENvdW50X2dvb2QBAAAACgKvADAAFgAFAAkAdXNl
+cl9nb29kAGoBrgAaAAUACgBDb3VudF9nb29k+wFUAa4ABAC1AwMACgAEAAIAJgAMAENvdW50T2ZW
+aWV3cwUACgBDb3VudF92aWV3+wFUAQMACgAEAAIAKgAOAENvdW50T2ZBbnN3ZXJzBQAMAENvdW50
+X0Fuc3dlcvsBVAEDAAUAWABUAAcADAAMAA4ABwAIAAkABABDb3VudE9mR29vZHNDb3VudE9mVmll
+d3NDb3VudE9mQW5zd2Vyc0NyZWF0ZWRVbmlxdWVJRCRDb25mbGljdCRSRUYEAAQAAABkAAUABABG
+b3JtAQALACgwMS4Qjr8QluIpAAoCBAAFAAQARm9ybQEADwBGTV9RdWVzdGlvbl9kZWwACgIEAB0C
+BQAEAEZvcm0BAAsARk1fUXVlc3Rpb24ACgIEAB0CBAADAAcAIAAaAAkzUzRTNlM3UzlTMTBTMTJT
+MTNTMTVTMTZT
+</formula></item>
+<item name='$Collation' summary='true'>
+<rawitemdata type='2'>
+BgAAAABE
+</rawitemdata></item>
+<item name='$Collation1' summary='true'>
+<rawitemdata type='2'>
+GQABAABEgWYAAAAMAENvdW50T2ZHb29kcw==
+</rawitemdata></item>
+<item name='$Collation2' summary='true'>
+<rawitemdata type='2'>
+GQABAABEgWYAAAAMAENvdW50T2ZWaWV3cw==
+</rawitemdata></item>
+<item name='$Collation3' summary='true'>
+<rawitemdata type='2'>
+GwABAABEgWYAAAAOAENvdW50T2ZBbnN3ZXJz
+</rawitemdata></item>
+<item name='$Collation4' summary='true'>
+<rawitemdata type='2'>
+FAABAABEgWYAAAAHAENyZWF0ZWQ=
+</rawitemdata></item>
+<item name='$Comment' sign='true'><text/></item>
+<item name='$Flags'><text>Y</text></item>
+<item name='$DesignerVersion'><text>8.5.3</text></item>
+<item name='$SelQuery' sign='true'>
+<rawitemdata type='f'>
+gQYAAAAAif8zAAAAAAABACcAKDAxLhCOvxCW4il8Rk1fUXVlc3Rpb25fZGVsfEZNX1F1ZXN0aW9u
+AA==
+</rawitemdata></item>
+<item name='$ViewFormat' sign='true'>
+<rawitemdata type='5'>
+AQAFAAgACAAAAFZDAAIMAAwAbAAAAFAAAQAACgEAAAAIAAAAAAICAAAAVkMAAgwADAA4AAAAUAAB
+AAAKAQAAAAgAAAAAAgIAAABWQwACDgAOADwAAACAAAEAAAoBAAAACAAAAAACAgAAAFZDAAIHAA4A
+AAAAAHQAAQAACgAAAAAAAAAAAAICAAAAVkMAAAgACAAAAAAAUAABAAAKAAAAAAAAAAAAAgIAAABD
+b3VudE9mR29vZHNDb3VudE9mR29vZHNsAAoABAACAFoADABDb3VudE9mR29vZHMFAAoAQ291bnRf
+Z29vZAEAAAAKAq8AMAAWAAUACQB1c2VyX2dvb2QAagGuABoABQAKAENvdW50X2dvb2T7AVQBrgAE
+ALUDAwAHAAwABQAJMFMwRQBDb3VudE9mVmlld3NDb3VudE9mVmlld3M4AAoABAACACYADABDb3Vu
+dE9mVmlld3MFAAoAQ291bnRfdmlld/sBVAEDAAcADAAFAAkwUzBFAENvdW50T2ZBbnN3ZXJzQ291
+bnRPZkFuc3dlcnM8AAoABAACACoADgBDb3VudE9mQW5zd2VycwUADABDb3VudF9BbnN3ZXL7AVQB
+AwAHAAwABQAJMFMwRQBDcmVhdGVkQ3JlYXRlRGF0ZXRpbWVVbmlxdWVJRFVuaXF1ZUlEJgABAAAA
+AQEACQEAAAoBAQ4KAAABAK0rAQABAAEAAAAAAAAAAABXQwEBAAkAAAAAAAAAAAAAAAAAAAAAAACE
+AAAAAAD//wAAAAAAAAAAAAAAAAAAV0MBAQAJAAAAAAAAAAAAAAAAAAAAAAAAhAAAAAAA//8AAAAA
+AAAAAAAAAAAAAFdDAQEACQAAAAAAAAAAAAAAAAAAAAAAAIQAAAAAAP//AAAAAAAAAAAAAAAAAABX
+QwEBAAkAAAAAAAAAAAAAAAAAAAAAAABEAAAAAAD//wAAAAAAAAAAAAAAAAAAV0MBAQAJAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAA//8AAAAAAAAAAAAAAAAAAEIAAAAAAAEA////AAUA////AAEAAAAA
+AAAAAAAAAAAAAQD///8AAQD///8AAAABAAAAAAABAAAAAAABAAAAAAAAAAgAAAAAAAEAWEMATIAB
+AAAAAAABAgICAQEBAQcEAwAAAAAAAAAALy8gOllDAAAIAAAAAQAAAAEAAAAAAAAAAAAAAAAAAAAA
+AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAuLL5ZQwAACAAAAAEAAAABAAAAAAAAAAAAAAAAAAAAAAAA
+AAABAAAAAAAAAAAAAAAAAAAAAAAALiy+WUMAAAgAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAA
+AQAAAAAAAAAAAAAAAAAAAAAAAC4svgAAAA==
+</rawitemdata></item></note>
+
