@@ -78,11 +78,7 @@ editor.insertHtml(code.innerHTML);
 dijit.byId('#{id:codeInputDialog}').hide();]]></xp:this.script>
 					</xp:eventHandler>
 				</xp:button>
-				<xp:button id="cancel" style="width:82.0px" value="キャンセル">
-					<xp:eventHandler event="onclick" submit="false">
-						<xp:this.script><![CDATA[dijit.byId('codeInputDialog').hide();]]></xp:this.script>
-					</xp:eventHandler>
-				</xp:button>
+				
 			</div>
 		</div>
 	</xp:div>

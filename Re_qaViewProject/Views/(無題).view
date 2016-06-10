@@ -1,13 +1,14 @@
 <?xml version='1.0' encoding='utf-8'?>
 <note default='true' class='view' xmlns='http://www.lotus.com/dxl' version='9.0'
- replicaid='49257CC8003F7FA2'>
-<noteinfo noteid='116' unid='D81625EACD95EE5549257CC8003F7FA6' sequence='1'>
-<created><datetime>20140428T203334,46+09</datetime></created>
-<modified><datetime>20140428T203334,50+09</datetime></modified>
-<revised><datetime>20140428T203334,49+09</datetime></revised>
-<lastaccessed><datetime>20140428T203335,04+09</datetime></lastaccessed>
-<addedtofile><datetime>20140428T203334,50+09</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Admin Admin/O=Domino</name></updatedby>
+ maintenanceversion='1.6' replicaid='49257ED2001A515F'>
+<noteinfo noteid='116' unid='BD8AB4AC93A3564149257ED2001A5161' sequence='3'>
+<created><datetime>20151002T134727,69+09</datetime></created>
+<modified><datetime>20160610T103133,92+09</datetime></modified>
+<revised><datetime>20160610T103133,91+09</datetime></revised>
+<lastaccessed><datetime>20160610T103439,81+09</datetime></lastaccessed>
+<addedtofile><datetime>20151002T134727,71+09</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Admin/O=LotusLab</name></updatedby>
+<wassignedby><name>CN=Admin/O=LotusLab</name></wassignedby>
 <item name='$TITLE'><text/></item>
 <item name='$Formula' summary='true'><formula compiled='true'>
 HAAFAA4ACgABAAQAJCQkJAQABAAAAAgAZgADAA==

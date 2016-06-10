@@ -1,12 +1,12 @@
-<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.5" replicaid="49257F6A000E389C" version="9.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="23a" sequence="22" unid="3F2FAEA7C9CE26EC49257C9C0002EBDD">
-<created><datetime>20140315T093154,53+09</datetime></created>
-<modified><datetime>20160302T113521,48+09</datetime></modified>
-<revised><datetime>20160301T155333,62+09</datetime></revised>
-<lastaccessed><datetime>20160302T113521,48+09</datetime></lastaccessed>
-<addedtofile><datetime>20160302T113521,48+09</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Yuta Kawakami/O=SystemPlanet</name><name>CN=admin/O=Dev</name></updatedby>
-<wassignedby><name>CN=admin/O=Dev</name></wassignedby>
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.6" replicaid="49257ED2001A4A57" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="492" sequence="11" unid="FB64AB8A6AD9C04F49257ED2001AAD11">
+<created><datetime>20151002T135122,41+09</datetime></created>
+<modified><datetime>20160610T103028,63+09</datetime></modified>
+<revised><datetime>20160610T103028,62+09</datetime></revised>
+<lastaccessed><datetime>20160610T103028,63+09</datetime></lastaccessed>
+<addedtofile><datetime>20151002T135124,08+09</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Admin/O=LotusLab</name></updatedby>
+<wassignedby><name>CN=Admin/O=LotusLab</name></wassignedby>
 <item name="$TITLE"><text>Endiconp2mini.png</text></item>
 <item name="$Flags"><text>34CiQ</text></item>
 <item name="$FlagsExt" sign="true"><text>D</text></item>
@@ -15,6 +15,6 @@
 <item name="$ImagesColorize" sign="true"><number>0</number></item>
 <item name="$FileModDT" sign="true"><datetime>20130611T200456,74+09</datetime></item>
 <item name="$ImageNames" sign="true"><text>Endiconp2mini.png</text></item>
-<item name="$DesignerVersion" sign="true"><text>8.5.3</text></item>
+<item name="$DesignerVersion"><text>8.5.3</text></item>
 
 </note>

@@ -1,20 +1,20 @@
-<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.5" replicaid="49257C8300820851" version="9.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="227a" sequence="8" unid="EE751C03BDF9ADAA49257F6E00815A1D">
-<created><datetime>20160307T083252,13+09</datetime></created>
-<modified><datetime>20160307T083657,94+09</datetime></modified>
-<revised><datetime>20160307T083657,93+09</datetime></revised>
-<lastaccessed><datetime>20160307T083657,94+09</datetime></lastaccessed>
-<addedtofile><datetime>20160307T083252,48+09</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Kenji Ebihara/OU=R/O=RSI</name></updatedby>
-<wassignedby><name>CN=Kenji Ebihara/OU=R/O=RSI</name></wassignedby>
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.6" replicaid="49257ED2001A4A57" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="646" sequence="17" unid="29906BD1D5EDA41949257F96002AAB32">
+<created><datetime>20160415T164603,38+09</datetime></created>
+<modified><datetime>20160610T103025,96+09</datetime></modified>
+<revised><datetime>20160610T103025,95+09</datetime></revised>
+<lastaccessed><datetime>20160610T103025,96+09</datetime></lastaccessed>
+<addedtofile><datetime>20160415T164603,52+09</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Admin/O=LotusLab</name></updatedby>
+<wassignedby><name>CN=Admin/O=LotusLab</name></wassignedby>
 <item name="$Comment"><text>XSnippets添付コントロール</text></item>
 <item name="$TITLE"><text>cc_AttachSnippetsEdit.xsp</text></item>
 <item name="$Flags"><text>gC~4;</text></item>
 
 
+
+
 <item name="$FileNames" sign="true"><text>cc_AttachSnippetsEdit.xsp</text></item>
-
-
 <item name="$DesignerVersion"><text>8.5.1</text></item>
 
 

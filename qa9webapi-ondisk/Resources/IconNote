@@ -1,13 +1,14 @@
 <?xml version='1.0' encoding='utf-8'?>
 <note default='true' class='icon' xmlns='http://www.lotus.com/dxl' version='9.0'
- maintenanceversion='1.5' replicaid='49257F9400330996'>
-<noteinfo noteid='11a' unid='28E3713474CAA1C649257F94003309C2' sequence='3'>
-<created><datetime>20160413T181728,34+09</datetime></created>
-<modified><datetime>20160413T181728,43+09</datetime></modified>
-<revised><datetime>20160413T181728,42+09</datetime></revised>
-<lastaccessed><datetime>20160413T181728,43+09</datetime></lastaccessed>
-<addedtofile><datetime>20160413T181728,39+09</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Kenji Ebihara/OU=R/O=RSI</name></updatedby>
+ maintenanceversion='1.6' replicaid='49257FCE0006F0F8'>
+<noteinfo noteid='11e' unid='1753E00AA4CCEC6549257FCE0006F107' sequence='8'>
+<created><datetime>20160610T101549,19+09</datetime></created>
+<modified><datetime>20160610T102707,38+09</datetime></modified>
+<revised><datetime>20160610T102707,37+09</datetime></revised>
+<lastaccessed><datetime>20160610T102707,37+09</datetime></lastaccessed>
+<addedtofile><datetime>20160610T101549,21+09</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Admin/O=LotusLab</name></updatedby>
+<wassignedby><name>CN=Admin/O=LotusLab</name></wassignedby>
 <item name='IconBitmap' summary='true'>
 <rawitemdata type='6'>
 AiAgAQAA///////wD///4Af//8AD//4AAH/8AAA/+AAAH/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAA
@@ -23,7 +24,8 @@ d30fAAAAAPHXd33Xd3d913d9HwAAAADx13d913d3fdd3fR8AAAAA8R3d0dd3d30d3dEfAAAAAA8R
 EREdd3fRERER8AAAAAAA////Ed3dEf///wAAAAAAAAAAAPERER8AAAAAAAAAAAAAAAAP///wAAAA
 AAAAAAACICABAAD/////+A4DgA==
 </rawitemdata></item>
-<item name='$Flags'><text>J</text></item>
 <item name='$Daos'><text>0</text></item>
-<item name='$TITLE'><text>[テンプレート]Q&amp;A WebAPI</text></item></note>
+<item name='$TITLE'><text>[テンプレート]Q&amp;A WebAPI</text></item>
+<item name='$FlagsNoRefresh'><text>rv</text></item>
+<item name='$Flags'><text>J7</text></item></note>
 

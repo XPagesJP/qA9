@@ -168,7 +168,7 @@ if (myTheme != ""){
 
 
 			<xp:panel xp:key="MastFooter" styleClass="lotusRight">
-					ver 0.9.3 (Public Beta 3)
+					ver 0.9.5 (Public Beta 5)
 			</xp:panel>
 			<xp:callback facetName="facetRight" id="facetRight"
 				xp:key="RightColumn">
@@ -179,7 +179,7 @@ if (myTheme != ""){
 
 		<xe:this.configuration>
 			<xe:oneuiApplication
-				legalText="Copyright © 2013 Kyushu Notes Partner Community. (九州地区ノーツパートナー会 ) All Rights Reserved."
+				legalText="Copyright © 2016 Kyushu Notes Partner Community. (九州地区ノーツパートナー会 ) All Rights Reserved."
 				productLogo="/logo.png" productLogoHeight="45px"
 				productLogoWidth="360px"
 				placeBarName="#{javascript:compositeData.placeBarName;}"

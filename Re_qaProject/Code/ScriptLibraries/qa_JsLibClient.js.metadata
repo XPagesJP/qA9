@@ -1,12 +1,12 @@
-<?xml version="1.0" encoding="UTF-8"?><note class="filter" maintenanceversion="1.5" replicaid="49257C8300820851" version="9.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="342" sequence="17" unid="77019414516DF8A549257C8300829AE3">
-<created><datetime>20140219T084633,31+09</datetime></created>
-<modified><datetime>20160219T185535,52+09</datetime></modified>
-<revised><datetime>20160219T185535,51+09</datetime></revised>
-<lastaccessed><datetime>20160219T185535,52+09</datetime></lastaccessed>
-<addedtofile><datetime>20140219T084636,54+09</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Kenji Ebihara/OU=R/O=RSI</name></updatedby>
-<wassignedby><name>CN=Kenji Ebihara/OU=R/O=RSI</name></wassignedby>
+<?xml version="1.0" encoding="UTF-8"?><note class="filter" maintenanceversion="1.6" replicaid="49257ED2001A4A57" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="59a" sequence="11" unid="D3CB24ECAB49DC1B49257ED2001AAEF6">
+<created><datetime>20151002T135127,26+09</datetime></created>
+<modified><datetime>20160610T103041,73+09</datetime></modified>
+<revised><datetime>20160610T103041,72+09</datetime></revised>
+<lastaccessed><datetime>20160610T103041,73+09</datetime></lastaccessed>
+<addedtofile><datetime>20151002T135128,52+09</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Admin/O=LotusLab</name></updatedby>
+<wassignedby><name>CN=Admin/O=LotusLab</name></wassignedby>
 <item name="$POID"><datetime>20131126T204725,92+09</datetime></item>
 <item name="$TITLE" sign="true"><text>qa_JsLibClient</text></item>
 <item name="$Flags"><text>h534Q</text></item>
