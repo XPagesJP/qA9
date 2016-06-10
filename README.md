@@ -1,6 +1,8 @@
 ﻿Re_QA_ntf
 =========
 
+REST API仕様 http://docs.qa91.apiary.io 
+
 【QAテンプレート再作成】
 
 一部のデータが、GitHub上にアップできなかったため、再作成を実施。
