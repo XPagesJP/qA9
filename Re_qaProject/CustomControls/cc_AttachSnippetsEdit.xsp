@@ -86,7 +86,8 @@ if(!strVal.isEmpty()){
 	</xp:panel>
 
 	<!--  ***** c_SelectSnippet を別の場所に配置 ***** -->
-	<xp:eventHandler event="onClientLoad" submit="true"
+	<!--  <xp:eventHandler event="onClientLoad" submit="true" -->
+	<xp:eventHandler event="afterPageLoad" submit="true"
 		refreshMode="partial" refreshId="panelAttachSnippets">
 	</xp:eventHandler>
 </xp:view>
