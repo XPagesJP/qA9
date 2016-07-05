@@ -24,6 +24,7 @@ var QuestionApi = {
 	},
 	/// 質問のリストを返す
 	getList: function(conditions){
+		
 		var conditionsArray = [];
 		// カテゴリの条件
 		if(!StringUril.isNullOrEmpty(conditions.category)){

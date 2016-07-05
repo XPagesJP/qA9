@@ -6,6 +6,13 @@
 	<xp:this.resources>
 		<xp:script src="/QuestionApi.jss" clientSide="false"></xp:script>
 	</xp:this.resources>
+	
+	
+	
+	<xp:this.afterRenderResponse><![CDATA[#{javascript:var exCon = facesContext.getExternalContext();
+var response = exCon.getResponse();
+response.setHeader("Access-Control-Allow-Origin", "*");
+}]]></xp:this.afterRenderResponse>
 	<xe:restService id="questionsService" pathInfo="questions">
 		<xe:this.service>
 			<xe:customRestService requestVar="json"
@@ -15,7 +22,8 @@
 
 				<xe:this.doGet><![CDATA[#{javascript:var conditions = QuestionApi.createSerchConditions();
 return QuestionApi.getList(conditions);}]]></xe:this.doGet>
+
 			</xe:customRestService>
 		</xe:this.service>
 	</xe:restService>
-	</xp:view>
+</xp:view>
