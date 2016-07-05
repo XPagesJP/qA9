@@ -1,12 +1,12 @@
-<?xml version="1.0" encoding="UTF-8"?><note class="filter" maintenanceversion="1.5" replicaid="49257F9400330996" version="9.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="186" sequence="4" unid="D718EE004F663D3749257FCA0082D0D7">
-<created><datetime>20160607T084851,43+09</datetime></created>
-<modified><datetime>20160607T085426,27+09</datetime></modified>
-<revised><datetime>20160607T085426,26+09</datetime></revised>
-<lastaccessed><datetime>20160607T085426,27+09</datetime></lastaccessed>
-<addedtofile><datetime>20160607T084851,45+09</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Kenji Ebihara/OU=R/O=RSI</name></updatedby>
-<wassignedby><name>CN=Kenji Ebihara/OU=R/O=RSI</name></wassignedby>
+<?xml version="1.0" encoding="UTF-8"?><note class="filter" maintenanceversion="1.4" replicaid="49257FE700368941" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="152" sequence="9" unid="7AD8AFA9A98A24A049257FE700360B71">
+<created><datetime>20160705T185018,73+09</datetime></created>
+<modified><datetime>20160705T190125,94+09</datetime></modified>
+<revised><datetime>20160705T190125,93+09</datetime></revised>
+<lastaccessed><datetime>20160705T190125,94+09</datetime></lastaccessed>
+<addedtofile><datetime>20160705T185541,28+09</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Admin Admin/O=Domino</name></updatedby>
+<wassignedby><name>CN=Admin Admin/O=Domino</name></wassignedby>
 <item name="$TITLE" sign="true"><text>StringUtil</text></item>
 <item name="$Flags"><text>.5834Q</text></item>
 <item name="$PublicAccess" sign="true"><text>1</text></item>
