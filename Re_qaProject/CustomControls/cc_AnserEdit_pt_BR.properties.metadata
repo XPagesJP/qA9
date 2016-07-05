@@ -1,12 +1,12 @@
-<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.5" replicaid="49257F6A000E389C" version="9.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="2e2" sequence="21" unid="8FDAA8106567C70449257C9C0002EC79">
-<created><datetime>20140315T093156,09+09</datetime></created>
-<modified><datetime>20160302T113522,32+09</datetime></modified>
-<revised><datetime>20160210T095153,71+09</datetime></revised>
-<lastaccessed><datetime>20160302T113522,32+09</datetime></lastaccessed>
-<addedtofile><datetime>20160302T113522,32+09</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Yuta Kawakami/O=SystemPlanet</name><name>CN=admin/O=Dev</name></updatedby>
-<wassignedby><name>CN=admin/O=Dev</name></wassignedby>
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.6" replicaid="49257ED2001A4A57" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="546" sequence="11" unid="EBF935E9B387DF7249257ED2001AAE2A">
+<created><datetime>20151002T135125,22+09</datetime></created>
+<modified><datetime>20160610T103025,38+09</datetime></modified>
+<revised><datetime>20160610T103025,37+09</datetime></revised>
+<lastaccessed><datetime>20160610T103025,38+09</datetime></lastaccessed>
+<addedtofile><datetime>20151002T135127,14+09</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Admin/O=LotusLab</name></updatedby>
+<wassignedby><name>CN=Admin/O=LotusLab</name></wassignedby>
 <item name="$Flags"><text>gC~4;2</text></item>
 <item name="$TITLE"><text>cc_AnserEdit_pt_BR.properties</text></item>
 

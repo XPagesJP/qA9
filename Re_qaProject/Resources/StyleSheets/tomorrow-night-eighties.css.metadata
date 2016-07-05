@@ -1,17 +1,17 @@
-<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.5" replicaid="49257C8300820851" version="9.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="2266" sequence="3" unid="493264E1628C4BC049257F6C003224ED">
-<created><datetime>20160304T180742,53+09</datetime></created>
-<modified><datetime>20160304T180742,59+09</datetime></modified>
-<revised><datetime>20160304T180742,58+09</datetime></revised>
-<lastaccessed><datetime>20160304T180742,59+09</datetime></lastaccessed>
-<addedtofile><datetime>20160304T180742,54+09</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Kenji Ebihara/OU=R/O=RSI</name></updatedby>
-<wassignedby><name>CN=Kenji Ebihara/OU=R/O=RSI</name></wassignedby>
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.6" replicaid="49257ED2001A4A57" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="61e" sequence="7" unid="4C863115BE7887F149257F96002AA83E">
+<created><datetime>20160415T164555,82+09</datetime></created>
+<modified><datetime>20160610T103042,84+09</datetime></modified>
+<revised><datetime>20160610T103042,83+09</datetime></revised>
+<lastaccessed><datetime>20160610T103042,84+09</datetime></lastaccessed>
+<addedtofile><datetime>20160415T164555,98+09</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Admin/O=LotusLab</name></updatedby>
+<wassignedby><name>CN=Admin/O=LotusLab</name></wassignedby>
 <item name="$Flags"><text>34C=Q</text></item>
 <item name="$TITLE"><text>tomorrow-night-eighties.css</text></item>
 <item name="$MimeType"><text>text/css</text></item>
+<item name="$MimeCharSet"><text>Shift_JIS</text></item>
 <item name="$DesignerVersion"><text>8.5.3</text></item>
 
 
-<item name="$FileNames" sign="true"><text>tomorrow-night-eighties.css</text></item>
-<item name="$MimeCharSet"><text>Shift_JIS</text></item></note>
+<item name="$FileNames" sign="true"><text>tomorrow-night-eighties.css</text></item></note>

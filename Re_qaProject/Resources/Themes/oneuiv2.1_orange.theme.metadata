@@ -1,12 +1,12 @@
-<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.0" replicaid="49257F7100352C34" version="9.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="61a" sequence="1" unid="EAAD66C3DC0E649E49257F710035FE4F">
-<created><datetime>20160309T184945,11+09</datetime></created>
-<modified><datetime>20160309T184945,66+09</datetime></modified>
-<revised><datetime>20160309T184945,65+09</datetime></revised>
-<lastaccessed><datetime>20160309T184945,66+09</datetime></lastaccessed>
-<addedtofile><datetime>20160309T184945,66+09</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Administrator/O=OUG</name></updatedby>
-<wassignedby><name>CN=Administrator/O=OUG</name></wassignedby>
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.6" replicaid="49257ED2001A4A57" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="606" sequence="11" unid="229EB1CF0BE5237349257F96002AA5FC">
+<created><datetime>20160415T164550,04+09</datetime></created>
+<modified><datetime>20160610T103040,93+09</datetime></modified>
+<revised><datetime>20160610T103040,92+09</datetime></revised>
+<lastaccessed><datetime>20160610T103040,93+09</datetime></lastaccessed>
+<addedtofile><datetime>20160415T164550,18+09</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Admin/O=LotusLab</name></updatedby>
+<wassignedby><name>CN=Admin/O=LotusLab</name></wassignedby>
 <item name="$Flags"><text>34567Cg~`</text></item>
 <item name="$TITLE" sign="true"><text>oneuiv2.1_orange.theme</text></item>
 <item name="$DesignerVersion"><text>8.5.3</text></item>

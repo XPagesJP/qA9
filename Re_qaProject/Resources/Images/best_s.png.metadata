@@ -1,12 +1,12 @@
-<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.5" replicaid="49257F6A000E389C" version="9.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="226" sequence="22" unid="D1EF757E3D81FAB849257C9C0002EBCB">
-<created><datetime>20140315T093154,35+09</datetime></created>
-<modified><datetime>20160302T113521,38+09</datetime></modified>
-<revised><datetime>20160301T155333,52+09</datetime></revised>
-<lastaccessed><datetime>20160302T113521,38+09</datetime></lastaccessed>
-<addedtofile><datetime>20160302T113521,38+09</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Yuta Kawakami/O=SystemPlanet</name><name>CN=admin/O=Dev</name></updatedby>
-<wassignedby><name>CN=admin/O=Dev</name></wassignedby>
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.6" replicaid="49257ED2001A4A57" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="47e" sequence="11" unid="405652690FF61CD649257ED2001AAD00">
+<created><datetime>20151002T135122,24+09</datetime></created>
+<modified><datetime>20160610T103024,02+09</datetime></modified>
+<revised><datetime>20160610T103024,01+09</datetime></revised>
+<lastaccessed><datetime>20160610T103024,02+09</datetime></lastaccessed>
+<addedtofile><datetime>20151002T135123,78+09</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Admin/O=LotusLab</name></updatedby>
+<wassignedby><name>CN=Admin/O=LotusLab</name></wassignedby>
 <item name="$TITLE"><text>best_s.png</text></item>
 <item name="$FlagsExt" sign="true"><text>D</text></item>
 <item name="$ImagesWide" sign="true"><number>1</number></item>
@@ -15,6 +15,6 @@
 <item name="$FileModDT" sign="true"><datetime>20130729T125928,19+09</datetime></item>
 <item name="$Flags"><text>34CiQ</text></item>
 <item name="$ImageNames" sign="true"><text>best2_m.png</text></item>
-<item name="$DesignerVersion" sign="true"><text>8.5.3</text></item>
+<item name="$DesignerVersion"><text>8.5.3</text></item>
 
 </note>

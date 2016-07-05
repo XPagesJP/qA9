@@ -1,13 +1,14 @@
 <?xml version='1.0' encoding='utf-8'?>
-<note class='form' xmlns='http://www.lotus.com/dxl' version='9.0' replicaid='49257CC8003F8C70'>
-<noteinfo noteid='19e' unid='3202100C9DAEA8D749257CC8003FF8EB' sequence='3'>
-<created><datetime>20140428T203844,91+09</datetime></created>
-<modified><datetime>20140612T213908,11+09</datetime></modified>
-<revised><datetime>20140612T203639,63+09</datetime></revised>
-<lastaccessed><datetime>20140612T213908,11+09</datetime></lastaccessed>
-<addedtofile><datetime>20140428T203844,94+09</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Admin Admin/O=Domino</name></updatedby>
-<wassignedby><name>CN=Admin Admin/O=Domino</name></wassignedby>
+<note class='form' xmlns='http://www.lotus.com/dxl' version='9.0' maintenanceversion='1.6'
+ replicaid='49257ED2001A576D'>
+<noteinfo noteid='1a2' unid='88C7FFF5979940EF49257ED2001AB458' sequence='10'>
+<created><datetime>20151002T135141,04+09</datetime></created>
+<modified><datetime>20160610T103120,27+09</datetime></modified>
+<revised><datetime>20160610T103120,26+09</datetime></revised>
+<lastaccessed><datetime>20160610T103120,27+09</datetime></lastaccessed>
+<addedtofile><datetime>20151002T135141,12+09</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Admin/O=LotusLab</name></updatedby>
+<wassignedby><name>CN=Admin/O=LotusLab</name></wassignedby>
 <item name='$Comment' sign='true'><text/></item>
 <item name='$HTMLCode' sign='true'>
 <rawitemdata type='1'>

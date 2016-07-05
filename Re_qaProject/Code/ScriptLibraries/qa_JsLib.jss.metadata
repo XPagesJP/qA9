@@ -1,15 +1,15 @@
-<?xml version="1.0" encoding="UTF-8"?><note class="filter" maintenanceversion="1.5" replicaid="49257F6A000E389C" version="9.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="33a" sequence="28" unid="111DE703ED19278D49257C850044441C">
-<created><datetime>20140220T212538,84+09</datetime></created>
-<modified><datetime>20160302T113522,76+09</datetime></modified>
-<revised><datetime>20160301T155334,80+09</datetime></revised>
-<lastaccessed><datetime>20160302T113522,76+09</datetime></lastaccessed>
-<addedtofile><datetime>20160302T113522,76+09</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Yuta Kawakami/O=SystemPlanet</name><name>CN=admin/O=Dev</name></updatedby>
-<wassignedby><name>CN=admin/O=Dev</name></wassignedby>
+<?xml version="1.0" encoding="UTF-8"?><note class="filter" maintenanceversion="1.6" replicaid="49257ED2001A4A57" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="59e" sequence="11" unid="2E59BD4554D41AA949257ED2001AAEFF">
+<created><datetime>20151002T135127,35+09</datetime></created>
+<modified><datetime>20160610T103041,65+09</datetime></modified>
+<revised><datetime>20160610T103041,64+09</datetime></revised>
+<lastaccessed><datetime>20160610T103041,65+09</datetime></lastaccessed>
+<addedtofile><datetime>20151002T135128,59+09</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Admin/O=LotusLab</name></updatedby>
+<wassignedby><name>CN=Admin/O=LotusLab</name></wassignedby>
 <item name="$POID"><datetime>20131203T205712,68+09</datetime></item>
 <item name="$TITLE" sign="true"><text>qa_JsLib</text></item>
 <item name="$Flags"><text>.5834Q</text></item>
 <item name="$PublicAccess" sign="true"><text>1</text></item>
-<item name="$DesignerVersion" sign="true"><text>8.5.3</text></item>
+<item name="$DesignerVersion"><text>8.5.3</text></item>
 </note>
