@@ -5,6 +5,8 @@
 
 	<xp:this.resources>
 		<xp:script src="/QuestionApi.jss" clientSide="false"></xp:script>
+		<xp:script src="/UsersApi.jss" clientSide="false"></xp:script>
+		
 	</xp:this.resources>
 	<xe:restService id="questionsService" pathInfo="questions">
 		<xe:this.service>
@@ -18,4 +20,17 @@ return QuestionApi.getList(conditions);}]]></xe:this.doGet>
 			</xe:customRestService>
 		</xe:this.service>
 	</xe:restService>
+	
+	
+	<xe:restService id="usersService" pathInfo="users">
+		<xe:this.service>
+			<xe:customRestService requestVar="json"
+				requestContentType="application/json" contentType="application/json"
+				doGet="#{javascript:return UsersApi.getList();}">
+
+
+			</xe:customRestService>
+		</xe:this.service>
+	</xe:restService>
+	
 	</xp:view>
