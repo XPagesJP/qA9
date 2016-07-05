@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xp:view xmlns:xp="http://www.ibm.com/xsp/core"
-	xmlns:xe="http://www.ibm.com/xsp/coreex"
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xe="http://www.ibm.com/xsp/coreex"
 	xmlns:xc="http://www.ibm.com/xsp/custom">
 	<xp:this.data>
 		<xp:dominoView var="view1" viewName="V_Tag"></xp:dominoView>
@@ -18,8 +17,7 @@
 			rendererType="com.ibm.xsp.extlib.OneUITagCloud">
 			<xe:this.cloudData>
 				<xe:dominoViewCloudData sortTags="alphabet"
-					viewName="V_Tag" linkTargetPage="/x_Tag.xsp"
-					linkRequestParam="CategoryFilter">
+					viewName="V_Tag" linkTargetPage="/x_Tag.xsp" linkRequestParam="CategoryFilter">
 
 				</xe:dominoViewCloudData>
 			</xe:this.cloudData>
@@ -36,52 +34,46 @@
 		<xp:column id="column3">
 			<xp:table>
 				<xp:tr>
-					<xp:td styleClass="Column_count_G"
-						style="text-align:center">
-						<xp:text escape="true"
-							style="font-size:14pt;color:rgb(255,255,255)" id="user_good">
+					<xp:td styleClass="Column_count_G" style="text-align:center">
+						<xp:text escape="true" style="font-size:14pt;color:rgb(255,255,255)"
+							id="user_good">
 							<xp:this.value><![CDATA[#{javascript:viewEntry.getColumnValue("$user_good")}]]></xp:this.value>
 							<xp:this.converter>
-								<xp:convertNumber type="number"
-									integerOnly="true">
+								<xp:convertNumber type="number" integerOnly="true">
 								</xp:convertNumber>
 							</xp:this.converter>
 						</xp:text>
 						<xp:br></xp:br>
-						<xp:label value="いいね" id="label4"
-							style="color:rgb(255,255,255)">
+						<xp:label value="いいね" id="label4" style="color:rgb(255,255,255)">
 						</xp:label>
 					</xp:td>
-					<xp:td styleClass="Column_count_A"
-						style="text-align:center">
-						<xp:text escape="true" style="font-size:14pt;color:rgb(255,255,255)" id="Count_Answer">
-									<xp:this.converter>
-										<xp:convertNumber type="number" integerOnly="true">
-										</xp:convertNumber>
-									</xp:this.converter>
-									<xp:this.value><![CDATA[#{javascript:viewEntry.getColumnValue("$Count_Answer")
+					<xp:td styleClass="Column_count_A" style="text-align:center">
+						<xp:text escape="true" style="font-size:14pt;color:rgb(255,255,255)"
+							id="Count_Answer">
+							<xp:this.converter>
+								<xp:convertNumber type="number" integerOnly="true">
+								</xp:convertNumber>
+							</xp:this.converter>
+							<xp:this.value><![CDATA[#{javascript:viewEntry.getColumnValue("$Count_Answer")
 
 
 }]]></xp:this.value>
-								</xp:text>
+						</xp:text>
 						<xp:br></xp:br>
-						<xp:label value="回答" id="label5"
-							style="color:rgb(255,255,255)">
+						<xp:label value="回答" id="label5" style="color:rgb(255,255,255)">
 						</xp:label>
 					</xp:td>
-					<xp:td styleClass="Column_count_V"
-						style="text-align:center;">
+					<xp:td styleClass="Column_count_V" style="text-align:center;">
 						<xp:text escape="true" id="Count_view"
 							style="font-size:14pt;color:rgb(255,255,255)">
 							<xp:this.converter>
-								<xp:convertNumber type="number"
-									integerOnly="true">
+								<xp:convertNumber type="number" integerOnly="true">
 								</xp:convertNumber>
 							</xp:this.converter>
-						<xp:this.value><![CDATA[#{javascript:viewEntry.getColumnValue("$Count_view")}]]></xp:this.value></xp:text>
+							<xp:this.value><![CDATA[#{javascript:viewEntry.getColumnValue("$Count_view")}]]></xp:this.value>
+						</xp:text>
 						<xp:br></xp:br>
-						<xp:label value="閲覧" id="label6"
-							style="color:rgb(255,255,255)">
+						<xp:label value="閲覧" id="label6" style="color:rgb(255,255,255)">
 						</xp:label>
 					</xp:td>
 
@@ -89,6 +81,16 @@
 			</xp:table>
 		</xp:column>
 		<xp:column id="column1" styleClass="Column_Main">
+			<xp:this.facets>
+				<xp:div xp:key="footer">
+					<xp:scriptBlock>
+						<xp:this.value><![CDATA[
+reloadSocialButton();			
+]]></xp:this.value>
+					</xp:scriptBlock>
+				</xp:div>
+			</xp:this.facets>
+
 			<xp:text escape="false" id="Title"
 				style="margin-left:0.0px;margin-right:0.0px;margin-top:3px;margin-bottom:3px"
 				tagName="h4">
@@ -99,11 +101,9 @@
 
 }]]></xp:this.value>
 			</xp:text>
-			<xp:panel id="detail"
-				style="margin-top:5px;margin-bottom:5px;">
-				<xp:text escape="true" id="details"
-							style="color:rgb(128,128,128)">
-							<xp:this.value><![CDATA[#{javascript:var max=300;
+			<xp:panel id="detail" style="margin-top:5px;margin-bottom:5px;">
+				<xp:text escape="true" id="details" style="color:rgb(128,128,128)">
+					<xp:this.value><![CDATA[#{javascript:var max=300;
 var doc:NotesDocument = viewEntry.getDocument();
 
 
@@ -120,37 +120,65 @@ if(ANS == "") {
 		return ANS;
 	}
 }}]]></xp:this.value>
-						</xp:text>
+				</xp:text>
 			</xp:panel>
 			<xp:panel id="meta">
 				<xp:label id="label1" value="質問日時:"></xp:label>
-				<xp:text escape="true" id="Created"
-					value="#{viewEntry.Created}">
+				<xp:text escape="true" id="Created" value="#{viewEntry.Created}">
 					<xp:this.converter>
 						<xp:convertDateTime type="both"></xp:convertDateTime>
 					</xp:this.converter>
 				</xp:text>
-				<xp:text escape="true" id="divider1"
-					styleClass="lotusDivider">
+				<xp:text escape="true" id="divider1" styleClass="lotusDivider">
 					<xp:this.value><![CDATA[#{javascript:"  |  "}]]></xp:this.value>
 				</xp:text>
 
 
 
 				<xp:label value="カテゴリ:" id="label3"></xp:label>
-				<xp:text escape="true" id="Category"
-					value="#{viewEntry.Category}">
+				<xp:text escape="true" id="Category" value="#{viewEntry.Category}">
 				</xp:text>
 				<div>
 
 
-					
-				<xc:cc_Taglist>
-								<xc:this.TagField><![CDATA[#{javascript:var Tag =viewEntry.getColumnValue("Tag");
+
+					<xc:cc_Taglist>
+						<xc:this.TagField><![CDATA[#{javascript:var Tag =viewEntry.getColumnValue("Tag");
 
 return @Implode(Tag,",")
 }]]></xc:this.TagField>
-							</xc:cc_Taglist></div>
+					</xc:cc_Taglist>
+				</div>
+				<div id="socialLinks">
+					<xp:div styleClass="fb-like">
+						<xp:this.attrs>
+							<xp:attr name="data-layout" value="button"></xp:attr>
+							<xp:attr name="data-action" value="like"></xp:attr>
+							<xp:attr name="data-show-faces" value="false"></xp:attr>
+							<xp:attr name="data-share" value="false"></xp:attr>
+							<xp:attr name="data-href"
+								value="#{javascript: Common.getHost() + 'x_anspage.xsp?docId=' +  viewEntry.getDocument().getUniversalID();}"></xp:attr>
+						</xp:this.attrs>
+					</xp:div>
+					<span class="separater"></span>
+					<xp:link escape="true" text="Tweet" styleClass="twitter-share-button">
+						<xp:this.attrs>
+							<xp:attr name="data-url"
+								value="#{javascript:Common.getHost() + 'x_anspage.xsp?docId=' +  viewEntry.getDocument().getUniversalID();}">
+							</xp:attr>
+							<xp:attr name="data-text">
+								<xp:this.value><![CDATA[#{javascript:viewEntry.getColumnValue('件名')+" - "+database.getTitle();}]]></xp:this.value>
+							</xp:attr>
+						</xp:this.attrs>
+					</xp:link>
+					<xp:div styleClass="g-plusone">
+						<xp:this.attrs>
+							<xp:attr name="data-size" value="medium"></xp:attr>
+							<xp:attr name="data-href"
+								value="#{javascript:Common.getHost() + 'x_anspage.xsp?docId=' +  viewEntry.getDocument().getUniversalID();}"></xp:attr>
+						</xp:this.attrs>
+					</xp:div>
+				</div>				
 			</xp:panel>
 		</xp:column>
 		<xp:column id="column2" styleClass="Column_status">

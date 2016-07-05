@@ -1,24 +1,24 @@
-<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.5" replicaid="49257C8300820851" version="9.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="2a6" sequence="194" unid="727D68F34F8120B049257C8300829A6E">
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.6" replicaid="49257C8300820851" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="2a6" sequence="196" unid="727D68F34F8120B049257C8300829A6E">
 <created><datetime>20140219T084632,14+09</datetime></created>
-<modified><datetime>20160307T083656,42+09</datetime></modified>
-<revised><datetime>20160307T083656,41+09</datetime></revised>
-<lastaccessed><datetime>20160307T083656,42+09</datetime></lastaccessed>
+<modified><datetime>20160705T181517,13+09</datetime></modified>
+<revised><datetime>20160705T181517,12+09</datetime></revised>
+<lastaccessed><datetime>20160705T181517,13+09</datetime></lastaccessed>
 <addedtofile><datetime>20140219T084633,77+09</datetime></addedtofile></noteinfo>
 <updatedby><name>CN=Kenji Ebihara/OU=R/O=RSI</name></updatedby>
 <wassignedby><name>CN=Kenji Ebihara/OU=R/O=RSI</name></wassignedby>
 <item name="$TITLE"><text>cc_View_Category.xsp</text></item>
 <item name="$Flags"><text>gC~4;</text></item>
 <item name="$Comment" sign="true"><text>トップページ</text></item>
-
-
-<item name="$FileNames" sign="true"><text>cc_View_Category.xsp</text></item>
-
-
 <item name="$DesignerVersion"><text>8.5.3</text></item>
 
 
 
 
+
+
+
+
+<item name="$FileNames" sign="true"><text>cc_View_Category.xsp</text></item>
 
 </note>
