@@ -72,16 +72,7 @@ if (myTheme != ""){
 		context.redirectToPage(url + '/top.xsp');
 	};
 })();}]]></xp:this.beforeRenderResponse>
-	<xp:scriptBlock id="scriptBlock1">
-		<xp:this.value><![CDATA[
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-  ga('create', 'UA-46663140-2', 'xpages.jp');
-  ga('send', 'pageview');]]></xp:this.value>
-	</xp:scriptBlock>
 	<xp:scriptBlock>
 		<xp:this.value><![CDATA[
 		XSP.addOnLoad(function(){
@@ -95,75 +86,83 @@ if (myTheme != ""){
 	]]>
 		</xp:this.value>
 	</xp:scriptBlock>
-	<div id="fb-root"></div>
 	<xp:scriptBlock>
-		<xp:this.value><![CDATA[(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&appId=177509492387338&version=v2.0";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));]]></xp:this.value>
+		<xp:this.value><![CDATA[
+	( function(i, s, o, g, r, a, m) {
+		i['GoogleAnalyticsObject'] = r;
+		i[r] = i[r] || function() {
+			(i[r].q = i[r].q || []).push(arguments)
+		}, i[r].l = 1 * new Date();
+		a = s.createElement(o), m = s.getElementsByTagName(o)[0];
+		a.async = 1;
+		a.src = g;
+		m.parentNode.insertBefore(a, m)
+	})(window, document, 'script', '//www.google-analytics.com/analytics.js',
+			'ga');
+
+	ga('create', 'UA-46663140-2', 'xpages.jp');
+	ga('send', 'pageview');
+    loadSocialButton();	
+		]]></xp:this.value>
 	</xp:scriptBlock>
+	<div id="fb-root"></div>
 	<xp:scriptBlock id="scriptBlock2">
 		<xp:this.value><![CDATA[
-!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
 		]]></xp:this.value>
 	</xp:scriptBlock>
 	<script src="https://apis.google.com/js/platform.js" async="async"
 		defer="defer">
 		{lang: 'ja'}
-</script>
+	</script>
 	<xe:applicationLayout id="applicationLayout1">
 		<xp:callback facetName="facetMiddle" id="facetMiddle"></xp:callback>
 		<xe:this.facets>
 			<xp:span xp:key="MastHeader"></xp:span>
 			<xp:panel xp:key="SearchBar">
-			<xc:cc_SearchBar></xc:cc_SearchBar>
-			<xc:c_Login allowBrowserCaching="false" loggedInMessage="ログイン成功。 読み込み中..."
-				loginFailMessage="Username / password incorrect, please try again"
-				loginFailReason1Message="You are not authorized to access this website."
-				loginFailReason3Message="Session has expired. You must log in again."
-				loginFailReason4Message="Session out of sync, server clocks may be out of sync."
-				loginFailReason5Message="Your account has been locked out."
-				loginButtonText="ログイン" labelName="ユーザー名" labelPassword="パスワード"
-				urlLoginNSF="/names.nsf" logoutLinkText="ログアウト" displayLogoutLink="true"
-				showRememberMe="false" textRememberMe="パスワードを記憶する" xDaysRememberMe="90"
-				cookieDomain="bureaubos.nl"
-				loginFailReason2Message="認証に失敗しました。入力内容を確認してください。" loginDialogTitle="ログイン or 新規登録"
-				loginMessage="””" loginLinkText="ログイン or 新規登録">
+				<xc:cc_SearchBar></xc:cc_SearchBar>
+				<xc:c_Login allowBrowserCaching="false" loggedInMessage="ログイン成功。 読み込み中..."
+					loginFailMessage="Username / password incorrect, please try again"
+					loginFailReason1Message="You are not authorized to access this website."
+					loginFailReason3Message="Session has expired. You must log in again."
+					loginFailReason4Message="Session out of sync, server clocks may be out of sync."
+					loginFailReason5Message="Your account has been locked out."
+					loginButtonText="ログイン" labelName="ユーザー名" labelPassword="パスワード"
+					urlLoginNSF="/names.nsf" logoutLinkText="ログアウト" displayLogoutLink="true"
+					showRememberMe="false" textRememberMe="パスワードを記憶する" xDaysRememberMe="90"
+					cookieDomain="bureaubos.nl" loginFailReason2Message="認証に失敗しました。入力内容を確認してください。"
+					loginDialogTitle="ログイン or 新規登録" loginMessage="””" loginLinkText="ログイン or 新規登録">
 
-				<xc:this.urlAfterLogout><![CDATA[#{javascript:facesContext.getExternalContext().getRequestContextPath() + "/top.xsp"}]]></xc:this.urlAfterLogout>
-				<xc:this.urlAfterLogin><![CDATA[#{javascript:facesContext.getExternalContext().getRequestContextPath()  + "/top.xsp"}]]></xc:this.urlAfterLogin>
-				<xp:this.facets>
-					<xp:span xp:key="customLoginHeader"></xp:span>
-					<xp:span xp:key="customAfterLoginButton">
-						<xp:panel xp:key="MastHeader">
+					<xc:this.urlAfterLogout><![CDATA[#{javascript:facesContext.getExternalContext().getRequestContextPath() + "/top.xsp"}]]></xc:this.urlAfterLogout>
+					<xc:this.urlAfterLogin><![CDATA[#{javascript:facesContext.getExternalContext().getRequestContextPath()  + "/top.xsp"}]]></xc:this.urlAfterLogin>
+					<xp:this.facets>
+						<xp:span xp:key="customLoginHeader"></xp:span>
+						<xp:span xp:key="customAfterLoginButton">
+							<xp:panel xp:key="MastHeader">
 
-							<xp:table>
-								<xp:tr>
-									<xp:td>
-										<xp:link escape="true" text="パスワードを忘れた方は、こちら" id="link2"
-											value="x_passwordReissue.xsp">
-										</xp:link>
-									</xp:td>
-								</xp:tr>
-								<xp:tr>
-									<xp:td style="padding-top:20.0px;padding-left:50.0px">
-										<xp:link escape="true" text="新規アカウント登録" id="link1"
-											value="x_Account.xsp">
-											<xp:image id="image1" url="/add.png">
-											</xp:image>
-										</xp:link>
-									</xp:td>
-								</xp:tr>
-							</xp:table>
+								<xp:table>
+									<xp:tr>
+										<xp:td>
+											<xp:link escape="true" text="パスワードを忘れた方は、こちら" id="link2"
+												value="x_passwordReissue.xsp">
+											</xp:link>
+										</xp:td>
+									</xp:tr>
+									<xp:tr>
+										<xp:td style="padding-top:20.0px;padding-left:50.0px">
+											<xp:link escape="true" text="新規アカウント登録" id="link1"
+												value="x_Account.xsp">
+												<xp:image id="image1" url="/add.png">
+												</xp:image>
+											</xp:link>
+										</xp:td>
+									</xp:tr>
+								</xp:table>
 
-						</xp:panel>
-					</xp:span>
+							</xp:panel>
+						</xp:span>
 
-				</xp:this.facets>
-			</xc:c_Login>
+					</xp:this.facets>
+				</xc:c_Login>
 			</xp:panel>
 
 
@@ -180,8 +179,7 @@ if (myTheme != ""){
 		<xe:this.configuration>
 			<xe:oneuiApplication
 				legalText="Copyright © 2016 Kyushu Notes Partner Community. (九州地区ノーツパートナー会 ) All Rights Reserved."
-				productLogo="/logo.png" productLogoHeight="45px"
-				productLogoWidth="360px"
+				productLogo="/logo.png" productLogoHeight="45px" productLogoWidth="360px"
 				placeBarName="#{javascript:compositeData.placeBarName;}"
 				productLogoClass="siteBanner">
 				<xe:this.footerLinks>
@@ -196,8 +194,7 @@ if (myTheme != ""){
 
 						<xe:this.selected><![CDATA[#{javascript:qa_JsLib.IsSameUrlFileName(['','top.xsp','\.nsf']);}]]></xe:this.selected>
 					</xe:basicLeafNode>
-					<xe:basicLeafNode label="マイページ"
-						href="x_ProfileEdit.xsp"
+					<xe:basicLeafNode label="マイページ" href="x_ProfileEdit.xsp"
 						selected="#{javascript:IsSameUrlFileName('x_ProfileEdit.xsp');}">
 						<xe:this.rendered><![CDATA[#{javascript:var userName:NotesName = session.createName(@UserName());
 if (userName.getCommon()=="Anonymous")
@@ -216,8 +213,7 @@ else
 					<xe:basicLeafNode label="検索" href="x_Search.xsp"
 						selected="#{javascript:IsSameUrlFileName('x_Search.xsp');}">
 					</xe:basicLeafNode>
-					<xe:basicLeafNode label="ユーザー"
-						href="x_Page_AlluserList.xsp"
+					<xe:basicLeafNode label="ユーザー" href="x_Page_AlluserList.xsp"
 						selected="#{javascript:IsSameUrlFileName('x_Page_AlluserList.xsp');}">
 					</xe:basicLeafNode>
 					<xe:basicLeafNode label="お知らせ" href="x_Info.xsp"
@@ -246,12 +242,10 @@ return isNew == true ? "/new_icon.png" : "";}]]></xe:this.image>
 
 
 				<xe:this.bannerUtilityLinks>
-					<xe:userTreeNode userField="commonName"
-						rendered="false">
+					<xe:userTreeNode userField="commonName" rendered="false">
 					</xe:userTreeNode>
 					<xe:loginTreeNode label="ログイン"
-						loaded="${javascript:context.getUser().isAnonymous();}"
-						rendered="false">
+						loaded="${javascript:context.getUser().isAnonymous();}" rendered="false">
 					</xe:loginTreeNode>
 					<xe:basicLeafNode label="ログアウト"
 						loaded="${javascript:!(context.getUser().isAnonymous());}"
@@ -267,11 +261,9 @@ return isNew == true ? "/new_icon.png" : "";}]]></xe:this.image>
 })();
 }]]></xe:this.href>
 					</xe:basicLeafNode>
-					<xe:basicContainerNode label="編集"
-						rendered="false">
+					<xe:basicContainerNode label="編集" rendered="false">
 						<xe:this.children>
-							<xe:pageTreeNode label="プロフィール変更"
-								page="/x_ProfileEdit.xsp">
+							<xe:pageTreeNode label="プロフィール変更" page="/x_ProfileEdit.xsp">
 								<xe:this.rendered><![CDATA[#{javascript://非表示
 return false;
 
@@ -286,8 +278,7 @@ else
        return true;
 }}]]></xe:this.rendered>
 							</xe:pageTreeNode>
-							<xe:pageTreeNode label="パスワード変更"
-								page="/x_passwordChange.xsp">
+							<xe:pageTreeNode label="パスワード変更" page="/x_passwordChange.xsp">
 								<xe:this.rendered><![CDATA[#{javascript://非表示
 return false;
 
@@ -301,12 +292,11 @@ else
        return true;
 }}]]></xe:this.rendered>
 							</xe:pageTreeNode>
-							<xe:pageTreeNode label="パスワード再発行"
-								page="/x_passwordReissue.xsp" rendered="false">
+							<xe:pageTreeNode label="パスワード再発行" page="/x_passwordReissue.xsp"
+								rendered="false">
 
 							</xe:pageTreeNode>
-							<xe:pageTreeNode label="アカウント登録"
-								page="/x_Account.xsp">
+							<xe:pageTreeNode label="アカウント登録" page="/x_Account.xsp">
 								<xe:this.rendered><![CDATA[#{javascript://非表示
 return false;
 var userName:NotesName = session.createName(@UserName());
@@ -332,8 +322,8 @@ else
 
 
 
-					<xe:pageTreeNode page="/x_Account.xsp"
-						rendered="false" label="　" image="/newAcount.png" title="新規登録">
+					<xe:pageTreeNode page="/x_Account.xsp" rendered="false"
+						label="　" image="/newAcount.png" title="新規登録">
 
 					</xe:pageTreeNode>
 
@@ -359,8 +349,8 @@ if(url != ""){
   w.location.href= url;
 }]]></xe:this.onClick>
 					</xe:basicLeafNode>
-					<xe:basicLeafNode label="XSnippets 日本語版"
-						title="XSnippets" styleClass="bannerOuterLink">
+					<xe:basicLeafNode label="XSnippets 日本語版" title="XSnippets"
+						styleClass="bannerOuterLink">
 						<xe:this.onClick><![CDATA[var url="#{javascript:
   
   var db:NotesDatabase = session.getCurrentDatabase();
@@ -384,9 +374,8 @@ if(url != ""){
 				</xe:this.bannerUtilityLinks>
 
 				<xe:this.placeBarActions>
-					<xe:basicLeafNode label="新しい質問の投稿"
-						style="font-size:12pt" href="x_QuestionCompose.xsp"
-						image="/1871.png">
+					<xe:basicLeafNode label="新しい質問の投稿" style="font-size:12pt"
+						href="x_QuestionCompose.xsp" image="/1871.png">
 						<xe:this.rendered><![CDATA[#{javascript:var userName:NotesName = session.createName(@UserName());
 if (userName.getCommon()=="Anonymous")
 {
