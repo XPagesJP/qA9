@@ -563,19 +563,21 @@ return @Unique(TagList)}]]></xp:this.valueList>
 						</xp:td>
 
 					</xp:tr>
-				<xp:tr><xp:td>  テーマ</xp:td><xp:td>：</xp:td><xp:td><xp:comboBox id="MyTheme" style="width:152.0px" value="#{docAcc.MyTheme}">
+				<xp:tr><xp:td>  テーマ</xp:td><xp:td>：</xp:td><xp:td>
+	<xp:comboBox id="MyTheme" style="width:152.0px"
+		value="#{docAcc.MyTheme}">
 		<xp:this.defaultValue><![CDATA[#{javascript:"oneuiv2.1_blue"}]]></xp:this.defaultValue>
-		<xp:selectItem itemLabel="oneuiv2.1_blue" itemValue="oneuiv2.1_blue">
+		<xp:selectItem itemLabel="ブルー" itemValue="oneuiv2.1_blue">
 		</xp:selectItem>
-		<xp:selectItem itemLabel="oneuiv2.1_gold" itemValue="oneuiv2.1_gold">
+		<xp:selectItem itemLabel="ゴールド" itemValue="oneuiv2.1_gold">
 		</xp:selectItem>
-		<xp:selectItem itemLabel="oneuiv2.1_green" itemValue="oneuiv2.1_green">
+		<xp:selectItem itemLabel="グリーン" itemValue="oneuiv2.1_green">
 		</xp:selectItem>
-		<xp:selectItem itemLabel="oneuiv2.1_onyx" itemValue="oneuiv2.1_onyx">
+		<xp:selectItem itemLabel="ブラック" itemValue="oneuiv2.1_onyx">
 		</xp:selectItem>
-		<xp:selectItem itemLabel="oneuiv2.1_orange" itemValue="oneuiv2.1_orange">
+		<xp:selectItem itemLabel="オレンジ" itemValue="oneuiv2.1_orange">
 		</xp:selectItem>
-		<xp:selectItem itemLabel="oneuiv2.1_pink" itemValue="oneuiv2.1_pink">
+		<xp:selectItem itemLabel="モモイロ" itemValue="oneuiv2.1_pink">
 		</xp:selectItem>
 
 
@@ -583,14 +585,13 @@ return @Unique(TagList)}]]></xp:this.valueList>
 
 
 
-		<xp:selectItem itemLabel="oneuiv2.1_purple" itemValue="oneuiv2.1_purple">
+		<xp:selectItem itemLabel="ムラサキ" itemValue="oneuiv2.1_purple">
 		</xp:selectItem>
-		<xp:selectItem itemLabel="oneuiv2.1_red" itemValue="oneuiv2.1_red">
+		<xp:selectItem itemLabel="レッド" itemValue="oneuiv2.1_red">
 		</xp:selectItem>
-		<xp:selectItem itemLabel="oneuiv2.1_silver" itemValue="oneuiv2.1_silver">
+		<xp:selectItem itemLabel="シルバー" itemValue="oneuiv2.1_silver">
 		</xp:selectItem>
-		<xp:selectItem itemLabel="oneuiv2.1_gen1" itemValue="oneuiv2.1_gen1">
-		</xp:selectItem>
+
 	</xp:comboBox></xp:td></xp:tr></xp:table>
 				<xp:panel id="LayoutPanel" styleClass="questionBox" style="padding-top:5.0px;padding-bottom:20.0px">
 <xp:this.rendered><![CDATA[#{javascript:if(!docAcc.isEditable()){
