@@ -33,4 +33,11 @@ return QuestionApi.getList(conditions);}]]></xe:this.doGet>
 		</xe:this.service>
 	</xe:restService>
 	
-	</xp:view>
+	<xe:restService id="categoryService" pathInfo="category">
+		<xe:this.service>
+			<xe:customRestService contentType="application/json"
+				doGet="#{javascript:return CategoryApi.getList();}"
+				requestContentType="application/json" requestVar="json">
+			</xe:customRestService>
+		</xe:this.service>
+	</xe:restService></xp:view>

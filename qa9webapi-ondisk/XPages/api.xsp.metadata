@@ -1,20 +1,20 @@
-<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.6" replicaid="49257FCE0006F0F8" version="9.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="172" sequence="7" unid="43ED30266891CC1349257FCE0007F5B2">
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.0" replicaid="49257FEF000C849A" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="15a" sequence="8" unid="43ED30266891CC1349257FCE0007F5B2">
 <created><datetime>20160610T102656,50+09</datetime></created>
-<modified><datetime>20160610T103349,74+09</datetime></modified>
-<revised><datetime>20160610T103349,73+09</datetime></revised>
-<lastaccessed><datetime>20160610T103349,73+09</datetime></lastaccessed>
-<addedtofile><datetime>20160610T102656,65+09</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Admin/O=LotusLab</name></updatedby>
-<wassignedby><name>CN=Admin/O=LotusLab</name></wassignedby>
+<modified><datetime>20160713T174307,94+09</datetime></modified>
+<revised><datetime>20160713T174307,93+09</datetime></revised>
+<lastaccessed><datetime>20160713T174307,94+09</datetime></lastaccessed>
+<addedtofile><datetime>20160713T111704,35+09</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Administrator/O=OUG</name></updatedby>
+<wassignedby><name>CN=Administrator/O=OUG</name></wassignedby>
 <item name="$Flags"><text>gC~4K</text></item>
 <item name="$TITLE"><text>api.xsp</text></item>
-
-
-<item name="$FileNames" sign="true"><text>api.xsp</text></item>
 <item name="$DesignerVersion"><text>8.5</text></item>
 
 
 
 
-</note>
+
+
+
+<item name="$FileNames" sign="true"><text>api.xsp</text></item></note>
