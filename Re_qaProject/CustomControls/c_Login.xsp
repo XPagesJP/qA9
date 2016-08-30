@@ -311,7 +311,8 @@ function returnCookieVal(cookiename){
 	</xp:scriptBlock>
 	
 	
-	<xp:link escape="true" id="link2" style="margin-left:10.0px;font-weight:bold;color:rgb(255,255,255);font-size:11pt;margin-right:15.0px" value="x_ProfileEdit.xsp"><xp:this.text><![CDATA[#{javascript:var userName:NotesName = session.createName(@UserName());
+	<xp:link escape="true" id="link2" value="x_ProfileEdit.xsp">
+		<xp:this.text><![CDATA[#{javascript:var userName:NotesName = session.createName(@UserName());
 if (userName.getCommon()=="Anonymous")
 {
        return "";
@@ -319,7 +320,8 @@ if (userName.getCommon()=="Anonymous")
 else
 {
        return userName.getCommon();
-}}]]></xp:this.text><xp:this.rendered><![CDATA[#{javascript:var userName:NotesName = session.createName(@UserName());
+}}]]></xp:this.text>
+		<xp:this.rendered><![CDATA[#{javascript:var userName:NotesName = session.createName(@UserName());
 if (userName.getCommon()=="Anonymous")
 {
        return false;
@@ -327,7 +329,14 @@ if (userName.getCommon()=="Anonymous")
 else
 {
        return true;
-}}]]></xp:this.rendered></xp:link>
+}}]]></xp:this.rendered>
+		<xp:this.style><![CDATA[#{javascript:var nowTheme = context.getSessionProperty('xsp.theme');
+if (nowTheme == "oneuiv2.1_gold" || nowTheme == "oneuiv2.1_silver"){
+	return "margin-left:10.0px;font-weight:bold;color:rgb(0,0,0);font-size:11pt;margin-right:15.0px";
+}else{
+	return "margin-left:10.0px;font-weight:bold;color:rgb(255,255,255);font-size:11pt;margin-right:15.0px";
+}}]]></xp:this.style>
+	</xp:link>
 
 	<xp:link escape="true" id="lnkLogin"
 		text="#{javascript:compositeData.loginLinkText}"
@@ -358,8 +367,7 @@ if ('#{javascript:compositeData.showRememberMe}' == 'true') {
 	</xp:link>
 
 	<xp:link escape="true"
-		text="#{javascript:compositeData.logoutLinkText}" id="lnkLogout"
-		style="color:rgb(255,255,255);font-size:11pt;text-decoration:underline">
+		text="#{javascript:compositeData.logoutLinkText}" id="lnkLogout">
 
 		<xp:this.rendered><![CDATA[#{javascript:var userName:NotesName = session.createName(@UserName());
 if (userName.getCommon()=="Anonymous")
@@ -371,8 +379,14 @@ else
 	return compositeData.displayLogoutLink;
 }}]]></xp:this.rendered>
 		<xp:this.value><![CDATA[#{javascript:facesContext.getExternalContext().getRequestContextPath() + "?logout&redirectTo=" + compositeData.urlAfterLogout}]]></xp:this.value>
+		<xp:this.style><![CDATA[#{javascript:var nowTheme = context.getSessionProperty('xsp.theme');
+if (nowTheme == "oneuiv2.1_gold" || nowTheme == "oneuiv2.1_silver"){
+	return "color:rgb(0,0,0);font-size:11pt;text-decoration:underline";
+}else{
+	return "color:rgb(255,255,255);font-size:11pt;text-decoration:underline";
+}}]]></xp:this.style>
 	</xp:link>
-	
+
 	<xp:eventHandler event="onClientLoad" submit="false">
 		<xp:this.script><![CDATA[// from version 1.5.1
 // the use of a url parameter to invoke the login dialog is not required, you may leave the parameter empty
