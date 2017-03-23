@@ -6,7 +6,8 @@
 	<xp:this.resources>
 		<xp:script src="/QuestionApi.jss" clientSide="false"></xp:script>
 		<xp:script src="/UsersApi.jss" clientSide="false"></xp:script>
-		
+
+		<xp:script src="/CategoriesApi.jss" clientSide="false"></xp:script>
 	</xp:this.resources>
 	<xe:restService id="questionsService" pathInfo="questions">
 		<xe:this.service>
@@ -33,10 +34,10 @@ return QuestionApi.getList(conditions);}]]></xe:this.doGet>
 		</xe:this.service>
 	</xe:restService>
 	
-	<xe:restService id="categoryService" pathInfo="category">
+	<xe:restService id="categoriesService" pathInfo="categories">
 		<xe:this.service>
 			<xe:customRestService contentType="application/json"
-				doGet="#{javascript:return CategoryApi.getList();}"
+				doGet="#{javascript:return CategoriesApi.getList();}"
 				requestContentType="application/json" requestVar="json">
 			</xe:customRestService>
 		</xe:this.service>
