@@ -1,23 +1,23 @@
-<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.6" replicaid="49257ED2001A4A57" version="9.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="4de" sequence="26" unid="1DF608FA16198A6749257ED2001AAD71">
-<created><datetime>20151002T135123,37+09</datetime></created>
-<modified><datetime>20160610T103027,63+09</datetime></modified>
-<revised><datetime>20160610T103027,62+09</datetime></revised>
-<lastaccessed><datetime>20160610T103027,63+09</datetime></lastaccessed>
-<addedtofile><datetime>20151002T135125,12+09</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Admin/O=LotusLab</name></updatedby>
-<wassignedby><name>CN=Admin/O=LotusLab</name></wassignedby>
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.4" replicaid="49257E0A001A0492" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="34e" sequence="248" unid="864CC437480FEE2649257CE800458FDB">
+<created><datetime>20140530T213948,11+09</datetime></created>
+<modified><datetime>20170413T185539,94+09</datetime></modified>
+<revised><datetime>20170413T185539,93+09</datetime></revised>
+<lastaccessed><datetime>20170413T185539,94+09</datetime></lastaccessed>
+<addedtofile><datetime>20150316T134500,50+09</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Admin Admin/O=Domino</name></updatedby>
+<wassignedby><name>CN=Admin Admin/O=Domino</name></wassignedby>
 <item name="$Flags"><text>gC~4;</text></item>
 <item name="$TITLE"><text>cc_topComment.xsp</text></item>
 <item name="$Comment" sign="true"><text>トップページのサイト説明</text></item>
+<item name="$DesignerVersion"><text>8.5</text></item>
+
+
+
 
 
 
 
 <item name="$FileNames" sign="true"><text>cc_topComment.xsp</text></item>
-<item name="$DesignerVersion"><text>8.5</text></item>
-
-
-
 
 </note>

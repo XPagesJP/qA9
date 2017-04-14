@@ -7,7 +7,7 @@
 	</xp:this.resources>
 
 	<xp:section id="section1"
-		header="ようこそ！！　qA9 for ICS(Louts) Developersへ" initClosed="true">
+		header="ようこそ！！　qA9 for ICS(Lotus) Developersへ" initClosed="true">
 		<xp:table style="width:100.0%">
 
 			<xp:tr>
