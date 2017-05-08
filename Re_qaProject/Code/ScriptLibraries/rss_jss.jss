@@ -17,8 +17,8 @@ rss.getRssFeeds = function(){
 	while(!!doc && 0 < limit){
 		guid = doc.getItemValueString("UniqueID");
 		title = doc.getItemValueString("Title");
-		docLink = siteUrl + "/" + "x_anspage.xsp?docId=" + guid;
-		docLink = docLink.replace("//","/");
+		var sep = (/\/$/.test(siteUrl)) ? "" : "/"
+		docLink = siteUrl + sep + "x_anspage.xsp?docId=" + guid;
 		desc = @Left(doc.getItemValueString("Body"), 100);
 		date = doc.getCreated().toJavaDate();
 		feedCreator.setTextEntry(guid,title,docLink,desc,date);

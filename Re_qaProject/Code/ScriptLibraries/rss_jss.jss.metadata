@@ -1,12 +1,12 @@
-<?xml version="1.0" encoding="UTF-8"?><note class="filter" maintenanceversion="1.6" replicaid="49257ED2001A4A57" version="9.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="596" sequence="11" unid="54A86E92CBB164F449257ED2001AAEEB">
-<created><datetime>20151002T135127,15+09</datetime></created>
-<modified><datetime>20160610T103042,15+09</datetime></modified>
-<revised><datetime>20160610T103042,14+09</datetime></revised>
-<lastaccessed><datetime>20160610T103042,15+09</datetime></lastaccessed>
-<addedtofile><datetime>20151002T135128,45+09</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Admin/O=LotusLab</name></updatedby>
-<wassignedby><name>CN=Admin/O=LotusLab</name></wassignedby>
+<?xml version="1.0" encoding="UTF-8"?><note class="filter" maintenanceversion="1.7" replicaid="49257C8300820851" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="12f2" sequence="67" unid="A6A0BED46B3716F149257DC6001DE543">
+<created><datetime>20150107T142632,35+09</datetime></created>
+<modified><datetime>20170508T180403,43+09</datetime></modified>
+<revised><datetime>20170508T180403,42+09</datetime></revised>
+<lastaccessed><datetime>20170508T180403,43+09</datetime></lastaccessed>
+<addedtofile><datetime>20150107T142632,38+09</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Kenji Ebihara/OU=R/O=RSI</name></updatedby>
+<wassignedby><name>CN=Kenji Ebihara/OU=R/O=RSI</name></wassignedby>
 <item name="$TITLE" sign="true"><text>rss_jss</text></item>
 <item name="$Flags"><text>.5834Q</text></item>
 <item name="$PublicAccess" sign="true"><text>1</text></item>
