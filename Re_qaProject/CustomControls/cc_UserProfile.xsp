@@ -5,6 +5,7 @@
 
 	<xp:this.resources>
 		<xp:styleSheet href="/qa.css"></xp:styleSheet>
+		<xp:script src="/Common_jss.jss" clientSide="false"></xp:script>
 	</xp:this.resources>
 	<xp:span style="color:rgb(128,128,255)"></xp:span>
 		<xp:inputHidden id="Host_name">
@@ -31,9 +32,8 @@ var PRF_path =Settingdoc.getItemValue("Profile_path");
 return PRF_path;}]]></xp:this.value>
 	</xp:inputHidden>
 	<xp:repeat id="repeat1" rows="1" var="PFLDoc">
-		<xp:this.value><![CDATA[#{javascript:var userName:NotesName = session.createName(compositeData.userName);
-var Targetuser = userName.getCommon();
-
+		<xp:this.value><![CDATA[#{javascript:// '@'が入っていると'getCommonで'その前まで切られてしまうので、@を他の文字に置き換える
+var Targetuser = Common.getCommonUserName(compositeData.userName);
 //var Targetuser = getComponent("sessionUser").getValue();
 
 
@@ -41,9 +41,10 @@ var sv =getComponent("Profile_SV").getValue();
 var path = getComponent("Profile_Path").getValue();
 
 var PRF_db = session.getDatabase(
-    (sv.size() === 0) ? '' : sv[0],
+    (sv.size() === 0) ? null : sv[0],
     path[0]);
 var PRF_view = PRF_db.getView("V_Profile");
+
 //return PRF_view.getAllEntriesByKey(Targetuser,true);
 return PRF_view.getAllEntriesByKey(Targetuser + "/XPages",true);}]]></xp:this.value>
 		<xp:panel>
@@ -52,7 +53,7 @@ return PRF_view.getAllEntriesByKey(Targetuser + "/XPages",true);}]]></xp:this.va
 
 
 
-			<xp:table styleClass="oneuser" >
+			<xp:table styleClass="oneuser">
 				<xp:tr>
 					<xp:td style="width:1px">
 						<xp:image id="image1"
@@ -169,7 +170,8 @@ return userNmae;
 									<xp:tr>
 										<xp:td colspan="4">
 											<xp:text escape="true"
-												id="UserID_big" style="color:rgb(128,128,128)" rendered="false">
+												id="UserID_big" style="color:rgb(128,128,128)"
+												rendered="false">
 												<xp:this.value><![CDATA[#{javascript:var profileDoc =PFLDoc.getDocument();
 
 var userNmae =profileDoc.getItemValueString("UserID");
@@ -178,8 +180,8 @@ return @Name("[ABBREVIATE]",userNmae);
 
 }]]></xp:this.value>
 											</xp:text>
-											<hr size="1"
-												color="#808080" rendered="false">
+											<hr size="1" color="#808080"
+												rendered="false">
 											</hr>
 										</xp:td>
 
@@ -290,7 +292,8 @@ return vPoint;}]]></xp:this.value>
 
 									<xp:tr>
 										<xp:td>タグ</xp:td>
-										<xp:td colspan="3" styleClass="inlineB">
+										<xp:td colspan="3"
+											styleClass="inlineB">
 											：
 											<xc:cc_Taglist>
 												<xc:this.TagField><![CDATA[#{javascript:var profileDoc =PFLDoc.getDocument();
@@ -299,7 +302,8 @@ var Tag =profileDoc.getItemValue("Tag");
 
 return @Implode(Tag,",")
 }]]></xc:this.TagField>
-											</xc:cc_Taglist></xp:td>
+											</xc:cc_Taglist>
+										</xp:td>
 
 
 									</xp:tr>

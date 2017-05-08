@@ -1,14 +1,16 @@
-<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.0" replicaid="4925801F00267BAA" version="9.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="5ea" sequence="10" unid="81E981DF894ABDC449257ED2001AAED8">
-<created><datetime>20151002T135126,96+09</datetime></created>
-<modified><datetime>20160830T161540,30+09</datetime></modified>
-<revised><datetime>20160830T161540,29+09</datetime></revised>
-<lastaccessed><datetime>20160830T161540,30+09</datetime></lastaccessed>
-<addedtofile><datetime>20160830T160227,17+09</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Administrator/O=OUG</name></updatedby>
-<wassignedby><name>CN=Administrator/O=OUG</name></wassignedby>
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.7" replicaid="49257C8300820851" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="436" sequence="75" unid="E53D1C8ED8FCA32049257DC6001126ED">
+<created><datetime>20150107T120720,77+09</datetime></created>
+<modified><datetime>20170508T192828,98+09</datetime></modified>
+<revised><datetime>20170508T192828,97+09</datetime></revised>
+<lastaccessed><datetime>20170508T192828,98+09</datetime></lastaccessed>
+<addedtofile><datetime>20150107T120723,14+09</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Kenji Ebihara/OU=R/O=RSI</name></updatedby>
+<wassignedby><name>CN=Kenji Ebihara/OU=R/O=RSI</name></wassignedby>
 <item name="$Flags"><text>gC~4;</text></item>
 <item name="$TITLE" sign="true"><text>c_Login.xsp</text></item>
+
+
 <item name="$DesignerVersion"><text>8.5.1</text></item>
 
 
@@ -18,6 +20,4 @@
 
 
 
-<item name="$FileNames" sign="true"><text>c_Login.xsp</text></item>
-
-</note>
+<item name="$FileNames" sign="true"><text>c_Login.xsp</text></item></note>

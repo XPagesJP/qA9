@@ -425,7 +425,7 @@ return @Implode(Tag,",")
 				<xp:column id="column4">
 					<xc:cc_UserProfile>
 						<xc:this.userName><![CDATA[#{javascript:var Author =viewEntry.getColumnValue("質問者名");
-return @Name("[ABBREVIATE]",Author)}]]></xc:this.userName>
+return Author;}]]></xc:this.userName>
 					</xc:cc_UserProfile>
 				</xp:column>
 			</xp:dataTable>

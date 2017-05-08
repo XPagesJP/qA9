@@ -8,11 +8,12 @@
 		<xp:dojoModule name="dijit.form.Button" />
 		<xp:styleSheet href="/c_login.css"></xp:styleSheet>
 		<xp:dojoModule name="dojo.cookie"></xp:dojoModule>
+		<xp:script src="/Common_jss.jss" clientSide="false"></xp:script>
 	</xp:this.resources>
 
 
-	
-	
+
+
 	<xp:scriptBlock id="scr_Caching"
 		rendered="#{javascript:return compositeData.allowBrowserCaching;}">
 		<xp:this.value><![CDATA["<meta http-equiv=\"pragma\" content=\"no-cache\" />"]]></xp:this.value>
@@ -312,14 +313,14 @@ function returnCookieVal(cookiename){
 	
 	
 	<xp:link escape="true" id="link2" value="x_ProfileEdit.xsp">
-		<xp:this.text><![CDATA[#{javascript:var userName:NotesName = session.createName(@UserName());
-if (userName.getCommon()=="Anonymous")
+		<xp:this.text><![CDATA[#{javascript:var commonName = Common.getCommonUserName(@UserName());
+if (commonName=="Anonymous")
 {
        return "";
 }
 else
 {
-       return userName.getCommon();
+       return commonName;
 }}]]></xp:this.text>
 		<xp:this.rendered><![CDATA[#{javascript:var userName:NotesName = session.createName(@UserName());
 if (userName.getCommon()=="Anonymous")

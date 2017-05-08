@@ -92,3 +92,13 @@ Common.getSnippetsDB = function(){
 	
 	return sdb;
 };
+
+Common.getCommonUserName = function(userName) {
+	var atmartAlt = '\t';
+	var _userName = userName;
+	_userName = _userName.replace(/\@/g, atmartAlt);
+	var userName:NotesName = session.createName(_userName);
+	var Targetuser = userName.getCommon();
+	Targetuser = Targetuser.replace(/\t/g, '@');	
+	return Targetuser;
+}

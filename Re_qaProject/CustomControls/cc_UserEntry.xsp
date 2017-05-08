@@ -151,6 +151,8 @@ return ErrMsg}]]></xp:this.value></xp:text>
 	//アドレス帳取得・登録チェック
 	var NamesServer = envdoc.getItemValueString("names_server");
 	var NamesPath = envdoc.getItemValueString("names_path");
+	NamesServer = (NamesServer === '') ? null : NamesServer;
+
 	var Namesdb:NotesDatabase = session.getDatabase(NamesServer,NamesPath);
 	if (Namesdb == null) {
 		sessionScope.ErrMsg = "アドレス帳の取得に失敗しました。管理者にご連絡ください。";
@@ -203,6 +205,7 @@ return ErrMsg}]]></xp:this.value></xp:text>
 	return true;
 
 }catch( e ){
+  print(e.message);
   sessionScope.ErrMsg=e;
 }
 }]]></xp:this.condition>
