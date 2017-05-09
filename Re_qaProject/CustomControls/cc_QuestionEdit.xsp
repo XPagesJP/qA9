@@ -117,7 +117,7 @@ return PRF_path;}]]></xp:this.value>
 					<xp:table style="margin-bottom:10.0px">
 
 						<xp:tr>
-							<xp:td style="width:42px">カテゴリ</xp:td>
+							<xp:td style="width:50px">カテゴリ</xp:td>
 							<xp:td>
 								<xp:label id="label6" for="category1"
 									value=":">
@@ -153,7 +153,7 @@ return PRF_path;}]]></xp:this.value>
 
 							<xp:tr>
 
-								<xp:td style="width:42px">タグ</xp:td>
+								<xp:td style="width:50px">タグ</xp:td>
 								<xp:td>
 									<xp:label id="label5"
 										for="category1" value=":">
@@ -241,6 +241,112 @@ return @Unique(TagList)}]]></xp:this.valueList>
 		</xp:table>
 		<xp:table
 			style="width:86%;margin-bottom:20.0px;margin-top:10.0px">
+			<xp:tr>
+				<xp:td style="background-color:rgb(246,246,246)">
+					環境情報
+				</xp:td>
+			</xp:tr>
+			<xp:tr>
+				<xp:td>
+					<xp:table border="0" style="margin:5.0px">
+						<xp:tr>
+							<xp:td
+								style="width:100px;height:50px;font-weight:bold" valign="top">
+								サーバー
+							</xp:td>
+							<xp:td align="right" valign="top">
+								OS、バージョン
+							</xp:td>
+							<xp:td valign="top">
+								：
+								<xp:inputText id="inputText_ServerOs"
+									style="width:200px;padding:4px;" value="#{docQues.ServerOs}">
+									<xp:typeAhead mode="full"
+										minChars="0" id="typeAhead3" ignoreCase="true">
+										<xp:this.valueList><![CDATA[#{javascript:var thList= @DbColumn(@DbName(),"V_EnvSearch",1)
+
+return @Unique(thList)}]]></xp:this.valueList>
+									</xp:typeAhead>
+								</xp:inputText>
+							</xp:td>
+							<xp:td align="right" valign="top">Dominoバージョン</xp:td>
+							<xp:td valign="top">：<xp:inputText id="inputText_DominoVer" style="width:200px;padding:4px;" value="#{docQues.DominoVer}">
+									<xp:typeAhead mode="full"
+										minChars="0" id="typeAhead1" ignoreCase="true">
+										<xp:this.valueList><![CDATA[#{javascript:var thList= @DbColumn(@DbName(),"V_EnvSearch",2)
+
+return @Unique(thList)}]]></xp:this.valueList>
+									</xp:typeAhead>
+</xp:inputText></xp:td>
+						</xp:tr>
+						<xp:tr>
+							<xp:td style="width:100px;font-weight:bold"
+								valign="top">
+								クライアント
+							</xp:td>
+							<xp:td align="right">OS、バージョン</xp:td>
+							<xp:td>
+								：
+								<xp:inputText id="inputText_ClientOS"
+									style="width:200px;padding:4px;" value="#{docQues.ClientOS}">
+									<xp:typeAhead mode="full"
+										minChars="0" id="typeAhead4" ignoreCase="true">
+										<xp:this.valueList><![CDATA[#{javascript:var thList= @DbColumn(@DbName(),"V_EnvSearch",3)
+
+return @Unique(thList)}]]></xp:this.valueList>
+									</xp:typeAhead>
+								</xp:inputText></xp:td>
+							<xp:td align="right">Notesバージョン</xp:td>
+							<xp:td>
+								：
+								<xp:inputText id="inputText_NotesVer"
+									style="width:200px;padding:4px;" value="#{docQues.NotesVer}">
+									<xp:typeAhead mode="full"
+										minChars="0" id="typeAhead6" ignoreCase="true">
+										<xp:this.valueList><![CDATA[#{javascript:var thList= @DbColumn(@DbName(),"V_EnvSearch",4)
+
+return @Unique(thList)}]]></xp:this.valueList>
+									</xp:typeAhead>
+								</xp:inputText></xp:td>
+						</xp:tr>
+						<xp:tr>
+							<xp:td style="height:30px">
+								<xp:span style="height:25.0px">
+								</xp:span>
+							</xp:td>
+							<xp:td>ブラウザの種類</xp:td>
+							<xp:td>
+								：
+								<xp:inputText id="inputText_BrowserVer"
+									style="width:200px;padding:4px;" value="#{docQues.BrowserVer}">
+									<xp:typeAhead mode="full"
+										minChars="0" id="typeAhead5" ignoreCase="true">
+										<xp:this.valueList><![CDATA[#{javascript:var thList= @DbColumn(@DbName(),"V_EnvSearch",5)
+
+return @Unique(thList)}]]></xp:this.valueList>
+									</xp:typeAhead>
+								</xp:inputText></xp:td>
+							<xp:td></xp:td>
+							<xp:td></xp:td>
+						</xp:tr>
+						
+						
+						<xp:tr>
+							<xp:td style="font-weight:bold"
+								valign="top">
+								その他
+							</xp:td>
+							<xp:td colspan="4">
+								<xp:inputTextarea id="inputTextarea_Env_etc" value="#{docQues.Env_etc}" style="width:100%;height:50px"></xp:inputTextarea>
+								</xp:td>
+
+							
+							
+						</xp:tr>
+					</xp:table>
+				</xp:td>
+			</xp:tr>
+			
 			<xp:tr>
 				<xp:td style="background-color:rgb(246,246,246)">
 					XSnippetsの参照を添付

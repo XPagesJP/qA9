@@ -1,22 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom"
-    xmlns:xe="http://www.ibm.com/xsp/coreex" dojoParseOnLoad="true">
-    <xp:this.resources>
-        <xp:styleSheet href="/qa.css"></xp:styleSheet>
-    </xp:this.resources>
-    <xp:panel styleClass="questionBox">
-    	<xp:this.data>
-    		<xp:dominoDocument var="docQues" action="openDocument"
-    			documentId="#{javascript:compositeData.docId;}"
-    			formName="FM_Question">
-    		</xp:dominoDocument>
-    	</xp:this.data>
-    	<xp:image id="image2" url="/Endiconp2mini.png"
-    		styleClass="EndImage">
+	xmlns:xe="http://www.ibm.com/xsp/coreex" dojoParseOnLoad="true">
+	<xp:this.resources>
+		<xp:styleSheet href="/qa.css" />
+	</xp:this.resources>
+	<xp:panel styleClass="questionBox">
+		<xp:this.data>
+			<xp:dominoDocument var="docQues" action="openDocument"
+				documentId="#{javascript:compositeData.docId;}" formName="FM_Question" />
+
+		</xp:this.data>
+		<xp:image id="image2" url="/Endiconp2mini.png" styleClass="EndImage">
 
 
 
-    		<xp:this.rendered><![CDATA[#{javascript://対象の文書
+			<xp:this.rendered><![CDATA[#{javascript://対象の文書
 var targetdoc = docQues.getDocument();
 
 //ステータスが 「9」解決済みの場合表示
@@ -26,76 +24,110 @@ if(targetdoc.getItemValueString("Status")=="2"){
 	return false;
 }
 }]]></xp:this.rendered>
-    	</xp:image>
-    	<div class="controle">
-    		<p>
-    			<xp:image url="/Q01.jpg" id="image1"></xp:image>
-    		</p>
-    		<xc:cc_QAccount></xc:cc_QAccount>
-    	</div>
-    	<div class="body">
-    		<xp:inputRichText id="inputRichText1"
-    			value="#{docQues.Body}" readonly="true">
-    		</xp:inputRichText>
-    		<xc:cc_AttachSnippets
-        		docQA="#{javascript:return docQues;}">
-        	</xc:cc_AttachSnippets>
-    		<xp:fileDownload id="fileDownload1"
-    			displayLastModified="false" displayCreated="false"
-    			hideWhen="true" value="#{docQues.TempFile}">
-    		</xp:fileDownload>
+		</xp:image>
+		<div class="controle">
+			<p>
+				<xp:image url="/Q01.jpg" id="image1" />
+			</p>
+			<xc:cc_QAccount />
+		</div>
+		<div class="body" style="min-height: 200px;">
+			<xp:inputRichText id="inputRichText1" value="#{docQues.Body}"
+				readonly="true" />
 
-    	</div>
-    	<div class="qaInfo">
-    		<xp:panel styleClass="inlineB">
-    			<span>カテゴリ:</span>
+			<xc:cc_AttachSnippets docQA="#{javascript:return docQues;}" />
 
-    			<xp:link escape="true" id="category_link">
-    				<xp:this.text><![CDATA[#{javascript:var doc =docQues.getDocument();
+
+
+		</div>
+		<xp:fileDownload id="fileDownload1"
+			displayLastModified="false" displayCreated="false" hideWhen="true"
+			value="#{docQues.TempFile}" />
+
+		<!-- 2017.05.09 環境情報追加 -->
+
+		<xp:table style="margin-left: 95px;width: 800px;margin-top:10px">
+			
+			<xp:tr>
+				<xp:td style="padding:10px">
+					<span style="color:rgb(0,128,255)">サーバー情報：</span>
+					<xp:label id="label1" style="margin-left:10px;">
+						<xp:this.value><![CDATA[#{javascript:docQues.getItemValueString("ServerOs")}]]></xp:this.value>
+					</xp:label>
+					<xp:label id="label2" style="margin-left:10px;">
+						<xp:this.value><![CDATA[#{javascript:docQues.getItemValueString("DominoVer")}]]></xp:this.value>
+					</xp:label>
+					　｜　<span style="color:rgb(0,128,255)">クライアント情報：</span>
+					<xp:label id="label3" style="margin-left:10px;">
+						<xp:this.value><![CDATA[#{javascript:docQues.getItemValueString("ClientOs")}]]></xp:this.value>
+					</xp:label>
+					<xp:label id="label4" style="margin-left:10px;">
+						<xp:this.value><![CDATA[#{javascript:docQues.getItemValueString("NotesVer")}]]></xp:this.value>
+					</xp:label>
+					<xp:label id="label5" style="margin-left:10px;">
+						<xp:this.value><![CDATA[#{javascript:docQues.getItemValueString("BrowserVer")}]]></xp:this.value>
+					</xp:label>
+					　｜　
+					<xp:label id="label6" style="margin-left:10px;">
+						<xp:this.value><![CDATA[#{javascript:docQues.getItemValueString("Env_etc")}]]></xp:this.value>
+					</xp:label>
+					
+					
+				</xp:td>
+			</xp:tr>
+		</xp:table>
+
+
+		<!-- 2017.05.09 環境情報追加 -->
+		<div class="qaInfo">
+			<xp:panel styleClass="inlineB">
+				<span>カテゴリ:</span>
+
+				<xp:link escape="true" id="category_link">
+					<xp:this.text><![CDATA[#{javascript:var doc =docQues.getDocument();
 
 doc.getItemValueString("Category");
 }]]></xp:this.text>
 
-    				<xp:eventHandler event="onclick" submit="true"
-    					refreshMode="complete">
-    					<xp:this.action>
+					<xp:eventHandler event="onclick" submit="true"
+						refreshMode="complete">
+						<xp:this.action>
 
-    						<xp:actionGroup>
+							<xp:actionGroup>
 
-    							<xp:executeScript>
-    								<xp:this.script><![CDATA[#{javascript:var doc =docQues.getDocument();
+								<xp:executeScript>
+									<xp:this.script><![CDATA[#{javascript:var doc =docQues.getDocument();
 
 var Target = doc.getItemValueString("Category");
 
 sessionScope.CategoryName = Target;}]]></xp:this.script>
-    							</xp:executeScript>
-    							<xp:openPage name="/top.xsp"></xp:openPage>
-    						</xp:actionGroup>
-    					</xp:this.action>
-    				</xp:eventHandler>
-    			</xp:link>
-    			<span class="separator">&#160;|&#160;</span>
-    			<span>タグ:</span>
-    			<xc:cc_Taglist id="Ques_Tag">
-    				<xc:this.TagField><![CDATA[#{javascript:
+								</xp:executeScript>
+								<xp:openPage name="/top.xsp" />
+							</xp:actionGroup>
+						</xp:this.action>
+					</xp:eventHandler>
+				</xp:link>
+				<span class="separator">&#160;|&#160;</span>
+				<span>タグ:</span>
+				<xc:cc_Taglist id="Ques_Tag">
+					<xc:this.TagField><![CDATA[#{javascript:
 var Tag =docQues.getItemValue("Tag");
 
 return @Implode(Tag,",")
 }]]></xc:this.TagField>
-    			</xc:cc_Taglist>
-    			<span class="separator">&#160; |&#160;</span>
-    			<span>質問日時:</span>
-    			<xp:text styleClass="value" escape="true"
-    				id="Ques_Created" value="#{docQues.Created}">
-    				<xp:this.converter>
-    					<xp:convertDateTime type="both">
-    					</xp:convertDateTime>
-    				</xp:this.converter>
-    			</xp:text>
+				</xc:cc_Taglist>
+				<span class="separator">&#160; |&#160;</span>
+				<span>質問日時:</span>
+				<xp:text styleClass="value" escape="true" id="Ques_Created"
+					value="#{docQues.Created}">
+					<xp:this.converter>
+						<xp:convertDateTime type="both" />
 
-    			<xp:image url="/3096_32.png" id="image5"
-    				style="width:20px;height:20px">
-    				<xp:this.rendered><![CDATA[#{javascript:var parentdoc = docQues.getDocument();
+					</xp:this.converter>
+				</xp:text>
+
+				<xp:image url="/3096_32.png" id="image5" style="width:20px;height:20px">
+					<xp:this.rendered><![CDATA[#{javascript:var parentdoc = docQues.getDocument();
 
 //質問者でなければ、非表示
 if (Common.getCurrentUser().name!=parentdoc.getItemValueString("Author")){
@@ -103,16 +135,16 @@ if (Common.getCurrentUser().name!=parentdoc.getItemValueString("Author")){
 }else{
        return true 
 }}]]></xp:this.rendered>
-    			</xp:image>
-    			<xp:text escape="false" id="Editlink"
-    				style="text-decoration:underline;color:rgb(0,0,255)">
-    				<xp:this.value><![CDATA[#{javascript:var doc =docQues.getDocument();
+				</xp:image>
+				<xp:text escape="false" id="Editlink"
+					style="text-decoration:underline;color:rgb(0,0,255)">
+					<xp:this.value><![CDATA[#{javascript:var doc =docQues.getDocument();
 var editdocID = doc.getUniversalID();
 return "<a href=\"x_QuestionCompose.xsp?docId=" 
 + editdocID + "\">" 
  + "編集する" + "</a>"}]]></xp:this.value>
 
-    				<xp:this.rendered><![CDATA[#{javascript:var parentdoc = docQues.getDocument();
+					<xp:this.rendered><![CDATA[#{javascript:var parentdoc = docQues.getDocument();
 
 //質問者でなければ、非表示
 if (Common.getCurrentUser().name!=parentdoc.getItemValueString("Author")){
@@ -120,12 +152,12 @@ if (Common.getCurrentUser().name!=parentdoc.getItemValueString("Author")){
 }else{
        return true 
 }}]]></xp:this.rendered>
-    			</xp:text>
+				</xp:text>
 
 
-    			<xp:link escape="true" id="Deletelink" text="削除"
-    				style="text-decoration:underline">
-    				<xp:this.rendered><![CDATA[#{javascript:var parentdoc = docQues.getDocument();
+				<xp:link escape="true" id="Deletelink" text="削除"
+					style="text-decoration:underline">
+					<xp:this.rendered><![CDATA[#{javascript:var parentdoc = docQues.getDocument();
 
 //質問者でなければ、非表示
 if (Common.getCurrentUser().name!=parentdoc.getItemValueString("Author")){
@@ -133,42 +165,40 @@ if (Common.getCurrentUser().name!=parentdoc.getItemValueString("Author")){
 }else{
        return true 
 }}]]></xp:this.rendered>
-    				<xp:image id="image7" url="/3159_32.png"
-    					style="height:20px;width:20px">
-    				</xp:image>
+					<xp:image id="image7" url="/3159_32.png" style="height:20px;width:20px" />
 
-    				<xp:eventHandler event="onclick" submit="true"
-    					refreshMode="complete">
-    					<xp:this.action>
 
-    						<xp:actionGroup>
-    							<xp:confirm
-    								message="この質問文書を削除してよろしいですか？">
-    							</xp:confirm>
-    							<xp:executeScript>
-    								<xp:this.script><![CDATA[#{javascript:var targetdoc = docQues.getDocument();
+					<xp:eventHandler event="onclick" submit="true"
+						refreshMode="complete">
+						<xp:this.action>
+
+							<xp:actionGroup>
+								<xp:confirm message="この質問文書を削除してよろしいですか？" />
+
+								<xp:executeScript>
+									<xp:this.script><![CDATA[#{javascript:var targetdoc = docQues.getDocument();
 //削除処理
 qa_JsLib.DeleteDocument(targetdoc,1);
 }]]></xp:this.script>
-    							</xp:executeScript>
-    							<xp:openPage name="/top.xsp"></xp:openPage>
-    						</xp:actionGroup>
-    					</xp:this.action>
-    				</xp:eventHandler>
-    			</xp:link>
+								</xp:executeScript>
+								<xp:openPage name="/top.xsp" />
+							</xp:actionGroup>
+						</xp:this.action>
+					</xp:eventHandler>
+				</xp:link>
 
-    			<xp:table style="width:100%">
-    				<xp:tr>
-    					<xp:td></xp:td>
-    					<xp:td style="text-align:left">
-    						<xc:cc_UserProfile>
-    							<xc:this.userName><![CDATA[#{javascript:var Author = docQues.getDocument().getItemValueString("Author");
+				<xp:table style="width:100%">
+					<xp:tr>
+						<xp:td />
+						<xp:td style="text-align:left">
+							<xc:cc_UserProfile>
+								<xc:this.userName><![CDATA[#{javascript:var Author = docQues.getDocument().getItemValueString("Author");
 return @Name("[ABBREVIATE]",Author)}]]></xc:this.userName>
-    						</xc:cc_UserProfile>
-    					</xp:td>
-    					<xp:td>
-    						<xp:panel id="Bestpanel">
-    							<xp:this.rendered><![CDATA[#{javascript:if (Common.getCurrentUser().name=="Anonymous")
+							</xc:cc_UserProfile>
+						</xp:td>
+						<xp:td>
+							<xp:panel id="Bestpanel">
+								<xp:this.rendered><![CDATA[#{javascript:if (Common.getCurrentUser().name=="Anonymous")
 {
        return false;
 }
@@ -177,60 +207,58 @@ else
        return true;
 }
 }]]></xp:this.rendered>
-    							<xp:image url="/2925_64.png" id="image3"
-    								title="お気に入り登録する" styleClass="StartIcon">
-    								<xp:this.rendered><![CDATA[#{javascript:var su = Common.getCurrentUser().name;
+								<xp:image url="/2925_64.png" id="image3" title="お気に入り登録する"
+									styleClass="StartIcon">
+									<xp:this.rendered><![CDATA[#{javascript:var su = Common.getCurrentUser().name;
 var Favmem = docQues.getItemValue('User_Favorite');
 if(@IsMember(su, Favmem) == @True()) {
 	return false ;
 } else {
 	return true ;
 }}]]></xp:this.rendered>
-    								<xp:eventHandler event="onclick"
-    									submit="true" refreshMode="partial"
-    									refreshId="Bestpanel" id="eventHandler1">
-    									<xp:this.action><![CDATA[#{javascript:var targetdoc = docQues.getDocument();
+									<xp:eventHandler event="onclick" submit="true"
+										refreshMode="partial" refreshId="Bestpanel" id="eventHandler1">
+										<xp:this.action><![CDATA[#{javascript:var targetdoc = docQues.getDocument();
 //お気に入り！質問文書-ユーザー登録
 qa_JsLib.SetFavoriteCountUD(1,targetdoc);
 
 //お気に入り！プロフィール-お気に入り先登録
 qa_JsLib.SetPersonHistory(targetdoc,3);
 }]]></xp:this.action>
-    								</xp:eventHandler>
-    							</xp:image>
-    							<xp:image url="/3227.png" id="image4"
-    								styleClass="StartIcon" title="お気に入り解除する">
-    								<xp:this.rendered><![CDATA[#{javascript:var su = Common.getCurrentUser().name;
+									</xp:eventHandler>
+								</xp:image>
+								<xp:image url="/3227.png" id="image4" styleClass="StartIcon"
+									title="お気に入り解除する">
+									<xp:this.rendered><![CDATA[#{javascript:var su = Common.getCurrentUser().name;
 var Favmem = docQues.getItemValue('User_Favorite');
 if(@IsMember(su, Favmem) == @True()) {
 	return true ;
 } else {
 	return false ;
 }}]]></xp:this.rendered>
-    								<xp:eventHandler event="onclick"
-    									submit="true" refreshMode="partial"
-    									refreshId="Bestpanel" id="eventHandler2">
-    									<xp:this.action><![CDATA[#{javascript:var targetdoc = docQues.getDocument();
+									<xp:eventHandler event="onclick" submit="true"
+										refreshMode="partial" refreshId="Bestpanel" id="eventHandler2">
+										<xp:this.action><![CDATA[#{javascript:var targetdoc = docQues.getDocument();
 //お気に入り！質問文書-ユーザー解除
 qa_JsLib.SetFavoriteCountUD(0,targetdoc);
 
 //お気に入り！プロフィール-お気に入り先解除
 qa_JsLib.SetPersonHistory(targetdoc,4);
 }]]></xp:this.action>
-    								</xp:eventHandler>
-    							</xp:image>
-    						</xp:panel>
-    					</xp:td>
-    					<xp:td>
-    						<xc:c_SelectSnippet></xc:c_SelectSnippet>
-    					</xp:td>
-    				</xp:tr>
-    			</xp:table>
-    		</xp:panel>
+									</xp:eventHandler>
+								</xp:image>
+							</xp:panel>
+						</xp:td>
+						<xp:td>
+							<xc:c_SelectSnippet />
+						</xp:td>
+					</xp:tr>
+				</xp:table>
+			</xp:panel>
 
 
 
-    	</div>
+		</div>
 
-    </xp:panel>
+	</xp:panel>
 </xp:view>
