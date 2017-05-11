@@ -364,7 +364,8 @@ qa_JsLib.InputChkAccount = function(accDoc, type){
 		
 		if (getComponent("LoginName").value == ""){
 			sessionScope.ErrMsg =  "ログインユーザー名が入力されていません。"
-		
+		}else if (!/^[\w\-]+$/g.test(getComponent("LoginName").value)){
+			sessionScope.ErrMsg =  "入力できる文字は、英数、ハイフン、アンダーバーのみです。"
 		}else if (Password1 == "" || Password2 == "" ){
 			sessionScope.ErrMsg =  "パスワードが入力されていません。"
 		
