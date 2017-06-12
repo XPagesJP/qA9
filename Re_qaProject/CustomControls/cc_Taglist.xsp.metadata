@@ -1,23 +1,18 @@
-<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.6" replicaid="49257ED2001A4A57" version="9.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="4fe" sequence="26" unid="222B75CE31DF534F49257ED2001AADA4">
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.8" replicaid="4925811E00232CF3" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="54e" sequence="14" unid="222B75CE31DF534F49257ED2001AADA4">
 <created><datetime>20151002T135123,88+09</datetime></created>
-<modified><datetime>20160610T103027,46+09</datetime></modified>
-<revised><datetime>20160610T103027,45+09</datetime></revised>
-<lastaccessed><datetime>20160610T103027,46+09</datetime></lastaccessed>
-<addedtofile><datetime>20151002T135125,76+09</datetime></addedtofile></noteinfo>
+<modified><datetime>20170612T174019,00+09</datetime></modified>
+<revised><datetime>20170612T174018,99+09</datetime></revised>
+<lastaccessed><datetime>20170612T174019,00+09</datetime></lastaccessed>
+<addedtofile><datetime>20170512T153635,66+09</datetime></addedtofile></noteinfo>
 <updatedby><name>CN=Admin/O=LotusLab</name></updatedby>
 <wassignedby><name>CN=Admin/O=LotusLab</name></wassignedby>
 <item name="$Comment" sign="true"><text>タグのみのコントロール</text></item>
 <item name="$TITLE"><text>cc_Taglist.xsp</text></item>
 <item name="$Flags"><text>gC~4;</text></item>
-
-
-
-
-<item name="$FileNames" sign="true"><text>cc_Taglist.xsp</text></item>
 <item name="$DesignerVersion"><text>8.5.1</text></item>
 
 
 
 
-</note>
+<item name="$FileNames" sign="true"><text>cc_Taglist.xsp</text></item></note>
