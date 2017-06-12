@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.6" replicaid="49257ED2001A4A57" version="9.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="536" sequence="29" unid="4D8FB3E152DC0BB149257ED2001AAE10">
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.8" replicaid="4925811E00232CF3" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="596" sequence="20" unid="4D8FB3E152DC0BB149257ED2001AAE10">
 <created><datetime>20151002T135124,96+09</datetime></created>
-<modified><datetime>20160610T102049,06+09</datetime></modified>
-<revised><datetime>20160610T102049,05+09</datetime></revised>
-<lastaccessed><datetime>20160610T102049,06+09</datetime></lastaccessed>
-<addedtofile><datetime>20151002T135126,88+09</datetime></addedtofile></noteinfo>
+<modified><datetime>20170612T180240,85+09</datetime></modified>
+<revised><datetime>20170612T180240,84+09</datetime></revised>
+<lastaccessed><datetime>20170612T180240,85+09</datetime></lastaccessed>
+<addedtofile><datetime>20170512T153639,46+09</datetime></addedtofile></noteinfo>
 <updatedby><name>CN=Admin/O=LotusLab</name></updatedby>
 <wassignedby><name>CN=Admin/O=LotusLab</name></wassignedby>
 <item name="$Comment"><text>タグのみのコントロール</text></item>
@@ -15,4 +15,10 @@
 
 
 
-<item name="$FileNames" sign="true"><text>cc_AppLayout.xsp</text></item></note>
+
+
+
+
+<item name="$FileNames" sign="true"><text>cc_AppLayout.xsp</text></item>
+
+</note>
