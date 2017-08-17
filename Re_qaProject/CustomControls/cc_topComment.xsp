@@ -7,8 +7,13 @@
 	</xp:this.resources>
 
 	<xp:section id="section1"
-		header="ようこそ！！　qA9 for ICS(Lotus) Developersへ" initClosed="true">
-		<xp:table style="width:100.0%">
+		header="ようこそ！！　qA9 for ICS(Lotus) Developersへ">
+		<xp:this.initClosed><![CDATA[#{javascript:var commonName = Common.getCommonUserName(@UserName());
+if (commonName=="Anonymous"){
+	return false;
+} else {
+	return true;
+}}]]></xp:this.initClosed><xp:table style="width:100.0%">
 
 			<xp:tr>
 				<xp:td valign="top">

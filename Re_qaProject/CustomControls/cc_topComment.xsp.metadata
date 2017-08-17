@@ -1,12 +1,12 @@
-<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.4" replicaid="49257E0A001A0492" version="9.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="34e" sequence="248" unid="864CC437480FEE2649257CE800458FDB">
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.5" replicaid="4925817F0019334E" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="4ae" sequence="10" unid="864CC437480FEE2649257CE800458FDB">
 <created><datetime>20140530T213948,11+09</datetime></created>
-<modified><datetime>20170413T185539,94+09</datetime></modified>
-<revised><datetime>20170413T185539,93+09</datetime></revised>
-<lastaccessed><datetime>20170413T185539,94+09</datetime></lastaccessed>
-<addedtofile><datetime>20150316T134500,50+09</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Admin Admin/O=Domino</name></updatedby>
-<wassignedby><name>CN=Admin Admin/O=Domino</name></wassignedby>
+<modified><datetime>20170817T133604,88+09</datetime></modified>
+<revised><datetime>20170817T133604,87+09</datetime></revised>
+<lastaccessed><datetime>20170817T133604,88+09</datetime></lastaccessed>
+<addedtofile><datetime>20170817T133538,21+09</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Administrator/O=OUG</name></updatedby>
+<wassignedby><name>CN=Administrator/O=OUG</name></wassignedby>
 <item name="$Flags"><text>gC~4;</text></item>
 <item name="$TITLE"><text>cc_topComment.xsp</text></item>
 <item name="$Comment" sign="true"><text>トップページのサイト説明</text></item>
