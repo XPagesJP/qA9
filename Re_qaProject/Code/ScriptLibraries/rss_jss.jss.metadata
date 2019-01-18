@@ -1,12 +1,12 @@
-<?xml version="1.0" encoding="UTF-8"?><note class="filter" maintenanceversion="1.7" replicaid="49257C8300820851" version="9.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="12f2" sequence="67" unid="A6A0BED46B3716F149257DC6001DE543">
+<?xml version="1.0" encoding="UTF-8"?><note class="filter" replicaid="49258273002E3161" version="10.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="14a" sequence="3" unid="A6A0BED46B3716F149257DC6001DE543">
 <created><datetime>20150107T142632,35+09</datetime></created>
-<modified><datetime>20170508T180403,43+09</datetime></modified>
-<revised><datetime>20170508T180403,42+09</datetime></revised>
-<lastaccessed><datetime>20170508T180403,43+09</datetime></lastaccessed>
-<addedtofile><datetime>20150107T142632,38+09</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Kenji Ebihara/OU=R/O=RSI</name></updatedby>
-<wassignedby><name>CN=Kenji Ebihara/OU=R/O=RSI</name></wassignedby>
+<modified><datetime dst="true">20180418T043127,14-04</datetime></modified>
+<revised><datetime>20180418T172449,97+09</datetime></revised>
+<lastaccessed><datetime dst="true">20180418T043127,14-04</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20180418T043127,14-04</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Admin Domino/O=MLUG</name></updatedby>
+<wassignedby><name>CN=Admin Domino/O=MLUG</name></wassignedby>
 <item name="$TITLE" sign="true"><text>rss_jss</text></item>
 <item name="$Flags"><text>.5834Q</text></item>
 <item name="$PublicAccess" sign="true"><text>1</text></item>

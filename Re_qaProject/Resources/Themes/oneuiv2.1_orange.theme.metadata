@@ -1,12 +1,12 @@
-<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.6" replicaid="49257ED2001A4A57" version="9.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="606" sequence="11" unid="229EB1CF0BE5237349257F96002AA5FC">
+<?xml version="1.0" encoding="UTF-8"?><note class="form" replicaid="49258273002E3161" version="10.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="296" sequence="5" unid="229EB1CF0BE5237349257F96002AA5FC">
 <created><datetime>20160415T164550,04+09</datetime></created>
-<modified><datetime>20160610T103040,93+09</datetime></modified>
-<revised><datetime>20160610T103040,92+09</datetime></revised>
-<lastaccessed><datetime>20160610T103040,93+09</datetime></lastaccessed>
-<addedtofile><datetime>20160415T164550,18+09</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Admin/O=LotusLab</name></updatedby>
-<wassignedby><name>CN=Admin/O=LotusLab</name></wassignedby>
+<modified><datetime dst="true">20180418T043202,62-04</datetime></modified>
+<revised><datetime>20180418T172443,19+09</datetime></revised>
+<lastaccessed><datetime dst="true">20180418T043202,62-04</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20180418T043202,62-04</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Admin Domino/O=MLUG</name></updatedby>
+<wassignedby><name>CN=Admin Domino/O=MLUG</name></wassignedby>
 <item name="$Flags"><text>34567Cg~`</text></item>
 <item name="$TITLE" sign="true"><text>oneuiv2.1_orange.theme</text></item>
 <item name="$DesignerVersion"><text>8.5.3</text></item>

@@ -1,14 +1,13 @@
 <?xml version='1.0' encoding='utf-8'?>
-<note class='filter' xmlns='http://www.lotus.com/dxl' version='9.0' maintenanceversion='1.6'
- replicaid='49257ED2001A4A57'>
-<noteinfo noteid='5b2' unid='E7F8E48BD773666349257ED2001AAF20' sequence='10'>
+<note class='filter' xmlns='http://www.lotus.com/dxl' version='10.0' replicaid='49258273002E3161'>
+<noteinfo noteid='156' unid='E7F8E48BD773666349257ED2001AAF20' sequence='2'>
 <created><datetime>20151002T135127,68+09</datetime></created>
-<modified><datetime>20160610T103052,08+09</datetime></modified>
-<revised><datetime>20160610T103052,07+09</datetime></revised>
-<lastaccessed><datetime>20160610T103052,08+09</datetime></lastaccessed>
-<addedtofile><datetime>20151002T135128,85+09</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Admin/O=LotusLab</name></updatedby>
-<wassignedby><name>CN=Admin/O=LotusLab</name></wassignedby>
+<modified><datetime dst='true'>20180418T043128,16-04</datetime></modified>
+<revised><datetime>20180418T172450,34+09</datetime></revised>
+<lastaccessed><datetime dst='true'>20180418T043128,16-04</datetime></lastaccessed>
+<addedtofile><datetime dst='true'>20180418T043128,16-04</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Admin Domino/O=MLUG</name></updatedby>
+<wassignedby><name>CN=Admin Domino/O=MLUG</name></wassignedby>
 <item name='$POID'><datetime>20140612T203200,49+09</datetime></item>
 <item name='$TITLE' sign='true'><text>履歴チェック|AG_Log_Chk</text></item>
 <item name='$AssistType' sign='true'><number>65413</number></item>
@@ -36,13 +35,13 @@ gQYAAAAA
 <item name='$DesignerVersion' sign='true'><text>8.5.3</text></item>
 <item name='$AssistRunInfo' summary='true'>
 <rawitemdata type='3'>
-BgAAAgAACABSBgAAAAAAAAUAAAAwAAAAAAAAAAAAAAAAAAAALwEAAAAAAAAAAAAAAAAAABAAAAAA
-AAAAx5CBAGl/JUkAAAAAqOIlAGl/JUmpDwQAVX8lSQAAAAAAAAAAAAAAAAAAAAAAAAAAEINHEIFb
-EINXEINGEIOTEINnIBCXmhCX8BCDYBCDRhCDYhCDTnxBR19Mb2dfQ2hrIBCCzCAyMDE2LzAzLzAy
-IDA4OjM1OjEyIBCCxRCCzBCOwBCNcxCCqhCKShCObhCCtRCC3BCCtRCCvRCBQg0KMCAQlbYQj5EQ
-gqoQjJ8QjfUQj/AQjI8QgskQiOoQknYQgrUQgtwQgrUQgr0QgUINCkxvdHVzU2NyaXB0IBCC8BCO
-wBCNcxCCtRCC3BCCtRCCvQ0KEINHEIFbEINXEINGEIOTEINnIBCXmhCX8BCDYBCDRhCDYhCDTnxB
-R19Mb2dfQ2hrIBCCzBCOwBCNcxCCqhCPSRCXuRCCtRCC3BCCtRCCvRCBQigyMDE2LzAzLzAyIDA4
+BgAAAgAACABSAQAAAAAAAAUAAAAwAAAAAAAAAAAAAAAAAAAA6AAAAAAAAAAAAAAAAAAAABAAAAAA
+AAAAhbETAIaDJYUAAAAAkNMuAHOCJYUyyy4Ac4IlhQAAAAAAAAAAAAAAAAAAAAAAAAAAU3RhcnRl
+ZCBydW5uaW5nIGFnZW50ICcQl5oQl/AQg2AQg0YQg2IQg058QUdfTG9nX0Noaycgb24gMDEvMTcv
+MjAxOSAxMDozNTowNiBQTQ0KRm91bmQgMCBkb2N1bWVudChzKSB0aGF0IG1hdGNoIHNlYXJjaCBj
+cml0ZXJpYQ0KUmFuIExvdHVzU2NyaXB0IGNvZGUNCkRvbmUgcnVubmluZyBhZ2VudCAnEJeaEJfw
+EINgEINGEINiEINOfEFHX0xvZ19DaGsnIG9uIDAxLzE3LzIwMTkgMTA6MzU6MDYgUE0NCgANCuby
+TO+Y1dqMOBYmAJp+JUmOwBCNcxCCqhCPSRCXuRCCtRCC3BCCtRCCvRCBQigyMDE2LzAzLzAyIDA4
 OjM1OjEyKQ0KAA0K5vJM75jV2ow4FiYAmn4lSaqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq
 qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq
 qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq

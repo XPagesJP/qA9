@@ -1,12 +1,12 @@
-<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.6" replicaid="49257ED2001A4A57" version="9.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="4a6" sequence="11" unid="D5D1D46C4156A5CD49257ED2001AAD24">
+<?xml version="1.0" encoding="UTF-8"?><note class="form" replicaid="49258273002E3161" version="10.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="5ba" sequence="3" unid="D5D1D46C4156A5CD49257ED2001AAD24">
 <created><datetime>20151002T135122,60+09</datetime></created>
-<modified><datetime>20160610T103023,27+09</datetime></modified>
-<revised><datetime>20160610T103023,26+09</datetime></revised>
-<lastaccessed><datetime>20160610T103023,27+09</datetime></lastaccessed>
-<addedtofile><datetime>20151002T135124,38+09</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Admin/O=LotusLab</name></updatedby>
-<wassignedby><name>CN=Admin/O=LotusLab</name></wassignedby>
+<modified><datetime dst="true">20180418T043255,85-04</datetime></modified>
+<revised><datetime>20180418T172445,37+09</datetime></revised>
+<lastaccessed><datetime dst="true">20180418T043255,85-04</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20180418T043255,85-04</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Admin Domino/O=MLUG</name></updatedby>
+<wassignedby><name>CN=Admin Domino/O=MLUG</name></wassignedby>
 <item name="$TITLE"><text>3159_32.png</text></item>
 <item name="$Flags"><text>34CiQ</text></item>
 <item name="$FlagsExt" sign="true"><text>D</text></item>

@@ -20,7 +20,8 @@
 	<xp:panel id="contentBody">
 		<xp:this.data>
 			<xp:dominoView var="view1"
-				keys="#{javascript:sessionScope.CategoryName;}" keysExactMatch="true">
+				keys="#{javascript:sessionScope.CategoryName;}"
+				keysExactMatch="true">
 				<xp:this.viewName><![CDATA[#{javascript:var sortColumn = sessionScope.sortColumn;
 var Status = sessionScope.Status;
 var CategoryName = sessionScope.CategoryName;
@@ -56,6 +57,13 @@ if (Status == "All" && sortColumn == "Created" ){
 	viewName = "V_AnswerCount_Open"
 }else if (Status == "Close" && sortColumn == "Count_Answer"){
 	viewName = "V_AnswerCount_Close"
+}else if (Status == "All" && sortColumn == "AnsModified"){
+	viewName = "V_ModifiedDate_All"
+}else if (Status == "Open" && sortColumn == "AnsModified"){
+	viewName = "V_ModifiedDate_Open"
+}else if (Status == "Close" && sortColumn == "AnsModified"){
+	viewName = "V_ModifiedDate_Close"	
+	
 }	
 
 if (CategoryName != null && CategoryName != ""){
@@ -171,6 +179,22 @@ view1.gotoFirstPage()}]]></xp:this.action>
 							<xp:eventHandler event="onclick" submit="true"
 								refreshMode="partial" refreshId="contentBody">
 								<xp:this.action><![CDATA[#{javascript:sessionScope.sortColumn="Created"
+
+//ページャ 1ページ目に移動
+var view1:com.ibm.xsp.component.xp.XspViewPanel=getComponent("opportunitiesDataTable");
+view1.gotoFirstPage()}]]></xp:this.action>
+							</xp:eventHandler>
+						</xp:link>
+					</li>
+					<li>
+						<xp:link escape="true" text="更新順" id="modifiedDateSort">
+							<xp:this.styleClass><![CDATA[#{javascript://getSortLinkStyleClass("質問日")}]]></xp:this.styleClass>
+							<xp:this.style><![CDATA[#{javascript:if (sessionScope.sortColumn=="AnsModified"){
+	"color:rgb(255,0,0);font-weight:bold"
+}}]]></xp:this.style>
+							<xp:eventHandler event="onclick" submit="true"
+								refreshMode="partial" refreshId="contentBody">
+								<xp:this.action><![CDATA[#{javascript:sessionScope.sortColumn="AnsModified"
 
 //ページャ 1ページ目に移動
 var view1:com.ibm.xsp.component.xp.XspViewPanel=getComponent("opportunitiesDataTable");

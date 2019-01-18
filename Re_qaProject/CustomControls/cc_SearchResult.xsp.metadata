@@ -1,12 +1,12 @@
-<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.6" replicaid="49257ED2001A4A57" version="9.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="506" sequence="26" unid="5B0491A9E3625B3A49257ED2001AADB1">
+<?xml version="1.0" encoding="UTF-8"?><note class="form" replicaid="49258273002E3161" version="10.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="3c6" sequence="10" unid="5B0491A9E3625B3A49257ED2001AADB1">
 <created><datetime>20151002T135124,01+09</datetime></created>
-<modified><datetime>20160610T103027,35+09</datetime></modified>
-<revised><datetime>20160610T103027,34+09</datetime></revised>
-<lastaccessed><datetime>20160610T103027,35+09</datetime></lastaccessed>
-<addedtofile><datetime>20151002T135125,92+09</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Admin/O=LotusLab</name></updatedby>
-<wassignedby><name>CN=Admin/O=LotusLab</name></wassignedby>
+<modified><datetime dst="true">20181211T100130,16-04</datetime></modified>
+<revised><datetime dst="true">20181211T100130,15-04</datetime></revised>
+<lastaccessed><datetime dst="true">20181211T100130,16-04</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20180418T043218,36-04</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Admin Domino/O=MLUG</name></updatedby>
+<wassignedby><name>CN=Admin Domino/O=MLUG</name></wassignedby>
 <item name="$Comment" sign="true"><text>タグのみのコントロール</text></item>
 <item name="$TITLE"><text>cc_SearchResult.xsp</text></item>
 <item name="$Flags"><text>gC~4;</text></item>
@@ -15,8 +15,8 @@
 
 
 <item name="$FileNames" sign="true"><text>cc_SearchResult.xsp</text></item>
-<item name="$DesignerVersion"><text>8.5.2</text></item>
 
+<item name="$DesignerVersion"><text>8.5.3</text></item>
 
 
 

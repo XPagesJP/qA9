@@ -1,14 +1,13 @@
 <?xml version='1.0' encoding='utf-8'?>
-<note class='filter' xmlns='http://www.lotus.com/dxl' version='9.0' maintenanceversion='1.6'
- replicaid='49257ED2001A4A57'>
-<noteinfo noteid='5ba' unid='A219F533881B8C2B49257ED2001AAF26' sequence='10'>
+<note class='filter' xmlns='http://www.lotus.com/dxl' version='10.0' replicaid='49258273002E3161'>
+<noteinfo noteid='146' unid='A219F533881B8C2B49257ED2001AAF26' sequence='2'>
 <created><datetime>20151002T135127,74+09</datetime></created>
-<modified><datetime>20160610T103051,99+09</datetime></modified>
-<revised><datetime>20160610T103051,98+09</datetime></revised>
-<lastaccessed><datetime>20160610T103051,99+09</datetime></lastaccessed>
-<addedtofile><datetime>20151002T135128,89+09</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Admin/O=LotusLab</name></updatedby>
-<wassignedby><name>CN=Admin/O=LotusLab</name></wassignedby>
+<modified><datetime dst='true'>20180418T043126,94-04</datetime></modified>
+<revised><datetime>20180418T172450,38+09</datetime></revised>
+<lastaccessed><datetime dst='true'>20180418T043126,94-04</datetime></lastaccessed>
+<addedtofile><datetime dst='true'>20180418T043126,94-04</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Admin Domino/O=MLUG</name></updatedby>
+<wassignedby><name>CN=Admin Domino/O=MLUG</name></wassignedby>
 <item name='$POID'><datetime>20141209T212715,58+09</datetime></item>
 <item name='$TITLE' sign='true'><text>定期メール送信|ag_MaillSend</text></item>
 <item name='$AssistType' sign='true'><number>65413</number></item>
@@ -36,7 +35,7 @@ gQYAAAAA
 <item name='$DesignerVersion' sign='true'><text>8.5.3</text></item>
 <item name='$AssistRunInfo' summary='true'>
 <rawitemdata type='3'>
-BgAAAgAACABWBgAAAAAAAAUAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+BgAAAgAACABCAQAAAAAAAAUAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAKLNOAMd9JUl0njoAyHwlSQAAAAAAAAAAAAAAAAAAAAAAAAAAqqqqqqqq
 qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq
 qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq
