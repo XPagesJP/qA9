@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core"
+	xmlns:xc="http://www.ibm.com/xsp/custom"
+	xmlns:xe="http://www.ibm.com/xsp/coreex">
+
+
+	
+	<xc:cc_AppLayout pageTitle="ユーザー">
+		<xp:this.facets>
+
+			<xc:cc_AllUserList xp:key="facetMiddle"></xc:cc_AllUserList>
+		</xp:this.facets>
+	</xc:cc_AppLayout>
+</xp:view>

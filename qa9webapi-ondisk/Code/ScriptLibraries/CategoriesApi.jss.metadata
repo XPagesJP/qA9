@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?><note class="filter" maintenanceversion="1.5" replicaid="492580EB003122B2" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="646" sequence="5" unid="7050B998B24D3D8549257FEF002FF6E4">
+<created><datetime>20160713T174353,96+09</datetime></created>
+<modified><datetime>20170323T173212,42+09</datetime></modified>
+<revised><datetime>20170323T173212,41+09</datetime></revised>
+<lastaccessed><datetime>20170323T173212,42+09</datetime></lastaccessed>
+<addedtofile><datetime>20170322T175923,50+09</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Administrator/O=OUG</name></updatedby>
+<wassignedby><name>CN=Administrator/O=OUG</name></wassignedby>
+<item name="$POID"><datetime>20160705T185627,48+09</datetime></item>
+<item name="$TITLE" sign="true"><text>CategoriesApi</text></item>
+<item name="$Flags"><text>.5834Q</text></item>
+<item name="$PublicAccess" sign="true"><text>1</text></item>
+<item name="$DesignerVersion"><text>8.5.3</text></item>
+</note>

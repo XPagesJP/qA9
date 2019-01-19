@@ -6,20 +6,8 @@
         <xp:styleSheet href="/qa.css"></xp:styleSheet>
     </xp:this.resources>
     <div>
-        <p>
-            <xp:image id="image2">
-                <xp:this.url><![CDATA[#{javascript:if(docAns.getItemValueString("AorC") === "A"){
-    return "/A045_2.jpg";
-}else{
-    return "/Coment02.jpg";
-};}]]></xp:this.url>
-            </xp:image>
-        </p>
-        <p>
-            <xp:image id="image1" url="/bestA_P2.jpg"
+    <xp:image id="image1" url="/best_s.png"
                 styleClass="BestAnwerImage">
-
-
                 <xp:this.rendered><![CDATA[#{javascript://対象の文書
 if(docAns.getItemValueString("bestAns")==""){
     return false;
@@ -28,23 +16,47 @@ if(docAns.getItemValueString("bestAns")==""){
 }
 }]]></xp:this.rendered>
             </xp:image>
+    <p>
+             <xp:image id="image2">
+                <xp:this.url><![CDATA[#{javascript:if(docAns.getItemValueString("AorC") === "A"){
+    return "/A04.jpg";
+}else{
+    return "/Coment02.jpg";
+};}]]></xp:this.url>
+            </xp:image>
+
         </p>
         <xc:cc_Like targetDoc="#{javascript:docAns}"></xc:cc_Like>
     </div>
-    <xp_1:dialog id="dialog1"
-        style="background-color:rgb(188,217,233);border-color:rgb(0,0,0);border-style:groove;border-width:thin"
-        title="いいね!ユーザー">
+    <xp_1:dialog id="viewCountMemberList_dialog"
+    	style="background-color:rgb(188,217,233);border-color:rgb(0,0,0);border-style:groove;border-width:thin"
+    	title="いいね!ユーザー">
 
-        <xp:panel style="background-color:rgb(255,255,255)">
+    	<xp:panel style="background-color:rgb(255,255,255)">
 
-            <xp:repeat id="repeat" rows="30" var="rowUser">
+    		<xp:this.rendered><![CDATA[#{javascript://対象の文書;
 
-                <xc:cc_UserProfile>
-                    <xc:this.userName><![CDATA[#{javascript:return @Name("[ABBREVIATE]",rowUser)}]]></xc:this.userName>
-                </xc:cc_UserProfile>
-                <xp:this.value><![CDATA[#{javascript://対象の文書
 var targetdoc = docAns.getDocument();
-//閲覧数の取得	
+
+var user_good = targetdoc.getItemValueString("user_good")
+
+if (user_good=="")
+{
+       return false;
+}
+else
+{
+       return true;
+}
+}]]></xp:this.rendered>
+    		<xp:repeat id="repeat" rows="30" var="rowUser_A">
+
+    			<xc:cc_UserProfile>
+    				<xc:this.userName><![CDATA[#{javascript:return @Name("[ABBREVIATE]",rowUser_A)}]]></xc:this.userName>
+    			</xc:cc_UserProfile>
+    			<xp:this.value><![CDATA[#{javascript://対象の文書
+var targetdoc = docAns.getDocument();
+//閲覧数の取得
 
 	var user_good = targetdoc.getItemValue("user_good");
 
@@ -54,8 +66,26 @@ var targetdoc = docAns.getDocument();
 		return user_good;
 	
 	}}]]></xp:this.value>
-            </xp:repeat>
+    		</xp:repeat>
 
-        </xp:panel>
+    	</xp:panel>
+    	<xp:panel
+    		style="text-align:center;padding-left:2.0px;padding-right:2.0px;padding-top:2.0px;padding-bottom:2.0px">
+    		なし
+    		<xp:this.rendered><![CDATA[#{javascript://対象の文書;
+var targetdoc = docAns.getDocument();
+var user_good = targetdoc.getItemValueString("user_good")
+
+if (user_good=="")
+{
+       return true;
+}
+else
+{
+       return false;
+}
+}]]></xp:this.rendered>
+    		
+    	</xp:panel>
     </xp_1:dialog>
 </xp:view>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><note class="filter" replicaid="49258273002E3161" version="10.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="13a" sequence="3" unid="154647C58FD2EEEA49257ED2001AAEDE">
+<created><datetime>20151002T135127,02+09</datetime></created>
+<modified><datetime dst="true">20180418T043125,93-04</datetime></modified>
+<revised><datetime>20180418T172449,90+09</datetime></revised>
+<lastaccessed><datetime dst="true">20180418T043125,93-04</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20180418T043125,93-04</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Admin Domino/O=MLUG</name></updatedby>
+<wassignedby><name>CN=Admin Domino/O=MLUG</name></wassignedby>
+<item name="$LastBuildTime" sign="true"><datetime>20121123T213928,78+08</datetime></item>
+<item name="$BabelInfo" sign="true"><textlist><text>F0CE760432912A2B80257917004BF463</text><text>ja-JP</text></textlist></item>
+<item name="$LANGUAGE" sign="true"><text>ja</text></item>
+<item name="$POID"><datetime>20130827T210620,01+09</datetime></item>
+<item name="$TITLE" sign="true"><text>xpCGIVariables</text></item>
+<item name="$Flags"><text>.5834Q</text></item>
+<item name="$PublicAccess" sign="true"><text>1</text></item>
+<item name="$DesignerVersion"><text>8.5.3</text></item>
+</note>

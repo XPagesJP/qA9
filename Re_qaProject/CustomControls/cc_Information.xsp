@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core">
+
+	<xp:this.resources>
+		<xp:styleSheet href="/qa.css"></xp:styleSheet>
+	</xp:this.resources>
+
+	<xp:this.data>
+		<xp:dominoView var="view1" viewName="V_Information" >
+		</xp:dominoView>
+	</xp:this.data>
+	
+	<xp:panel style="margin-top:20.0px" styleClass="viewInfo">
+		<xp:button value="新規作成" id="createNewInfo">
+			<xp:this.rendered><![CDATA[#{javascript:context.getUser().getRoles().indexOf('[admin]') >= 0;}]]></xp:this.rendered>
+			<xp:eventHandler event="onclick" submit="true"
+				refreshMode="complete">
+				<xp:this.action>
+					<xp:openPage target="newDocument"
+						name="/x_EditInfo.xsp">
+					</xp:openPage>
+				</xp:this.action>
+			</xp:eventHandler>
+		</xp:button>
+		<xp:pager layout="Previous Group Next" id="pager1"
+			styleClass="lotusPaging" for="infoRepeat">
+		</xp:pager>
+		<xp:repeat id="infoRepeat" rows="10" value="#{view1}"
+			var="viewEntry" indexVar="index">
+			<!-- DataTableよりRepeatのほうが簡素で望ましい -->
+
+			<xp:section id="section1" type="wide"
+				style="font-size: 1.3em;">
+
+				<xp:this.header><![CDATA[#{javascript:(function(){
+	var colVals = viewEntry.getColumnValues();
+	var title = I18n.toString(colVals.elementAt(0).toJavaDate(), 'yyyy/MM/dd')
+    	        + " " + colVals.elementAt(1);
+	return title;
+})();
+}]]></xp:this.header>
+				<xp:this.initClosed><![CDATA[#{javascript:return index !== 0;
+//indexを参照すると、初めかどうかの判断が簡単にできる。
+}]]></xp:this.initClosed>
+				<xp:panel>
+
+					<xp:this.data>
+						<xp:dominoDocument var="viewdoc1"
+							formName="FM_Information" ignoreRequestParams="true"
+							action="openDocument"
+							documentId="#{javascript:viewEntry.getNoteID();}">
+						</xp:dominoDocument>
+					</xp:this.data>
+
+					<div style="margin: 5px 20px;">
+						<xp:link styleClass="actionLink" escape="true"
+							text="編集" id="editLink">
+							<xp:this.rendered><![CDATA[#{javascript://print(context.getUser().getRoles());
+context.getUser().getRoles().indexOf("[admin]") >= 0;}]]></xp:this.rendered>
+							<xp:eventHandler event="onclick"
+								submit="true" refreshMode="complete">
+								<xp:this.action>
+									<xp:openPage name="/x_EditInfo.xsp"
+										target="editDocument"
+										documentId="#{javascript:viewdoc1.getNoteID();}">
+									</xp:openPage>
+								</xp:this.action>
+							</xp:eventHandler>
+						</xp:link>
+						<xp:inputRichText id="body1" readonly="true"
+							value="#{viewdoc1.Body}">
+						</xp:inputRichText>
+					</div>
+				</xp:panel>
+			</xp:section>
+		</xp:repeat>
+		<xp:pager layout="Previous Group Next" id="pager2"
+			styleClass="lotusPaging" for="infoRepeat">
+		</xp:pager>
+
+	</xp:panel>
+</xp:view>

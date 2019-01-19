@@ -1,12 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xe="http://www.ibm.com/xsp/coreex"
-    xmlns:xc="http://www.ibm.com/xsp/custom">
-    <xp:this.resources>
-        <xp:styleSheet href="/qa.css"></xp:styleSheet>
-    </xp:this.resources>
-    <xc:cc_AppLayout>
-        <xp:this.facets>
-            
-        </xp:this.facets>
-    </xc:cc_AppLayout>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core"
+	xmlns:xe="http://www.ibm.com/xsp/coreex"
+	xmlns:xc="http://www.ibm.com/xsp/custom">
+	<xp:this.resources>
+		<xp:styleSheet href="/qa.css"></xp:styleSheet>
+	</xp:this.resources>
+	<xp:this.afterPageLoad><![CDATA[#{javascript:sessionScope.CategoryName = null;
+sessionScope.Status = null;
+sessionScope.sortColumn=null;}]]></xp:this.afterPageLoad>
+	<xc:cc_AppLayout>
+		<xp:this.facets>
+			<xc:cc_View_Category xp:key="facetMiddle"></xc:cc_View_Category>
+
+		</xp:this.facets>
+	</xc:cc_AppLayout>
 </xp:view>

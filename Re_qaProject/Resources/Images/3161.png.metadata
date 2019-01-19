@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?><note class="form" replicaid="49258273002E3161" version="10.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="532" sequence="3" unid="B023DC5F2387C1E249257ED2001AAD1F">
+<created><datetime>20151002T135122,55+09</datetime></created>
+<modified><datetime dst="true">20180418T043248,18-04</datetime></modified>
+<revised><datetime>20180418T172445,31+09</datetime></revised>
+<lastaccessed><datetime dst="true">20180418T043248,18-04</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20180418T043248,18-04</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Admin Domino/O=MLUG</name></updatedby>
+<wassignedby><name>CN=Admin Domino/O=MLUG</name></wassignedby>
+<item name="$TITLE"><text>3161.png</text></item>
+<item name="$FlagsExt" sign="true"><text>D</text></item>
+<item name="$ImagesWide" sign="true"><number>1</number></item>
+<item name="$ImagesHigh" sign="true"><number>1</number></item>
+<item name="$ImagesColorize" sign="true"><number>0</number></item>
+<item name="$FileModDT" sign="true"><datetime>20131126T201319,66+09</datetime></item>
+<item name="$ImageNames" sign="true"><text>3161.png</text></item>
+<item name="$Flags"><text>D34CiQ</text></item>
+<item name="$DesignerVersion"><text>8.5.3</text></item>
+
+</note>

@@ -1,21 +1,20 @@
-<?xml version="1.0" encoding="UTF-8"?><note class="form" replicaid="49257B870044B72C" version="9.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="20e" sequence="1" unid="8D657B5F8D24AE5B49257B65001471EF">
-<created><datetime>20130508T124318,87+09</datetime></created>
-<modified><datetime>20130611T213035,52+09</datetime></modified>
-<revised><datetime>20130508T124318,88+09</datetime></revised>
-<lastaccessed><datetime>20130611T213035,52+09</datetime></lastaccessed>
-<addedtofile><datetime>20130611T213035,52+09</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=System Administrator/O=rskkgdev852</name></updatedby>
-<wassignedby><name>CN=System Administrator/O=rskkgdev852</name></wassignedby>
+<?xml version="1.0" encoding="UTF-8"?><note class="form" replicaid="49258273002E3161" version="10.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="252" sequence="3" unid="1355AE4DD46FD81649257ED2001AAD0E">
+<created><datetime>20151002T135122,38+09</datetime></created>
+<modified><datetime dst="true">20180418T043159,10-04</datetime></modified>
+<revised><datetime>20180418T172445,01+09</datetime></revised>
+<lastaccessed><datetime dst="true">20180418T043159,10-04</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20180418T043159,10-04</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Admin Domino/O=MLUG</name></updatedby>
+<wassignedby><name>CN=Admin Domino/O=MLUG</name></wassignedby>
 <item name="$TITLE"><text>Q01.jpg</text></item>
 <item name="$Flags"><text>34CiQ</text></item>
-<item name="$FlagsExt"><text>D</text></item>
+<item name="$FlagsExt" sign="true"><text>D</text></item>
 <item name="$ImagesWide" sign="true"><number>1</number></item>
 <item name="$ImagesHigh" sign="true"><number>1</number></item>
 <item name="$ImagesColorize" sign="true"><number>0</number></item>
-
-
-<item name="$MimeType" sign="true"><text>image/jpeg</text></item>
 <item name="$FileModDT" sign="true"><datetime>20130508T083953,82+09</datetime></item>
 <item name="$ImageNames" sign="true"><text>Q01.jpg</text></item>
-<item name="$DesignerVersion"><text>8.5.3</text></item></note>
+<item name="$DesignerVersion"><text>8.5.3</text></item>
+
+</note>

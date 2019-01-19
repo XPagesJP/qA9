@@ -1,9 +1,102 @@
 .bold {
 	font-weight: bold;
 }
-div.qalist{
-    width: 800px;
+ /*------------------------------ 角丸CSS */
+    #xsnazzy { background:transparent; margin:1em; padding:0; }
+    #xsnazzy .h, #xsnazzy p { margin:0; padding:10px 15px; line-height:2em; }
+    #xsnazzy .h { font-size:1.5em; color:#60c8d8; padding-bottom:0; font-weight:bold; }
+    #xsnazzy .xtop, #xsnazzy .xbottom {display:block; background:transparent; font-size:1px; }
+    #xsnazzy b { display:block; overflow:hidden; }
+    #xsnazzy .xb1, #xsnazzy .xb2, #xsnazzy .xb3 {height:1px; }
+    #xsnazzy .xb2, #xsnazzy .xb3, #xsnazzy .xb4 {background:#FFFFFF; border-left:1px solid #708090; border-right:1px solid #708090; }
+    #xsnazzy .xb1 { margin:0 5px; background:#708090; }
+    #xsnazzy .xb2 { margin:0 3px; border-width:0 2px; }
+    #xsnazzy .xb3 { margin:0 2px; }
+    #xsnazzy .xb4 { height:2px; margin:0 1px; }
+    #xsnazzy .xboxcontent { display:block; background:#FFFFFF; border:0 solid #708090; border-width:0 1px; }
+    
+
+/*2013.11.26 nishi ADD >> */
+.CursorPoint{
+	cursor:pointer;
 }
+
+.button01{
+	height:40px;
+}
+.StartIcon{
+	height:40px;
+	width:40px;
+	cursor:pointer;
+}
+
+/*2013.11.26 nishi ADD << */
+
+
+/*2013.07.25 nishi ADD >> */
+/*ユーザー情報（小）*/
+.userImage01{
+	height:40px;
+	width:40px;
+	cursor:pointer;
+}
+
+/*ユーザー情報（大）*/
+.userImage02{
+	height:100px;
+	width:100px;
+	box-shadow:2px 2px 4px rgba(0,0,0,0.5);
+	border-collapse: separate;
+}
+
+
+/*編集ダイアログ*/
+.editDialog{
+	padding: 10px 10px 10px 10px;
+	background:#FFFFFF;
+}
+
+.allUserList > div{
+	display: inline-block;
+}
+
+.inlineB > div{
+	display: inline-block;
+}
+
+.userDialog{
+	max-width: 500px;
+	min-width: 350px;
+}
+
+.oneuser{
+	width: 250px;
+	min-height: 70px;
+	
+}
+
+
+.subTittle {
+	font-size:16pt;
+	font-weight:bold;
+}
+
+/*2013.07.25 nishi ADD << */div.qalist{
+    width: 900px;
+}
+
+/*2013.07.25 nishi ADD << */div.ansbox{
+    width: 790px;
+    margin-left:60.0px;
+}
+
+div#socialLinks{
+	text-align: left;
+}
+div#socialLinks .separater{
+	margin-left: 1em;
+}
+
 div.qalist h3{
     margin-top: 1em;
     font-size: 120%;
@@ -14,7 +107,7 @@ div.qalist h3{
 }
 div.questionBox,
 div.answerBox {
-	border-radius: 10px;
+	border-radius: 5px;
 	border: 1px solid #666;
 	overflow: hidden;
 	margin-bottom: 1em;
@@ -24,15 +117,20 @@ div.answerBox .attachmentFiles
 {
     border-top: 1px dotted #aaa;
 }
+.bodys{
+	width :1000px
+	}
+
 div.questionBox .body,
 div.answerBox .body {
-	float: left;
+	/*float: left;*/
 	padding: 1em;
+	margin-left:95px;
 }
 
 div.questionBox .controle,
 div.answerBox .controle {
-    padding-bottom: 1em;
+    padding-bottom: 2em;
 	float: left;
 	text-align: center;
 	width: 90px;
@@ -82,22 +180,93 @@ div.qaInfo .separator{
 }
 .answerList{
     padding-left: 2em;
-}
-.BestAnwerImage {
-	color: #ff0000;
-	position: relative;
-	left: -40px
-}
+}    
+
 .newAnswerInputBox{
     margin-top: 1em;
-    border-top: 1px solid #aaa;
+  /*  border-top: 1px solid #aaa;*/
     padding: 0.5em 0 0.5em 0;
 }
 .inputAnswerActions{
 	text-align: center;
 }
+
+.BestAnwerImage {
+	position: absolute;
+	left: 880px;
+}
+
 .EndImage {
 	position: absolute;
-	top: -5;
-	left: 40px
+	left: 00px;
+}
+
+/*ビュー用*/
+.Column_Main{
+	width:1200px;
+}
+.Column_3{
+	width: 200px;
+	min-width: 200px;
+	max-width: 200px;
+}
+.Column_count_G{
+	background-color:rgb(0,128,192);
+	height:24px;
+	width: 50px;
+	min-width: 50px;
+}
+.Column_count_A{
+	background-color:rgb(255,128,255);
+	width: 50px;
+	height:24px;
+	min-width: 50px;
+}
+.Column_count_V{
+	background-color:rgb(255,128,0);
+	width: 50px;
+	height:24px;
+	min-width: 50px;
+}
+.Column_status{
+	width: 60px;
+	min-width: 60px;
+}
+.viewInfo{}
+.viewInfo .actionLink{
+	font-size: 80%;
+}
+.editInfo {}
+.editInfo .row{
+	margin-bottom: 1em;
+}
+.editInfo .title{
+	width: 50em;
+}
+.editInfo .form-label{
+	font-weight: bold;
+	color: #696969;
+	display: inline-block;
+	width: 8em;
+	text-align: right;
+}
+.editInfo .forRT{
+	float: left;
+}
+.editInfo .domino-richtext{
+	float: left;
+	width: 80em;
+}
+.editInfo .actions{
+	margin-top: 1em;
+	padding-left: 8em;
+}
+.editInfo .actions button.primary{
+	font-size: 140%;
+	margin-right: 1em;
+}
+
+.bannerOuterLink {
+	margin: 10px 4px !important;
+	border: solid 2px #aaaaaa !important;
 }

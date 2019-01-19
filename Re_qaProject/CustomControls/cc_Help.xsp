@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core">
+	<xp:this.data>
+		<xp:dominoDocument var="document1" formName="FM_Help"
+			action="openDocument">
+			<xp:this.documentId><![CDATA[#{javascript:var accountlist = database.getView("V_Help");
+var helpdoc =accountlist.getFirstDocument();
+	
+if(helpdoc == null){	
+	return "";
+}else{	
+	return helpdoc.getUniversalID()
+}}]]></xp:this.documentId>
+		</xp:dominoDocument>
+	</xp:this.data>
+	<xp:this.resources>
+		<xp:styleSheet href="/qa.css"></xp:styleSheet>
+	</xp:this.resources>
+	
+	<xp:panel style="margin-top:20.0px">
+		<xp:inputRichText value="#{document1.Body}" id="body1" readonly="true">
+		</xp:inputRichText>
+	</xp:panel>
+</xp:view>

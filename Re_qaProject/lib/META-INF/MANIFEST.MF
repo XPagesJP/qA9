@@ -1,0 +1,63 @@
+Manifest-Version: 1.0
+Archiver-Version: Plexus Archiver
+Created-By: 1.6.0_10 (Sun Microsystems Inc.)
+Built-By: nlothian
+Build-Jdk: 1.6.0_10
+Export-Package: com.sun.syndication.feed.module;uses:="com.sun.syndica
+ tion.feed.impl,com.sun.syndication.feed";version="1.0",com.sun.syndic
+ ation.feed.module.impl;uses:="com.sun.syndication.feed.module";versio
+ n="1.0",com.sun.syndication.feed.synd;uses:="com.sun.syndication.feed
+ .module,com.sun.syndication.feed.module.impl,com.sun.syndication.feed
+ .impl,com.sun.syndication.feed.synd.impl,com.sun.syndication.feed";ve
+ rsion="1.0",com.sun.syndication;version="1.0",com.sun.syndication.fee
+ d.rss;uses:="com.sun.syndication.feed.module,com.sun.syndication.feed
+ .module.impl,com.sun.syndication.feed.impl,com.sun.syndication.feed";
+ version="1.0",com.sun.syndication.io.impl;uses:="com.sun.syndication.
+ feed.module,org.jdom.output,org.jdom.input,com.sun.syndication.io,com
+ .sun.syndication.feed.rss,com.sun.syndication.feed,org.jdom,com.sun.s
+ yndication.feed.atom";version="1.0",com.sun.syndication.feed.impl;use
+ s:="com.sun.syndication.feed";version="1.0",com.sun.syndication.feed.
+ synd.impl;uses:="com.sun.syndication.feed.module,com.sun.syndication.
+ feed.module.impl,com.sun.syndication.feed.synd,com.sun.syndication.fe
+ ed.rss,com.sun.syndication.io.impl,com.sun.syndication.feed,com.sun.s
+ yndication.feed.atom";version="1.0",com.sun.syndication.feed;uses:="c
+ om.sun.syndication.feed.module,com.sun.syndication.feed.module.impl,c
+ om.sun.syndication.feed.impl";version="1.0",com.sun.syndication.io;us
+ es:="com.sun.syndication.feed.module,org.jdom.output,com.sun.syndicat
+ ion.io.impl,org.jdom.input,org.w3c.dom,org.xml.sax,com.sun.syndicatio
+ n.feed.synd,com.sun.syndication.feed,org.jdom";version="1.0",com.sun.
+ syndication.feed.atom;uses:="com.sun.syndication.feed.module,com.sun.
+ syndication.feed.module.impl,com.sun.syndication.feed.impl,com.sun.sy
+ ndication.feed";version="1.0"
+Embed-Directory: META-INF/lib
+Bundle-ClassPath: .,META-INF/lib/jdom-1.0.jar
+Tool: Bnd-0.0.255
+Bundle-Name: ROME, RSS and atOM utilitiEs for Java
+Bundle-Vendor: Sun Microsystems
+Bundle-Version: 1.0
+Bnd-LastModified: 1236810206025
+Embed-Transitive: true
+Bundle-ManifestVersion: 2
+Bundle-Description: All Roads Lead to ROME. ROME is a set of Atom/RSS 
+ Java utilities that make it		easy to work in Java with most syndicati
+ on formats. Today it accepts all flavors of RSS		(0.90, 0.91, 0.92, 0
+ .93, 0.94, 1.0 and 2.0), Atom 0.3 and Atom 1.0 feeds. Rome includes		
+ a set of parsers and generators for the various flavors of feeds, as 
+ well as converters		to convert from one format to another. The parser
+ s can give you back Java objects that		are either specific for the fo
+ rmat you want to work with, or a generic normalized		SyndFeed object 
+ that lets you work on with the data without bothering about the		unde
+ rlying format.
+Embed-Dependency: *;scope=compile|runtime;inline=false
+Import-Package: com.sun.syndication;version="1.0",com.sun.syndication.
+ feed;version="1.0",com.sun.syndication.feed.atom;version="1.0",com.su
+ n.syndication.feed.impl;version="1.0",com.sun.syndication.feed.module
+ ;version="1.0",com.sun.syndication.feed.module.impl;version="1.0",com
+ .sun.syndication.feed.rss;version="1.0",com.sun.syndication.feed.synd
+ ;version="1.0",com.sun.syndication.feed.synd.impl;version="1.0",com.s
+ un.syndication.io;version="1.0",com.sun.syndication.io.impl;version="
+ 1.0",org.jdom;resolution:=optional,org.jdom.input;resolution:=optiona
+ l,org.jdom.output;resolution:=optional,org.w3c.dom,org.xml.sax
+Bundle-SymbolicName: rome.rome
+Bundle-DocURL: http://java.sun.com/
+

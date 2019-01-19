@@ -1,43 +1,401 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xe="http://www.ibm.com/xsp/coreex">
-    <xe:applicationLayout id="applicationLayout1">
-        <xp:callback facetName="facetMiddle" id="facetMiddle"></xp:callback>
-        <xe:this.facets>
-            <xp:panel xp:key="MastFooter" styleClass="lotusRight">
-                ver 0.0.0
-            </xp:panel>
-            <xp:callback facetName="facetRight" id="facetRight"
-                xp:key="RightColumn">
-            </xp:callback>
-            <xp:callback facetName="facetLeft" id="facetLeft"
-                xp:key="LeftColumn">
-            </xp:callback>
-        </xe:this.facets>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xe="http://www.ibm.com/xsp/coreex"
+	xmlns:xc="http://www.ibm.com/xsp/custom">
 
-        <xe:this.configuration>
-            <xe:oneuiApplication footer="false"
-                legalText="九州地区ノーツパートナー会 Copyright © 2013 Kyushu Notes Partner Community. All Rights Reserved."
-                productLogo="/logo.png" productLogoHeight="45px"
-                productLogoWidth="360px"
-                placeBarName="#{javascript:compositeData.placeBarName;}">
-                <xe:this.footerLinks></xe:this.footerLinks>
-                <xe:this.titleBarTabs>
-                    <xe:basicLeafNode label="トップ"></xe:basicLeafNode>
-                    <xe:basicLeafNode label="お気に入り"></xe:basicLeafNode>
-                    <xe:basicLeafNode label="履歴"></xe:basicLeafNode>
-                    <xe:basicLeafNode label="検索"></xe:basicLeafNode>
-                    <xe:basicLeafNode label="ユーザー"></xe:basicLeafNode>
-                    <xe:basicLeafNode label="ヘルプ"></xe:basicLeafNode>
-                </xe:this.titleBarTabs>
+	<xp:this.resources>
+		<xp:script src="/qa_JsLib.jss" clientSide="false"></xp:script>
+		<xp:styleSheet href="/qa.css"></xp:styleSheet>
+		<xp:script src="./highlight.pack.js" clientSide="true"></xp:script>
+		<xp:styleSheet href="/tomorrow-night-eighties.css"></xp:styleSheet>
+
+		<xp:script src="/qa_JsLibClient.js" clientSide="true"></xp:script>
+	</xp:this.resources>
+	<xp:this.beforePageLoad><![CDATA[#{javascript:var response = facesContext.getExternalContext().getResponse();
+response.setHeader("X-UA-Compatible", "IE=EmulateIE10");
+  
+//テーマの変更
+var myTheme = "";
+if (sessionScope.myTheme!=null){
+	myTheme = sessionScope.myTheme;
+}else{
+	var user = @Name("[ABBREVIATE]", @UserName());
+	if (user!="Anonymous"){
+		//プロフィールよりテーマ取得
+		var db:NotesDatabase = session.getCurrentDatabase();
+		//環境設定文書取得
+		var envvw:NotesView = db.getView("V_Setting");
+		var envdoc:NotesDocument = envvw.getFirstDocument();
+		
+		//プロフィールDB取得
+		var ProServer = envdoc.getItemValueString("Profile_server");
+		var ProPath = envdoc.getItemValueString("Profile_path");
+		var Prodb:NotesDatabase = session.getDatabase(ProServer,ProPath);
+		
+		//自分のプロフィール取得
+		var Provw:NotesView = Prodb.getView("V_Profile");			
+		var Prodoc:NotesDocument = Provw.getDocumentByKey(user, true);
+		if(Prodoc != null){
+			myTheme = Prodoc.getItemValueString("MyTheme");
+			if (myTheme == ""){
+				myTheme = "oneuiv2.1_blue";
+			}
+			sessionScope.myTheme = myTheme;
+		}
+	}
+}
+
+if (myTheme != ""){
+	var nowTheme = context.getSessionProperty('xsp.theme');
+	if (nowTheme != myTheme) {
+		context.setSessionProperty('xsp.theme', myTheme);
+		var pagename = "/"+@RightBack(context.getUrl().getAddress(),"/");
+		context.redirectToPage(pagename);
+	}
+}}]]></xp:this.beforePageLoad>
+
+	<xp:this.afterPageLoad><![CDATA[#{javascript:(function(){
+	var _title =
+		(!!compositeData.pageTitle ? 
+			compositeData.pageTitle + " - " :
+			'') + 
+		database.getTitle();
+	
+	view.setPageTitle(_title);
+	
+})();
+}]]></xp:this.afterPageLoad>
 
 
-                <xe:this.bannerUtilityLinks>
-                    <xe:userTreeNode userField="commonName">
-                    </xe:userTreeNode>
-                    <xe:loginTreeNode label="ログイン"></xe:loginTreeNode>
+	<xp:this.beforeRenderResponse><![CDATA[#{javascript:(function(){
+	var url = facesContext.getExternalContext().getRequest().getRequestURL();
+	if(/\.nsf$/.test(url.toString())){
+		context.redirectToPage(url + '/top.xsp');
+	};
+})();}]]></xp:this.beforeRenderResponse>
 
-                </xe:this.bannerUtilityLinks>
-            </xe:oneuiApplication>
-        </xe:this.configuration>
-    </xe:applicationLayout>
+	<xp:scriptBlock>
+		<xp:this.value><![CDATA[
+		XSP.addOnLoad(function(){
+			var ank = dojo.create('a', {'href':'./top.xsp'});
+			var img = dojo.query(".lotusBanner .siteBanner img")[0];
+			dojo.place(img, ank, "first");
+			dojo.query(".lotusBanner .siteBanner")
+				.style("cursor","pointer")
+				.addContent(ank);
+		});
+	]]>
+		</xp:this.value>
+	</xp:scriptBlock>
+	<xp:scriptBlock>
+		<xp:this.value><![CDATA[
+	( function(i, s, o, g, r, a, m) {
+		i['GoogleAnalyticsObject'] = r;
+		i[r] = i[r] || function() {
+			(i[r].q = i[r].q || []).push(arguments)
+		}, i[r].l = 1 * new Date();
+		a = s.createElement(o), m = s.getElementsByTagName(o)[0];
+		a.async = 1;
+		a.src = g;
+		m.parentNode.insertBefore(a, m)
+	})(window, document, 'script', '//www.google-analytics.com/analytics.js',
+			'ga');
+
+	ga('create', 'UA-46663140-2', 'xpages.jp');
+	ga('send', 'pageview');
+    loadSocialButton();	
+		]]></xp:this.value>
+	</xp:scriptBlock>
+	<div id="fb-root"></div>
+	<xp:scriptBlock id="scriptBlock2">
+		<xp:this.value><![CDATA[
+		]]></xp:this.value>
+	</xp:scriptBlock>
+	<script src="https://apis.google.com/js/platform.js" async="async"
+		defer="defer">
+		{lang: 'ja'}
+	</script>
+	<xe:applicationLayout id="applicationLayout1">
+		<xp:callback facetName="facetMiddle" id="facetMiddle"></xp:callback>
+		<xe:this.facets>
+			<xp:span xp:key="MastHeader"></xp:span>
+			<xp:panel xp:key="SearchBar">
+				<xc:cc_SearchBar></xc:cc_SearchBar>
+				<xc:c_Login allowBrowserCaching="false" loggedInMessage="ログイン成功。 読み込み中..."
+					loginFailMessage="Username / password incorrect, please try again"
+					loginFailReason1Message="You are not authorized to access this website."
+					loginFailReason3Message="Session has expired. You must log in again."
+					loginFailReason4Message="Session out of sync, server clocks may be out of sync."
+					loginFailReason5Message="Your account has been locked out."
+					loginButtonText="ログイン" labelName="ユーザー名" labelPassword="パスワード"
+					urlLoginNSF="/names.nsf" logoutLinkText="ログアウト" displayLogoutLink="true"
+					showRememberMe="false" textRememberMe="パスワードを記憶する" xDaysRememberMe="90"
+					cookieDomain="bureaubos.nl" loginFailReason2Message="認証に失敗しました。入力内容を確認してください。"
+					loginDialogTitle="ログイン or 新規登録" loginMessage="””" loginLinkText="ログイン or 新規登録">
+
+					<xc:this.urlAfterLogout><![CDATA[#{javascript:facesContext.getExternalContext().getRequestContextPath() + "/top.xsp"}]]></xc:this.urlAfterLogout>
+					<xc:this.urlAfterLogin><![CDATA[#{javascript:facesContext.getExternalContext().getRequestContextPath()  + "/top.xsp"}]]></xc:this.urlAfterLogin>
+					<xp:this.facets>
+						<xp:span xp:key="customLoginHeader"></xp:span>
+						<xp:span xp:key="customAfterLoginButton">
+							<xp:panel xp:key="MastHeader">
+
+								<xp:table>
+									<xp:tr>
+										<xp:td>
+											<xp:link escape="true" text="パスワードを忘れた方は、こちら" id="link2"
+												value="x_passwordReissue.xsp">
+											</xp:link>
+										</xp:td>
+									</xp:tr>
+									<xp:tr>
+										<xp:td style="padding-top:20.0px;padding-left:50.0px">
+											<xp:link escape="true" text="新規アカウント登録" id="link1"
+												value="x_Account.xsp">
+												<xp:image id="image1" url="/add.png">
+												</xp:image>
+											</xp:link>
+										</xp:td>
+									</xp:tr>
+								</xp:table>
+
+							</xp:panel>
+						</xp:span>
+
+					</xp:this.facets>
+				</xc:c_Login>
+			</xp:panel>
+
+
+			<xp:panel xp:key="MastFooter" styleClass="lotusRight">
+					ver 0.9.6 (Public Beta 6)
+			</xp:panel>
+			<xp:callback facetName="facetRight" id="facetRight"
+				xp:key="RightColumn">
+			</xp:callback>
+			<xp:callback facetName="facetLeft" id="facetLeft" xp:key="LeftColumn">
+			</xp:callback>
+		</xe:this.facets>
+
+		<xe:this.configuration>
+			<xe:oneuiApplication
+				legalText="Copyright © 2017 Kyushu Notes Partner Community. (九州地区ノーツパートナー会 ) All Rights Reserved."
+				productLogo="/logo.png" productLogoHeight="45px" productLogoWidth="360px"
+				placeBarName="#{javascript:compositeData.placeBarName;}"
+				productLogoClass="siteBanner">
+				<xe:this.footerLinks>
+
+
+
+
+				</xe:this.footerLinks>
+				<xe:this.titleBarTabs>
+					<xe:basicLeafNode label="トップ" href="top.xsp">
+
+
+						<xe:this.selected><![CDATA[#{javascript:qa_JsLib.IsSameUrlFileName(['','top.xsp','\.nsf']);}]]></xe:this.selected>
+					</xe:basicLeafNode>
+					<xe:basicLeafNode label="マイページ" href="x_ProfileEdit.xsp"
+						selected="#{javascript:IsSameUrlFileName('x_ProfileEdit.xsp');}">
+						<xe:this.rendered><![CDATA[#{javascript:var userName:NotesName = session.createName(@UserName());
+if (userName.getCommon()=="Anonymous")
+{
+       return false;
+}
+else
+{
+       return true;
+}}]]></xe:this.rendered>
+					</xe:basicLeafNode>
+					<xe:basicLeafNode label="履歴" href="x_History.xsp"
+						selected="#{javascript:IsSameUrlFileName('x_History.xsp');}"
+						loaded="false">
+					</xe:basicLeafNode>
+					<xe:basicLeafNode label="検索" href="x_Search.xsp"
+						selected="#{javascript:IsSameUrlFileName('x_Search.xsp');}">
+					</xe:basicLeafNode>
+					<xe:basicLeafNode label="ユーザー" href="x_Page_AlluserList.xsp"
+						selected="#{javascript:IsSameUrlFileName('x_Page_AlluserList.xsp');}">
+					</xe:basicLeafNode>
+					<xe:basicLeafNode label="お知らせ" href="x_Info.xsp"
+						selected="#{javascript:IsSameUrlFileName('x_Info.xsp');}">
+
+						<xe:this.image><![CDATA[#{javascript:
+//最新のお知らせ文書作成日より 30日以内であれば NEWアイコンを表示
+var isNew = false;
+var db:NotesDatabase = session.getCurrentDatabase();
+var infvw:NotesView = db.getView("V_Information");
+var infdoc:NotesDocument = infvw.getFirstDocument();
+if(infdoc != null){
+	var dtNow:NotesDateTime = session.createDateTime("Today");
+	var dtCreated:NotesDateTime = session.createDateTime(infdoc.getItemValue("Created").elementAt(0).toString());
+	if( dtNow.timeDifference(dtCreated) < 30 * 86400 ){
+		isNew = true;
+	}
+}
+return isNew == true ? "/new_icon.png" : "";}]]></xe:this.image>
+					</xe:basicLeafNode>
+					<xe:basicLeafNode label="ヘルプ" href="x_Help.xsp"
+						selected="#{javascript:IsSameUrlFileName('x_Help.xsp');}">
+					</xe:basicLeafNode>
+
+				</xe:this.titleBarTabs>
+
+
+				<xe:this.bannerUtilityLinks>
+					<xe:userTreeNode userField="commonName" rendered="false">
+					</xe:userTreeNode>
+					<xe:loginTreeNode label="ログイン"
+						loaded="${javascript:context.getUser().isAnonymous();}" rendered="false">
+					</xe:loginTreeNode>
+					<xe:basicLeafNode label="ログアウト"
+						loaded="${javascript:!(context.getUser().isAnonymous());}"
+						rendered="false">
+						<xe:this.href><![CDATA[#{javascript:(function(){
+	var accountlist = database.getView("V_Setting");
+	var Settingdoc =accountlist.getFirstDocument();
+	var hostName =Settingdoc.getItemValueString("Host_name");
+	var url = new XSPUrl(hostName + '/names.nsf');
+	url.setParameter('logout','');
+	url.setParameter('RedirectTo', hostName);
+	return url.toString();
+})();
+}]]></xe:this.href>
+					</xe:basicLeafNode>
+					<xe:basicContainerNode label="編集" rendered="false">
+						<xe:this.children>
+							<xe:pageTreeNode label="プロフィール変更" page="/x_ProfileEdit.xsp">
+								<xe:this.rendered><![CDATA[#{javascript://非表示
+return false;
+
+
+var userName:NotesName = session.createName(@UserName());
+if (userName.getCommon()=="Anonymous")
+{
+       return false;
+}
+else
+{
+       return true;
+}}]]></xe:this.rendered>
+							</xe:pageTreeNode>
+							<xe:pageTreeNode label="パスワード変更" page="/x_passwordChange.xsp">
+								<xe:this.rendered><![CDATA[#{javascript://非表示
+return false;
+
+var userName:NotesName = session.createName(@UserName());
+if (userName.getCommon()=="Anonymous")
+{
+       return false;
+}
+else
+{
+       return true;
+}}]]></xe:this.rendered>
+							</xe:pageTreeNode>
+							<xe:pageTreeNode label="パスワード再発行" page="/x_passwordReissue.xsp"
+								rendered="false">
+
+							</xe:pageTreeNode>
+							<xe:pageTreeNode label="アカウント登録" page="/x_Account.xsp">
+								<xe:this.rendered><![CDATA[#{javascript://非表示
+return false;
+var userName:NotesName = session.createName(@UserName());
+if (userName.getCommon()=="Anonymous")
+{
+       return true;
+}
+else
+{
+       return false;
+}
+}]]></xe:this.rendered>
+							</xe:pageTreeNode>
+						</xe:this.children>
+					</xe:basicContainerNode>
+
+
+
+
+
+
+
+
+
+
+					<xe:pageTreeNode page="/x_Account.xsp" rendered="false"
+						label="　" image="/newAcount.png" title="新規登録">
+
+					</xe:pageTreeNode>
+
+
+					<xe:basicLeafNode label="XPagesJP" title="XPagesJP"
+						styleClass="bannerOuterLink">
+						<xe:this.onClick><![CDATA[var url="#{javascript:
+  
+  var db:NotesDatabase = session.getCurrentDatabase();
+  var envvw:NotesView = db.getView('V_Setting');
+  var envdoc:NotesDocument = envvw.getFirstDocument();
+  if (envdoc == null){
+    return '';
+  }		
+  
+  // XSnippets URL取得
+  var linkurl = envdoc.getItemValueString('xpagesjp_url');
+  return linkurl;
+}";
+
+if(url != ""){
+  var w=window.open();
+  w.location.href= url;
+}]]></xe:this.onClick>
+					</xe:basicLeafNode>
+					<xe:basicLeafNode label="XSnippets 日本語版" title="XSnippets"
+						styleClass="bannerOuterLink">
+						<xe:this.onClick><![CDATA[var url="#{javascript:
+  
+  var db:NotesDatabase = session.getCurrentDatabase();
+  var envvw:NotesView = db.getView('V_Setting');
+  var envdoc:NotesDocument = envvw.getFirstDocument();
+  if (envdoc == null){
+    return '';
+  }		
+  
+  // XSnippets URL取得
+  var linkurl = envdoc.getItemValueString('snippets_url');
+  return linkurl;
+}";
+
+if(url != ""){
+  var w=window.open();
+  w.location.href= url;
+}]]></xe:this.onClick>
+					</xe:basicLeafNode>
+
+				</xe:this.bannerUtilityLinks>
+
+				<xe:this.placeBarActions>
+					<xe:basicLeafNode label="新しい質問の投稿" style="font-size:12pt"
+						href="x_QuestionCompose.xsp" image="/1871.png">
+						<xe:this.rendered><![CDATA[#{javascript:var userName:NotesName = session.createName(@UserName());
+if (userName.getCommon()=="Anonymous")
+{
+       return false;
+}
+else
+{
+       return true;
+}}]]></xe:this.rendered>
+					</xe:basicLeafNode>
+				</xe:this.placeBarActions>
+
+				<xe:this.bannerApplicationLinks>
+
+
+
+
+				</xe:this.bannerApplicationLinks>
+			</xe:oneuiApplication>
+		</xe:this.configuration>
+	</xe:applicationLayout>
+
 </xp:view>

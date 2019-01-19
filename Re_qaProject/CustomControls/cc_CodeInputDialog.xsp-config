@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<faces-config>
+  <faces-config-extension>
+    <namespace-uri>http://www.ibm.com/xsp/custom</namespace-uri>
+    <default-prefix>xc</default-prefix>
+  </faces-config-extension>
+  <composite-component>
+    <component-type>cc_CodeInputDialog</component-type>
+    <composite-name>cc_CodeInputDialog</composite-name>
+    <composite-file>/cc_CodeInputDialog.xsp</composite-file>
+    <composite-extension>
+      <designer-extension>
+        <in-palette>true</in-palette>
+        <render-markup>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&#xd;
+&lt;xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xe="http://www.ibm.com/xsp/coreex"&gt;&#xd;
+	&lt;div&gt;(code input dialog)&lt;/div&gt;&#xd;
+&lt;/xp:view&gt;</render-markup>
+      </designer-extension>
+    </composite-extension>
+    <property>
+      <property-name>target</property-name>
+      <property-class>string</property-class>
+      <property-extension>
+        <designer-extension>
+          <editor/>
+        </designer-extension>
+      </property-extension>
+    </property>
+  </composite-component>
+</faces-config>

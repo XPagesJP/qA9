@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core"
+	xmlns:xc="http://www.ibm.com/xsp/custom">
+
+	<xp:this.resources>
+		<xp:styleSheet href="/qa.css"></xp:styleSheet>
+	</xp:this.resources>
+	<xp:inputHidden id="Profile_SV">
+		<xp:this.value><![CDATA[#{javascript:var accountlist = database.getView("V_Setting");
+var Settingdoc =accountlist.getFirstDocument();
+var PRF_server =Settingdoc.getItemValue("Profile_server");
+
+
+return PRF_server;}]]></xp:this.value>
+	</xp:inputHidden>
+	<xp:inputHidden id="Profile_Path">
+		<xp:this.value><![CDATA[#{javascript:var accountlist = database.getView("V_Setting");
+var Settingdoc =accountlist.getFirstDocument();
+var PRF_path =Settingdoc.getItemValue("Profile_path");
+
+return PRF_path;}]]></xp:this.value>
+	</xp:inputHidden>
+
+	<xp:panel style="margin-bottom:20.0px">
+		<xp:label id="label1" value="ユーザー" styleClass="subTittle">
+		</xp:label>
+		<hr size="1" color="#808080"></hr>
+	</xp:panel>
+	<xp:panel style="margin-bottom:10.0px;margin-left:10.0px">
+		<xp:label value="ユーザー情報をポイントの高い順に表示します。" id="label2"></xp:label>
+	</xp:panel>
+	<xp:panel style="background-color:rgb(255,255,255)">
+		
+		<xp:repeat id="repeat" var="TargetUser" styleClass="allUserList"
+			rows="100">
+
+
+			<xp:this.value><![CDATA[#{javascript:var userName:NotesName = session.createName(compositeData.userName);
+var Targetuser = userName.getAbbreviated();
+
+var sv =getComponent("Profile_SV").getValue();
+var path = getComponent("Profile_Path").getValue();
+
+var PRF_db = session.getDatabase(
+    (sv.size() === 0) ? '' : sv[0],
+    path[0]);
+    
+var PRF_view = PRF_db.getView("V_Profile_P");
+
+
+var targetEntry =PRF_view.getAllEntries()
+
+return targetEntry;}]]></xp:this.value>
+			<xc:cc_UserProfile>
+				<xc:this.userName><![CDATA[#{javascript:var profileDoc:NotesDocument =TargetUser.getDocument();
+var profileuserName = profileDoc.getItemValueString("UserID");
+
+return @Name("[ABBREVIATE]",profileuserName)}]]></xc:this.userName>
+			</xc:cc_UserProfile>
+		</xp:repeat>
+		<xp:pager layout="Previous Group Next" partialRefresh="true"
+			id="pager2" for="repeat">
+		</xp:pager>
+	</xp:panel>
+</xp:view>

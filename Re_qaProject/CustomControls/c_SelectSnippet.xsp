@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core"
+	xmlns:xe="http://www.ibm.com/xsp/coreex">
+
+	
+	<xe:dialog id="dialogSnippets" title="XSnippetsの参照を添付"
+		partialRefresh="true">
+
+		<div>
+			<xe:dialogContent id="dialogSnippetsContent">
+				<div>
+					<div name="snippetSearch">
+						<xp:inputText id="inputSearchSnippets">
+							<xp:eventHandler event="onkeypress"
+								submit="false">
+								<xp:this.script><![CDATA[if(event.keyCode == 13){ 
+	event.keyCode = 0;
+	dojo.byId("#{id:btnSnippetsSearch}").click();
+}]]></xp:this.script>
+							</xp:eventHandler>
+						</xp:inputText>
+						<xp:button value="検索" id="btnSnippetsSearch"
+							style="width:5em">
+							<xp:eventHandler event="onclick"
+								submit="true" refreshMode="partial" refreshId="viewSnippets">
+								<xp:this.action><![CDATA[#{javascript://手入力
+sessionScope.searchSnippets = "";
+if(getComponent("inputSearchSnippets").getValue()!=""){
+    var fromList = new Array("　"," ");  //検索対象
+    var searchSnippets = getComponent("inputSearchSnippets").getValue();
+    searchSnippets = @ReplaceSubstring(@Trim(searchSnippets),fromList,"&");
+
+	sessionScope.searchSnippets=searchSnippets;
+};}]]></xp:this.action>
+							</xp:eventHandler>
+						</xp:button>
+
+					</div>
+
+					<xp:viewPanel rows="30" id="viewSnippets">
+
+						<xp:this.data>
+							<xp:dominoView var="viewSnippets"
+								viewName="SnippetsByDate">
+								<xp:this.databaseName><![CDATA[#{javascript:var db:NotesDatabase = session.getCurrentDatabase();
+var envvw:NotesView = db.getView('V_Setting');
+var envdoc:NotesDocument = envvw.getFirstDocument();
+if (envdoc == null){
+  return '';
+}		
+  
+// XSnippets DB取得
+var serverName = envdoc.getItemValueString('snippets_server');
+var dbPath = envdoc.getItemValueString('snippets_path');
+var sdb = session.getDatabase(serverName, dbPath);
+
+if(serverName.equals('')){
+  return dbPath;
+}else{
+  return serverName + '!!' + dbPath;
+}}]]></xp:this.databaseName>
+								<xp:this.search><![CDATA[#{javascript:if( sessionScope.searchSnippets != null ){
+	return sessionScope.searchSnippets;
+}else{
+	return null;
+}}]]></xp:this.search>
+							</xp:dominoView>
+						</xp:this.data>
+						<xp:viewColumn columnName="Id" id="viewColumn1"
+							showCheckbox="true" displayAs="hidden">
+							<xp:viewColumnHeader
+								id="viewColumnHeader1">
+							</xp:viewColumnHeader>
+						</xp:viewColumn>
+						<xp:viewColumn columnName="Name"
+							id="viewColumn2">
+							<xp:viewColumnHeader id="viewColumnHeader2"
+								value="名前">
+							</xp:viewColumnHeader>
+						</xp:viewColumn>
+						<xp:viewColumn columnName="Author"
+							id="viewColumn3">
+							<xp:viewColumnHeader value="作成者"
+								id="viewColumnHeader3">
+							</xp:viewColumnHeader>
+						</xp:viewColumn>
+						<xp:viewColumn columnName="Language"
+							id="viewColumn4">
+							<xp:viewColumnHeader value="言語"
+								id="viewColumnHeader4">
+							</xp:viewColumnHeader>
+						</xp:viewColumn>
+						<xp:viewColumn columnName="DateCreated"
+							id="viewColumn5">
+							<xp:this.converter>
+								<xp:convertDateTime type="both"></xp:convertDateTime>
+							</xp:this.converter>
+							<xp:viewColumnHeader id="viewColumnHeader5"
+								value="作成日">
+							</xp:viewColumnHeader>
+						</xp:viewColumn>
+						<xp:this.facets>
+							<xp:pager partialRefresh="true"
+								layout="Previous Group Next" xp:key="headerPager" id="pager1">
+							</xp:pager>
+
+
+
+						</xp:this.facets>
+					</xp:viewPanel>
+
+				</div>
+			</xe:dialogContent>
+			<xe:dialogButtonBar id="dialogButtonBar1">
+				<xp:panel style="text-align:right">
+
+
+
+					
+					<xp:button id="btnDialogOK"
+						style="width:8em">
+						<xp:this.value><![CDATA[OK
+]]></xp:this.value>
+						<xp:eventHandler event="onclick" submit="true"
+							refreshMode="complete">
+
+
+							<xp:this.action><![CDATA[#{javascript:// 質問、回答文書を取得
+var db:NotesDatabase = session.getCurrentDatabase();
+var snippetRefs = viewScope.SnippetRefs;
+
+// XSnippets URL取得
+var envDoc = Common.getSettingDoc();
+var url = "";
+if(envDoc == null){
+	return false;
+}
+url = envDoc.getItemValueString("snippets_query");
+
+// SnippetsDBの取得
+var sdb = Common.getSnippetsDB();
+if(sdb == null){
+	return false;
+}
+
+// チェックした文書の情報を取得
+var vw = getComponent("viewSnippets");
+var docIds = vw.getSelectedIds();
+var json = {snippets:[]};
+if( !SnippetRefs.isEmpty() ){
+	json = fromJson(SnippetRefs);
+}
+var cnt = 0;
+for( var docId in docIds){
+	var doc:NotesDocument = sdb.getDocumentByID(docId);
+	
+	// 添付するSnippets情報を追加
+	json.snippets.push({
+		"title":doc.getItemValueString("Name"),
+		"url":url + doc.getItemValueString("id")
+	});
+	cnt++;
+}
+
+if(cnt > 0){
+	// ダイアログを閉じる
+	viewScope.SnippetJSON = toJson(json);
+	var dialogId = getComponent("dialogSnippets").getClientId(facesContext);
+	var btnId = viewScope.btnAddSnippetId;
+	// XSP.partialRefreshPost を動作させるために setTimeout() 使用
+	view.postScript("setTimeout(function(){"
+	 + "dojo.byId('" + btnId + "').click();"
+	 + "XSP.closeDialog('" + dialogId + "');"
+	 + "},1);"
+	 );
+	return true;
+
+}else{
+	// チェックなし
+	view.postScript("alert('添付する Snippet をチェックして下さい。')");
+	return false;
+}
+}]]></xp:this.action>
+
+
+						</xp:eventHandler>
+					</xp:button>
+					<xp:button value="キャンセル" id="btnDialogCancel"
+						style="width:8em">
+						<xp:eventHandler event="onclick"
+							submit="false">
+							<xp:this.script><![CDATA[XSP.closeDialog("#{id:dialogSnippets}");]]></xp:this.script>
+						</xp:eventHandler>
+					</xp:button>
+				</xp:panel>
+			</xe:dialogButtonBar>
+		</div>
+
+
+
+	</xe:dialog>
+</xp:view>

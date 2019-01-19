@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.6" replicaid="49257ED2001A576D" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="16e" sequence="23" unid="FEE659A993C3D16649257ED2001AB41C">
+<created><datetime>20151002T135140,44+09</datetime></created>
+<modified><datetime>20160610T103120,07+09</datetime></modified>
+<revised><datetime>20160610T103120,06+09</datetime></revised>
+<lastaccessed><datetime>20160610T103120,07+09</datetime></lastaccessed>
+<addedtofile><datetime>20151002T135140,46+09</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Admin/O=LotusLab</name></updatedby>
+<wassignedby><name>CN=Admin/O=LotusLab</name></wassignedby>
+<item name="$Flags"><text>gC~4K</text></item>
+<item name="$TITLE"><text>x_Register.xsp</text></item>
+<item name="$Comment" sign="true"><text>プロフィール登録用</text></item>
+
+
+<item name="$FileNames" sign="true"><text>x_Register.xsp</text></item>
+<item name="$DesignerVersion"><text>8.5</text></item>
+
+
+
+
+</note>

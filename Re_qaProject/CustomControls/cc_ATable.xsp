@@ -21,6 +21,9 @@
             <xp:inputRichText id="inputRichText1"
                 readonly="true" value="#{docAns.Body}">
             </xp:inputRichText>
+            <xc:cc_AttachSnippets
+        		docQA="#{javascript:return docAns;}">
+            </xc:cc_AttachSnippets>
             <xp:fileDownload rows="30" id="fileDownload1"
                 displayLastModified="false" value="#{docAns.TempFile}"
                 displayType="true" displayCreated="false" displaySize="true"
@@ -32,18 +35,102 @@
             <xp:text styleClass="value" escape="true" id="Ques_Created"
                 value="#{docAns.Created}">
                 <xp:this.converter>
-                    <xp:convertDateTime type="both"
-                        dateStyle="short">
+                    <xp:convertDateTime type="both">
                     </xp:convertDateTime>
                 </xp:this.converter>
             </xp:text>
+            <xp:link escape="true" text="編集する" id="link1"
+            	style="padding-left:10.0px;text-decoration:underline">
+            	<xp:this.rendered><![CDATA[#{javascript:var doc = docAns.getDocument();
+
+//回答者でなければ、非表示
+if (Common.getCurrentUser().name!=doc.getItemValueString("Author")){
+       return false;
+}else{
+       return true 
+}}]]></xp:this.rendered>
+            	<xp:eventHandler event="onclick" submit="false">
+            		<xp:this.script><![CDATA[XSP.openDialog("#{id:dialog1}");]]></xp:this.script>
+            	</xp:eventHandler>
+            	<xp:image id="image1" url="/3096_32.png"
+            		style="width:20.0px;height:20.0px">
+            	</xp:image>
+            </xp:link>
+            <xp:link escape="true" id="Deletelink" text="削除"
+            	style="text-decoration:underline">
+            	<xp:this.rendered><![CDATA[#{javascript:var doc = docAns.getDocument();
+
+//回答者でなければ、非表示
+if (Common.getCurrentUser().name!=doc.getItemValueString("Author")){
+       return false;
+}else{
+       return true 
+}}]]></xp:this.rendered>
+            	<xp:image id="image7" url="/3159_32.png"
+            		style="height:20px;width:20px">
+            	</xp:image>
+
+            	<xp:eventHandler event="onclick" submit="true"
+            		refreshMode="complete">
+            		<xp:this.action>
+
+            			<xp:actionGroup>
+
+
+
+            				<xp:confirm message="この回答文書を削除してよろしいですか？"></xp:confirm>
+
+
+
+
+
+
+
+
+
+
+            				<xp:executeScript>
+            					<xp:this.script><![CDATA[#{javascript:var targetdoc = docAns.getDocument();
+var parentdoc = docQues.getDocument();
+
+
+//削除処理
+qa_JsLib.DeleteDocument(targetdoc,2);
+
+//質問数の回答カウント数ダウン
+if(targetdoc.getItemValueString("AorC")=="A"){
+		
+		if(parentdoc.getItemValueString("Count_Answer")==""){
+			var ca_count = 0;
+		}else{
+			var ca_count =  parseInt(parentdoc.getItemValueString("Count_Answer"))-1 ;
+		}
+		parentdoc.replaceItemValue("Count_Answer",ca_count.toString());
+		parentdoc.save();
+		
+}
+}]]></xp:this.script>
+            				</xp:executeScript>
+            			</xp:actionGroup>
+            		</xp:this.action>
+            	</xp:eventHandler>
+            </xp:link>
+            <xp:table>
+            	<xp:tr>
+            		<xp:td></xp:td>
+            		<xp:td style="width:10%;text-align:left">
+            
             <xc:cc_UserProfile>
                 <xc:this.userName><![CDATA[#{javascript:var Author = docAns.getDocument().getItemValueString("Author");
 return @Name("[ABBREVIATE]",Author)}]]></xc:this.userName>
-            </xc:cc_UserProfile>
+            </xc:cc_UserProfile></xp:td>
+            	</xp:tr>
+            </xp:table>
+            
+
         </div>
         <div class="bestAnswerBox">
-            <xp:button style="margin-top:10.0px" id="CloseB">
+            <xp:button style="margin-top:0.0px;font-size:11pt;margin-bottom:10.0px" id="CloseB">
                 <xp:this.value><![CDATA[#{javascript:
 var parentdoc = docQues.getDocument();
 if(parentdoc.getItemValueString("status")=="2"){
@@ -53,6 +140,14 @@ if(parentdoc.getItemValueString("status")=="2"){
 }}]]></xp:this.value>
                 <xp:this.rendered><![CDATA[#{javascript:var targetdoc = docAns.getDocument();
 var parentdoc = docQues.getDocument();
+
+//質問者でなければ、非表示
+if (Common.getCurrentUser().name!=parentdoc.getItemValueString("Author"))
+{
+       return false;
+}
+
+
 //コメントの場合、非表示
 if(targetdoc.getItemValueString("AorC")=="C") return false;
 
@@ -75,6 +170,31 @@ var parentdoc = docQues.getDocument();
 qa_JsLib.SetBestAnswer(targetdoc,parentdoc);}]]></xp:this.action>
                 </xp:eventHandler>
             </xp:button>
+            
+            <xp:panel id="ReEditPanel">
+
+
+
+
+
+
+    	
+    	<xe:dialog id="dialog1" title="回答／コメントに対する編集">
+    		
+    		
+    		
+    		<xp:panel styleClass="editDialog">
+    			<xc:cc_AnserEdit>
+    				<xc:this.property_editID><![CDATA[#{javascript:var doc =docAns.getDocument();
+doc.getUniversalID();
+}]]></xc:this.property_editID>
+    			</xc:cc_AnserEdit>
+    			
+    		</xp:panel>
+
+    	</xe:dialog>
+    	</xp:panel>
+        
         </div>
     </xp:panel>
 </xp:view>

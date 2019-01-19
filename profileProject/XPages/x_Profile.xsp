@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core">
+
+	<xp:this.data>
+		<xp:dominoDocument var="profile" formName="FM_Profile"
+			computeWithForm="both" action="openDocument">
+
+			<xp:this.documentId><![CDATA[#{javascript://var user = @Name('[CN]',session.getEffectiveUserName());
+//var user = requestScope.sessionScope.profileUserID;
+url = context.getUrl();
+var user = @Right(url,'userid=');
+
+var db = session.getCurrentDatabase();
+var vw = db.getView('V_Profile');
+var vwEntry:NotesViewEntry = vw.getEntryByKey(user,true);
+
+var unid = '';
+if (vwEntry != '' && vwEntry != null){
+	unid = vwEntry.getColumnValues()[1];
+}
+
+return unid;}]]></xp:this.documentId>
+		</xp:dominoDocument>
+	</xp:this.data>
+	<xp:inputText id="inputText1">
+		<xp:this.value><![CDATA[#{javascript:var userName:NotesName = session.createName(@UserName());
+return(userName.getCommon());}]]></xp:this.value>
+	</xp:inputText>
+	<xp:br></xp:br>
+	<xp:br></xp:br>
+	<xp:inputText id="inputText3" value="#{profile.UserID}"></xp:inputText>
+	<xp:br></xp:br>
+	<xp:br></xp:br>
+	<xp:inputText id="inputText2" value="#{profile.NickName}"></xp:inputText>
+	<xp:br></xp:br>
+	<xp:br></xp:br>
+	<xp:br></xp:br>
+	<xp:inputText id="inputText4"><xp:this.defaultValue><![CDATA[#{javascript:url = context.getUrl();
+return @Right(url,'userid=');}]]></xp:this.defaultValue></xp:inputText><xp:br></xp:br>
+	
+	<xp:br></xp:br>
+	<xp:button value="ラベル" id="button1"><xp:eventHandler event="onclick" submit="true" refreshMode="complete">
+	<xp:this.action>
+		<xp:saveDocument></xp:saveDocument>
+	</xp:this.action></xp:eventHandler></xp:button></xp:view>

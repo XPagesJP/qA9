@@ -1,12 +1,13 @@
-<?xml version="1.0" encoding="UTF-8"?><note class="filter" replicaid="49257B870044B72C" version="9.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="216" sequence="32" unid="241E32EEAD10A7C249257B660038AF4E">
-<created><datetime>20130509T191908,94+09</datetime></created>
-<modified><datetime>20130611T213035,56+09</datetime></modified>
-<revised><datetime>20130611T202346,94+09</datetime></revised>
-<lastaccessed><datetime>20130611T213035,56+09</datetime></lastaccessed>
-<addedtofile><datetime>20130611T213035,56+09</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=System Administrator/O=rskkgdev852</name></updatedby>
-<wassignedby><name>CN=System Administrator/O=rskkgdev852</name></wassignedby>
+<?xml version="1.0" encoding="UTF-8"?><note class="filter" replicaid="49258273002E3161" version="10.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="15a" sequence="3" unid="EF04890D855FB1C049257C8300829AEE">
+<created><datetime>20140219T084633,42+09</datetime></created>
+<modified><datetime dst="true">20180418T043128,37-04</datetime></modified>
+<revised><datetime>20180418T172450,11+09</datetime></revised>
+<lastaccessed><datetime dst="true">20180418T043128,37-04</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20180418T043128,37-04</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Admin Domino/O=MLUG</name></updatedby>
+<wassignedby><name>CN=Admin Domino/O=MLUG</name></wassignedby>
+<item name="$POID"><datetime>20131203T205712,68+09</datetime></item>
 <item name="$TITLE" sign="true"><text>qa_JsLib</text></item>
 <item name="$Flags"><text>.5834Q</text></item>
 <item name="$PublicAccess" sign="true"><text>1</text></item>

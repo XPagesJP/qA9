@@ -1,14 +1,14 @@
 <?xml version='1.0' encoding='utf-8'?>
-<note class='view' xmlns='http://www.lotus.com/dxl' version='9.0' replicaid='49257B870044B72C'>
-<noteinfo noteid='16e' unid='B723524B2F5866AF49257B04004699AB' sequence='4'>
-<created><datetime>20130131T215108,59+09</datetime></created>
-<modified><datetime>20130627T221409,34+09</datetime></modified>
-<revised><datetime>20130627T221409,33+09</datetime></revised>
-<lastaccessed><datetime>20130627T221409,34+09</datetime></lastaccessed>
-<addedtofile><datetime>20130611T213034,51+09</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=System Administrator/O=rskkgdev852</name></updatedby>
-<wassignedby><name>CN=System Administrator/O=rskkgdev852</name></wassignedby>
-<item name='$FormatNote' summary='true'>
+<note class='view' xmlns='http://www.lotus.com/dxl' version='10.0' replicaid='49258273002E3161'>
+<noteinfo noteid='19e' unid='44E04CA2E0D5031349257ED2001AAC75' sequence='2'>
+<created><datetime>20151002T135120,85+09</datetime></created>
+<modified><datetime dst='true'>20180418T043138,22-04</datetime></modified>
+<revised><datetime>20180418T172441,25+09</datetime></revised>
+<lastaccessed><datetime dst='true'>20180418T043306,74-04</datetime></lastaccessed>
+<addedtofile><datetime dst='true'>20180418T043138,22-04</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Admin Domino/O=MLUG</name></updatedby>
+<wassignedby><name>CN=Admin Domino/O=MLUG</name></wassignedby>
+<item name='$FormatNote' summary='true' sign='true'>
 <rawitemdata type='4'>
 AQD2tdcUWCG3Z9J8QAAEeyVJ
 </rawitemdata></item>
@@ -25,13 +25,22 @@ DwABAABEgGYAAAACACQ1
 </rawitemdata></item>
 <item name='$ViewFormat' summary='true' sign='true'>
 <rawitemdata type='5'>
-AQABAAYACAAAAFZDAQACAAUAEgAHAFAAAQAACgAAAAAAAAAAAAICAAAAJDUoS0VZKRIAAgAQAAIA
+AQABAAcACAAAAFZDAQACAAUAEgAHAFAAAQAACgAAAAAAAAAAAAICAAAAJDUoS0VZKRIAAgAQAAIA
 JDUBAAEAMQADAAEFAQABADEmAAEAAAABAQAJAQAACgEBDgoAAAEArSsBAAEAAQAAAAAAAAAAAFdD
 AQAACQAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAP//AAAAAAAAAAAAAAAAAABCAAAAAAABAP///wAF
 AP///wABAAAAAAAAAAAAAAAAAAEA////AAEA////AAAAAQAAAAAAAQAAAAAAAQAAAAAAAAAIAAAA
 AAABAA==
 </rawitemdata></item>
 <item name='$Comment' sign='true'><text/></item>
-<item name='$DesignerVersion'><text>8.5.3</text></item>
-<item name='$Flags'><text>Y</text></item></note>
+<item name='$Flags'><text>Y</text></item>
+<item name='$DesignerVersion' sign='true'><text>8.5.3</text></item>
+<item name='$V5ACTIONS' sign='true'>
+<rawitemdata type='1'>
+vRw/AAAAAQABAAAAAQAAAAAAAAAAAAAACAACAHn/bAABAPDw8AABAAAAAAAJAAAAAAABAPDw8AAA
+AB8AAAAAAAAAAAADAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAPz/OgAAAAAAAQAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAEAAAAAAAAAAAAAAAAAAAC+/4QAAAABAAAAnwEAABsAAAAAAAAAEJDdEJLoEJW2EI+R
+EI3sEJCsEIFFEJXSEI9XSVIAAABCAAIA6AcAAAAAAADtAVoBrwAsACAAAgDoAwAAAAAAAAEACgBG
+TV9TZXR0aW5n7QKuAAwAAQAAAK4ABAC1AwMABwAOAAcACTE0UzE3UwA=
+</rawitemdata></item></note>
 

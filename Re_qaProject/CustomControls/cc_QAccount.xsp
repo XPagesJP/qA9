@@ -9,31 +9,44 @@
 
         </xc:cc_Like>
         <div class="viewCountBox">
-            閲覧数:
-            <xp:text escape="true" id="View_count" styleClass="number">
+            <xp:panel><div>閲覧数</div></xp:panel>
+            
+            <xp:panel><xp:text escape="true" id="View_count" styleClass="number">
                 <xp:this.converter>
-                    <xp:convertNumber type="number"
-                        integerOnly="true">
+                    <xp:convertNumber type="number" integerOnly="true">
                     </xp:convertNumber>
                 </xp:this.converter>
                 <xp:this.value><![CDATA[#{javascript:var targetdoc = docQues.getDocument();
 //閲覧数の取得    
 return qa_JsLib.GetViewCount(targetdoc)
 }]]></xp:this.value>
-            </xp:text>
+            </xp:text></xp:panel>
+            
         </div>
         
     </div>
-    <xp_1:dialog id="dialog1"
-        style="background-color:rgb(188,217,233);border-color:rgb(0,0,0);border-style:groove;border-width:thin"
-        title="いいね!ユーザー">
+    <xp_1:dialog id="viewCountMemberList_dialog"
+    	style="background-color:rgb(188,217,233);border-color:rgb(0,0,0);border-style:groove;border-width:thin"
+    	title="いいね!ユーザー">
 
-        <xp:panel style="background-color:rgb(255,255,255)">
+    	<xp:panel style="background-color:rgb(255,255,255)">
 
-            <xp:repeat id="repeat" rows="30" var="rowUser">
+    		<xp:this.rendered><![CDATA[#{javascript://対象の文書;
+var targetdoc = docQues.getDocument();
+var user_good = targetdoc.getItemValueString("user_good")
+
+if (user_good=="")
+{
+       return false;
+}
+else
+{
+       return true;
+}
+}]]></xp:this.rendered><xp:repeat id="repeat" rows="30" var="rowUser">
 
 
-                <xp:this.value><![CDATA[#{javascript://対象の文書
+    			<xp:this.value><![CDATA[#{javascript://対象の文書
 var targetdoc = docQues.getDocument();
 //閲覧数の取得	
 
@@ -45,11 +58,24 @@ var targetdoc = docQues.getDocument();
 		return user_good;
 	
 	}}]]></xp:this.value>
-                <xc:cc_UserProfile>
-                    <xc:this.userName><![CDATA[#{javascript:return @Name("[ABBREVIATE]",rowUser)}]]></xc:this.userName>
-                </xc:cc_UserProfile>
-            </xp:repeat>
+    			<xc:cc_UserProfile>
+    				<xc:this.userName><![CDATA[#{javascript:return @Name("[ABBREVIATE]",rowUser)}]]></xc:this.userName>
+    			</xc:cc_UserProfile>
+    			</xp:repeat>
 
-        </xp:panel>
+    	</xp:panel>
+    	<xp:panel style="text-align:center;padding-left:2.0px;padding-right:2.0px;padding-top:2.0px;padding-bottom:2.0px">なし<xp:this.rendered><![CDATA[#{javascript://対象の文書;
+var targetdoc = docQues.getDocument();
+var user_good = targetdoc.getItemValueString("user_good")
+
+if (user_good=="")
+{
+       return true;
+}
+else
+{
+       return false;
+}
+}]]></xp:this.rendered></xp:panel>
     </xp_1:dialog>
 </xp:view>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?><note class="form" replicaid="49258273002E3161" version="10.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="34a" sequence="5" unid="4447919E8FE750E849257F96002AA5A5">
+<created><datetime>20160415T164549,17+09</datetime></created>
+<modified><datetime dst="true">20180418T043211,74-04</datetime></modified>
+<revised><datetime>20180418T172443,09+09</datetime></revised>
+<lastaccessed><datetime dst="true">20180418T043211,74-04</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20180418T043211,74-04</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Admin Domino/O=MLUG</name></updatedby>
+<wassignedby><name>CN=Admin Domino/O=MLUG</name></wassignedby>
+<item name="$Flags"><text>34567Cg~`</text></item>
+<item name="$TITLE" sign="true"><text>oneuiv2.1_pink.theme</text></item>
+<item name="$DesignerVersion"><text>8.5.3</text></item>
+
+
+<item name="$FileNames" sign="true"><text>oneuiv2.1_pink.theme</text></item></note>

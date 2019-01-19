@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?><note class="form" replicaid="49258273002E3161" version="10.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="58e" sequence="9" unid="CB69A5889F333E8A49257ED2001AAB03">
+<created><datetime>20151002T135117,15+09</datetime></created>
+<modified><datetime dst="true">20181211T100144,11-04</datetime></modified>
+<revised><datetime dst="true">20181211T100144,10-04</datetime></revised>
+<lastaccessed><datetime dst="true">20181211T100144,11-04</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20180418T043253,38-04</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Admin Domino/O=MLUG</name></updatedby>
+<wassignedby><name>CN=Admin Domino/O=MLUG</name></wassignedby>
+<item name="$TITLE"><text>x_Search.xsp</text></item>
+<item name="$Flags"><text>gC~4K</text></item>
+<item name="$Comment" sign="true"><text>検索ページ</text></item>
+
+
+<item name="$FileNames" sign="true"><text>x_Search.xsp</text></item>
+
+<item name="$DesignerVersion"><text>8.5</text></item>
+
+
+
+</note>

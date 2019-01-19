@@ -1,7 +1,9 @@
+
 import Common_jss;
 //名前空間は設計要素名と同一にする(ローカルルール)
 var qa_JsLib = {};
-
+//co11111
+//comment2
 //////////////////////////////////////////
 //[SetGoodCountUD]いいね！アクション
 //引数
@@ -14,6 +16,7 @@ qa_JsLib.SetGoodCountUD = function(key:int ,targetDoc:NotesXspDocument){
 	//var targetdoc = docQues.getDocument();
 	//var su = getComponent("sessionUser").getValue();
 	var su = Common.getCurrentUser().name;
+	
 	var user_good = targetdoc.getItemValue("user_good");
 
 	if (key == 1) {
@@ -70,6 +73,64 @@ qa_JsLib.SetGoodCountUD = function(key:int ,targetDoc:NotesXspDocument){
 	context.reloadPage();
 }
 
+//////////////////////////////////////////
+//[SetFavoriteCountUD]お気に入りアクション
+//引数
+// key  int  UP:1 Down:0
+//戻り値
+// なし
+//////////////////////////////////////////
+qa_JsLib.SetFavoriteCountUD = function(key:int ,targetDoc:NotesXspDocument){
+
+	var su = Common.getCurrentUser().name;
+	var members = targetDoc.getItemValue("User_Favorite");
+
+	if (key == 1) {
+		//お気に入り！ユーザーの追加
+		if (members.length == 0) {
+			targetDoc.replaceItemValue("User_Favorite",su);
+		} else {
+			 var result = "";
+			 for (var i=0; i<members.length; i++) {
+			 if(members[i]==su){
+		 		//既に登録済みの場合、処理させない。
+		 		return
+			 }
+			 		result  = result + members[i] + "\n";
+		 	}
+		 	result  =result  + su;
+		 	targetDoc.replaceItemValue("User_Favorite",@Explode(result,"\n"));
+		}
+		//ログ出力
+		qa_JsLib.ComposeAccess_log(targetDoc ,null ,'3','1')
+	
+	}else{
+		//お気に入り！ユーザーのクリア
+		var ugcount =  members.length;
+
+		if (members.length == 0) {
+				 return;
+		} else {
+				 var result = "";
+				 for (var i=0; i<members.length; i++) {
+				 	if(members[i]==su){
+				 	//既に登録済みの場合、セットしない。
+				 	ugcount = Number(ugcount) - 1
+				 	}else{
+				 		result  = result + members[i] + "\n";
+				 	}	
+				 }
+				if (ugcount < 0 )ugcount=0;
+				targetDoc.replaceItemValue("User_Favorite",@Explode(result,"\n"));
+		}
+		
+		//ログ出力
+		qa_JsLib.ComposeAccess_log(targetDoc ,null ,'3','-1')
+		
+	}
+	targetDoc.save();
+
+}
 
 //////////////////////////////////////////
 //[SetViewCountUD]閲覧カウントアップ
@@ -86,9 +147,14 @@ qa_JsLib.SetViewCountUD = function(targetDoc:NotesXspDocument){
 	Key.add(targetdoc.getParentDatabase().getReplicaID());
 	Key.add(targetdoc.getUniversalID());
 	Key.add(@Today().toDateString());
-	Key.add(getComponent("sessionUser").getValue());
+	var su = Common.getCurrentUser().name;
+	Key.add(su);
+	//Key.add(getComponent("sessionUser").getValue());
+	
+	
 	//ログ出力
-	qa_JsLib.ComposeAccess_log(targetDoc,Key ,'0','')
+	//qa_JsLib.ComposeAccess_log(targetDoc,Key ,'0','')
+	qa_JsLib.ComposeAccess_log(targetDoc,null ,'0','')	//2015.08.06　キーを渡さず常に閲覧カウントを実施！
 	
 }
 
@@ -225,13 +291,12 @@ qa_JsLib.SetBestAnswer = function(targetDoc:NotesXspDocument,parentdoc:NotesXspD
 //[ComposeAccess_log]履歴にログの追加
 //引数
 //Chkkey　同キーチェック用
-//Action　アクション内容（閲覧|0/いいね|1/これで解決|2）
+//Action　アクション内容（閲覧|0/いいね|1/これで解決|2 /お気に入り|3/質問投稿|4 /回答投稿|5 /コメント投稿|6）
 //Key1	　キー１の値
 //戻り値
 //なし
 //////////////////////////////////////////
-qa_JsLib.ComposeAccess_log = function(targetDoc:NotesXspDocument,Chkkey , Action ,Key1){
-
+qa_JsLib.ComposeAccess_log = function(targetDoc:NotesDocument,Chkkey , Action ,Key1){
 	var accountlist = database.getView("V_Setting");
 	var Settingdoc =accountlist.getFirstDocument();
 	var QAV_server =Settingdoc.getItemValue("QAview_server");
@@ -240,6 +305,11 @@ qa_JsLib.ComposeAccess_log = function(targetDoc:NotesXspDocument,Chkkey , Action
 	        QAV_server.size() === 0 ? '' : QAV_server[0],
 	        QAV_path[0]);
 
+	//引数の targetDoc が NotesXspDocument と NotesDocument の時がある
+	//NotesDocument に揃える
+	if(targetDoc instanceof NotesXspDocument){
+		targetDoc = targetDoc.getDocument();
+	}
 
 	//チェックキーがある場合、同キーのチェック。あった場合、処理しない
 	//
@@ -258,8 +328,8 @@ qa_JsLib.ComposeAccess_log = function(targetDoc:NotesXspDocument,Chkkey , Action
 	QAV_doc.replaceItemValue("server",database.getServer());
 	QAV_doc.replaceItemValue("path",database.getFilePath());
 	QAV_doc.replaceItemValue("Db_id",database.getReplicaID());
-	QAV_doc.replaceItemValue("doc_id",targetdoc.getUniversalID());
-	QAV_doc.replaceItemValue("Doc_Author",targetdoc.getItemValue("Author"));
+	QAV_doc.replaceItemValue("doc_id",targetDoc.getUniversalID());
+	QAV_doc.replaceItemValue("Doc_Author",targetDoc.getItemValue("Author"));
 	QAV_doc.replaceItemValue("AccessUser",Common.getCurrentUser().name);
 	var date_notes = session.createDateTime(@Now()); 
 	QAV_doc.replaceItemValue("AccessDate", date_notes);
@@ -269,4 +339,348 @@ qa_JsLib.ComposeAccess_log = function(targetDoc:NotesXspDocument,Chkkey , Action
 
 	QAV_doc.save();
 
+}
+
+
+//////////////////////////////////////////
+//[InputChkAccount]アカウント登録入力チェック
+//引数
+//accDoc　アカウント登録文書
+//type	"1"：新規登録		"2"：パスワード変更		"3"：パスワード再発行
+//戻り値
+//なし
+//////////////////////////////////////////
+qa_JsLib.InputChkAccount = function(accDoc, type){
+
+	sessionScope.ErrMsg = "";
+	
+	var Seiki=/^[A-Za-z0-9]+[\w\.-]+@[\w\.-]+\.\w{2,}$/;
+	
+	if (type=="1"){
+		//新規登録
+		var Password1 = getComponent("Password1").value;
+		var Password2 = getComponent("Password2").value;
+		var MailAddress = getComponent("MailAddress").value;
+		
+		if (getComponent("LoginName").value == ""){
+			sessionScope.ErrMsg =  "ログイン名が入力されていません。"
+		}else if (!/^[\w\-]+$/g.test(getComponent("LoginName").value)){
+			sessionScope.ErrMsg =  "ログイン名に利用できる文字は、英数、ハイフン、アンダーバーのみです。"
+		}else if (Password1 == "" || Password2 == "" ){
+			sessionScope.ErrMsg =  "パスワードが入力されていません。"
+		
+		}else if (Password1 != Password2){
+			sessionScope.ErrMsg =  "パスワードが一致しません。パスワードを入力し直して下さい。"
+		
+		}else{
+			if (MailAddress == ""){
+				sessionScope.ErrMsg =  "メールアドレスが入力されていません。"
+			}else if (!MailAddress.match(Seiki)){
+				sessionScope.ErrMsg =  "メールアドレスの形式が不正です。"
+			}
+		}
+	}else if(type=="2"){
+		//パスワード変更
+		var Password1 = getComponent("Password1").value;
+		var Password2 = getComponent("Password2").value;
+		
+		if (getComponent("CrrPassword").value == ""){
+			sessionScope.ErrMsg = "現在のパスワードが入力されていません。"
+			
+		}else if (Password1 == "" || Password2 == "" ){
+			sessionScope.ErrMsg =  "パスワードが入力されていません。"
+
+		}else if (Password1 != Password2){
+			sessionScope.ErrMsg =  "パスワードが一致しません。パスワードを入力し直して下さい。"
+		}	
+	
+	}else if(type=="3"){
+		var MailAddress = getComponent("MailAddress").value;
+		
+		if (getComponent("LoginName").value == ""){
+			sessionScope.ErrMsg =  "ログインユーザー名が入力されていません。"
+				
+		}else{
+			if (MailAddress == ""){
+				sessionScope.ErrMsg =  "メールアドレスが入力されていません。"
+			}else if (!MailAddress.match(Seiki)){
+				sessionScope.ErrMsg =  "メールアドレスの形式が不正です。"
+			}
+		}
+	}
+	
+	if (sessionScope.ErrMsg != ""){
+		return false;
+	}else{
+		return true;
+	}	
+}
+
+
+//////////////////////////////////////////
+//[SetPersonHistory]お気に入り履歴登録
+//引数
+//key  int  UP:1 Down:0
+//戻り値
+//なし
+//////////////////////////////////////////
+qa_JsLib.SetPersonHistory = function(targetDoc:NotesXspDocument,key:int){
+	//登録チェック
+	//環境設定文書取得
+	var db:NotesDatabase = session.getCurrentDatabase();
+	var envvw:NotesView = db.getView("V_Setting");
+	var envdoc:NotesDocument = envvw.getFirstDocument();
+	if (envdoc == null){
+		return "";
+	}		
+	
+	//プロフィールDB取得
+	var ProServer = envdoc.getItemValueString("Profile_server");
+	var ProPath = envdoc.getItemValueString("Profile_path");
+	var Prodb:NotesDatabase = session.getDatabase(ProServer,ProPath);
+	if (Prodb == null) {
+		return "";
+	}
+	//自分のプロフィール取得
+	
+	var user = @Name("[ABBREVIATE]", @UserName());
+	var Provw:NotesView = Prodb.getView("V_Profile");			
+	var Prodoc:NotesDocument = Provw.getDocumentByKey(user, true);
+	if(Prodoc == null){
+		return "";
+	}else{
+		
+		var UniqueID = "";
+		var SetField = "";
+		var setMax = 0;
+		if(key == 1){
+			//1:質問履歴
+			//UniqueID = targetdoc.getItemValueString("UniqueID");
+			UniqueID = targetdoc.getUniversalID();
+			SetField ="History_Qs";
+			setMax = 15;
+		}else if(key == 2){
+			//2：回答履歴(親のキー)
+			UniqueID = targetdoc.getItemValueString("ParentDocId");
+			SetField ="History_Ans";
+			setMax = 15;
+		}else if(key ==3|key ==4){
+			//3：お気に入り
+			UniqueID = targetdoc.getItemValueString("UniqueID");
+			SetField ="Favorite";
+			setMax = 9999;
+		}
+		
+		
+		var Nowitem =  Prodoc.getItemValue(SetField);
+		if (Nowitem.length == 0) {
+			Prodoc.replaceItemValue(SetField,UniqueID);
+		} else {
+			 var result = "";
+			 var cf =0;
+			 
+			 if(Nowitem.length < setMax ){
+				 var iMax = Nowitem.length
+			 }else{
+				 var iMax = setMax
+			 }
+			 
+			for (var i=0; i<iMax; i++) {
+			 	if(Nowitem[i]==UniqueID){
+			 		//既に登録済みの場合、セットしない
+			 		if(key ==4){
+			 			//お気に入りクリア時は、クリアフラグ
+			 			cf = 1
+			 		}
+				 }else{
+			 		result  = result + Nowitem[i] + "\n";
+			 	}
+			 	
+		 	}
+			if(cf !=1){
+				result  =UniqueID + "\n" + result ;
+			}
+		 	
+		 	Prodoc.replaceItemValue(SetField,@Explode(result,"\n"));
+		}
+		Prodoc.save();
+	}
+	
+}
+
+
+//////////////////////////////////////////
+//タグのセット
+//引数
+//戻り値
+//なし
+//////////////////////////////////////////
+
+qa_JsLib.SetTag = function(){
+
+	var inputTag =getComponent("taginput").getValue();
+
+	
+
+	
+	
+	
+	var NowTag2 =@Explode(getComponent("djextListTextBox1").getValue(),",");
+	var NowTag =getComponent("djextListTextBox1").getValue();
+
+	var inputTag_R = "";
+	var  StrTag = "";
+	for (var i=1; i<=@Elements(inputTag); i++) {
+		var sIT = @Element(inputTag, i);
+		 	 //既存値チェック
+		 	 
+		var input:com.ibm.xsp.component.xp.XspInputText = @Trim(sIT); 
+		//var sourceString = input.getValueAsString(); 
+		var sourceString = input;
+		var transITag = com.ibm.icu.text.Normalizer.normalize(sourceString,
+		com.ibm.icu.text.Normalizer.NFKC); 
+
+		
+			 //質問文書上で検索
+			var TagChkQ =@DbLookup(@DbName(),"V_TagSearch",@LowerCase(@Trim(transITag)),2);
+			if( TagChkQ==undefined){
+					 
+					//プロフィール文書上 で検索
+					var sv =getComponent("Profile_SV").getValue();
+					var path = getComponent("Profile_Path").getValue();
+
+					var PRF_dbname = new Array((sv.size() === 0) ? '' : sv[0], path[0]);
+					var TagChkP =@DbLookup(PRF_dbname,"V_Profile_Tag",@LowerCase(@Trim(transITag)),2);
+					if( TagChkP==undefined){	 
+						StrTag = transITag
+					 }else{
+						 StrTag = TagChkP
+					 }
+			}else{
+				 StrTag = TagChkQ
+			}
+			
+			if(inputTag_R==""){
+					  	inputTag_R = StrTag ;
+					 }else{
+					  	inputTag_R = inputTag_R + ","+ StrTag;
+			}
+	}
+			
+		var inputTag_R2  =@Unique(@Explode(inputTag_R,","));
+		
+		
+		
+	if (NowTag.length == 0) {
+				getComponent("djextListTextBox1").setValue(inputTag_R2);
+				getComponent("taginput").setValue("");
+	} else {
+				 var result = "";
+				 
+					for (var n=1; n<=@Elements(NowTag); n++) {
+						result  = result + @Element(NowTag, n) + ",";
+				 	}
+				 
+				 	for (var i=1; i<=@Elements(inputTag_R2); i++) {
+				 		var i1 = @Element(inputTag_R2, i);//登録しようとしているタグ
+				 		var nchk = false
+				 		for (var n=1; n<=@Elements(NowTag); n++) {
+				 			var n1 = @Element(NowTag, n);//現在のタグ
+				 			if(n1==i1){
+			 					//既に登録済みの場合、処理させない。
+			 					nchk = true
+			 					break
+					 		}
+				 		}
+				 		if(nchk==false){
+				 			result  = result + i1 + ",";
+				 		}
+			 		}
+			 	
+			 	result  =@Explode(result ,",");
+			 	
+				getComponent("djextListTextBox1").setValue(result);
+				getComponent("taginput").setValue("");
+	}
+}			
+
+
+//////////////////////////////////////////
+//[DeleteDocument]文書削除
+//引数
+//key  int  質問文書:1 回答文書:2
+//戻り値
+//なし
+//////////////////////////////////////////
+qa_JsLib.DeleteDocument = function(targetDoc:NotesXspDocument,key:int){
+
+//フォーム名を変更して非表示化
+var fmname = targetdoc.getItemValueString("form");
+targetDoc.replaceItemValue("form",fmname + "_del");
+targetDoc.save();
+
+
+	if (key == 1) {
+		//ログ出力	(質問-1)
+		qa_JsLib.ComposeAccess_log(targetDoc,null ,'4','-1')
+		
+		//質問文書の場合、回答も削除
+		var answerlist = database.getView("V_Answer_All");
+		//var vec:NotesViewEntryCollection= answerlist.getAllEntriesByKey(targetDoc.getItemValueString('UniqueID'));
+		var vec:NotesViewEntryCollection= answerlist.getAllEntriesByKey(targetDoc.getItemValueString('UniqueID'),true);
+		if (vec.getCount() == 0) {
+			return;
+		}
+		var entry:NotesViewEntry = vec.getFirstEntry();
+		while (entry != null) {
+			//フォーム名を変更して非表示化
+			var Ansdoc = entry.getDocument()
+			var fmnameAns = Ansdoc.getItemValueString("form");
+			Ansdoc.replaceItemValue("form",fmnameAns + "_del");
+			Ansdoc.save();
+
+			//ログ出力	(回答-1)
+			//＞＞せっかく回答してくれたので、削除しない。
+			
+			var tmpentry = vec.getNextEntry();
+			entry.recycle();
+			entry = tmpentry;
+		}
+	}else{
+		
+		if(targetDoc.getItemValueString("AorC")=="A"){
+			//ログ出力	(回答-1)
+			qa_JsLib.ComposeAccess_log(targetDoc,null ,'5','-1')
+		}else{
+			//ログ出力	(コメント-1)
+			qa_JsLib.ComposeAccess_log(targetDoc,null ,'6','-1')
+		}
+		
+	}
+
+}
+//////////////////////////////////////////
+//[IsSameUrlFileName]URLのファイル名と一致するか確認
+//引数
+//pageName  string or [string]: URLのファイル名が同じかチェックする名前。配列の場合は、いずれかに一致するか確認する
+//戻り値
+//boolean: 同じ場合は true そうでない場合は false を返す
+//////////////////////////////////////////
+qa_JsLib.IsSameUrlFileName = function IsSameUrlFileName(pageName){
+	var _fileName = context.getUrl().getPath(),
+	    _pageName = [],
+	    _result = false, _reg;
+	if(pageName instanceof Array){
+	    _pageName = pageName;
+	}else{
+	    _pageName = [pageName];
+	}
+	for(var i=0,max=_pageName.length; i < max; i++){
+	    _reg = new RegExp('/' + _pageName[i] + '$');
+	    if(_reg.test(_fileName)){
+	        _result = true;
+	        break;
+	    }
+	}
+	return _result;
 }

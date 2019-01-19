@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?><note class="form" replicaid="49258273002E3161" version="10.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="4ba" sequence="10" unid="97DEA0DD163010DD49257F96002AAB8B">
+<created><datetime>20160415T164604,27+09</datetime></created>
+<modified><datetime dst="true">20181211T100119,42-04</datetime></modified>
+<revised><datetime dst="true">20181211T100119,41-04</datetime></revised>
+<lastaccessed><datetime dst="true">20181211T100119,42-04</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20180418T043231,51-04</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Admin Domino/O=MLUG</name></updatedby>
+<wassignedby><name>CN=Admin Domino/O=MLUG</name></wassignedby>
+<item name="$Comment"><text>XSnippets添付コントロール</text></item>
+<item name="$TITLE"><text>cc_AttachSnippets.xsp</text></item>
+<item name="$Flags"><text>gC~4;</text></item>
+
+
+
+
+<item name="$FileNames" sign="true"><text>cc_AttachSnippets.xsp</text></item>
+
+<item name="$DesignerVersion"><text>8.5</text></item>
+
+
+
+</note>

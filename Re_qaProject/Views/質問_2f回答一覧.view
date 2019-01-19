@@ -1,14 +1,13 @@
 <?xml version='1.0' encoding='utf-8'?>
-<note default='true' class='view' xmlns='http://www.lotus.com/dxl' version='9.0'
- replicaid='49257B870044B72C'>
-<noteinfo noteid='17a' unid='C9493CE31DF8E0A249257B0B00582EFC' sequence='9'>
-<created><datetime>20130208T010311,96+09</datetime></created>
-<modified><datetime>20130627T220213,36+09</datetime></modified>
-<revised><datetime>20130627T220213,35+09</datetime></revised>
-<lastaccessed><datetime>20130627T220213,36+09</datetime></lastaccessed>
-<addedtofile><datetime>20130611T213034,57+09</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=System Administrator/O=rskkgdev852</name></updatedby>
-<wassignedby><name>CN=System Administrator/O=rskkgdev852</name></wassignedby>
+<note class='view' xmlns='http://www.lotus.com/dxl' version='10.0' replicaid='49258273002E3161'>
+<noteinfo noteid='1fa' unid='EB11E4F20642158549257ED2001AAC64' sequence='2'>
+<created><datetime>20151002T135120,68+09</datetime></created>
+<modified><datetime dst='true'>20180418T043152,37-04</datetime></modified>
+<revised><datetime>20180418T172441,01+09</datetime></revised>
+<lastaccessed><datetime dst='true'>20181209T030008,48-04</datetime></lastaccessed>
+<addedtofile><datetime dst='true'>20180418T043152,37-04</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Admin Domino/O=MLUG</name></updatedby>
+<wassignedby><name>CN=Admin Domino/O=MLUG</name></wassignedby>
 <item name='$FormulaClass' sign='true'><text>1</text></item>
 <item name='$TITLE' sign='true'><text>質問/回答一覧|V_QA_ALL</text></item>
 <item name='$Index' sign='true'><text/></item>
@@ -31,7 +30,7 @@ GAACAABEgGYAAAACAIBmAAIAAgAkNyQ4
 </rawitemdata></item>
 <item name='$Comment' sign='true'><text/></item>
 <item name='$Flags'><text>Y</text></item>
-<item name='$DesignerVersion'><text>8.5.3</text></item>
+<item name='$DesignerVersion' sign='true'><text>8.5.3</text></item>
 <item name='$ViewFormat' sign='true'>
 <rawitemdata type='5'>
 AQAGAAkAiAAAAFZDCQACAAAAiAAAACMAAQAACgAAAAAAAAAAAAICAAAAVkMJAAIAAACIAAAADAAB
