@@ -1,13 +1,14 @@
 <?xml version='1.0' encoding='utf-8'?>
-<note class='filter' xmlns='http://www.lotus.com/dxl' version='10.0' replicaid='49258273002E3161'>
-<noteinfo noteid='13e' unid='7073D0A791CAC17149257ED2001AAA4A' sequence='2'>
+<note class='filter' xmlns='http://www.lotus.com/dxl' version='10.0' maintenanceversion='1.0'
+ replicaid='4925811E00232CF3'>
+<noteinfo noteid='16a' unid='7073D0A791CAC17149257ED2001AAA4A' sequence='10'>
 <created><datetime>20151002T135115,30+09</datetime></created>
-<modified><datetime dst='true'>20180418T043126,14-04</datetime></modified>
-<revised><datetime>20180418T172434,71+09</datetime></revised>
-<lastaccessed><datetime dst='true'>20180418T043126,14-04</datetime></lastaccessed>
-<addedtofile><datetime dst='true'>20180418T043126,14-04</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Admin Domino/O=MLUG</name></updatedby>
-<wassignedby><name>CN=Admin Domino/O=MLUG</name></wassignedby>
+<modified><datetime>20190130T144312,57+09</datetime></modified>
+<revised><datetime>20190130T144312,56+09</datetime></revised>
+<lastaccessed><datetime>20190130T144312,57+09</datetime></lastaccessed>
+<addedtofile><datetime>20170512T153610,66+09</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=XPages Admin/O=XPages</name></updatedby>
+<wassignedby><name>CN=XPages Admin/O=XPages</name></wassignedby>
 <item name='$TITLE' sign='true'><text>Database Script</text></item>
 <item name='$Flags'><text>t34Q</text></item>
 <item name='$PublicAccess' sign='true'><text>1</text></item>

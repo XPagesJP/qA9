@@ -1,13 +1,14 @@
 <?xml version='1.0' encoding='utf-8'?>
-<note class='view' xmlns='http://www.lotus.com/dxl' version='10.0' replicaid='49258273002E3161'>
-<noteinfo noteid='1b6' unid='6A874B8FD6D580DC49257ED2001AAC78' sequence='2'>
+<note class='view' xmlns='http://www.lotus.com/dxl' version='10.0' maintenanceversion='1.0'
+ replicaid='4925811E00232CF3'>
+<noteinfo noteid='3d2' unid='6A874B8FD6D580DC49257ED2001AAC78' sequence='10'>
 <created><datetime>20151002T135120,88+09</datetime></created>
-<modified><datetime dst='true'>20180418T043141,86-04</datetime></modified>
-<revised><datetime>20180418T172441,33+09</datetime></revised>
-<lastaccessed><datetime dst='true'>20180418T043141,86-04</datetime></lastaccessed>
-<addedtofile><datetime dst='true'>20180418T043141,86-04</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Admin Domino/O=MLUG</name></updatedby>
-<wassignedby><name>CN=Admin Domino/O=MLUG</name></wassignedby>
+<modified><datetime>20190130T144323,45+09</datetime></modified>
+<revised><datetime>20190130T144323,44+09</datetime></revised>
+<lastaccessed><datetime>20190130T144323,45+09</datetime></lastaccessed>
+<addedtofile><datetime>20170512T153623,30+09</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=XPages Admin/O=XPages</name></updatedby>
+<wassignedby><name>CN=XPages Admin/O=XPages</name></wassignedby>
 <item name='$FormatNote' summary='true' sign='true'>
 <rawitemdata type='4'>
 AQD2tdcUWCG3Z9J8QAAEeyVJ

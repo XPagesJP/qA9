@@ -1,13 +1,14 @@
 <?xml version='1.0' encoding='utf-8'?>
-<note class='form' xmlns='http://www.lotus.com/dxl' version='10.0' replicaid='49258273002E3161'>
-<noteinfo noteid='622' unid='F523747845E56A7549257ED2001AAD48' sequence='2'>
+<note class='form' xmlns='http://www.lotus.com/dxl' version='10.0' maintenanceversion='1.0'
+ replicaid='4925811E00232CF3'>
+<noteinfo noteid='51a' unid='F523747845E56A7549257ED2001AAD48' sequence='10'>
 <created><datetime>20151002T135122,96+09</datetime></created>
-<modified><datetime dst='true'>20180418T043301,77-04</datetime></modified>
-<revised><datetime>20180418T172446,01+09</datetime></revised>
-<lastaccessed><datetime dst='true'>20180418T043301,77-04</datetime></lastaccessed>
-<addedtofile><datetime dst='true'>20180418T043301,77-04</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Admin Domino/O=MLUG</name></updatedby>
-<wassignedby><name>CN=Admin Domino/O=MLUG</name></wassignedby>
+<modified><datetime>20190130T144322,60+09</datetime></modified>
+<revised><datetime>20190130T144322,59+09</datetime></revised>
+<lastaccessed><datetime>20190130T144322,60+09</datetime></lastaccessed>
+<addedtofile><datetime>20170512T153633,71+09</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=XPages Admin/O=XPages</name></updatedby>
+<wassignedby><name>CN=XPages Admin/O=XPages</name></wassignedby>
 <item name='$Comment' sign='true'><text/></item>
 <item name='$HTMLCode' sign='true'>
 <rawitemdata type='1'>

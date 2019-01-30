@@ -1,12 +1,12 @@
-<?xml version="1.0" encoding="UTF-8"?><note class="form" replicaid="49258273002E3161" version="10.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="516" sequence="3" unid="AAFF6774D2CB9BCD49257ED2001AAEAE">
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.0" replicaid="4925811E00232CF3" version="10.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="5ce" sequence="13" unid="AAFF6774D2CB9BCD49257ED2001AAEAE">
 <created><datetime>20151002T135126,54+09</datetime></created>
-<modified><datetime dst="true">20180418T043246,76-04</datetime></modified>
-<revised><datetime>20180418T172449,17+09</datetime></revised>
-<lastaccessed><datetime dst="true">20180418T043246,76-04</datetime></lastaccessed>
-<addedtofile><datetime dst="true">20180418T043246,76-04</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Admin Domino/O=MLUG</name></updatedby>
-<wassignedby><name>CN=Admin Domino/O=MLUG</name></wassignedby>
+<modified><datetime>20190130T144311,54+09</datetime></modified>
+<revised><datetime>20190130T144311,53+09</datetime></revised>
+<lastaccessed><datetime>20190130T144311,54+09</datetime></lastaccessed>
+<addedtofile><datetime>20170512T153641,52+09</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=XPages Admin/O=XPages</name></updatedby>
+<wassignedby><name>CN=XPages Admin/O=XPages</name></wassignedby>
 <item name="$Flags"><text>gC~4;2</text></item>
 <item name="$TITLE"><text>cc_AnserEdit_da.properties</text></item>
 

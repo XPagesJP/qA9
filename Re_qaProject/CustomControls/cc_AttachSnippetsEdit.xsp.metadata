@@ -1,22 +1,22 @@
-<?xml version="1.0" encoding="UTF-8"?><note class="form" replicaid="49258273002E3161" version="10.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="2ae" sequence="10" unid="29906BD1D5EDA41949257F96002AAB32">
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.0" replicaid="4925811E00232CF3" version="10.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="58e" sequence="28" unid="29906BD1D5EDA41949257F96002AAB32">
 <created><datetime>20160415T164603,38+09</datetime></created>
-<modified><datetime dst="true">20181211T100120,08-04</datetime></modified>
-<revised><datetime dst="true">20181211T100120,07-04</datetime></revised>
-<lastaccessed><datetime dst="true">20181211T100120,08-04</datetime></lastaccessed>
-<addedtofile><datetime dst="true">20180418T043203,93-04</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Admin Domino/O=MLUG</name></updatedby>
-<wassignedby><name>CN=Admin Domino/O=MLUG</name></wassignedby>
+<modified><datetime>20190130T144233,74+09</datetime></modified>
+<revised><datetime>20190130T144233,73+09</datetime></revised>
+<lastaccessed><datetime>20190130T144233,74+09</datetime></lastaccessed>
+<addedtofile><datetime>20170512T153639,13+09</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=XPages Admin/O=XPages</name></updatedby>
+<wassignedby><name>CN=XPages Admin/O=XPages</name></wassignedby>
 <item name="$Comment"><text>XSnippets添付コントロール</text></item>
 <item name="$TITLE"><text>cc_AttachSnippetsEdit.xsp</text></item>
 <item name="$Flags"><text>gC~4;</text></item>
-
-
+<item name="$DesignerVersion"><text>8.5.1</text></item>
 
 
 <item name="$FileNames" sign="true"><text>cc_AttachSnippetsEdit.xsp</text></item>
 
-<item name="$DesignerVersion"><text>8.5.1</text></item>
+
+
 
 
 
