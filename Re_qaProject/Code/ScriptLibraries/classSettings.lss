@@ -87,7 +87,10 @@ Public Class classSettings
 		p_ViewD_Point     = p_docSettings.GetItemValue( "ViewD_Point" )(0)
 		p_LastChkDate     = p_docSettings.GetItemValue( "LastChkDate" )
 		
+		Exit Sub
+		
 ErrProc:
+		Error Err, Error
 		Exit Sub
 	End Sub
 	
