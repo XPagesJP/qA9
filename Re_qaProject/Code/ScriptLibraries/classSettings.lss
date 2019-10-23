@@ -1,0 +1,317 @@
+'++LotusScript Development Environment:2:5:(Options):0:74
+%REM
+	Library classSettings
+	Created 2019/10/23 by XPages Admin/XPages
+	Description: Comments for Library
+%END REM
+Option Public
+Option Declare
+
+
+'++LotusScript Development Environment:2:5:(Forward):0:1
+Declare Public Class classSettings
+
+'++LotusScript Development Environment:2:5:(Declarations):0:10
+%REM
+	Class classSettings
+	Description: Comments for Class
+%END REM
+Public Class classSettings
+	Private p_docSettings     As NotesDocument
+	Private p_Domain          As String
+	Private p_CategoryList    As Variant
+	Private p_Host_name       As String
+	Private p_QAview_server   As String
+	private p_QAview_path     As String
+	Private p_Profile_server  As String
+	Private p_Profile_path    As String
+	Private p_names_server    As String
+	Private p_names_path      As String
+	Private p_snippets_server As String
+	Private p_snippets_path   As String
+	Private p_snippets_url    As String
+	Private p_snippets_query  As String
+	Private p_xpagesjp_url    As String
+	Private p_QcomA_Point     As Double
+	Private p_AnsA_Point      As Double
+	Private p_ComA_Point      As Double
+	Private p_GoodA_Point     As Double
+	Private p_GoodD_Point     As Double
+	Private p_BestA_Point     As Double
+	Private p_BestD_Point     As Double
+	Private p_FavA_Point      As Double
+	Private p_FavD_Point      As Double
+	Private p_ViewD_Point     As Double
+	Private p_LastChkDate     As Variant
+	
+	%REM
+		Sub New
+		Description: Comments for Sub
+	%END REM
+	Sub New( session As NotesSession )
+		On Error GoTo ErrProc
+		
+		Dim dbCurrent   As     NotesDatabase
+		Dim vwSettings  As     NotesView
+		
+		Set dbCurrent   = session.CurrentDatabase
+		Set vwSettings  = dbCurrent.GetView( "V_Setting" )
+		Set p_docSettings = vwSettings.GetFirstDocument()
+		If p_docSettings Is Nothing Then
+			Error 1000, "環境設定文書がありません。"
+		End If
+		
+		p_Domain          = p_docSettings.GetItemValue( "Domain" )(0)
+		p_CategoryList    = p_docSettings.GetItemValue( "CategoryList" )
+		p_Host_name       = p_docSettings.GetItemValue( "Host_name" )(0)
+		p_QAview_server   = p_docSettings.GetItemValue( "QAview_server" )(0)
+		p_QAview_path     = p_docSettings.GetItemValue( "QAview_path" )(0)
+		p_Profile_server  = p_docSettings.GetItemValue( "Profile_server" )(0)
+		p_Profile_path    = p_docSettings.GetItemValue( "Profile_path" )(0)
+		p_names_server    = p_docSettings.GetItemValue( "names_server" )(0)
+		p_names_path      = p_docSettings.GetItemValue( "names_path" )(0)
+		p_snippets_server = p_docSettings.GetItemValue( "snippets_server" )(0)
+		p_snippets_path   = p_docSettings.GetItemValue( "snippets_path" )(0)
+		p_snippets_url    = p_docSettings.GetItemValue( "snippets_url" )(0)
+		p_snippets_query  = p_docSettings.GetItemValue( "snippets_query" )(0)
+		p_xpagesjp_url    = p_docSettings.GetItemValue( "xpagesjp_url" )(0)
+		p_QcomA_Point     = p_docSettings.GetItemValue( "QcomA_Point" )(0)
+		p_AnsA_Point      = p_docSettings.GetItemValue( "AnsA_Point" )(0)
+		p_ComA_Point      = p_docSettings.GetItemValue( "ComA_Point" )(0)
+		p_GoodA_Point     = p_docSettings.GetItemValue( "GoodA_Point" )(0)
+		p_GoodD_Point     = p_docSettings.GetItemValue( "GoodD_Point" )(0)
+		p_BestA_Point     = p_docSettings.GetItemValue( "BestA_Point" )(0)
+		p_BestD_Point     = p_docSettings.GetItemValue( "BestD_Point" )(0)
+		p_FavA_Point      = p_docSettings.GetItemValue( "FavA_Point" )(0)
+		p_FavD_Point      = p_docSettings.GetItemValue( "FavD_Point" )(0)
+		p_ViewD_Point     = p_docSettings.GetItemValue( "ViewD_Point" )(0)
+		p_LastChkDate     = p_docSettings.GetItemValue( "LastChkDate" )
+		
+ErrProc:
+		Exit Sub
+	End Sub
+	
+	Sub Delete()
+		Set p_docSettings = Nothing
+	End Sub
+	
+	%REM
+		Function Save
+		Description: Comments for Function
+	%END REM
+	Function Save( force As Boolean, createResponse As Boolean ) As Boolean
+		If p_docSettings.Save( force, createResponse ) = True Then
+			Save = True
+		Else
+			Save = False
+		End If
+	End Function
+	
+	%REM
+		Property Get Domain
+		Description: Comments for Property Get
+	%END REM
+	Property Get Domain As String
+		Domain = p_Domain
+	End Property
+	
+	%REM
+		Property Get CategoryList
+		Description: Comments for Property Get
+	%END REM
+	Property Get CategoryList As Variant
+		CategoryList = p_CategoryList
+	End Property
+	
+	%REM
+		Property Get Host_name
+		Description: Comments for Property Get
+	%END REM
+	Property Get Host_name As String
+		Host_name = p_Host_name
+	End Property
+	
+	%REM
+		Property Get QAview_server
+		Description: Comments for Property Get
+	%END REM
+	Property Get QAview_server As String
+		QAview_server = p_QAview_server
+	End Property
+	
+	%REM
+		Property Get QAview_path
+		Description: Comments for Property Get
+	%END REM
+	Property Get QAview_path As String
+		QAview_path = p_QAview_path
+	End Property
+	
+	%REM
+		Property Get Profile_server
+		Description: Comments for Property Get
+	%END REM
+	Property Get Profile_server As String
+		Profile_server = p_Profile_server
+	End Property
+	
+	%REM
+		Property Get Profile_path
+		Description: Comments for Property Get
+	%END REM
+	Property Get Profile_path As String
+		Profile_path = p_Profile_path
+	End Property
+	
+	%REM
+		Property Get names_server
+		Description: Comments for Property Get
+	%END REM
+	Property Get names_server As String
+		names_server = p_names_server
+	End Property
+	
+	%REM
+		Property Get names_path
+		Description: Comments for Property Get
+	%END REM
+	Property Get names_path As String
+		names_path = p_names_path
+	End Property
+	
+	%REM
+		Property Get snippets_server
+		Description: Comments for Property Get
+	%END REM
+	Property Get snippets_server As String
+		snippets_server = p_snippets_server
+	End Property
+	
+	%REM
+		Property Get snippets_path
+		Description: Comments for Property Get
+	%END REM
+	Property Get snippets_path As String
+		snippets_path = p_snippets_path
+	End Property
+	
+	%REM
+		Property Get snippets_url
+		Description: Comments for Property Get
+	%END REM
+	Property Get snippets_url As String
+		snippets_url = p_snippets_url
+	End Property
+	
+	%REM
+		Property Get snippets_query
+		Description: Comments for Property Get
+	%END REM
+	Property Get snippets_query As String
+		snippets_query = p_snippets_query
+	End Property
+	
+	%REM
+		Property Get xpagesjp_url
+		Description: Comments for Property Get
+	%END REM
+	Property Get xpagesjp_url As String
+		xpagesjp_url = p_xpagesjp_url
+	End Property
+	
+	%REM
+		Property Get QcomA_Point
+		Description: Comments for Property Get
+	%END REM
+	Property Get QcomA_Point As Double
+		QcomA_Point = p_QcomA_Point
+	End Property
+	
+	%REM
+		Property Get AnsA_Point
+		Description: Comments for Property Get
+	%END REM
+	Property Get AnsA_Point As Double
+		AnsA_Point = p_AnsA_Point
+	End Property
+	
+	%REM
+		Property Get ComA_Point
+		Description: Comments for Property Get
+	%END REM
+	Property Get ComA_Point As Double
+		ComA_Point = p_ComA_Point
+	End Property
+	
+	%REM
+		Property Get GoodA_Point
+		Description: Comments for Property Get
+	%END REM
+	Property Get GoodA_Point As Double
+		GoodA_Point = p_GoodA_Point
+	End Property
+	
+	%REM
+		Property Get GoodD_Point
+		Description: Comments for Property Get
+	%END REM
+	Property Get GoodD_Point As Double
+		GoodD_Point = p_GoodD_Point
+	End Property
+	
+	%REM
+		Property Get BestA_Point
+		Description: Comments for Property Get
+	%END REM
+	Property Get BestA_Point As Double
+		BestA_Point = p_BestA_Point
+	End Property
+	
+	%REM
+		Property Get BestD_Point
+		Description: Comments for Property Get
+	%END REM
+	Property Get BestD_Point As Double
+		BestD_Point = p_BestD_Point
+	End Property
+	
+	%REM
+		Property Get FavA_Point
+		Description: Comments for Property Get
+	%END REM
+	Property Get FavA_Point As Double
+		FavA_Point = p_FavA_Point
+	End Property
+	
+	%REM
+		Property Get FavD_Point
+		Description: Comments for Property Get
+	%END REM
+	Property Get FavD_Point As Double
+		FavD_Point = p_FavD_Point
+	End Property
+	
+	%REM
+		Property Get ViewD_Point
+		Description: Comments for Property Get
+	%END REM
+	Property Get ViewD_Point As Double
+		ViewD_Point = p_ViewD_Point
+	End Property
+	
+	%REM
+		Property Get LastChkDate
+		Description: Comments for Property Get
+	%END REM
+	Property Get LastChkDate As Variant
+		LastChkDate = p_LastChkDate
+	End Property
+	
+	%REM
+		Property Set LastChkDate
+		Description: Comments for Property Set
+	%END REM
+	Property Set LastChkDate As Variant
+		p_LastChkDate = LastChkDate
+	End Property
+End Class

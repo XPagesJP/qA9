@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?><note class="filter" maintenanceversion="1.0" replicaid="4925849C001C76A1" version="10.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="652" sequence="1" unid="EF2FEA9C0D4D6E264925849C001CA48E">
+<created><datetime>20191023T141251,34+09</datetime></created>
+<modified><datetime>20191023T141251,36+09</datetime></modified>
+<revised><datetime>20191023T141251,35+09</datetime></revised>
+<lastaccessed><datetime>20191023T141251,35+09</datetime></lastaccessed>
+<addedtofile><datetime>20191023T141251,35+09</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=XPages Admin/O=XPages</name></updatedby>
+<wassignedby><name>CN=XPages Admin/O=XPages</name></wassignedby>
+<item name="$TITLE" sign="true"><text>MailSend_lss</text></item>
+<item name="$Flags"><text>s34Q</text></item>
+<item name="$PublicAccess" sign="true"><text>1</text></item>
+<item name="$DesignerVersion"><text>8.5.3</text></item>
+
+</note>

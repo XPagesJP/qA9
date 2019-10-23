@@ -1,0 +1,568 @@
+'++LotusScript Development Environment:2:5:(Options):0:74
+%REM
+	Library MailSend_lss
+	Created 2019/10/23 by XPages Admin/XPages
+	Description: Comments for Library
+%END REM
+Option Public
+Option Declare
+
+Use "classSettings"
+
+
+'++LotusScript Development Environment:2:5:(Forward):0:1
+Declare Function fncMailBody_ComposeList(TargetDoc() As NotesDocument ,_
+maildoc As NotesDocument ,sTitle As String ,sHedder As String , errMsg As String) As Boolean
+Declare Function Fun_mailsend(maildoc As NotesDocument, errMsg As String) As Boolean
+Declare Function GetSetting(cSettings As classSettings, curdb As NotesDatabase, errMsg As String) As Boolean
+Declare Function UserAdd(Target As String) As String
+Declare Function FncChk_relation(TargetDoc() As NotesDocument,NewA_reladoc() As NotesDocument, userNM As String ,relationcount As Integer , errMsg As String) As Boolean
+Declare Function fncMaildoc_Initialize(pdoc As NotesDocument ,maildoc As NotesDocument , errMsg As String) As Boolean
+Declare Function FncGet_NewDocCollection(chkview As NotesView,NewDoc() As NotesDocument ,NewCount As Integer ,errMsg As String) As Boolean
+Declare Sub Main()
+
+'++LotusScript Development Environment:2:5:(Declarations):0:10
+Dim ss 		As NotesSession
+
+Dim ndb 	As NotesDatabase'アドレス帳DB
+Dim pdb 	As NotesDatabase'プロフィールDB
+
+'最終更新日時
+Dim dLastChkdate As NotesDateTime
+
+Dim sUrl As String
+Dim sUrltop As String
+Dim nline As String
+
+
+'++LotusScript Development Environment:2:1:fncMailBody_ComposeList:6:8
+%REM
+	Function fncMailBody_ComposeList
+	Description: Comments for Function
+%END REM
+Function fncMailBody_ComposeList(TargetDoc() As NotesDocument ,_
+maildoc As NotesDocument ,sTitle As String ,sHedder As String , errMsg As String) As Boolean
+	fncMailBody_ComposeList= False
+	On Error GoTo OnErrLabel
+	
+	Dim mbody As String
+	 
+	Dim rtQbody As NotesRichTextItem
+	Dim sQbody As String
+	
+	Dim chkview As NotesView
+	Dim curdb 	As NotesDatabase
+	Dim chkQdoc As NotesDocument
+	Set curdb = ss.Currentdatabase
+	Set chkview = curdb.getview("V_Date_All_Unique")
+	
+		
+	mbody = maildoc.body(0)
+	
+	mbody = mbody & "************************　　" & sTitle & "　　　************************"
+	mbody = mbody & nline 
+	mbody = mbody & "  " & sHedder 
+	mbody = mbody & nline 
+	'mbody = mbody & "*********************" & sTitle & "*********************"
+
+	
+	Dim n As Long
+	'mbody = mbody &  "_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/"
+	For n=0 To UBound(TargetDoc)
+		
+		'質問文書
+		If TargetDoc(n).form(0) = "FM_Question" Then
+			mbody = mbody & nline 
+			mbody = mbody &  "-------------------------------------------------------------------"
+			mbody = mbody & nline 
+			mbody = mbody &   TargetDoc(n).Title(0)
+			'mbody = mbody & nline
+			mbody = mbody & "　（　投稿者：" & UserAdd(TargetDoc(n).Author(0))
+			mbody = mbody & " | 投稿日：" & CStr(TargetDoc(n).Created) & "　）"
+			mbody = mbody & nline
+			'mbody = mbody & CStr(TargetDoc(n).Created(0))
+			'mbody = mbody & nline
+			mbody = mbody &  "-------------------------------------------------------------------"
+			mbody = mbody & nline
+			Set rtQbody = TargetDoc(n).Getfirstitem("Body")
+			sQbody = rtQbody.Text
+			If Len (sQbody)> 200 Then
+				mbody = mbody & LeftBP(sQbody,200) & "..."
+			Else
+				mbody = mbody & sQbody
+			End If
+			mbody = mbody & nline
+			mbody = mbody & sUrl & TargetDoc(n).UniqueID(0)
+			
+			Else
+			'回答文書
+			Set chkQdoc = chkview.Getdocumentbykey(TargetDoc(n).ParentDocId(0), True)
+			If Not chkQdoc Is Nothing Then
+				
+				mbody = mbody & nline 
+				mbody = mbody &  "-------------------------------------------------------------------"
+				mbody = mbody & nline 
+				mbody = mbody &   "【 回答 】" & chkQdoc.Title(0) 
+				'mbody = mbody & nline
+				mbody = mbody & "　（　投稿者：" & UserAdd(TargetDoc(n).Author(0))
+				mbody = mbody & " | 投稿日：" & CStr(TargetDoc(n).Created) & "　）"
+				mbody = mbody & nline
+				'mbody = mbody & CStr(TargetDoc(n).Created(0))
+				'mbody = mbody & nline
+				mbody = mbody &  "-------------------------------------------------------------------"
+				mbody = mbody & nline
+				Set rtQbody = TargetDoc(n).Getfirstitem("Body")
+				sQbody = rtQbody.Text
+				If Len (sQbody)> 200 Then
+					mbody = mbody & LeftBP(sQbody,200) & "..."
+				Else
+					mbody = mbody & sQbody
+				End If
+				mbody = mbody & nline
+				mbody = mbody & sUrl &  chkQdoc.UniqueID(0)
+			End If
+		End If
+
+		
+		mbody = mbody & nline
+		mbody = mbody & nline
+		'mbody = mbody &  "_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/"
+	Next
+	maildoc.body = mbody
+	
+	fncMailBody_ComposeList = True
+	Exit Function
+	
+OnErrLabel:
+	errMsg = "[fncMailBody_ComposeList] エラー： " & Erl() & "行目 " & Error & "(" & Err() & ")"
+	
+ErrLabel:
+	Exit Function
+	
+End Function
+
+
+'++LotusScript Development Environment:2:1:Fun_mailsend:5:8
+%REM
+	Function Fun_mailsend
+	Description: Comments for Function
+%END REM
+Function Fun_mailsend(maildoc As NotesDocument, errMsg As String) As Boolean
+	Fun_mailsend = False
+	On Error GoTo OnErrLabel
+	
+	Call maildoc.Send(False)
+	
+	Fun_mailsend = True
+	
+	Exit Function
+	
+OnErrLabel:
+	errMsg = "[Fun_mailsend] エラー： " & Erl() & "行目 " & Error & "(" & Err() & ")"
+	Exit Function
+End Function
+
+
+'++LotusScript Development Environment:2:1:GetSetting:1:8
+Function GetSetting(cSettings As classSettings, curdb As NotesDatabase, errMsg As String) As Boolean
+	GetSetting = False
+	On Error GoTo OnErrLabel
+	
+	'アドレス帳を取得
+	Set ndb = ss.Getdatabase( cSettings.names_server, cSettings.names_path )
+	If ndb.Isopen = False Then
+		errMsg = "アドレス帳が取得できませんでした。"
+		GoTo ErrLabel
+	End If
+	
+	'プロフィールを取得
+	Set pdb = ss.Getdatabase( cSettings.Profile_server, cSettings.Profile_path )
+	If pdb.Isopen = False Then
+		errMsg = "プロフィールDBが取得できませんでした。"
+		GoTo ErrLabel
+	End If
+	
+	'最終更新日時
+	If Len( cSettings.LastChkDate(0) ) = 0 Then
+		Set dLastChkDate = New NotesDateTime( Now ) 
+		Call dLastChkDate.AdjustDay( -1) '初回は1日前
+	Else
+		Set dLastChkDate = New NotesDateTime( cSettings.LastChkDate(0) )
+	End If
+	
+	GetSetting = True
+
+	Exit Function
+	
+OnErrLabel:
+	errMsg = "[GetSetting] エラー： " & Erl() & "行目 " & Error & "(" & Err() & ")"
+	
+ErrLabel:
+	Exit Function
+	
+End Function
+
+
+'++LotusScript Development Environment:2:1:UserAdd:5:8
+%REM
+	Function setUser
+	Description: Comments for Function
+%END REM
+Function UserAdd(Target As String) As String
+	Dim Nname As NotesName
+	Set Nname = New NotesName(Target)
+	UserAdd = Nname.Common
+End Function
+
+
+'++LotusScript Development Environment:2:1:FncChk_relation:6:8
+%REM
+	Function Chk_relation
+	回答文書が関連するか否かのチェック
+	Description: Comments for Function
+%END REM
+Function FncChk_relation(TargetDoc() As NotesDocument,NewA_reladoc() As NotesDocument, userNM As String ,relationcount As Integer , errMsg As String) As Boolean
+	FncChk_relation = False
+	On Error GoTo OnErrLabel
+	
+	Dim chkview As NotesView
+	Dim chkviewA As NotesView
+	Dim curdb 	As NotesDatabase
+	Dim relrationFlg As Integer
+	
+	Dim chkQdoc As NotesDocument
+	Dim chkAdoc As NotesDocument
+	
+	Dim n As Integer '新着質問数
+	Dim i As Integer
+	Dim r As Integer
+	
+	ReDim NewA_reladoc(0)
+	
+	Set curdb = ss.Currentdatabase
+	Set chkview = curdb.getview("V_Date_All_Unique")
+	Set chkviewA = curdb.getview("V_Answer_All")
+	
+	r= -1
+	For n=0 To UBound(TargetDoc)
+		relrationFlg = 0
+		'質問文書の取得
+		Set chkQdoc = chkview.Getdocumentbykey(TargetDoc(n).ParentDocId(0), True)
+		If Not chkQdoc Is Nothing Then
+			
+			'質問文書の作成者
+			If UserAdd(userNM) =UserAdd(chkQdoc.Author(0)) Then
+				relrationFlg=1
+				GoTo nextTarget
+			End If
+			
+			'質問文書をお気に入りにしている
+			For i=0 To UBound(chkQdoc.User_Favorite)
+				If UserAdd(userNM) =UserAdd(chkQdoc.User_Favorite(i)) Then
+					relrationFlg=1
+					GoTo nextTarget
+				End If
+			Next
+			
+			'回答文書を作った人
+			Dim chkAdoccol As NotesDocumentCollection
+			
+			Set chkAdoccol = chkviewA.GetAlldocumentsbykey(TargetDoc(n).ParentDocId(0), True)
+			Set chkAdoc = chkAdoccol.Getfirstdocument()
+			
+			While Not chkAdoc Is Nothing
+				If UserAdd(userNM) =UserAdd(chkAdoc.Author(0)) Then
+					relrationFlg=1
+					GoTo nextTarget
+				End If
+				Set chkAdoc = chkAdoccol.Getnextdocument(chkAdoc)
+			Wend
+		End If
+		
+nextTarget:
+		If relrationFlg = 1 Then
+			r= r + 1
+			ReDim Preserve NewA_reladoc(n)
+			Set NewA_reladoc(r) = TargetDoc(n)
+		End If
+	Next
+	
+	relationcount = n +1	
+	
+
+	FncChk_relation = True
+	
+	Exit Function
+	
+OnErrLabel:
+	errMsg = "[FncChk_relation] エラー： " & Erl() & "行目 " & Error & "(" & Err() & ")"
+	Exit Function
+End Function
+
+
+'++LotusScript Development Environment:2:1:fncMaildoc_Initialize:6:8
+%REM
+	Function fncMaildoc_Initialize
+	宛先や、ヘッダー情報
+	Description: Comments for Function
+%END REM
+Function fncMaildoc_Initialize(pdoc As NotesDocument ,maildoc As NotesDocument , errMsg As String) As Boolean
+	fncMaildoc_Initialize = False
+	On Error GoTo OnErrLabel
+	
+	Dim db  As NotesDatabase
+	
+	Dim mbody		As String
+'	Dim nline		As String
+	
+	Set db = ss.Currentdatabase
+	
+
+	Set maildoc = New NotesDocument( db )
+	maildoc.Form = "Memo"
+
+	
+	'送信先
+	maildoc.SendTo = pdoc.Address(0)
+	
+	maildoc.Subject = "【 " & db.Title & " 】   " & CStr(Today) & "のニュースレター"
+	
+	If  pdoc.LastName(0)<>"" Then
+		mbody = mbody & nline & pdoc.LastName(0) & pdoc.FirstName(0) +"様"
+	Else
+		mbody = mbody & nline & UserAdd(pdoc.UserID(0)) +"様"
+	End If
+	mbody = mbody & nline
+	'ヘッダー＞＞＞＞＞＞＞＞＞＞
+	mbody = mbody & db.Title & "の新着のニュースレターです。" & nline
+	mbody = mbody & "当メールの配信を停止したい場合は、 " & db.Title & "（ " & sUrltop & "/top.xsp ）へアクセスして、" & nline
+	mbody = mbody & "マイページより設定の変更を行ってください。"
+	mbody = mbody & nline & nline
+	' ヘッダー＜＜＜＜＜＜＜＜＜＜
+	
+	maildoc.body = mbody
+	
+	fncMaildoc_Initialize = True
+
+	Exit Function
+	
+OnErrLabel:
+	errMsg = "[fncMaildoc_Initialize] エラー： " & Erl() & "行目 " & Error & "(" & Err() & ")"
+	
+ErrLabel:
+	Exit Function
+	
+End Function
+
+
+'++LotusScript Development Environment:2:1:FncGet_NewDocCollection:5:8
+%REM
+	Function FncGet_NewQCollection
+	Description: 新着文書コレクションの取得
+%END REM
+Function FncGet_NewDocCollection(chkview As NotesView,NewDoc() As NotesDocument ,NewCount As Integer ,errMsg As String) As Boolean
+	FncGet_NewDocCollection = False
+	On Error GoTo OnErrLabel
+	
+	Dim chkDate As NotesDateTime
+	
+	Dim chkdoc As NotesDocument
+	Dim n As Integer '新着質問数
+
+	Set chkdoc =chkview.GetFirstDocument
+	ReDim NewDoc(0)
+	
+	n =-1
+	
+	While Not(chkdoc Is Nothing)
+		Set chkDate =New NotesDateTime(chkdoc.Created)
+		Dim Va As Variant
+		
+		Va = chkDate.TimeDifferenceDouble(dLastChkDate)
+		'前回の実施タイミングと比較
+		If chkDate.TimeDifferenceDouble(dLastChkDate ) > 0 Then
+			n= n + 1
+			ReDim Preserve NewDoc(n)
+			Set NewDoc(n) = chkdoc
+			
+		Else
+			'新着終了
+			NewCount = n +1
+			FncGet_NewDocCollection = True
+			Exit Function
+		End If
+		
+		Set chkdoc = chkview.getNextdocument(chkdoc)
+	Wend
+	
+	NewCount = n +1	
+	FncGet_NewDocCollection = True
+	Exit Function
+OnErrLabel:
+	errMsg = "[FncGet_NewDocCollection] エラー： " & Erl() & "行目 " & Error & "(" & Err() & ")"
+	
+ErrLabel:
+	Exit Function
+	
+End Function
+
+
+'++LotusScript Development Environment:2:2:Main:5:8
+%REM
+	Sub Main
+	Description: Comments for Sub
+%END REM
+Sub Main()
+	%REM
+	ユーザー文書の登録/更新
+	%END REM
+	On Error GoTo OnErrLabel
+	
+	Dim curdb 	As NotesDatabase
+	Dim cSettings As classSettings	'環境設定文書オブジェクト
+	
+	Dim pview	As NotesView
+	Dim pentryCol 	As NotesViewEntryCollection
+
+	Dim newQCount As Integer
+	Dim newACount As Integer
+	Dim relationcount As Integer
+	Dim sendcount As Long
+	
+	Dim errMsg 	As String
+	
+	Dim chkview As NotesView
+	
+	'新着リスト
+	Dim newQDoc() As NotesDocument
+	Dim newADoc() As NotesDocument
+	Dim NewA_reladoc() As NotesDocument
+	
+	Dim pentry	As NotesViewEntry
+	Dim pdoc	As NotesDocument
+	
+	Dim kind	As String
+	Dim userNM	As String
+	Dim ndoc 	As NotesDocument
+	Dim maildoc As NotesDocument
+
+	Dim nview 	As NotesView
+	
+	Dim slist_title As String
+	Dim slist_Hedder As String
+	
+	Dim msflg As Integer
+	
+	Set curdb = ss.Currentdatabase
+	
+	nline = Chr(10)& Chr(10)
+	
+	Print curdb.Title & "(" & curdb.Filepath & ") ・・・・定期メール通知処理 開始"
+	
+	'設定文書を取得
+	Set curdb = ss.Currentdatabase
+	Set cSettings = New classSettings( ss )
+	If GetSetting(cSettings, curdb, errMsg) = False Then
+		GoTo ErrMsg
+	End If
+	
+	sUrltop = cSettings.Host_name & "/" & Replace(curdb.Filepath,"\","/")
+	sUrl = cSettings.Host_name & "/" & Replace(curdb.Filepath,"\","/") & "/x_anspage.xsp?docId="
+	
+	'送信ユーザー文書を取得
+	Set pview = pdb.Getview("V_Profile_Mail")
+	Set pentryCol = pview.AllEntries
+	
+	If pentryCol.Count > 0 Then
+		
+		'新着文書コレクションの取得
+		Set chkview = curdb.getview("V_Date_Create")
+		If FncGet_NewDocCollection(chkview,newQDoc(),newQCount , errMsg) = False Then
+			Print errMsg
+		End If
+		
+		'新着回答文書コレクションの取得
+		Set chkview = curdb.getview("V_Date_CreateA")
+		If FncGet_NewDocCollection(chkview,newADoc(),newACount , errMsg) = False Then
+			Print errMsg
+		End If
+		
+		If newQCount = 0  And newACount = 0 Then
+			GoTo endAgent
+		End If
+		
+		'	Set nview = ndb.Getview("($Users)")
+		
+		Set pentry = pentryCol.Getfirstentry()
+		While Not(pentry Is Nothing)
+			
+			Set pdoc = pentry.Document
+			'アドレス帳でユーザ文書を検索
+			kind = ""
+			userNM = pdoc.UserID(0)
+			'		Set ndoc = nview.Getdocumentbykey(userNM, True)
+			
+			'メールイニシャライズ
+			If fncMaildoc_Initialize(pdoc ,maildoc , errMsg) = False Then
+				Print errMsg
+				GoTo Nextdoc
+			End If
+			
+			'新着質問情報
+			If newQCount > 0  Then
+				slist_title="新着情報"
+				slist_Hedder =dLastChkDate.DateOnly & " "& dLastChkDate.TimeOnly  & "以降に発生した質問をお知らせします。"
+				If fncMailBody_ComposeList(newQDoc() ,maildoc ,slist_title ,slist_Hedder , errMsg) = False Then
+					Print errMsg
+					GoTo Nextdoc
+				End If
+				msflg = 1
+			End If
+			
+			'新着回答情報
+			If newACount > 0  Then
+				slist_title="回答新着情報"
+				relationcount = 0
+				If FncChk_relation(newADoc() ,NewA_reladoc(), userNM , relationcount, errMsg)= True Then
+					slist_Hedder = "あなたに関連する質問に回答・コメントが投稿されました。"
+					If fncMailBody_ComposeList(NewA_reladoc() ,maildoc ,slist_title ,slist_Hedder , errMsg) = False Then
+						Print errMsg
+						GoTo Nextdoc
+					End If
+					msflg = 1
+				End If
+			End If
+			
+			If msflg = 1 Then
+				If Fun_mailsend(maildoc , errMsg) = False Then
+					Print errMsg
+					GoTo Nextdoc
+				End If
+				
+				sendcount = sendcount + 1		
+			End If
+			
+Nextdoc:
+			msflg = 0
+			Set pentry = pentryCol.Getnextentry(pentry)
+		Wend
+		
+endAgent:	
+		Print curdb.Title & "(" & curdb.Filepath & ") ・・・・定期メール通知処理  完了　　（" & CStr(sendcount)  & "件）"
+		
+	End If
+	
+EndAction:
+	'最終処理日更新
+	cSettings.LastChkDate = Now
+	
+	Call cSettings.Save( True, False )
+	Exit Sub
+	
+OnErrLabel:
+	errMsg = "[Initialize] エラー： " & Erl() & "行目 " & Error & "(" & Err() & ")"
+	
+ErrMsg:
+	Print curdb.Title & "(" & curdb.Filepath & ") " & errMsg
+	Exit Sub
+End Sub
