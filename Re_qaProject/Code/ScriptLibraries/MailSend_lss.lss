@@ -18,8 +18,8 @@ Declare Function GetSetting(cSettings As classSettings, curdb As NotesDatabase, 
 Declare Function UserAdd(Target As String) As String
 Declare Function FncChk_relation(TargetDoc() As NotesDocument,NewA_reladoc() As NotesDocument, userNM As String ,relationcount As Integer , errMsg As String) As Boolean
 Declare Function fncMaildoc_Initialize(pdoc As NotesDocument ,maildoc As NotesDocument , errMsg As String) As Boolean
-Declare Function FncGet_NewDocCollection(chkview As NotesView,NewDoc() As NotesDocument ,NewCount As Integer ,errMsg As String) As Boolean
 Declare Sub Main()
+Declare Function FncGet_NewDocCollection(chkview As NotesView,NewDoc() As NotesDocument ,NewCount As Integer ,errMsg As String) As Boolean
 
 '++LotusScript Development Environment:2:5:(Declarations):0:10
 Dim ss 		As NotesSession
@@ -355,58 +355,6 @@ ErrLabel:
 End Function
 
 
-'++LotusScript Development Environment:2:1:FncGet_NewDocCollection:5:8
-%REM
-	Function FncGet_NewQCollection
-	Description: 新着文書コレクションの取得
-%END REM
-Function FncGet_NewDocCollection(chkview As NotesView,NewDoc() As NotesDocument ,NewCount As Integer ,errMsg As String) As Boolean
-	FncGet_NewDocCollection = False
-	On Error GoTo OnErrLabel
-	
-	Dim chkDate As NotesDateTime
-	
-	Dim chkdoc As NotesDocument
-	Dim n As Integer '新着質問数
-
-	Set chkdoc =chkview.GetFirstDocument
-	ReDim NewDoc(0)
-	
-	n =-1
-	
-	While Not(chkdoc Is Nothing)
-		Set chkDate =New NotesDateTime(chkdoc.Created)
-		Dim Va As Variant
-		
-		Va = chkDate.TimeDifferenceDouble(dLastChkDate)
-		'前回の実施タイミングと比較
-		If chkDate.TimeDifferenceDouble(dLastChkDate ) > 0 Then
-			n= n + 1
-			ReDim Preserve NewDoc(n)
-			Set NewDoc(n) = chkdoc
-			
-		Else
-			'新着終了
-			NewCount = n +1
-			FncGet_NewDocCollection = True
-			Exit Function
-		End If
-		
-		Set chkdoc = chkview.getNextdocument(chkdoc)
-	Wend
-	
-	NewCount = n +1	
-	FncGet_NewDocCollection = True
-	Exit Function
-OnErrLabel:
-	errMsg = "[FncGet_NewDocCollection] エラー： " & Erl() & "行目 " & Error & "(" & Err() & ")"
-	
-ErrLabel:
-	Exit Function
-	
-End Function
-
-
 '++LotusScript Development Environment:2:2:Main:5:8
 %REM
 	Sub Main
@@ -453,6 +401,7 @@ Sub Main()
 	
 	Dim msflg As Integer
 	
+	Set ss = New NotesSession
 	Set curdb = ss.Currentdatabase
 	
 	nline = Chr(10)& Chr(10)
@@ -566,3 +515,54 @@ ErrMsg:
 	Print curdb.Title & "(" & curdb.Filepath & ") " & errMsg
 	Exit Sub
 End Sub
+
+'++LotusScript Development Environment:2:1:FncGet_NewDocCollection:5:8
+%REM
+	Function FncGet_NewQCollection
+	Description: 新着文書コレクションの取得
+%END REM
+Function FncGet_NewDocCollection(chkview As NotesView,NewDoc() As NotesDocument ,NewCount As Integer ,errMsg As String) As Boolean
+	FncGet_NewDocCollection = False
+	On Error GoTo OnErrLabel
+	
+	Dim chkDate As NotesDateTime
+	
+	Dim chkdoc As NotesDocument
+	Dim n As Integer '新着質問数
+
+	Set chkdoc =chkview.GetFirstDocument
+	ReDim NewDoc(0)
+	
+	n =-1
+	
+	While Not(chkdoc Is Nothing)
+		Set chkDate =New NotesDateTime(chkdoc.Created)
+		Dim Va As Variant
+		
+		Va = chkDate.TimeDifferenceDouble(dLastChkDate)
+		'前回の実施タイミングと比較
+		If chkDate.TimeDifferenceDouble(dLastChkDate ) > 0 Then
+			n= n + 1
+			ReDim Preserve NewDoc(n)
+			Set NewDoc(n) = chkdoc
+			
+		Else
+			'新着終了
+			NewCount = n +1
+			FncGet_NewDocCollection = True
+			Exit Function
+		End If
+		
+		Set chkdoc = chkview.getNextdocument(chkdoc)
+	Wend
+	
+	NewCount = n +1	
+	FncGet_NewDocCollection = True
+	Exit Function
+OnErrLabel:
+	errMsg = "[FncGet_NewDocCollection] エラー： " & Erl() & "行目 " & Error & "(" & Err() & ")"
+	
+ErrLabel:
+	Exit Function
+	
+End Function
