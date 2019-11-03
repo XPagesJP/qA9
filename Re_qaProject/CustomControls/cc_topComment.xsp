@@ -23,17 +23,17 @@ if (commonName=="Anonymous"){
 
 
 
-						このサイトは、IBMが提供しているグループウェア用ミドルウェア「IBM
-						Notes/Domino（IBMノーツ/ドミノ）」専用のＱ＆Ａサイトです。
+						このサイトは、HCLが提供しているグループウェア用ミドルウェア「HCL
+						Notes/Domino（HCLノーツ/ドミノ）」専用のＱ＆Ａサイトです。
 						<xp:br></xp:br>
-						Notesの開発（NotesScript、Xpages）はじめ、Dominoの設定など何でも質問してください。
+						Notesの開発（LotusScript、XPages、DQL等）はじめ、Dominoの設定など何でも質問してください。
 						<xp:br></xp:br>
 						<xp:br></xp:br>
 						　【質問内容】
 						<xp:br></xp:br>
 						　　・Notesの使い方
 						<xp:br></xp:br>
-						　　・アプリ開発における実装手段（Notes アプリ／Domino web／Xpages）
+						　　・アプリ開発における実装手段（Notes アプリ／Domino web／XPages）
 						<xp:br></xp:br>
 						　　・Dominoの設定
 						<xp:br></xp:br>
