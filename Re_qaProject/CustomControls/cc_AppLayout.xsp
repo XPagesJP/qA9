@@ -167,7 +167,7 @@ if (myTheme != ""){
 
 
 			<xp:panel xp:key="MastFooter" styleClass="lotusRight">
-					ver 0.9.6 (Public Beta 6)
+					ver 0.9.7 (Public Beta 7)
 			</xp:panel>
 			<xp:callback facetName="facetRight" id="facetRight"
 				xp:key="RightColumn">

@@ -1,13 +1,13 @@
 <?xml version='1.0' encoding='utf-8'?>
 <note class='filter' xmlns='http://www.lotus.com/dxl' version='10.0' maintenanceversion='1.0'
- replicaid='4925811E00232CF3'>
-<noteinfo noteid='61e' unid='A219F533881B8C2B49257ED2001AAF26' sequence='10'>
+ replicaid='492584A70055E044'>
+<noteinfo noteid='17e' unid='A219F533881B8C2B49257ED2001AAF26' sequence='3'>
 <created><datetime>20151002T135127,74+09</datetime></created>
-<modified><datetime>20190130T144323,75+09</datetime></modified>
-<revised><datetime>20190130T144323,74+09</datetime></revised>
-<lastaccessed><datetime>20190130T144323,75+09</datetime></lastaccessed>
-<addedtofile><datetime>20170512T153644,58+09</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=XPages Admin/O=XPages</name></updatedby>
+<modified><datetime>20191104T005532,72+09</datetime></modified>
+<revised><datetime>20191104T005532,71+09</datetime></revised>
+<lastaccessed><datetime>20191104T005532,71+09</datetime></lastaccessed>
+<addedtofile><datetime>20191104T003802,29+09</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Domino Administrator/O=EF10</name><name>CN=XPages Admin/O=XPages</name></updatedby>
 <wassignedby><name>CN=XPages Admin/O=XPages</name></wassignedby>
 <item name='$POID'><datetime>20141209T212715,58+09</datetime></item>
 <item name='$TITLE' sign='true'><text>定期メール送信|ag_MaillSend</text></item>
@@ -36,7 +36,7 @@ gQYAAAAA
 <item name='$DesignerVersion' sign='true'><text>8.5.3</text></item>
 <item name='$AssistRunInfo' summary='true'>
 <rawitemdata type='3'>
-BgAAAgAACABuBgAAAAAAAAUAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+BgAAAgAACAB6AQAAAAAAAAUAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAKLNOAMd9JUl0njoAyHwlSQAAAAAAAAAAAAAAAAAAAAAAAAAAqqqqqqqq
 qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq
 qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq
@@ -615,5 +615,5 @@ CTohABpHAl38EYOlGkkCSwwSLBAZhYsAIxpLAl38EYKlGk0CHBpPAhpQAl0cEn2oEhW/fRAJvxaT
 v33ABL8Uv30cCb+bpRpRAhwaUgIdCwAIAAAAAAAcAAAAAgAAABEAMAAAAAAA//8BAAMABQAAABAA
 OAAfAMAHyAB4ByABNAqNAcAGmAEEBtEBDAUHAiAIPgIKAAAA
 </rawitemdata></item>
-<item name='$AssistVersion'><datetime>20190130T144323,19+09</datetime></item></note>
+<item name='$AssistVersion'><datetime>20191104T005529,09+09</datetime></item></note>
 
