@@ -7,7 +7,7 @@
 	</xp:this.resources>
 
 	<xp:section id="section1"
-		header="ようこそ！！　qA9 for ICS(Lotus) Developersへ">
+		header="ようこそ！！　qA9 for Notes/Domino Developersへ">
 		<xp:this.initClosed><![CDATA[#{javascript:var commonName = Common.getCommonUserName(@UserName());
 if (commonName=="Anonymous"){
 	return false;

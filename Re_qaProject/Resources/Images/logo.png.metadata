@@ -1,21 +1,21 @@
-<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.0" replicaid="4925811E00232CF3" version="10.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="4b2" sequence="13" unid="DBEAA866F392EF6E49257ED2001AACF0">
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.0" replicaid="492584A70055E044" version="10.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="2fa" sequence="5" unid="DBEAA866F392EF6E49257ED2001AACF0">
 <created><datetime>20151002T135122,08+09</datetime></created>
-<modified><datetime>20190130T144315,27+09</datetime></modified>
-<revised><datetime>20190130T144315,26+09</datetime></revised>
-<lastaccessed><datetime>20190130T144315,27+09</datetime></lastaccessed>
-<addedtofile><datetime>20170512T153630,58+09</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=XPages Admin/O=XPages</name></updatedby>
+<modified><datetime>20210802T225411,23+09</datetime></modified>
+<revised><datetime>20210802T225411,22+09</datetime></revised>
+<lastaccessed><datetime>20210802T225411,22+09</datetime></lastaccessed>
+<addedtofile><datetime>20191104T003808,62+09</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Domino Administrator/O=EF10</name><name>CN=XPages Admin/O=XPages</name></updatedby>
 <wassignedby><name>CN=XPages Admin/O=XPages</name></wassignedby>
 <item name="$TITLE"><text>logo.png</text></item>
-<item name="$Flags"><text>34CiQ</text></item>
 <item name="$FlagsExt" sign="true"><text>D</text></item>
 <item name="$ImagesWide" sign="true"><number>1</number></item>
 <item name="$ImagesHigh" sign="true"><number>1</number></item>
 <item name="$ImagesColorize" sign="true"><number>0</number></item>
-<item name="$FileModDT" sign="true"><datetime>20130823T223921,01+09</datetime></item>
-<item name="$ImageNames" sign="true"><text>logo.png</text></item>
 <item name="$DesignerVersion"><text>8.5.3</text></item>
 
 
-</note>
+<item name="$MimeType" sign="true"><text>image/png</text></item>
+<item name="$FileModDT" sign="true"><datetime>20210802T214926,43+09</datetime></item>
+<item name="$Flags"><text>34CiQ</text></item>
+<item name="$ImageNames" sign="true"><text>logo.png</text></item></note>
